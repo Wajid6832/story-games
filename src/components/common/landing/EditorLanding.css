@@ -1,0 +1,295 @@
+/* ---------- Base Styles ---------- */
+.main-landing-div {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #EFEFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom:50px;
+  box-sizing: border-box;
+}
+
+.landing-second-div {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  border-radius: 90px;
+  background-color: #ebe8e8;
+  transform: rotate(5deg);
+  padding-bottom: 20px;
+}
+
+.lading-content-div {
+  margin-top: -60px;
+  width: 1224px;
+  max-width: 850px;
+  min-height: 550px;
+  border-radius: 90px;
+  margin-left: -40px;
+  background-color: #FFFFFF;
+  transform: rotate(1deg);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.landign-content {
+  padding-top: 80px;
+  padding-left: 20px;
+  transform: rotate(-6deg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------- Content Section ---------- */
+.content-upper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.content {
+  flex: 1 1 300px;
+  max-width: 100%;
+  margin-left: 0;
+}
+.heading{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.heading p {
+  font-weight: bold;
+  font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.second-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 445px;
+height: 26px;
+border-radius: 56px;
+angle: 0 deg;
+opacity: 1;
+
+}
+.second-heading p{
+    width: 303;
+height: 26;
+angle: 0 deg;
+opacity: 1;
+top: 100px;
+
+}
+
+.dasht-line {
+ width: 140px;
+height: 5px;
+border-radius: 56px;
+angle: 0 deg;
+opacity: 1;
+margin-top: -20px;
+background-color: #F6B21A;
+
+
+}
+.text{
+width: 472px;
+height: 74px;
+angle: 0 deg;
+opacity: 1;
+}
+.text p {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+
+.butons {
+  width: 100%;
+}
+
+.btn {
+    width: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+ justify-content: space-between;
+  margin-top: 10px;
+  margin-left: -15px;
+}
+
+.signup button,
+.signin button {
+  flex: 1 1 140px;
+  padding: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.signup button {
+  background-color: #6F8BDF;
+  width: 200px;
+height: 50px;
+border-radius: 15px;
+opacity: 1;
+gap: 10px;
+padding-top: 14px;
+padding-right: 70px;
+padding-bottom: 14px;
+padding-left: 70px;
+
+}
+
+.signin button {
+    background-color: transparent;
+    color: #6F8BDF;
+width: 200px;
+height: 50px;
+border-radius: 15px;
+opacity: 1;
+gap: 10px;
+padding-top: 14px;
+padding-right: 70px;
+padding-bottom: 14px;
+padding-left: 70px;
+border-width: 2px;
+border: 2px solid #6F8BDF;
+}
+
+.browse {
+  padding-top: 20px;
+  color: #6F8BDF;
+}
+
+.browse p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Image Section ---------- */
+.image {
+  flex: 1 1 250px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- Top List Cards ---------- */
+.top-list-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  transform: rotate(-6deg);
+  box-sizing: border-box;
+}
+
+.card-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: max-content;
+}
+
+.card {
+  flex: 0 0 70px;
+  height: 80px;
+  background: #ccc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.top-list-label {
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+
+/* ---------- Responsive Breakpoints ---------- */
+@media screen and (max-width: 768px) {
+  .landing-second-div,
+  .lading-content-div {
+    border-radius: 60px;
+    transform: none;
+    margin-left: 0;
+  }
+
+  .landign-content {
+    transform: none;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .content-upper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-list-container {
+    transform: none;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signup button,
+  .signin button {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    width: 50px;
+    height: 60px;
+  }
+
+  .card img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .heading p,
+  .second-heading p,
+  .browse p {
+    font-size: 0.95rem;
+  }
+
+  .text p {
+    font-size: 0.9rem;
+  }
+
+  .dasht-line {
+    width: 60px;
+  }
+}
