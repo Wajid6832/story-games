@@ -1,6 +1,6 @@
 .homeContainer {
-  padding: 20px 30px;
-  background-color: #fff;
+  padding: 10px 10px;
+  background-color: #ffffffd4;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .homeTitle {
   font-weight: 600;
   font-size: 1.4rem;
@@ -87,8 +88,15 @@
 }
 .cardCustom {
   border-radius: 12px;
+  border-color: transparent;
   background-color: #F8F9FA;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  overflow: hidden;
+  height: 247px;
 }
 .cardCustom:hover {
   transform: translateY(-5px);
@@ -96,7 +104,8 @@
 }
 .imagePlaceholder {
   background-color: #D3D3D3;
-  height: 150px;
+  height: 100%;
+  width: 217px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,6 +116,10 @@
   font-size: 2.5rem;
   color: #5F5F9F;
 }
+.cardBody {
+  height: 100%;
+  margin-left: -44px;
+}
 .link {
   color: #5B7BFF;
   text-decoration: none;
@@ -115,12 +128,6 @@
 .link:hover {
   text-decoration: underline;
 }
-
-
-
-
-
-
 .merge{
   display: flex;
 }

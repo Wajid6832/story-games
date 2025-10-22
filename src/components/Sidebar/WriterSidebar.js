@@ -1,6 +1,7 @@
-import React from "react";
-import style from "../../Modulecss/WriterSidebar.module.css";
+import React, { useState } from "react";
+import style from "../Sidebar/WriterSidebar.module.css";
 import { Nav } from "react-bootstrap";
+import { IoReorderThree } from "react-icons/io5";
 import {
   House,
   Person,
@@ -11,31 +12,41 @@ import {
   QuestionCircle,
   BoxArrowRight,
 } from "react-bootstrap-icons";
+
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className={style.sidebar}>
+    <div className={`${style.sidebar} ${isOpen ? style.open : style.closed}`}>
       <div className={style.sidebarTop}>
         <div className={style.sidebarBrand}>
           <span className={style.sidebarTitle}>Story Host</span>
+          <div className={style.icon} onClick={toggleSidebar}>
+            <IoReorderThree />
+          </div>
         </div>
         <Nav className="flex-column mt-1">
           <Nav.Link href="#" className={style.sidebarLink}>
-            <House className="me-2" /> Home
+            <House className={style.me2} /> <span>Home</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <Person className="me-2" /> Profile
+            <Person className={style.me2} /> <span>Profile</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <Book className="me-2" /> Current Novels
+            <Book className={style.me2} /> <span>Current Novels</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <PencilSquare className="me-2" /> Become an Editor
+            <PencilSquare className={style.me2} /> <span>Become an Editor</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <Heart className="me-2" /> Favorites
+            <Heart className={style.me2} /> <span>Favorites</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <Envelope className="me-2" /> Messages
+            <Envelope className={style.me2} /> <span>Messages</span>
           </Nav.Link>
         </Nav>
       </div>
@@ -46,22 +57,17 @@ const Sidebar = () => {
           </div>
           <span>Reader Mode OFF</span>
         </div>
-        <Nav className="flex-column mt-1">
+        <Nav className="flex-column ">
           <Nav.Link href="#" className={style.sidebarLink}>
-            <QuestionCircle className="me-2" /> Support
+            <QuestionCircle className={style.me2} /> <span>Support</span>
           </Nav.Link>
           <Nav.Link href="#" className={style.sidebarLink}>
-            <BoxArrowRight className="me-2" /> Sign Out
+            <BoxArrowRight className={style.me2} /> <span>Sign Out</span>
           </Nav.Link>
         </Nav>
       </div>
     </div>
   );
 };
+
 export default Sidebar;
-
-
-
-
-
-

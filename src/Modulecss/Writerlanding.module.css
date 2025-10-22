@@ -1,11 +1,21 @@
 
  .landingWrapper {
-  background-color: #FFFFFF;
+  background: #EFEFEF;
   min-height: 100vh;
   overflow-x: hidden;
-    box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1);
-
+  background-position: top left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 40%, 40%;
 }
+/* .img1{
+      position: absolute;
+      z-index: 1;
+}
+.img2{
+      position: absolute;
+            z-index: 3;
+
+} */
 .signUpBtn {
   background-color: #4B7BFF;
   border: none;
