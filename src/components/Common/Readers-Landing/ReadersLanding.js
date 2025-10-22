@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
-import placeholder from "../../../assets/Readers-Assets/images.png";
+import placeholder from "../../../assets/Readers-Assets/images/images.png";
 import Sidebar from "./Sidebar";
-import "./ReadersLanding.css";
+import NovelModal from "../../NovalPage/noval"; // ✅ Modal import
+import styles from "./ReadersLanding.module.css"; // ✅ Correct module import
+
 const sections = [
   "Uploaded",
   "My Favorites",
@@ -20,12 +22,13 @@ const generateStories = (sectionName) =>
     author: "Jon Doe",
     book: "Book Name",
   }));
+
 const CardContent = ({ section, story }) => {
   if (section === "Top 10 Writers") {
     return (
-      <div className="writer-placeholder text-center">
-        <div className="writer-circle mx-auto">
-          <img src={story.image} alt="writer" className="writer-placeholder-icon" />
+      <div className={`${styles["writer-placeholder"]} text-center`}>
+        <div className={styles["writer-circle"]}>
+          <img src={story.image} alt="writer" className={styles["writer-placeholder-icon"]} />
         </div>
         <p className="fw-semibold mt-2 mb-0 small text-dark">Author Name</p>
       </div>
@@ -50,18 +53,35 @@ const CardContent = ({ section, story }) => {
     );
   }
   return (
-    <div className="placeholder-card d-flex justify-content-center align-items-center">
-      <img src={story.image} alt="placeholder" className="placeholder-img" />
+    <div className={`${styles["placeholder-card"]} d-flex justify-content-center align-items-center`}>
+      <img src={story.image} alt="placeholder" className={styles["placeholder-img"]} />
     </div>
   );
 };
+
 const ReadersLanding = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false); // ✅ Modal state
+  const [selectedNovel, setSelectedNovel] = useState(null); // ✅ Selected novel
+
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  // ✅ Handle card click
+  const handleCardClick = (section, story) => {
+    if (
+      section !== "Top 10 Writers" &&
+      !section.includes("Character") &&
+      !section.includes("Chapter")
+    ) {
+      setSelectedNovel(story);
+      setShowModal(true);
+    }
+  };
+
   return (
     <div className="d-flex bg-light vh-100">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      <Container fluid className="p-4 overflow-auto readers-main">
+      <Container fluid className={`p-4 overflow-auto ${styles["readers-main"]}`}>
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
             className="btn btn-light d-lg-none mb-2"
@@ -83,21 +103,23 @@ const ReadersLanding = () => {
             />
           </div>
         </div>
+
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>
-            <div className="scroll-container no-scrollbar d-flex">
+            <div className={`${styles["scroll-container"]} ${styles["no-scrollbar"]} d-flex`}>
               {generateStories(section).map((story) => (
                 <Card
                   key={story.id}
-                  className={`story-card border-0 rounded-4 mx-2 ${
+                  onClick={() => handleCardClick(section, story)} // ✅ Added
+                  className={`${styles["story-card"]} border-0 rounded-4 mx-2 ${
                     section === "Top 10 Writers"
-                      ? "writer-card"
+                      ? styles["writer-card"]
                       : section.includes("Character")
-                      ? "character-card"
+                      ? styles["character-card"]
                       : section.includes("Chapter")
-                      ? "chapter-card"
-                      : "image-card"
+                      ? styles["chapter-card"]
+                      : styles["image-card"]
                   }`}
                 >
                   <CardContent section={section} story={story} />
@@ -106,8 +128,16 @@ const ReadersLanding = () => {
             </div>
           </div>
         ))}
+
+        {/* ✅ Novel Modal Added */}
+        <NovelModal
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          novel={selectedNovel}
+        />
       </Container>
     </div>
   );
 };
+
 export default ReadersLanding;

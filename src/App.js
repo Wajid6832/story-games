@@ -26,6 +26,9 @@ function App() {
         {/* <Route path="/products" element={<Products />} /> */}
         {/* <Route path="/" element={<Login />} /> */}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6d13fbd (reader section code pushed)
         <Route path="/" element={<ReaderHome />} />
         <Route path="/readinghome" element={<ReadersLanding />} />
 =======
