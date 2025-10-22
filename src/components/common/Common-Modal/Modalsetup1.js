@@ -3,7 +3,7 @@ import style from "../Common-Modal/Modal.module.css";
 import image from "../../../assets/icon.png";
 import { ImCross } from "react-icons/im";
 
-function Modalsetup1({ onHide, selectedWorkRoom }) {
+function Modalsetup1({ onHide, selectedWorkRoom, setcomponentIndex }) {
   return (
     <div className={style.overlay} onClick={onHide}>
       <div className={style.wrapper} onClick={(e) => e.stopPropagation()}>
@@ -19,7 +19,8 @@ function Modalsetup1({ onHide, selectedWorkRoom }) {
           <p className={style.genre}>Genre</p>
           <h3 className={style.title}>Novel {selectedWorkRoom}</h3>
           <p className={style.authors}>
-            <span className={style.span}>Author Name</span> • <span className={style.span}>Writer Name</span>
+            <span className={style.span}>Author Name</span> •{" "}
+            <span className={style.span}>Writer Name</span>
           </p>
 
           <p className={style.desc}>
@@ -33,7 +34,7 @@ function Modalsetup1({ onHide, selectedWorkRoom }) {
             suspendisse nam. Malesuada magna wisi enim ad minim veniam.
           </p>
 
-          <button className={style.applyBtn}>Apply for Position</button>
+          <button className={style.applyBtn} onClick={() => setcomponentIndex(1)}>Apply for Position</button>
         </div>
       </div>
     </div>

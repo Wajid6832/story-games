@@ -1,10 +1,9 @@
-import React from "react";
 import { ImCross } from "react-icons/im";
-// import styles from "../Common-Modal/Modal2.module.css";
-function Modalsetup2({ onHide }) {
+import styles from "../Common-Modal/Modal2.module.css";
+function Modalsetup2({ onHide, setcomponentIndex }) {
   return (
     <div className={`d-flex justify-content-center align-items-center ${styles.wrapper}`}>
-      <div className={`bg-white rounded-4 shadow p-4 position-relative text-center ${styles.main}`}>
+      <div className={`bg-white rounded-4 p-4 position-relative text-center ${styles.main}`}>
         
         <button
           onClick={onHide}
@@ -30,7 +29,8 @@ function Modalsetup2({ onHide }) {
             placeholder="Enter email address"
             className="form-control mb-3"
           />
-          <button type="submit" className="btn btn-primary w-100 rounded-3">
+        
+          <button type="submit" className="btn btn-primary w-100 rounded-3" onClick={() => setcomponentIndex(2)}>
             Apply
           </button>
         </form>
