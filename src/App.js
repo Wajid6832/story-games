@@ -1,22 +1,15 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "./features/auth/Login";
-import { Products } from "./features/product/Product";
 
-function App() {
+import React from 'react'
+import Create from './component/Create'
+// import PageReducer from './component/Loadingpage/PageReducer'
+const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-      <Routes>
-        <Route path="/products" element={<Products />} />
-        <Route path="/" element={<Login />} />
-      </Routes>
-      </BrowserRouter>
+    <div>
+      {/* <PageReducer /> */}
+      <Create />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+

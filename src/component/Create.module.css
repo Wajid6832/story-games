@@ -1,0 +1,159 @@
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #2B292D33;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+
+.createContainer {
+background-color: #fff;
+width: 550px;
+padding: 30px, 40px;
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+
+.illustration img {
+width: 100px;
+height: auto;
+margin-bottom: 20px;
+}
+
+
+.title {
+font-size: 26px;
+font-weight: 700;
+color: #1c1c1c;
+margin-bottom: 20px;
+}
+
+
+.inputField {
+width: 70%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 14px;
+margin-bottom: 15px;
+outline: none;
+margin-left: 100px;
+}
+
+
+.uploadBtn {
+background-color: #6f8bdf;
+color: white;
+border: none;
+width: 70%;
+padding: 12px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 15px;
+margin-bottom: 20px;
+}
+
+.btn {
+    width: 281px;
+    height: 50px;
+    border-radius: 13.3px;
+    padding-top: 12.26px;
+    padding-right: 61.28px;
+    padding-bottom: 12.28px;
+    padding-left: 61.28;
+    
+    background-color: #6f8bdf;
+    color: white;
+    margin-bottom: 30px;
+
+}
+
+
+.uploadBtn:hover {
+background-color: #5a75d1;
+}
+
+
+.uploadedTitle {
+font-size: 14px;
+color: #333;
+text-align: left;
+margin-bottom: 8px;
+padding: 10px;
+}
+
+
+.uploadedBox {
+    position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.uploadedBox::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 4px;
+  height: 90%;
+  background: linear-gradient(to bottom, #007bff 50%, #000 50%);
+  border-radius: 2px;
+}
+
+.uploadedText {
+  display: flex;         
+  align-items: center;    
+  gap: 20px;              
+  color: #333;
+  font-size: 14px;
+}
+
+.inlineImg {
+  width: 30px;          
+  height: 30px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+ 
+
+.crossIcon {
+   margin-left: 510px;
+}
+.inputContainer {
+  position: relative;
+  width: 300px;
+}
+
+.inputImg {
+  position: absolute;
+  top: 35%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  pointer-events: none;
+  margin-left: 100px; 
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px 12px 10px 50px; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.inputField:focus {
+  border-color: #6f8bdf;
+}
