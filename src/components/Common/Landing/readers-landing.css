@@ -1,0 +1,138 @@
+.no-scrollbar {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.scroll-container {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 8px;
+  flex-wrap: nowrap;
+}
+.story-card {
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.story-card:hover {
+  transform: translateY(-4px);
+}
+.placeholder-card {
+  width: 160px;
+  height: 220px;
+  border-radius: 20px;
+  background: #F4F4F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.placeholder-img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+}
+.writer-card {
+  width: 100px;
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+.writer-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.writer-circle {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #4A8DF7;
+  border-radius: 50%;
+  background: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.writer-placeholder-icon {
+  width: 25px;
+  height: 25px;
+  opacity: 0.6;
+}
+.writer-card p {
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+.character-card,
+.chapter-card {
+  width: 250px;
+  border-radius: 20px;
+  padding: 1rem;
+  background: #fff;
+}
+.chapter-card {
+  background: #F8F9FA;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #F1F1F1;
+}
+.search-box i {
+  font-size: 14px;
+  color: #888;
+}
+.search-box input {
+  width: 150px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+}
+.search-box input::placeholder {
+  color: #999;
+}
+@media (max-width: 992px) {
+  .placeholder-card {
+    width: 140px;
+    height: 200px;
+  }
+  .writer-card {
+    width: 90px;
+  }
+  .writer-circle {
+    width: 60px;
+    height: 60px;
+  }
+  .search-box input {
+    width: 120px;
+  }
+}
+@media (max-width: 576px) {
+  .placeholder-card {
+    width: 120px;
+    height: 180px;
+  }
+  .writer-card {
+    width: 80px;
+  }
+  .writer-circle {
+    width: 55px;
+    height: 55px;
+  }
+  .character-card,
+  .chapter-card {
+    width: 200px;
+  }
+  .search-box input {
+    width: 100px;
+  }
+}
+
+
+
+
