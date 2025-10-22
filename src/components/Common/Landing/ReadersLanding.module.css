@@ -1,4 +1,4 @@
-/* Scroll container without scrollbar */
+
 .scrollContainer {
   display: flex;
   gap: 16px;
@@ -13,7 +13,6 @@
   display: none;
 }
 
-/* Story Cards */
 .storyCard {
   flex: 0 0 auto;
   cursor: pointer;
@@ -24,7 +23,6 @@
   transform: translateY(-4px);
 }
 
-/* Placeholder Card */
 .placeholderCard {
   width: 160px;
   height: 220px;
@@ -41,7 +39,6 @@
   opacity: 0.5;
 }
 
-/* Writer Card */
 .writerCard {
   width: 100px;
   border: none;
@@ -77,7 +74,6 @@
   font-size: 0.85rem;
 }
 
-/* Character & Chapter Card */
 .characterCard,
 .chapterCard {
   width: 250px;
@@ -90,7 +86,6 @@
   background: #f8f9fa;
 }
 
-/* Search Box */
 .searchBox {
   display: flex;
   align-items: center;
@@ -117,7 +112,6 @@
   color: #999;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .placeholderCard { width: 140px; height: 200px; }
   .writerCard { width: 90px; }

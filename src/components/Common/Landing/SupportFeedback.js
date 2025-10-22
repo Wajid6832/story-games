@@ -24,7 +24,6 @@ const SupportFeedback = () => {
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
       <Container fluid className="p-4 overflow-auto readers-main">
-        {/* Header */}
         <div className="d-flex justify-content-start align-items-center mb-4 flex-wrap border-bottom pb-3">
           <button
             className="btn btn-light d-lg-none mb-2 me-3"
@@ -37,7 +36,6 @@ const SupportFeedback = () => {
         </div>
 
         <Row className="mt-4">
-          {/* Left Column: Form */}
           <Col lg={6} md={12}>
             <div className={styles.formContainer}>
               <h6 className="fw-bold mb-3">Input your information:</h6>
@@ -83,8 +81,6 @@ const SupportFeedback = () => {
               </Form>
             </div>
           </Col>
-
-          {/* Right Column: Illustration */}
           <Col
             lg={6}
             md={12}

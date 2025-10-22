@@ -71,8 +71,6 @@ const CardContent = ({ section, story }) => {
   );
 };
 
-// Modals remain the same as your previous code
-// Just remove inline styles if you want to move them into modular CSS
 
 const ReadersLanding = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
