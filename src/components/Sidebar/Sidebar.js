@@ -1,85 +1,88 @@
-import "./Sidebar.css";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { clearState } from "../../features/product/product.slice";
+import React, { useState } from "react";
+import styles from "./Sidebar.module.css";
+import { ListGroup, Button, Form } from "react-bootstrap";
+import { BiMenu } from "react-icons/bi";
 
-export const Sidebar = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const onSignOut = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    dispatch(clearState());
-    navigate("/");
+// ✅ Import your local images
+import logo from "../../assets/logo.png";
+import applications from "../../assets/applications.png";
+import favourites from "../../assets/favourites.png";
+import profile from "../../assets/profile.png";
+import message from "../../assets/message.png";
+import mail from "../../assets/mail.png";
+import review from "../../assets/review.png";
+import support from "../../assets/support.png";
+import logout from "../../assets/logout.png";
+
+const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
   };
-  const [toggle, setToggle] = useState(false);
 
-  const handleChange = (event) => {
-    setToggle(event.target.checked);
-    console.log(event.target.checked);
-  };
-
-  useEffect(() => {
-    console.log(toggle);
-  });
   return (
-    <>
-      <header className='header' id='header'>
-        <label className='switch'>
-          <input
-            type='checkbox'
-            onChange={handleChange}
-            name='mode'
-            checked={toggle}
-          />
-          <span className='slider round'></span>
-        </label>
-        <div className='header_toggle'>
-          <i className='bx bx-menu' id='header-toggle'></i>
+    <div className={`${styles.sidebar} ${!isOpen ? styles.collapsed : ""}`}>
+      {/* Top section with logo and toggle */}
+      <div className={styles.topSection}>
+        <div className={styles.logoWrapper}>
+          <img src={logo} alt="Logo" className={styles.logoIcon} />
+          {isOpen && <h5 className={styles.logoText}>Story Host</h5>}
         </div>
-        <div className='header_img'>
-          <img src='https://i.imgur.com/hczKIze.jpg' alt='profile' />
-        </div>
-      </header>
-      <div className='l-navbar' id='nav-bar'>
-        <nav className='nav'>
-          <div>
-            <NavLink className='nav_logo'>
-              <i className='bi bi-box-seam'></i>
-              <span className='nav_logo-name'>LG </span>
-            </NavLink>
-            <div className='nav_list'>
-              <NavLink href='#' className='nav_link'>
-                <i className='bi bi-bag-check' title='Items'></i>
-                <span className='nav_name'>Items</span>
-              </NavLink>
-              <NavLink href='#' className='nav_link'>
-                <i className='bi bi-person-vcard'></i>
-                <span className='nav_name'>Customers</span>
-              </NavLink>
-
-              <NavLink href='#' className='nav_link'>
-                <i className='bi bi-gear'></i>
-                <span className='nav_name'>Transactions</span>
-              </NavLink>
-              <NavLink href='#' className='nav_link'>
-                <i className='bi bi-person-gear'></i>
-                <span className='nav_name'>User Roles</span>
-              </NavLink>
-              <NavLink href='#' className='nav_link '>
-                <i className='bi bi-people'></i>
-                <span className='nav_name'>Users</span>
-              </NavLink>
-            </div>
-          </div>
-          <li onClick={onSignOut} className='nav_link' role='button'>
-            <i className='bi bi-box-arrow-right'></i>
-            <span className='nav_name'>Sign Out</span>
-          </li>
-        </nav>
+        <BiMenu className={styles.menuIcon} onClick={toggleSidebar} />
       </div>
-    </>
+
+      {/* Menu Items */}
+      <ListGroup variant="flush" className={styles.menu}>
+        <ListGroup.Item className={styles.item}>
+          <img src={applications} alt="Home" className={styles.icon} />
+          {isOpen && <span>Home</span>}
+        </ListGroup.Item>
+
+        <ListGroup.Item className={styles.item}>
+          <img src={profile} alt="Profile" className={styles.icon} />
+          {isOpen && <span>Profile</span>}
+        </ListGroup.Item>
+
+        <ListGroup.Item className={styles.item}>
+          <img src={review} alt="Review Responses" className={styles.icon} />
+          {isOpen && <span>Review Responses</span>}
+        </ListGroup.Item>
+
+        <ListGroup.Item className={styles.item}>
+          <img src={mail} alt="Open Applications" className={styles.icon} />
+          {isOpen && <span>Open Applications</span>}
+        </ListGroup.Item>
+
+        <ListGroup.Item className={styles.item}>
+          <img src={message} alt="Messages" className={styles.icon} />
+          {isOpen && <span>Messages</span>}
+        </ListGroup.Item>
+
+        <ListGroup.Item className={styles.item}>
+          <img src={favourites} alt="Favorites" className={styles.icon} />
+          {isOpen && <span>Favorites</span>}
+        </ListGroup.Item>
+      </ListGroup>
+
+      {/* Bottom Section */}
+      <div className={styles.bottom}>
+        <Form.Check
+          type="switch"
+          id="reader-mode"
+          label={isOpen ? "Reader Mode OFF" : ""}
+        />
+        <Button variant="link" className={styles.supportBtn}>
+          <img src={support} alt="Support" className={styles.iconSmall} />
+          {isOpen && "Support"}
+        </Button>
+        <Button variant="link" className={styles.signOutBtn}>
+          <img src={logout} alt="Logout" className={styles.iconSmall} />
+          {isOpen && "Sign Out"}
+        </Button>
+      </div>
+    </div>
   );
 };
 
+export default Sidebar;

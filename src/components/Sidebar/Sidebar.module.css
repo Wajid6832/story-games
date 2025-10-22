@@ -1,0 +1,118 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 16px 16px 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.collapsed {
+  width: 80px;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.logoText {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #2b2b2b;
+}
+
+.menuIcon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* ---- Menu Items ---- */
+.menu {
+  flex-grow: 1;
+}
+
+.item {
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #444;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+
+.item:hover {
+  background-color: #e6e6e6;
+  border-radius: 8px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.iconSmall {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+/* ---- Bottom Section ---- */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.supportBtn,
+.signOutBtn {
+  text-align: left;
+  padding: 0;
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Collapsed Styles */
+.collapsed .item {
+  justify-content: center;
+}
+
+.collapsed .bottom {
+  align-items: center;
+}
+
+.collapsed .supportBtn,
+.collapsed .signOutBtn {
+  justify-content: center;
+}
+
+.collapsed .supportBtn span,
+.collapsed .signOutBtn span {
+  display: none;
+}
