@@ -8,7 +8,7 @@ import Application from "../../../assets/applications.png"
 import Favourites from "../../../assets/favourites.png"
 import Mail from "../../../assets/mail.png"
 import Logout from "../../../assets/logout.png"
-import "./EditorSidebar.css"
+import style from "./EditorSidebar.module.css"
 import { NavLink } from 'react-router-dom'
 const EditorSidebar = () => {
     const [isOpen, SetIsopen] = useState(false);
@@ -98,7 +98,7 @@ const EditorSidebar = () => {
                                     <div className="img-links">
                                         <img src={Profile} alt="Profile" />
                                     </div>
-                                    <div className="link-text">
+                                    <div className={style.linkText}>
                                         <p>Profile</p>
                                     </div>
                                 </div>
