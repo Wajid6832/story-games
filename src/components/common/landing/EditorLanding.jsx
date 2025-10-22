@@ -1,8 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EditorLanding.css";
 import Frame from "../../../assets/Frame.png"
+import { useNavigate } from "react-router-dom";
 
 const EditorLanding = () => {
+  const navigator = useNavigate();
   return (
     <div className="main-landing-div">
       <div className="landing-second-div">
@@ -52,13 +54,16 @@ const EditorLanding = () => {
 
           <div className="top-list-container">
             <div className="card-list">
-              {Array(6).fill(0).map((_, index) => (
-                <div className="card" key={index}>
-                  <img src="placeholder.png" alt="Placeholder" />
-                </div>
-              ))}
+              <div className="lower-setction-cards">
+                {Array(6).fill(0).map((_, index) => (
+                  <div className="card" key={index}>
+                    <img src="placeholder.png" alt="Placeholder" />
+                  </div>
+                ))}
+              </div>
+
               <div className="top-list-label">
-                <p>Top lists</p>
+                <button onClick={()=>navigator("home")}>Top List</button>
               </div>
             </div>
           </div>
