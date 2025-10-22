@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import Sidebar from "./Sidebar"; // ✅ Import Sidebar
-import "./readers-landing.css";
-import supportImage from "../../../assets/Readers-Assets/images/support.png"; // ✅ Correct path
+import Sidebar from "./Sidebar";
+import supportImage from "../../../assets/Readers-Assets/images/support.png";
+import styles from "./SupportFeedback.module.css";
 
 const SupportFeedback = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -21,14 +21,11 @@ const SupportFeedback = () => {
 
   return (
     <div className="d-flex bg-light vh-100">
-      {/* ✅ Sidebar Section */}
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* ✅ Main Content Section */}
       <Container fluid className="p-4 overflow-auto readers-main">
         {/* Header */}
         <div className="d-flex justify-content-start align-items-center mb-4 flex-wrap border-bottom pb-3">
-          {/* Sidebar toggle for mobile */}
           <button
             className="btn btn-light d-lg-none mb-2 me-3"
             onClick={toggleSidebar}
@@ -36,24 +33,18 @@ const SupportFeedback = () => {
           >
             <i className="bi bi-list fs-4"></i>
           </button>
-
           <h3 className="fw-bold mb-0">Support / Send Feedback</h3>
         </div>
 
-        {/* Main Content Area */}
         <Row className="mt-4">
           {/* Left Column: Form */}
           <Col lg={6} md={12}>
-            <div className="bg-white p-4 rounded-4 shadow-sm">
+            <div className={styles.formContainer}>
               <h6 className="fw-bold mb-3">Input your information:</h6>
               <Form onSubmit={handleSubmit}>
-                {/* Email Input */}
                 <Form.Group className="mb-3">
-                  <div className="input-group" style={{ height: "45px" }}>
-                    <span
-                      className="input-group-text border-end-0 bg-light-subtle"
-                      style={{ backgroundColor: "#f5f5f5" }}
-                    >
+                  <div className={styles.inputGroup + " input-group"}>
+                    <span className={styles.inputGroupText + " input-group-text"}>
                       <i className="bi bi-envelope text-muted"></i>
                     </span>
                     <Form.Control
@@ -62,22 +53,15 @@ const SupportFeedback = () => {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="border-start-0"
-                      style={{
-                        backgroundColor: "#f5f5f5",
-                        borderLeft: "none",
-                        height: "100%",
-                      }}
+                      className={styles.formControl + " form-control"}
                     />
                   </div>
                 </Form.Group>
 
-                {/* Message Input */}
                 <Form.Group className="mb-4">
-                  <div className="input-group">
+                  <div className={styles.inputGroup + " input-group"}>
                     <span
-                      className="input-group-text border-end-0 align-items-start pt-3 bg-light-subtle"
-                      style={{ backgroundColor: "#f5f5f5" }}
+                      className={styles.inputGroupText + " input-group-text align-items-start pt-3"}
                     >
                       <i className="bi bi-chat-text text-muted"></i>
                     </span>
@@ -88,27 +72,12 @@ const SupportFeedback = () => {
                       required
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="border-start-0"
-                      style={{
-                        backgroundColor: "#f5f5f5",
-                        resize: "none",
-                        borderLeft: "none",
-                      }}
+                      className={styles.textareaControl + " form-control"}
                     />
                   </div>
                 </Form.Group>
 
-                {/* Submit Button */}
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="px-4 fw-semibold"
-                  style={{
-                    backgroundColor: "#8797e8",
-                    borderColor: "#8797e8",
-                    borderRadius: "8px",
-                  }}
-                >
+                <Button type="submit" className={styles.submitButton}>
                   Send Feedback
                 </Button>
               </Form>
@@ -119,18 +88,12 @@ const SupportFeedback = () => {
           <Col
             lg={6}
             md={12}
-            className="d-none d-lg-flex justify-content-center align-items-end position-relative"
-            style={{ minHeight: "400px" }}
+            className={`d-none d-lg-flex justify-content-center align-items-end position-relative ${styles.illustrationCol}`}
           >
             <img
               src={supportImage}
               alt="Support Illustration"
-              className="img-fluid"
-              style={{
-                maxWidth: "80%",
-                height: "auto",
-                objectFit: "contain",
-              }}
+              className={styles.illustrationImg + " img-fluid"}
               onError={(e) => {
                 console.error("⚠️ Image not found:", supportImage);
                 e.target.style.display = "none";
