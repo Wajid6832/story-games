@@ -1,8 +1,7 @@
-/* ---------- Base Styles ---------- */
-.main-landing-div {
+.mainLandingDiv {
   width: 100%;
   min-height: 100vh;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.landing-second-div {
+.landingSecondDiv {
   width: 100%;
   max-width: 950px;
   border-radius: 90px;
@@ -18,10 +17,10 @@
   transform: rotate(2deg);
   padding-bottom: 20px;
   overflow: hidden;
-   margin-top: -100px;
+  margin-top: -100px;
 }
 
-.lading-content-div {
+.ladingContentDiv {
   margin-top: -70px;
   width: 100%;
   border-radius: 90px;
@@ -31,16 +30,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
-.content-upper{
+
+.contentUpper {
   width: 100%;
   display: flex;
-  justify-content:space-between;
-   margin-top: 100px;
+  justify-content: space-between;
+  margin-top: 100px;
 }
 
-.landign-content {
+.landignContent {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -66,7 +65,7 @@
   margin: 0;
 }
 
-.second-heading {
+.secondHeading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,16 +73,16 @@
   max-width: 450px;
 }
 
-.second-heading p {
+.secondHeading p {
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin: 0;
 }
 
-.dasht-line {
+.dashtLine {
   width: 130px;
   height: 4px;
   border-radius: 50px;
-  background-color: #F6B21A;
+  background-color: #f6b21a;
 }
 
 .text {
@@ -113,19 +112,19 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 15px;
-  border: 2px solid #6F8BDF;
+  border: 2px solid #6f8bdf;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .signup button {
-  background-color: #6F8BDF;
+  background-color: #6f8bdf;
   color: #fff;
 }
 
 .signin button {
   background-color: transparent;
-  color: #6F8BDF;
+  color: #6f8bdf;
 }
 
 .signup button:hover {
@@ -133,13 +132,13 @@
 }
 
 .signin button:hover {
-  background-color: #6F8BDF;
+  background-color: #6f8bdf;
   color: #fff;
 }
 
 .browse {
   padding-top: 10px;
-  color: #6F8BDF;
+  color: #6f8bdf;
 }
 
 .browse p {
@@ -163,7 +162,7 @@
 }
 
 /* ---------- Top List Cards ---------- */
-.top-list-container {
+.topListContainer {
   width: 96%;
   overflow-x: auto;
   margin-top: 1rem;
@@ -172,21 +171,19 @@
   border-radius: 20px;
   transform: rotate(-1.8deg);
   box-sizing: border-box;
-
 }
 
-
-.card-list {
+.cardList {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
   min-width: max-content;
-    display: flex;
   justify-content: space-between;
   gap: 1.5px;
 }
-.lower-setction-cards{
+
+.lowerSetctionCards {
   display: flex;
   width: 80%;
   justify-content: space-between;
@@ -208,7 +205,7 @@
   object-fit: contain;
 }
 
-.top-list-label {
+.topListLabel {
   font-weight: bold;
   color: #333;
   white-space: nowrap;
@@ -217,17 +214,17 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 992px) {
-  .landign-content {
+  .landignContent {
     flex-direction: column;
     align-items: center;
     transform: none;
   }
 
-  .landing-second-div {
+  .landingSecondDiv {
     transform: none;
   }
 
-  .lading-content-div {
+  .ladingContentDiv {
     margin: 0;
     border-radius: 60px;
   }
@@ -237,7 +234,7 @@
     align-items: center;
   }
 
-  .second-heading {
+  .secondHeading {
     justify-content: center;
     gap: 1rem;
   }
@@ -250,7 +247,7 @@
     justify-content: center;
   }
 
-  .top-list-container {
+  .topListContainer {
     transform: none;
     margin-left: 0;
   }
@@ -276,21 +273,22 @@
     font-size: 0.9rem;
   }
 
-  .dasht-line {
+  .dashtLine {
     width: 60px;
   }
-  .content-upper{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between;
-   margin-top: 100px;
-}
-.lower-setction-cards{
-  display: flex;
- flex-wrap: wrap;
-  width: 80%;
-  justify-content: space-between;
-}
 
+  .contentUpper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+
+  .lowerSetctionCards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+  }
 }
