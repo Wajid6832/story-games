@@ -7,6 +7,7 @@ import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
 import WorkRoomPage from "./components/WorkRoom/WorkRoomPage";
 import LandingPage from "./components/Landing/LandingPage";
+import BookNamePage from "./components/BookName/BookNamePage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       </Routes>
       </BrowserRouter> */}
       {/* <WorkRoomPage/> */}
-      <LandingPage/>
+      {/* <LandingPage/> */}
+      <BookNamePage/>
     </div>
   );
 }
