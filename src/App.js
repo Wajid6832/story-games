@@ -22,13 +22,6 @@ function App() {
         <Route path="/home" element={<Home/>} />
       </Routes>
       </BrowserRouter>
-     {/* <BrowserRouter>
-          <Routes>
-            <Route path="/WriterHome" element={<WriterHome/>}/>
-          </Routes>
-      </BrowserRouter> */}
-      {/* <WriterSidebar/> */}
-      {/* <Landingpage/> */}
       
     </div>
     </>
