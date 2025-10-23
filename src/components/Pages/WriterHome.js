@@ -5,6 +5,8 @@ import Sidebar from "../Sidebar/WriterSidebar";
 import { CommonModal } from "../common/Common-Modal/Modal";
 import Modalsetup1 from "../common/Common-Modal/Modalsetup1";
 import Modalsetup2 from "../common/Common-Modal/Modalsetup2";
+import image from "../../assets/icon.png"
+import { Link } from "react-router-dom";
 const WriterHome = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedWorkRoom, setSetselectedWorkRoom] = useState(null);
@@ -39,7 +41,7 @@ const WriterHome = () => {
       </div>
       <Container fluid className={style.homeContainer}>
         <div className={style.homeHeader}>
-          <h4 className={style.homeTitle}>Home</h4>
+          <Link to="/"><h4 className={style.homeTitle}>Home</h4></Link>
           <div className={style.searchBar}>
             <input
               type="search"
@@ -62,6 +64,7 @@ const WriterHome = () => {
                       setOpenModal(true);
                     }}
                   >
+                      <img src={image} alt=""/>
                   </i>
                 </div>
               </Col>
@@ -81,7 +84,8 @@ const WriterHome = () => {
                       setOpenModal(true);
                     }}
                   >
-                  </i>{" "}
+                                          <img src={image} alt=""/>
+                  </i>
                 </div>
               </Col>
             ))}
@@ -94,7 +98,9 @@ const WriterHome = () => {
     <Col key={item.id} xs={6} sm={4} md={3} lg={4} className="mb-4">
       <Card className={`${style.cardCustom} shadow-sm`}>
         <div className={style.imagePlaceholder}>
-          <i className="bi bi-image fs-1"></i>
+          <i className="bi bi-image fs-1">
+            <img src={image} alt=""/>
+          </i>
         </div>
         <Card.Body className={style.cardBody}>
           <Card.Title className="fw-bold">{item.title}</Card.Title>

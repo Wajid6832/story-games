@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "../Sidebar/WriterSidebar.module.css";
 import { Nav } from "react-bootstrap";
 import { IoReorderThree } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import {
   House,
   Person,
@@ -30,24 +31,24 @@ const Sidebar = () => {
           </div>
         </div>
         <Nav className="flex-column mt-1">
-          <Nav.Link href="#" className={style.sidebarLink}>
+          <Link Link="/" className={style.sidebarLink}>
             <House className={style.me2} /> <span>Home</span>
-          </Nav.Link>
-          <Nav.Link href="#" className={style.sidebarLink}>
+          </Link>
+          <Link  className={style.sidebarLink}>
             <Person className={style.me2} /> <span>Profile</span>
-          </Nav.Link>
-          <Nav.Link href="#" className={style.sidebarLink}>
+          </Link>
+          <Link  className={style.sidebarLink}>
             <Book className={style.me2} /> <span>Current Novels</span>
-          </Nav.Link>
-          <Nav.Link href="#" className={style.sidebarLink}>
+          </Link>
+          <Link  className={style.sidebarLink}>
             <PencilSquare className={style.me2} /> <span>Become an Editor</span>
-          </Nav.Link>
-          <Nav.Link href="#" className={style.sidebarLink}>
+          </Link>
+          <Link  className={style.sidebarLink}>
             <Heart className={style.me2} /> <span>Favorites</span>
-          </Nav.Link>
-          <Nav.Link href="#" className={style.sidebarLink}>
+          </Link>
+          <Link  className={style.sidebarLink}>
             <Envelope className={style.me2} /> <span>Messages</span>
-          </Nav.Link>
+          </Link>
         </Nav>
       </div>
       <div className={style.sidebarBottom}>
