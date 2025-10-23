@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../assets/Readers-Assets/images.png";
-import Sidebar from "./Sidebar";
+import Sidebar from "../ReaderSidebar/Sidebar";
 import styles from "./CurrentNovels.module.css";
 
 const generateNovels = () =>
@@ -12,16 +12,48 @@ const generateNovels = () =>
   }));
 
 const CurrentNovels = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
+
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const novels = generateNovels();
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobileCheck = window.innerWidth < 992;
+      setIsMobile(mobileCheck);
+
+      if (!mobileCheck) {
+        setSidebarOpen(true);
+      } else {
+        setSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const contentMargin = isMobile ? "0px" : sidebarOpen ? "260px" : "80px";
+
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className={styles.sidebarWrapper}>
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      </div>
 
-      <Container fluid className="p-4 overflow-auto readers-main">
-        <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+      <Container
+        fluid
+        className={styles.mainContent}
+        style={{
+          marginLeft: contentMargin,
+          width: "100%",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
+        <div
+          className={`d-flex justify-content-between align-items-center flex-wrap ${styles.headerNav}`}
+        >
           <button
             className="btn btn-light d-lg-none mb-2"
             onClick={toggleSidebar}
@@ -29,7 +61,9 @@ const CurrentNovels = () => {
           >
             <i className="bi bi-list fs-4"></i>
           </button>
+
           <h3 className="fw-bold mb-0 me-auto">Current Novels</h3>
+
           <div className={styles.searchBox + " ms-auto"}>
             <i className="bi bi-search me-2 text-muted"></i>
             <input type="text" placeholder="Search" />
