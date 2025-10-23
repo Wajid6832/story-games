@@ -60,7 +60,7 @@ const Sidebar = () => {
         </ListGroup.Item>
 
         <ListGroup.Item className={styles.item}>
-          <img src={favourites} alt="Favorites" className={styles.icon} />
+          <img src={favourites} alt="Favorites" className={styles.iconFavourites} />
           {isOpen && <span>Favorites</span>}
         </ListGroup.Item>
       </ListGroup>
