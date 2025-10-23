@@ -57,6 +57,9 @@ function App() {
         
       </Routes>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fc8c8fe (conflicts handling and make chatbox responsive)
       </BrowserRouter> */}
 
       {/* <WriterLanding/> */}
