@@ -61,7 +61,7 @@ const EditorLanding = () => {
               </div>
 
               <div className={styles.topListLabel}>
-                <button onClick={() => navigator("home")}>Top List</button>
+                <button onClick={() => navigator("/editorhome")}>Top List</button>
               </div>
             </div>
           </div>

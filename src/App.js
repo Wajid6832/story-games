@@ -9,7 +9,8 @@ import ReaderHome from "./components/Common/Landing/Reader-Home";
 import ReadersLanding from "./components/Common/Landing/ReadersLanding";
 import CurrentNovels from "./components/Common/Landing/CurrentNovels";
 import SupportFeedback from "./components/Common/Landing/SupportFeedback"; 
-
+import EditorHome from "./components/Common/home/EditorHome";
+import EditorLanding from "./components/Common/Landing/EditorLanding";
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,8 @@ function App() {
         <Route path="/readinghome" element={<ReadersLanding/>} />
         <Route path="/CurrentNovels" element={<CurrentNovels />} />
         <Route path="/SupportFeedback" element={<SupportFeedback />} /> 
+        <Route path="/editorlanding" element={<EditorLanding/>} /> 
+           <Route path="/editorhome" element={<EditorHome/>} /> 
       </Routes>
       </BrowserRouter>
     </div>
