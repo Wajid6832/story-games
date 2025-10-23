@@ -23,10 +23,10 @@ function App() {
       <Routes>
         <Route path="/products" element={<Products />} />
         <Route path="/" element={<Login />} />
-        <Route path="/" element={<WriterHome />} />
+        <Route path="/WriterHome" element={<WriterHome />} />
         <Route path="/Bookpage" element={<Bookpage />} />
      
-          {/* Writer & Editor Routes */} */}
+          {/* Writer & Editor Routes */} 
          <Route path="/writer" element={<WriterHome />} />
           <Route path="/editor" element={<EditorLanding />} />
           <Route path="/home" element={<Home />} />
