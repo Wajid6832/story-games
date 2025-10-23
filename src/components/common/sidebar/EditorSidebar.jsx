@@ -10,7 +10,7 @@ import Mail from "../../../assets/mail.png";
 import Logout from "../../../assets/logout.png";
 import styles from "./EditorSidebar.module.css";
 import { NavLink } from "react-router-dom";
-
+import "bootstrap-icons/font/bootstrap-icons.css";
 const EditorSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +27,7 @@ const EditorSidebar = () => {
           </button>
         </div>
         <div className={styles.shoeManueLinks}>
-          {[Novels, Producer, Application, Favourites, Mail].map((icon, index) => (
+          {[Profile,Novels, Producer, Application, Favourites, Mail].map((icon, index) => (
             <NavLink key={index} className={styles.navlinks}>
               <div className={styles.links}>
                 <div className={styles.imgLinks}>
