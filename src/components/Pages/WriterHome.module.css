@@ -3,7 +3,18 @@
   background-color: #ffffffd4;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  transition: margin-left 0.3s ease;
+  margin-left: 60px; /* Default for closed sidebar */
 }
+
+.homeContainer.sidebarOpen {
+  margin-left: 230px; /* When sidebar is open */
+}
+
+.homeContainer.sidebarClosed {
+  margin-left: 60px; /* When sidebar is closed */
+}
+
 .homeHeader {
   display: flex;
   justify-content: space-between;
@@ -150,23 +161,6 @@
   color: #0056b3;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .setlink {
-    font-size: 0.9rem;
-    margin-top: 1.5rem;
-  }
-  .imagePlaceholder {
-    height: 100px;
-  }
-}
-@media (max-width: 576px) {
-  .setlink {
-    font-size: 0.85rem;
-    margin-top: 1rem;
-  }
-}
-
 .merge{
   display: flex;
 }
@@ -174,5 +168,32 @@
 .secondStep {
   div {
     display: block !important;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .homeContainer {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  .setlink {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+  .imagePlaceholder {
+    height: 100px;
+  }
+  
+  .homeHeader {
+    margin-top: 60px; /* Space for mobile toggle button */
+  }
+}
+
+@media (max-width: 576px) {
+  .setlink {
+    font-size: 0.85rem;
+    margin-top: 1rem;
   }
 }

@@ -1,95 +1,88 @@
 import React from "react";
-import { FaAngleLeft } from "react-icons/fa";
-import { BsCloudUpload } from "react-icons/bs";
-import styles from "../Bookpages/Bookpages.module.css"
+import { FaAngleLeft, FaRegHeart } from "react-icons/fa";
+import styles from "../../Pages/Bookpages/Bookpages.module.css";
+
 const Bookpage = () => {
-    return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <button className={styles.backBtn}>
-                    <FaAngleLeft />
-                </button>
-                <h2 className={styles.title}>Workroom Name</h2>
-            </div>
-            <div className={styles.divider}></div>
-            <div className={styles.characterBox}>
-                <h3 className={styles.sectionTitle}>Character 1 Name</h3>
-                <div className={styles.characterContent}>
-                    <div className={styles.traits}>
-                        <h4>Personality Traits</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-                            tation ullamcorper suscipit lobortis nisl ut.
-                        </p>
-                    </div>
-                    <div className={styles.about}>
-                        <h4>About Character</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-                            tation ullamcorper suscipit lobortis nisl ut.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.completedBox}>
-                <h3 className={styles.sectionTitle}>Completed Chapters</h3>
-                <div className={styles.chapterList}>
-                    {[1, 2, 3, 4].map((num) => (
-                        <div key={num} className={styles.chapterCard}>
-                              <p className={styles.date}>1 Oct 22</p>
-                            <h4>Chapter {num}</h4>
-                            <a href="#" className={styles.readLink}>
-                                Read Chapter →
-                            </a>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className={styles.upcomingBox}>
-                <h3 className={styles.sectionTitle}>Upcoming Chapter</h3>
-                <div className={styles.upcomingContent}>
-                    <div className={styles.section}>
-                        <h4>Where we left off:</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-                            tation ullamcorper suscipit lobortis nisl ut.
-                        </p>
-                    </div>
-                    <div className={styles.section}>
-                        <h4>Starting point:</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-                            tation ullamcorper suscipit lobortis nisl ut.
-                        </p>
-                    </div>
-                </div>
-                <div className={styles.synopsisRow}>
-                    <div className={styles.synopsisText}>
-                        <h4>Synopsis of this week’s Story:</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                            suscipit lobortis nisl ut.
-                        </p>
-                    </div>
-                    <div className={styles.synopsisButtons}>
-                        <button className={`${styles.btn} ${styles.primary}`}>
-                            <BsCloudUpload className={styles.icon} />
-                            Add a New Chapter
-                        </button>
-                        <button className={`${styles.btn} ${styles.secondary}`}>Group Chat</button>
-                    </div>
-                </div>
-            </div>
+  const characters = [
+    {
+      id: 1,
+      name: "1.1. Character One",
+      author: "Jon Doe",
+      chapters: [
+        { date: "1 Oct 22", title: "1.1.1. Chapter 1" },
+        { date: "1 Oct 22", title: "1.1.2. Chapter 2" },
+        { date: "1 Oct 22", title: "1.1.3. Chapter 3" },
+        { date: "1 Oct 22", title: "1.1.4. Chapter 4" },
+      ],
+    },
+    {
+      id: 2,
+      name: "1.2. Character Two",
+      author: "Jon Doe",
+      chapters: [
+        { date: "1 Oct 22", title: "1.2.1. Chapter 1" },
+        { date: "1 Oct 22", title: "1.2.2. Chapter 2" },
+        { date: "1 Oct 22", title: "1.2.3. Chapter 3" },
+        { date: "1 Oct 22", title: "1.2.4. Chapter 4" },
+      ],
+    },
+  ];
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <button className={styles.backBtn}>
+          <FaAngleLeft />
+        </button>
+        <h2 className={styles.title}>Book Name</h2>
+        <div className={styles.iconRight}>
+          <FaRegHeart />
         </div>
-    );
+      </div>
+
+      <div className={styles.divider}></div>
+
+      {characters.map((char) => (
+        <div key={char.id} className={styles.characterCard}>
+          <div className={styles.cardHeader}>
+            <h3 className={styles.charTitle}>{char.name}</h3>
+            <button className={styles.readBtn}>Read from Character Perspective</button>
+          </div>
+
+          <p className={styles.byline}>
+            Played & Written by <span>{char.author}</span>
+          </p>
+
+          <div className={styles.traitsRow}>
+            <div className={styles.traitBox}>
+              <h4>Personality Traits</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat.
+              </p>
+            </div>
+            <div className={styles.traitBox}>
+              <h4>About Character</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.chapterList}>
+            {char.chapters.map((ch, idx) => (
+              <div key={idx} className={styles.chapterItem}>
+                <p className={styles.date}>{ch.date}</p>
+                <h5>{ch.title}</h5>
+                <a href="#">Read Chapter </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
+
 export default Bookpage;
