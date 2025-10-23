@@ -1,4 +1,4 @@
-import { Modal, Button, Row } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 export const ConfirmationModal = (props) => {
   const { title, body, show, onHide, primaryActionName, primaryActionColor, closeOnClick, actionOnClick } =
     props;
