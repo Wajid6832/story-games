@@ -19,6 +19,11 @@ const ChatApp = () => {
     { name: 'Jenny Wilson', time: '10 hours', avatar: 'JW' },
     { name: 'Amelia Edwards', time: '10 hours', avatar: 'AE' },
     { name: 'Arlene McCoy', time: '10 hours', avatar: 'AM' },
+    { name: 'Wajid Bhai', time: '10 hours', avatar: 'WB' },
+    { name: 'Saqib bhai', time: '9 hours', avatar: 'SB' },
+    { name: 'Hussain Bhai', time: '5 hours', avatar: 'HB' },
+    { name: 'Qammar Bhai', time: '8 hours', avatar: 'QB' },
+    { name: 'Zain', time: '12 hours', avatar: 'Z' },
   ];
 
   const messages = [
@@ -38,11 +43,19 @@ const ChatApp = () => {
 
   return (
     <Container fluid className={styles.chatContainer}>
+
+  {/* 🔹 Fixed Top Header */}
+  <header className={styles.topHeader}>
+    <h5 className={styles.headerTitle}>ChatBox</h5>
+    <Button variant="primary" className={styles.newChatBtn}>New Chat</Button>
+  </header>
+
+
+
+
+
       <Row className="g-0">
         <Col md={3} className={styles.sidebar}>
-          <div className={styles.sidebarHeader}>
-            <h4 className="m-0">Chat</h4>
-          </div>
 
           <InputGroup className={`mb-3 px-3 ${styles.searchBox}`}>
             <InputGroup.Text><BsSearch /></InputGroup.Text>
@@ -79,7 +92,7 @@ const ChatApp = () => {
               </div>
             </div>
 
-            <div className={styles.rightHeader}>
+            {/* <div className={styles.rightHeader}>
               <InputGroup className={styles.addMemberInput}>
                 <Form.Control placeholder="Add members..." />
                 <Dropdown align="end">
@@ -91,11 +104,42 @@ const ChatApp = () => {
                   </Dropdown.Menu>
                 </Dropdown>
               </InputGroup>
-            </div>
+            </div> */}
+            <div className={styles.rightHeader}>
+  {/* Add Members Input + Dropdown */}
+  <Dropdown align="center" className={styles.addMemberInput}>
+    <Dropdown.Toggle
+      as={Form.Control}
+      placeholder="Add members..."
+      className={styles.messageInputDropdown}
+    />
+    <Dropdown.Menu>
+      {members.map((m, i) => (
+        <Dropdown.Item key={i}>{m}</Dropdown.Item>
+      ))}
+    </Dropdown.Menu>
+  </Dropdown>
+
+  {/* Three Dots Dropdown */}
+  <Dropdown align="end">
+    <Dropdown.Toggle
+      variant="light"
+      id="dropdown-three-dots"
+      className={styles.dotsBtn}
+    >
+      <BsThreeDotsVertical /> 
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item className="text-primary">Leave Group</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</div>
+
           </div>
 
           <div className={styles.chatBody}>
             {messages.map((m, i) => (
+              <>
               <div key={i} className={`${styles.messageRow} ${m.from === 'me' ? styles.messageMe : styles.messageThem}`}>
                 <div className={styles.msgAvatar}>{m.from === 'me' ? 'ME' : 'TH'}</div>
                 <div className={styles.msgBubble}>
@@ -107,6 +151,18 @@ const ChatApp = () => {
                   <div className={styles.msgTime}>{m.time}</div>
                 </div>
               </div>
+              <div key={i} className={`${styles.messageRow} ${m.from === 'me' ? styles.messageMe : styles.messageThem}`}>
+                <div className={styles.msgAvatar}>{m.from === 'me' ? 'ME' : 'TH'}</div>
+                <div className={styles.msgBubble}>
+                  {m.type === 'image' ? (
+                    <div className={styles.imagePlaceholder}>Image</div>
+                  ) : (
+                    <div>{m.text}</div>
+                  )}
+                  <div className={styles.msgTime}>{m.time}</div>
+                </div>
+              </div>
+              </>
             ))}
           </div>
 

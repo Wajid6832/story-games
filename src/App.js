@@ -22,7 +22,7 @@ import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
+       {/* <BrowserRouter>
       <Routes>
         <Route path="/products" element={<Products />}/>
         <Route path="/" element={<Login />} />
@@ -32,7 +32,7 @@ function App() {
         <Route path="/CurrentNovels" element={<CurrentNovels />} />
         <Route path="/SupportFeedback" element={<SupportFeedback />} /> 
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       {/* <WriterLanding/> */}
 {/* <LandingPage/> */}
