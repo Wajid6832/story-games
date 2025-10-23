@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../assets/Readers-Assets/images/images.png";
-import Sidebar from "./Sidebar";
-import NovelModal from "../../NovalPage/noval"; // ✅ Modal import
-import styles from "./ReadersLanding.module.css"; // ✅ Correct module import
+import Sidebar from "../ReaderSidebar/Sidebar";
+import NovelModal from "../../NovalPage/noval";
+import styles from "./ReadersLanding.module.css";
 
 const sections = [
   "Uploaded",
@@ -28,21 +28,29 @@ const CardContent = ({ section, story }) => {
     return (
       <div className={`${styles["writer-placeholder"]} text-center`}>
         <div className={styles["writer-circle"]}>
-          <img src={story.image} alt="writer" className={styles["writer-placeholder-icon"]} />
+          <img
+            src={story.image}
+            alt="writer"
+            className={styles["writer-placeholder-icon"]}
+          />
         </div>
         <p className="fw-semibold mt-2 mb-0 small text-dark">Author Name</p>
       </div>
     );
   }
+
   if (section.includes("Character")) {
     return (
       <div className="p-3">
         <p className="text-muted small mb-1">{story.book}</p>
         <h6 className="fw-bold mb-0">Character Name</h6>
-        <p className="text-primary small mb-0">Played & Written by {story.author}</p>
+        <p className="text-primary small mb-0">
+          Played & Written by {story.author}
+        </p>
       </div>
     );
   }
+
   if (section.includes("Chapter")) {
     return (
       <div className="p-3">
@@ -52,21 +60,28 @@ const CardContent = ({ section, story }) => {
       </div>
     );
   }
+
   return (
-    <div className={`${styles["placeholder-card"]} d-flex justify-content-center align-items-center`}>
-      <img src={story.image} alt="placeholder" className={styles["placeholder-img"]} />
+    <div
+      className={`${styles["placeholder-card"]} d-flex justify-content-center align-items-center`}
+    >
+      <img
+        src={story.image}
+        alt="placeholder"
+        className={styles["placeholder-img"]}
+      />
     </div>
   );
 };
 
 const ReadersLanding = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showModal, setShowModal] = useState(false); // ✅ Modal state
-  const [selectedNovel, setSelectedNovel] = useState(null); // ✅ Selected novel
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedNovel, setSelectedNovel] = useState(null);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
-  // ✅ Handle card click
   const handleCardClick = (section, story) => {
     if (
       section !== "Top 10 Writers" &&
@@ -78,10 +93,32 @@ const ReadersLanding = () => {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobileCheck = window.innerWidth < 992;
+      setIsMobile(mobileCheck);
+      setSidebarOpen(!mobileCheck);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const contentMargin = isMobile ? "0px" : sidebarOpen ? "260px" : "80px";
+
   return (
     <div className="d-flex bg-light vh-100">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      <Container fluid className={`p-4 overflow-auto ${styles["readers-main"]}`}>
+
+      <Container
+        fluid
+        className={`p-4 overflow-auto ${styles["readers-main"]}`}
+        style={{
+          marginLeft: contentMargin,
+          width: "100%",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
             className="btn btn-light d-lg-none mb-2"
@@ -107,11 +144,13 @@ const ReadersLanding = () => {
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>
-            <div className={`${styles["scroll-container"]} ${styles["no-scrollbar"]} d-flex`}>
+            <div
+              className={`${styles["scroll-container"]} ${styles["no-scrollbar"]} d-flex`}
+            >
               {generateStories(section).map((story) => (
                 <Card
                   key={story.id}
-                  onClick={() => handleCardClick(section, story)} // ✅ Added
+                  onClick={() => handleCardClick(section, story)}
                   className={`${styles["story-card"]} border-0 rounded-4 mx-2 ${
                     section === "Top 10 Writers"
                       ? styles["writer-card"]
@@ -129,7 +168,6 @@ const ReadersLanding = () => {
           </div>
         ))}
 
-        {/* ✅ Novel Modal Added */}
         <NovelModal
           show={showModal}
           onHide={() => setShowModal(false)}

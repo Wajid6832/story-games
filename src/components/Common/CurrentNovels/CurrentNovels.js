@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card } from "react-bootstrap";
-import placeholder from "../../assets/Readers-Assets/images/images.png";
-import Sidebar from "../Common/ReaderSidebar/Sidebar";
+import placeholder from "../../../assets/Readers-Assets/images.png";
+import Sidebar from "../ReaderSidebar/Sidebar";
 import styles from "./CurrentNovels.module.css";
 
 const generateNovels = () =>
