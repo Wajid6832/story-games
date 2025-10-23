@@ -1,0 +1,128 @@
+
+.scrollContainer {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.storyCard {
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.storyCard:hover {
+  transform: translateY(-4px);
+}
+
+.placeholderCard {
+  width: 160px;
+  height: 220px;
+  border-radius: 20px;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholderImg {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+}
+
+.writerCard {
+  width: 100px;
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+
+.writerPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.writerCircle {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #4a8df7;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.writerPlaceholderIcon {
+  width: 25px;
+  height: 25px;
+  opacity: 0.6;
+}
+
+.writerCard p {
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.characterCard,
+.chapterCard {
+  width: 250px;
+  border-radius: 20px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.chapterCard {
+  background: #f8f9fa;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+.searchBox i {
+  font-size: 14px;
+  color: #888;
+}
+
+.searchBox input {
+  width: 150px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+}
+
+.searchBox input::placeholder {
+  color: #999;
+}
+
+@media (max-width: 992px) {
+  .placeholderCard { width: 140px; height: 200px; }
+  .writerCard { width: 90px; }
+  .writerCircle { width: 60px; height: 60px; }
+  .searchBox input { width: 120px; }
+}
+
+@media (max-width: 576px) {
+  .placeholderCard { width: 120px; height: 180px; }
+  .writerCard { width: 80px; }
+  .writerCircle { width: 55px; height: 55px; }
+  .characterCard, .chapterCard { width: 200px; }
+  .searchBox input { width: 100px; }
+}
