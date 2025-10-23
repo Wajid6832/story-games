@@ -44,7 +44,6 @@ const ChatApp = () => {
   return (
     <Container fluid className={styles.chatContainer}>
 
-  {/* 🔹 Fixed Top Header */}
   <header className={styles.topHeader}>
     <h5 className={styles.headerTitle}>ChatBox</h5>
     <Button variant="primary" className={styles.newChatBtn}>New Chat</Button>
@@ -78,7 +77,6 @@ const ChatApp = () => {
           <div className={styles.sidebarFooter}></div>
         </Col>
 
-        {/* Chat Area */}
         <Col md={9} className={styles.chatArea}>
           <div className={styles.chatHeaderBar}>
             <div className={styles.leftHeader}>
@@ -92,21 +90,8 @@ const ChatApp = () => {
               </div>
             </div>
 
-            {/* <div className={styles.rightHeader}>
-              <InputGroup className={styles.addMemberInput}>
-                <Form.Control placeholder="Add members..." />
-                <Dropdown align="end">
-                  <Dropdown.Toggle variant="light" id="dropdown-basic" className={styles.dotsBtn}>
-                    <BsThreeDotsVertical />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {members.map((m, i) => <Dropdown.Item key={i}>{m}</Dropdown.Item>)}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </InputGroup>
-            </div> */}
+            
             <div className={styles.rightHeader}>
-  {/* Add Members Input + Dropdown */}
   <Dropdown align="center" className={styles.addMemberInput}>
     <Dropdown.Toggle
       as={Form.Control}
@@ -120,7 +105,6 @@ const ChatApp = () => {
     </Dropdown.Menu>
   </Dropdown>
 
-  {/* Three Dots Dropdown */}
   <Dropdown align="end">
     <Dropdown.Toggle
       variant="light"
