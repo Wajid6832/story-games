@@ -1,31 +1,31 @@
-import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import "./App.css";
-<<<<<<< HEAD
+// import React from "react";
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+// import "./App.css";
 
-// ✅ Import components
-import Sidebar from "./components/Sidebar/Sidebar";
-import NavbarTop from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
 
-function App() {
-  return (
-    <div className="d-flex">
-      {/* Sidebar */}
-      <Sidebar />
+// // ✅ Import components
+// import Sidebar from "./components/Sidebar/Sidebar";
+// import NavbarTop from "./components/Navbar/Navbar";
+// import Home from "./components/Home/Home";
 
-      {/* Main Area */}
-      <div className="flex-grow-1">
-        <NavbarTop />
-        <Home />
-      </div>
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div className="d-flex">
+//       {/* Sidebar */}
+//       <Sidebar />
 
-export default App;
+//       {/* Main Area */}
+//       <div className="flex-grow-1">
+//         <NavbarTop />
+//         <Home />
+//       </div>
+//     </div>
+//   );
+// }
 
-=======
+// export default App;
+
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
@@ -52,4 +52,3 @@ function App() {
   );
 }
 export default App;
->>>>>>> origin/staging
