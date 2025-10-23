@@ -29,7 +29,7 @@ const Create = () => {
 
       <div className={styles.uploadedBox}>
         <p>
-          <img src={document} alt="" />
+          <img src={document} alt="" className={styles.documentImg}/>
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
           nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
