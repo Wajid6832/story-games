@@ -1,11 +1,29 @@
-.landingWrapper {
-    background: #efefef;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background-position: top left, bottom right;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 40%, 40%;
+.bg {
+  position: relative;
+  background: #ffffff;
+  min-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  clip-path: polygon(4% 2%, 100% 0, 100% 100%, 0 92%);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 110px;
+  
 }
+
+
+.landingWrapper {
+  background: #f4f5ff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+
 
 .signUpBtn {
     background-color: #4B7BFF;
@@ -70,7 +88,7 @@
 }
 
 .placeholderCard {
-    background-color: #D3D3D3;
+    background-color: #b9babb;
     border: none;
     border-radius: 12px;
     height: 200px;
@@ -87,7 +105,7 @@
 
 .placeholderCard i {
     font-size: 2rem;
-    color: #5F5F9F;
+    color: #525457;
 }
 
 .footer {
