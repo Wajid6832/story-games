@@ -21,21 +21,21 @@ function App() {
     <div>
       <BrowserRouter>
       <Routes>
-        {/* <Route path="/products" element={<Products />} />
-        <Route path="/" element={<Login />} /> */}
+        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Login />} />
         <Route path="/" element={<WriterHome />} />
         <Route path="/Bookpage" element={<Bookpage />} />
      
-          {/* Writer & Editor Routes */}
-          {/* <Route path="/writer" element={<WriterHome />} />
+          {/* Writer & Editor Routes */} */}
+         <Route path="/writer" element={<WriterHome />} />
           <Route path="/editor" element={<EditorLanding />} />
-          <Route path="/home" element={<Home />} /> */}
+          <Route path="/home" element={<Home />} />
 
           {/* Reader Routes */}
-          {/* <Route path="/" element={<ReaderHome />} />
+          <Route path="/" element={<ReaderHome />} />
           <Route path="/readinghome" element={<ReadersLanding />} />
           <Route path="/currentnovels" element={<CurrentNovels />} />
-          <Route path="/supportfeedback" element={<SupportFeedback />} /> */}
+          <Route path="/supportfeedback" element={<SupportFeedback />} />
         </Routes>
       </BrowserRouter>
     </div>
