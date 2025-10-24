@@ -16,7 +16,6 @@ import ChatApp from "./components/Pages/ChatApp.jsx";
 
 
 import WorkRoomPage from "./components/WorkRoom/WorkRoomPage";
-import LandingPage from "./components/Landing/LandingPage";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
