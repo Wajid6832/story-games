@@ -19,10 +19,6 @@ import WorkRoomPage from "./components/WorkRoom/WorkRoomPage";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
-
 import Home from "./components/Common/Landing/Reader-Home";
 import ReaderHome from "./components/Common/Landing/Reader-Home";
 import ReadersLanding from "./components/Common/Landing/ReadersLanding";
@@ -36,15 +32,11 @@ import PrivacyPolicy from "./components/StoryPrivacyPolicy/StoryPrivacyPolicyPag
 function App() {
   return (
     <div className="App">
-       {/* <BrowserRouter>
-      <Routes>
-        <Route path="/products" element={<Products />}/>
-        <Route path="/" element={<Login />} />
 
-=======
      <BrowserRouter>
       <Routes> 
         <Route path="/products" element={<Products />} />
+        <Route path="/ChatApp" element={<ChatApp />} />
          <Route path="/" element={<Login />} />
         <Route path="/" element={<ReaderHome/>} />
         <Route path="/readinghome" element={<ReadersLanding/>} />
@@ -53,19 +45,9 @@ function App() {
          <Route path="/workroompage" element={ <WorkRoomPage/>} /> 
           <Route path="/landingpage" element={<LandingPage/>} /> 
            <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
-        
       </Routes>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fc8c8fe (conflicts handling and make chatbox responsive)
-      </BrowserRouter> */}
-
-      {/* <WriterLanding/> */}
-{/* <LandingPage/> */}
-      <ChatApp />
       
-       {/* </BrowserRouter> */}
+       </BrowserRouter>
      
     </div>
   );
