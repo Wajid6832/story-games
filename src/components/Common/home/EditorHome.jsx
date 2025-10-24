@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./EditorHome.module.css";
-import EditorSidebar from "../sidebar/EditorSidebar";
+
 import EditorHeader from "../header/EditorHeader";
 import EditorHomeFacTopUp from "../../editorHomeComponents/editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
+import EditorSidebar from "../../../Common/sidebar/EditorSidebar";
 
 const EditorHome = () => {
   return (

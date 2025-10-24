@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
-import Frame from "../../../assets/Frame.png";
-import { useNavigate } from "react-router-dom";
+import Frame from "../../assets/Frame.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const EditorLanding = () => {
   const navigator = useNavigate();
@@ -61,7 +61,8 @@ const EditorLanding = () => {
               </div>
 
               <div className={styles.topListLabel}>
-                <button onClick={() => navigator("/editorhome")}>Top List</button>
+                {/* <button onClick={() => navigator("/EditorHome")}>Top List</button> */}
+                <Link to="/EditorHome">Top List</Link>
               </div>
             </div>
           </div>
