@@ -6,14 +6,19 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
+
+import WriterLanding from "./components/Common/Landing/WriterLanding";
+import Sidebar from "./components/Sidebar/WriterSidebar.jsx";
+import WriterHome from "./components/Pages/WriterHome.jsx";
+import LandingPage from "./components/LandingPage.jsx";
+import ChatApp from "./components/Pages/ChatApp.jsx";
+
+
+
 import WorkRoomPage from "./components/WorkRoom/WorkRoomPage";
-import LandingPage from "./components/Landing/LandingPage";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
 import Home from "./components/Common/Landing/Reader-Home";
 import ReaderHome from "./components/Common/Landing/Reader-Home";
 import ReadersLanding from "./components/Common/Landing/ReadersLanding";
@@ -23,12 +28,15 @@ import PrivacyPolicy from "./components/StoryPrivacyPolicy/StoryPrivacyPolicyPag
 
 
 
+
 function App() {
   return (
     <div className="App">
+
      <BrowserRouter>
       <Routes> 
         <Route path="/products" element={<Products />} />
+        <Route path="/ChatApp" element={<ChatApp />} />
          <Route path="/" element={<Login />} />
         <Route path="/" element={<ReaderHome/>} />
         <Route path="/readinghome" element={<ReadersLanding/>} />
@@ -37,13 +45,12 @@ function App() {
          <Route path="/workroompage" element={ <WorkRoomPage/>} /> 
           <Route path="/landingpage" element={<LandingPage/>} /> 
            <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
-        
       </Routes>
       
        </BrowserRouter>
      
-      
     </div>
   );
 }
+
 export default App;

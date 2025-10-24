@@ -1,0 +1,138 @@
+.homeContainer {
+  padding: 20px 30px;
+  background-color: #fff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.homeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homeTitle {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.searchBar {
+  width: 240px;
+}
+
+.searchInput {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border: none;
+  padding: 6px 12px;
+}
+
+.divider {
+  margin-top: 12px;
+  border-top: 1px solid #ccccccae;
+}
+
+.section {
+  margin-top: 25px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cardsRow {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; 
+}
+
+.placeholderCard {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaaaaaa0;
+  font-size: 2rem;
+}
+
+.workroomCard {
+  border: none;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.workroomCard:hover {
+  transform: translateY(-4px);
+}
+
+.workroomImg {
+  background-color: #eaeaea;
+  border-radius: 8px 8px 0 0;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7b7b7b;
+  font-size: 2rem;
+}
+
+.workroomCard .cardBody {
+  text-align: center;
+}
+
+.enterLink {
+  text-decoration: none;
+  color: #3b57f5;
+  font-size: 0.9rem;
+}
+
+.enterLink:hover {
+  text-decoration: underline;
+}
+.cardsRow {
+  justify-content: start;
+}
+
+.cardCustom {
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardCustom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.imagePlaceholder {
+  background-color: #d3d3d3;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.imagePlaceholder i {
+  font-size: 2.5rem;
+  color: #5f5f9f;
+}
+
+.link {
+  color: #5b7bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
