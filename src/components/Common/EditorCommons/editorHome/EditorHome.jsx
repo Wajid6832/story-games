@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EditorHome.module.css";
 
 import EditorHeader from "../header/EditorHeader";
-import EditorHomeFacTopUp from "../../editorHomeComponents/editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
-import EditorSidebar from "../../../Common/sidebar/EditorSidebar";
+import EditorHomeFacTopUp from "../../../EditorSection/editorHomeComponents/editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
+import EditorSidebar from "../sidebar/EditorSidebar";
 
 const EditorHome = () => {
+  const [isOpenSidebar,setIsOpenSidebar]=useState(false);
+
+  const handleSidebar =()=>{
+    setIsOpenSidebar((prev)=>!prev);
+    console.log("handleSidebar :",isOpenSidebar);
+  }
+
   return (
     <div className={`${styles.editorHomeContainer} container-fluid`}>
       {/* Sidebar */}
       <div className={styles.sidebarSection}>
-        <EditorSidebar />
+        <EditorSidebar handleSidebar={handleSidebar} />
       </div>
 
       {/* Main content area */}
