@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-import logo from "../../../assets/Readers-Assets/items/Property 1=Variant3.png";
-import homeIcon from "../../../assets/Readers-Assets/icons/home.png";
-import profileIcon from "../../../assets/Readers-Assets/icons/profile.png";
-import novelsIcon from "../../../assets/Readers-Assets/icons/novels.png";
-import writerIcon from "../../../assets/Readers-Assets/icons/writer.png";
-import storeIcon from "../../../assets/Readers-Assets/icons/tokens.png";
-import favIcon from "../../../assets/Readers-Assets/icons/Property.png";
+import logo from "../../../src/assets/Readers-Assets/items/Property 1=Variant3.png";
+import homeIcon from "../../../src/assets/Readers-Assets/icons/home.png";
+import profileIcon from "../../../src/assets/Readers-Assets/icons/profile.png";
+import novelsIcon from "../../../src/assets/Readers-Assets/icons/novels.png";
+import writerIcon from "../../../src/assets/Readers-Assets/icons/writer.png"
+import storeIcon from "../../../src/assets/Readers-Assets/icons/tokens.png";
+import favIcon from "../../../src/assets/Property.png";
 import "./Sidebar.css";
 
 const SidebarLink = ({ icon, label, to, onClick }) => (
@@ -34,14 +34,14 @@ const StaticSidebarContent = ({ toggleSidebar }) => {
     { icon: homeIcon, label: "Home", to: "/" },
     { icon: profileIcon, label: "Profile", to: "/profile" },
     { icon: novelsIcon, label: "Current Novels", to: "/currentNovels" },
-    { icon: writerIcon, label: "Become a Writer", to: "/writer" },
+    { icon: writerIcon, label: "Become a Writer", to: "/BecomeWriter" },
     { icon: storeIcon, label: "Token Store", to: "/store" },
-    { icon: favIcon, label: "Favorites", to: "/favorites" },
+    { icon: favIcon, label: "Favorites", to: "/forgotPassword" },
   ];
 
   const footerLinks = [
     { icon: "bi bi-question-circle", label: "Support", to: "/SupportFeedback" },
-    { icon: "bi bi-box-arrow-right", label: "Sign Out", to: "/signout" },
+    { icon: "bi bi-box-arrow-right", label: "Sign Out", to: "/LinkBankAccount" },
   ];
 
   return (

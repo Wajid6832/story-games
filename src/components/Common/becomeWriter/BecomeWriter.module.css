@@ -1,88 +1,68 @@
-
 .appWrapper {
-    display: flex;
-    min-height: 100vh;
-    background-color: #f5f5f5; 
+  display: flex;
+  background: #f5f5f7;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .mainContent {
-    flex-grow: 1;
-    padding: 25px;
-    transition: margin-left 0.3s ease;
-}
-
-:root {
-    --primary-blue: #5A83F8;
-    --light-blue-bg: rgba(90, 131, 248, 0.1);
-    --input-gray: #f5f5f5;
-    --card-border-radius: 8px;
+  padding: 25px;
+  transition: margin-left 0.3s ease;
 }
 
 .characterCard {
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.2s;
-    height: 100%;
-    background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f1f2f4;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.characterCard.isSelected {
-    border: 2px solid var(--primary-blue) !important;
-    background-color: var(--light-blue-bg) !important;
+.selectedCard {
+  background-color: #6f8df7 !important;
+  color: #fff !important;
+  border: none !important;
+  transition: all 0.3s ease;
 }
 
-.cardHeaderBody {
-    padding: 16px; 
+.selectedCard:hover {
+  background-color: #5b7af0 !important;
+  transform: translateY(-2px);
+}
+
+.selectedCard .text-muted,
+.selectedCard .infoLink {
+  color: #fff !important;
 }
 
 .infoLink {
-    color: var(--primary-blue) !important;
-    cursor: pointer;
-    font-size: 0.875rem; 
-    text-decoration: none;
-}
-
-.cardExpandedContent {
-    padding: 0 16px 16px 16px; 
-    border-top: 1px solid #e0e0e0;
-}
-
-.customInput {
-    padding: 12px;
-    border-radius: var(--card-border-radius);
-    background-color: var(--input-gray);
-    border: none;
-    box-shadow: none;
+  font-size: 0.85rem;
+  color: #5a83f8;
+  cursor: pointer;
 }
 
 .primaryButton {
-    background-color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    padding: 8px 30px;
-    border-radius: var(--card-border-radius);
+  background: #5a83f8;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  color: #fff;
 }
 
-.outlineButton {
-    color: #6c757d;
-    border-color: #ced4da;
-    padding: 8px 30px;
-    border-radius: var(--card-border-radius);
+.cancelButton {
+  border-color: #5a83f8;
+  color: #5a83f8;
 }
 
 .fileUploadBox {
-    border: 2px dashed #e0e0e0;
-    background-color: #fff;
-    border-radius: var(--card-border-radius);
-    padding: 40px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    min-height: 150px;
+  border: 2px dashed #cdd1d9;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
 }
-.fileUploadBox.dragActive {
-    border: 2px dashed var(--primary-blue);
-    background-color: var(--light-blue-bg);
-}
-.uploadIconText {
-    color: #888;
+
+.inputField {
+  padding: 10px;
 }

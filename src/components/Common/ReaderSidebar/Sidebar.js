@@ -42,12 +42,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { icon: novelsIcon, label: "Current Novels", to: "/CurrentNovels" },
     { icon: writerIcon, label: "Become a Writer", to: "/becomewriter" },
     { icon: storeIcon, label: "Token Store", to: "/tokenstore" },
-    { icon: favIcon, label: "Favorites", to: "/favorites" },
+    { icon: favIcon, label: "Favorites", to: "/forgotPassword" },
   ];
 
   const footerLinks = [
     { icon: "bi-question-circle", label: "Support", to: "/SupportFeedback" },
-    { icon: "bi-box-arrow-right", label: "Sign Out", to: "/signout" },
+    { icon: "bi-box-arrow-right", label: "Sign Out", to: "/LinkBankAccount" },
   ];
 
   const handleNavigate = (to) => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import Sidebar from "../ReaderSidebar/Sidebar";
-import supportImage from "../../../assets/Readers-Assets/images/support.png";
+import Sidebar from "./Sidebar";
+import supportImage from "../../../src/assets/Readers-Assets/images/support.png";
 import styles from "./SupportFeedback.module.css";
 
 const SupportFeedback = () => {
