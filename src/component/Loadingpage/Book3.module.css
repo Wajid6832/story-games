@@ -1,20 +1,16 @@
-
-  .container {
+.container {
+  
    display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
   background-color: #fafafa;
   font-family: "Inter", sans-serif;
   position: relative;
-  top: 270px;   
+  top: 250px;  
   left: -100px; 
   border-radius: 16px;
-} 
-
-
-
+}
 
 .card {
   background: #fff;
@@ -23,7 +19,10 @@
   padding: 40px;
   width: 400px;
   text-align: center;
-
+  /* width: 726px;
+  height: 920px;
+  top: 52px;
+  left: 357px; */
 }
 
 
@@ -31,12 +30,31 @@
   margin-bottom: 20px;
 }
 
+.iconSection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
+
+
+.chatIcon::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-left: 2px solid #bdbdbd;
+  border-bottom: 2px solid #bdbdbd;
+  transform: rotate(45deg);
+  
+}
 .img2 {
-  
-   width: 100px;
-  height: 100px;
-  
+  width: 237.93px;
+  height: 160.85px;
   top: 116.82;
   left: 601px;
 }
@@ -49,7 +67,11 @@
   font-weight: 600;
 }
 
-
+.inputContainer {
+  position: relative;
+  width: 300px;
+ 
+}
 
 .inputImg {
   position: absolute;
@@ -67,9 +89,7 @@
 
 .inputField {
   width: 100%;
-    
   padding: 10px 12px 10px 50px; 
-  
   border: 0px solid #ccc;
   border-radius: 8px;
   font-size: 15px;
@@ -120,7 +140,7 @@
   border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
-   width: 100%; 
+  width: 100%;
    margin-bottom: 6px;
 }
 
@@ -132,25 +152,12 @@
 .createButton {
   background-color: #6574cd;
   color: #fff;
-  height: 30px;
-  width: 130px;
   border: none;
-  padding: 5px;
+  padding: 12px;
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s ease;
- 
-  margin-left: 100px;
-  margin-top: 50px;
-}
-
-.img4 {
-  width: 15px;
-  height: 15px;
-  display: flex;
-  justify-content: space-evenly;
-  gap: 5px;
 }
 
 .createButton:hover {
@@ -160,7 +167,6 @@
 .textareaContainer {
   position: relative;
   width: 100%;
-  
 }
 
 .icon3 {
@@ -176,7 +182,6 @@
 .textarea {
   width: 100%;
   min-height: 100px;
-  
   padding: 10px 10px 10px 40px; 
   border: 0px solid #ccc;
   border-radius: 8px;
@@ -189,19 +194,17 @@
 .inputContainer {
   position: relative;
   width: 100%;
-
 }
 
 .searchIcon {
   position: absolute;
   left: 12px;
-  top: 38%;
+  top: 50%;
   transform: translateY(-50%);
   width: 15px;
   height: 15px;
   pointer-events: none; 
   opacity: 0.7;
-  
 }
 
 .input {
@@ -215,9 +218,9 @@
  margin-top: 5px;
 }
 
-/* .container {
+.container {
   position: relative; 
-} */
+}
 
 .fram1 {
   position: absolute;
@@ -225,13 +228,4 @@
   right: 10px;   
   width: 30px;    
   height: auto;
-} 
-
-
-
-
-
-
-
-
-
+}

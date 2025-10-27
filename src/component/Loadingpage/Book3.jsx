@@ -2,19 +2,27 @@
 
 
 import React from "react";
-import Books2 from './Book2'
-import styles from './Book.module.css';
-import Avatar from '../../assets/img1/Avatar.png'
+import styles from './Book3.module.css'
+
 import Group2 from '../../assets/img1/Group2.png'
 import img2 from '../../assets/img1/images.png'
 import write from "../../assets/img1/write.png"
 import search from '../../assets/img1/search.png'
 import fram from '../../assets/img1/Frame 512783.png'
-const Book = () => {
+const Book3 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
+          <div className={styles.iconSection}>
+            <div className={styles.chatIcon}>
+              <div className={styles.message}></div>
+            </div>
+            <div className={styles.userIcons}>
+              <div className={styles.user}></div>
+              <div className={styles.user}></div>
+            </div>
+          </div>
           <div>
             <img src={fram} alt="" className={styles.fram1}/>
           </div>
@@ -52,25 +60,16 @@ const Book = () => {
   <img src={search} alt="search icon" className={styles.searchIcon} />
   <input
     type="text"
-    placeholder="l"
+    placeholder="Search to Add Group Members"
     className={styles.input}
   />
-  <div className={styles.img4}>
-    <img src={Avatar} alt=""/>
-    <img src={Avatar} alt=""/>
-    </div>
 </div>
- 
 
           <button className={styles.createButton}>Create Group</button>
         </div>
-        <Books2 />
       </div>
     </div>
   );
 };
 
-export default Book;
-
-
-
+export default Book3;

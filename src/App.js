@@ -14,8 +14,13 @@ import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 import Create from './component/Create'
 import BookName from "../src/component/Loadingpage/Book";
 // import Navbar from './component/Loadingpage/Navbar';
-import PageReducer from './component/Loadingpage/PageReducer'
-import Book from "../src/component/Loadingpage/Book";
+// import PageReducer from './component/Loadingpage/PageReducer'
+// import NewChat from "./component/Loadingpage/NewChat";
+import NewChat2 from './component/Loadingpage/NewChat2'
+// import Book from "../src/component/Loadingpage/Book";
+
+// import Book3 from './component/Loadingpage/Book3'
+// import MyProfile from './component/Loadingpage/MyProfile'
 const App = () => {
   return (
 
@@ -35,7 +40,11 @@ const App = () => {
         <Route path="/SupportFeedback" element={<SupportFeedback />} /> 
       </Routes>
       </BrowserRouter> */}
-      <Book/>
+      {/* <Book/> */}
+      {/* <Book3 /> */}
+      {/* <MyProfile /> */}
+      {/* <NewChat /> */}
+      <NewChat2 />
 
     </div> 
      </div>

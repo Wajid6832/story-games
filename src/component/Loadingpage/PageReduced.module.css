@@ -5,11 +5,11 @@ body {
 .pageContainer {
 
     justify-content: center;
-    /* text-align: center; */
+    
     width: 1150px;
     height: 549px;
-    /* Top: 238px; */
-    /* left: 169px; */
+  
+  
     color: Light Grey;
   
     margin: 80px;

@@ -37,7 +37,7 @@ const PageReducer = () => {
           molestie consequat, vel illum dolore eu feugiat nulla facilisis.
         </p>
 
-        {/* Icons row */}
+        
         <div className={styles.stats}>
           <span>
             <AiOutlineLike className={styles.icon} /> Likes (5)
@@ -50,7 +50,7 @@ const PageReducer = () => {
           </span>
         </div>
 
-        {/* Buttons */}
+      
         <div className={styles.buttons}>
           <button className={styles.prevBtn}>← Previous Chapter</button>
           <button className={styles.enterBtn}>Enter Workroom</button>
