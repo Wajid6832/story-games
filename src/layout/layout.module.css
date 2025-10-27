@@ -1,0 +1,19 @@
+.layoutWrapper{
+  display: flex;
+}
+.mainWrapper {
+  padding: 10px 10px;
+  background-color: #ffffffd4;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  transition: margin-left 0.3s ease;
+  margin-left: 60px; /* Default for closed sidebar */
+}
+
+.mainWrapper.sidebarOpen {
+  margin-left: 230px; /* When sidebar is open */
+}
+
+.mainWrapper.sidebarClosed {
+  margin-left: 60px; /* When sidebar is closed */
+}

@@ -14,7 +14,6 @@ const generateNovels = () =>
 const CurrentNovels = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
-
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const novels = generateNovels();
 

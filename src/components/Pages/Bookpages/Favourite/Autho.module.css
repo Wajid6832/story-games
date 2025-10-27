@@ -1,0 +1,129 @@
+.merge {
+  display: flex;
+  background-color: #fff;
+  min-height: 100vh;
+}
+.pageWrapper {
+  flex: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  background-color: #fff;
+}
+.sidebarOpen {
+  margin-left: 250px;
+}
+.sidebarClosed {
+  margin-left: 0;
+}
+.searchBox input {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding-left: 2rem;
+  height: 42px;
+}
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+} /* ---------- Tabs ---------- */
+.activeTab {
+  border-bottom: 2px solid #0066ff !important;
+  color: #0066ff !important;
+  font-weight: 600;
+}
+.inactiveTab {
+  color: #6c757d !important;
+} /* ---------- Author Section ---------- */
+.iconCircle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  border: 1.5px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.iconCircle:hover {
+  border-color: #0066ff;
+  background-color: #eef3ff;
+}
+.userIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, #0066ff 40%, transparent 41%),
+    linear-gradient(#0066ff 65%, transparent 65%);
+  mask: radial-gradient(circle at 40% 30%, #000 40%, transparent 41%);
+} /* ---------- Adventure Logs ---------- */
+.logCard {
+  background: #fafafa;
+  border: 1.5px solid #e0e0e0;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 160px;
+  position: relative;
+}
+.logCard:hover {
+  border-color: #0066ff;
+  background-color: #eef3ff;
+  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.25);
+  transform: translateY(-3px);
+} /* Small centered image inside each Adventure Log */
+.logImage {
+  width: 60px; /* Small neat thumbnail */
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+.logCard:hover .logImage {
+  transform: scale(1.05);
+  opacity: 1;
+} /* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .sidebarOpen {
+    margin-left: 0;
+  }
+  .pageWrapper {
+    padding: 1.5rem 1rem;
+  }
+  .iconCircle {
+    width: 64px;
+    height: 64px;
+  }
+  .logCard {
+    height: 140px;
+  }
+  .logImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .pageWrapper {
+    padding: 1rem;
+  }
+  .iconCircle {
+    width: 58px;
+    height: 58px;
+  }
+  .logCard {
+    height: 120px;
+  }
+  .logImage {
+    width: 45px;
+    height: 45px;
+  }
+}

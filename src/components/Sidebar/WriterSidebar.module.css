@@ -52,7 +52,8 @@
   overflow: hidden;
 }
 
-.icon {
+/* Desktop Icon - Only visible on desktop */
+.desktopIcon {
   font-size: 1.4rem;
   color: #333;
   cursor: pointer;
@@ -65,7 +66,7 @@
   z-index: 1001;
 }
 
-.icon:hover {
+.desktopIcon:hover {
   background-color: #e9ecef;
   color: #3b57f5;
 }
@@ -149,9 +150,7 @@
   transition: transform 0.3s ease;
 }
 
-/* ========== MOBILE RESPONSIVE ========== */
 
-/* Tablet devices (768px and below) */
 @media (max-width: 768px) {
   .sidebar {
     width: 230px;
@@ -169,7 +168,10 @@
     width: 230px;
   }
   
-  /* Mobile toggle button */
+  .desktopIcon {
+    display: none !important;
+  }
+  
   .mobileToggle {
     position: fixed;
     top: 15px;
@@ -186,14 +188,16 @@
   }
 }
 
-/* Desktop devices (769px and above) */
 @media (min-width: 769px) {
   .mobileToggle {
     display: none !important;
   }
+  
+  .desktopIcon {
+    display: flex !important;
+  }
 }
 
-/* Mobile overlay when sidebar is open */
 .sidebarOverlay {
   display: none;
   position: fixed;
