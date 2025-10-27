@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import Sidebar from "../ReaderSidebar/Sidebar";
-import supportImage from "../../../assets/Readers-Assets/images/support.png";
+// import Sidebar from "../ReaderSidebar/Sidebar";
+import Sidebar from "../Sidebar/WriterSidebar.jsx";
+// import supportImage from "../../../assets/Readers-Assets/images/support.png";
+// import supportImage from "../../assets/Readers-Assets/images/support.png";
+import supportImage from "../../assets/Readers-Assets/images/support.png";
 import styles from "./SupportFeedback.module.css";
 
 const SupportFeedback = () => {
