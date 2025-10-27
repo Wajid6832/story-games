@@ -33,7 +33,7 @@ const EditorLanding = () => {
                       <button>Signup</button>
                     </div>
                     <div className={styles.signin}>
-                      <button>SignIN</button>
+                      <button onClick={()=>navigator("/EditorLogin")}>SignIN</button>
                     </div>
                   </div>
                 </div>

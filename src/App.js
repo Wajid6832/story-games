@@ -1,12 +1,13 @@
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
 
 // Writer/Editor Components
 
-import WriterHome from "./components/Pages/WriterHome";
+import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
 import Bookpage from "./components/Pages/Bookpages/Bookpage";
 // Reader Components
 
@@ -28,6 +29,8 @@ import EditorHome from "./components/Common/EditorCommons/editorHome/EditorHome"
 // import EditorLanding from "./components/Common/Landing/EditorLanding";
 import TokenStore from "./components/TokenStore/TokenStore";
 import EditorLanding from "./components/Common/EditorCommons/editorLandig/EditorLanding";
+import EditorLogin from "./components/Common/EditorCommons/editorLogin/EditorLogin";
+import EditorFavourite from "./components/Common/EditorCommons/EditorFavourite";
 // import BecomeWriter from "./components/Common/becomeWriter/becomeWriter";
 
 function App() {
@@ -37,12 +40,14 @@ function App() {
       <Routes>
         <Route path="/" element={<EditorLanding/>} /> 
         <Route path="/EditorHome" element={<EditorHome />} />
+        <Route path="/EditorLogin" element={ <EditorLogin/>} />
+        <Route path="/EditorFavourite" element={ <EditorFavourite/>} />
         <Route path="/WriterHome" element={<WriterHome />} />
         <Route path="/Bookpage" element={<Bookpage />} />
      
           {/* Writer & Editor Routes */} 
          <Route path="/writer" element={<WriterHome />} />
-          <Route path="/editor" element={<EditorLanding />} />
+          {/* <Route path="/editor" element={<EditorLanding />} /> */}
           {/* <Route path="/home" element={<Home />} /> */}
 
           {/* Reader Routes */}

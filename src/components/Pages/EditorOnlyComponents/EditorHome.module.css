@@ -15,7 +15,14 @@
   border-right: 1px solid #ddd;
   transition: all 0.3s ease;
 }
-
+.sidebarClosed{
+  width: 30px;
+  flex-shrink: 0;
+  height: 100vh;
+  background-color: #efefef;
+  border-right: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
 /* Main Section (Header + Content) */
 .mainSection {
   flex: 1;

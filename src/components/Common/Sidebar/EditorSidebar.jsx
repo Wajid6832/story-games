@@ -13,12 +13,17 @@ import Support from "../../../../assets/support.png"
 import styles from "./EditorSidebar.module.css";
 import { NavLink } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
-const EditorSidebar = ({handleSidebar}) => {
+const EditorSidebar = ({ handleSidebar }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const handlesidebarFunctions = () => {
+    handleOpen();
+    handleSidebar();
+  }
 
   if (!isOpen) {
     return (
@@ -27,13 +32,14 @@ const EditorSidebar = ({handleSidebar}) => {
 
         <div className={styles.shoeMenue}>
           <div className={styles.menue}>
-            <button onClick={()=>{handleOpen();handleSidebar()}}>
-              <img src={Menue} alt="menu" />
+            <button  className='border-0' onClick={handlesidebarFunctions}>
+              {/* <img src={Menue} alt="menu" /> */}
+              <i class="bi bi-list"></i>
             </button>
           </div>
           <div className={styles.shoeManueLinks}>
             {[Profile, Novels, Producer, Application, Favourites, Mail].map((icon, index) => (
-              <NavLink key={index} className={styles.navlinks}>
+              <NavLink to="/" key={index} className={styles.navlinks}>
                 <div className={styles.links}>
                   <div className={styles.imgLinks}>
                     <img src={icon} alt="icon" />
@@ -63,8 +69,8 @@ const EditorSidebar = ({handleSidebar}) => {
               </div>
             </div>
             <div className={styles.menue}>
-              <button onClick={handleOpen}>
-                <img src={Menue} alt="menu" />
+              <button className='border-0' onClick={handlesidebarFunctions}>
+               <i class="bi bi-list"></i>
               </button>
             </div>
           </div>
@@ -114,7 +120,7 @@ const EditorSidebar = ({handleSidebar}) => {
               </div>
             </NavLink>
 
-            <NavLink className={styles.navlinks}>
+            <NavLink to="/EditorFavourite" className={styles.navlinks}>
               <div className={styles.links}>
                 <div className={styles.imgLinks}>
                   <img src={Favourites} alt="Favorites" />

@@ -6,7 +6,7 @@ import EditorHomeFacTopUp from "../../../EditorSection/editorHomeComponents/edit
 import EditorSidebar from "../sidebar/EditorSidebar";
 
 const EditorHome = () => {
-  const [isOpenSidebar,setIsOpenSidebar]=useState(false);
+  const [isOpenSidebar,setIsOpenSidebar]=useState(true);
 
   const handleSidebar =()=>{
     setIsOpenSidebar((prev)=>!prev);
@@ -16,7 +16,7 @@ const EditorHome = () => {
   return (
     <div className={`${styles.editorHomeContainer} container-fluid`}>
       {/* Sidebar */}
-      <div className={styles.sidebarSection}>
+      <div className={ isOpenSidebar?styles.sidebarSection:styles.sidebarClosed}>
         <EditorSidebar handleSidebar={handleSidebar} />
       </div>
 
