@@ -27,7 +27,10 @@ const Book2 = () => {
           <span className={styles.name}>{contact.name}</span>
         </div>
       ))}
+    
     </div>
+    
+    
   );
 };
 

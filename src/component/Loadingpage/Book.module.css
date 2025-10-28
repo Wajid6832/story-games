@@ -1,29 +1,20 @@
 
-  .container {
-   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-  background-color: #fafafa;
-  font-family: "Inter", sans-serif;
-  position: relative;
-  top: 270px;   
-  left: -100px; 
-  border-radius: 16px;
-} 
-
-
-
-
 .card {
-  background: #fff;
-  border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  padding: 40px;
-  width: 400px;
   text-align: center;
-
+   margin-left: 400px; 
+   width: 726px;
+  height: 920px;
+  top: 52px;
+  left: 357px; 
+  border-radius: 16px;
+  background-color: white; 
+  
+}
+.img {
+  display: flex;
+  gap: 10px;
+  margin-left: 80px;
 }
 
 
@@ -33,10 +24,8 @@
 
 
 .img2 {
-  
-   width: 100px;
-  height: 100px;
-  
+  width: 237.93px;
+  height: 160.85px;
   top: 116.82;
   left: 601px;
 }
@@ -49,32 +38,36 @@
   font-weight: 600;
 }
 
-
+.inputContainer {
+  position: relative;
+  width: 300px;
+  
+ 
+}
 
 .inputImg {
   position: absolute;
-  top: 35%;
+  
   left: 12px;
-  transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
+  
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   pointer-events: none;
-  margin-left: 10px; 
-  margin-top: 05px;
+  
+  margin-bottom: 05px;
+  margin-left: 02px;
   
 }
 
 .inputField {
-  width: 100%;
-    
-  padding: 10px 12px 10px 50px; 
-  
-  border: 0px solid #ccc;
+  width: 560px;
+  height: 52px;
   border-radius: 8px;
-  font-size: 15px;
-  background-color: #f1f1f1;
-  outline: none;
+  padding: 16px;
+  gap: 16px;
+  background-color: lightgrey;
+
 }
 
 .inputField:focus {
@@ -93,9 +86,10 @@
 }
 
 .uploadCircle {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border: 2px solid #9fa8da;
+  left: 240.5px;
   border-radius: 50%;
   margin: 0 auto 10px;
   display: flex;
@@ -105,52 +99,28 @@
   font-size: 24px;
   background-color: lightgray;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.input,
-.textarea {
-  border: none;
-  background: #f1f1f1;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  outline: none;
-   width: 100%; 
-   margin-bottom: 6px;
-}
-
 .textarea {
   resize: none;
-  height: 80px;
+  height: 80px; 
+
 }
 
 .createButton {
   background-color: #6574cd;
-  color: #fff;
-  height: 30px;
-  width: 130px;
-  border: none;
-  padding: 5px;
-  border-radius: 8px;
-  font-size: 10px;
-  cursor: pointer;
-  transition: background 0.2s ease;
- 
-  margin-left: 100px;
-  margin-top: 50px;
-}
-
-.img4 {
-  width: 15px;
-  height: 15px;
   display: flex;
-  justify-content: space-evenly;
-  gap: 5px;
+  flex-direction: row;
+  width: 281px;
+  height: 50px;
+  border-radius: 13.13px;
+  padding-top: 12.26px;
+  padding-right: 61.28px;
+  padding-bottom: 12.26px;
+  padding-left: 61.28px;
+  gap: 8.75px;
+  color: #fff;
+  margin-left: 230px;
+  margin-top: 50px;
+ 
 }
 
 .createButton:hover {
@@ -158,66 +128,108 @@
 }
 
 .textareaContainer {
-  position: relative;
-  width: 100%;
+
+    width: 560px;
+  height: 116px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   
 }
 
 .icon3 {
+
+  width: 20px;
+  height: 20px;
+  top : 16px;
+  left: 16px;
   position: absolute;
-  left: 12px;
-  top: 12px;
-  width: 15px;
-  height: 15px;
-  pointer-events: none; 
-  opacity: 0.7;
-}
+  display: flex;
+  margin-top: 420px;
+  margin-left: 540px;
 
-.textarea {
-  width: 100%;
-  min-height: 100px;
+}
+.searchIcon {
+ 
+  width: 20px;
+  height: 20px;
+  border: 1.5px;
+  margin-left: 50px;
+   margin-bottom: 50px;
+
   
-  padding: 10px 10px 10px 40px; 
-  border: 0px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  resize: none;
-  box-sizing: border-box;
 }
 
-.inputContainer {
-  position: relative;
-  width: 100%;
+.input1Container {
+  width: 560px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 16px;
+  background-color: lightgrey;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+}
 
+.inputImg {
+  width: 20px;
+  height: 20px;
+  margin-left: 470px;
+  
+}
+
+.inputField {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  flex: 1; 
+                 
+}
+.input1Container input::placeholder {
+  position: relative;
+  top: -15px;   
+}
+.input2Container {
+  width: 560px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 16px;
+  background-color: lightgrey;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+
+  
+  display: flex;              
+  align-items: center;        
+  gap: 10px;                  
 }
 
 .searchIcon {
-  position: absolute;
-  left: 12px;
-  top: 38%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
-  pointer-events: none; 
-  opacity: 0.7;
-  
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+  margin-top: 50px;
 }
 
-.input {
-  width: 100%;
-  padding: 10px 12px 10px 38px; 
-  border: 0px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
+.input1 {
+  border: none;
   outline: none;
-  box-sizing: border-box;
- margin-top: 5px;
+  background: transparent;
+
+  font-size: 14px;
+  flex: 1; 
 }
 
-/* .container {
-  position: relative; 
-} */
+.input2Container input::placeholder {
+  position: relative;
+  top: -02px;   
+}
+
+
+
 
 .fram1 {
   position: absolute;
@@ -225,7 +237,42 @@
   right: 10px;   
   width: 30px;    
   height: auto;
-} 
+  margin-right: 210px;
+}
+.textareaContainer {
+  width: 560px;
+  height: 116px;
+  border-radius: 8px;
+  background-color: lightgrey;
+  display: flex;            
+  align-items: center;      
+  gap: 10px; 
+  margin-top: 20px; 
+  margin-left: 80px;              
+}
+
+.icon3 {
+  width: 20px;
+  height: 20px;
+  top: 16px;
+  left: 16px;
+  
+  left: -50px;
+  right: -05px;
+
+  
+}
+.textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  margin-left: 40px;
+  margin-top: 20px;
+}
 
 
 

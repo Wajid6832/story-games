@@ -14,15 +14,7 @@ const Book3 = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <div className={styles.iconSection}>
-            <div className={styles.chatIcon}>
-              <div className={styles.message}></div>
-            </div>
-            <div className={styles.userIcons}>
-              <div className={styles.user}></div>
-              <div className={styles.user}></div>
-            </div>
-          </div>
+         
           <div>
             <img src={fram} alt="" className={styles.fram1}/>
           </div>
@@ -39,8 +31,8 @@ const Book3 = () => {
           <p>Upload Group Photo</p>
         </div>
 
-        <div className={styles.form}>
-     <div className={styles.inputContainer}>
+        
+     <div className={styles.input1Container}>
           <img src={write} alt="icon" className={styles.inputImg} />
           <input
             type="text"
@@ -56,19 +48,19 @@ const Book3 = () => {
     className={styles.textarea}
   ></textarea>
 </div>
-          <div className={styles.inputContainer}>
+          <div className={styles.input2Container}>
   <img src={search} alt="search icon" className={styles.searchIcon} />
   <input
     type="text"
     placeholder="Search to Add Group Members"
-    className={styles.input}
+    className={styles.input1}
   />
 </div>
 
           <button className={styles.createButton}>Create Group</button>
         </div>
       </div>
-    </div>
+    
   );
 };
 

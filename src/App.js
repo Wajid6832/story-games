@@ -1,15 +1,10 @@
 
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-// import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "./features/auth/Login";
-import { Products } from "./features/product/Product";
-import Home from "./components/Common/Landing/Reader-Home";
-import ReaderHome from "./components/Common/Landing/Reader-Home";
-import ReadersLanding from "./components/Common/Landing/ReadersLanding";
-import CurrentNovels from "./components/Common/Landing/CurrentNovels";
-import SupportFeedback from "./components/Common/Landing/SupportFeedback"; 
+import  Landing  from "./components/Common/Landing/EditorLanding";
 
 // import Create from './component/Create'
 // import BookName from "../src/component/Loadingpage/Book";
@@ -17,17 +12,15 @@ import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 // import PageReducer from './component/Loadingpage/PageReducer'
 // import NewChat from "./component/Loadingpage/NewChat";
 // import NewChat2 from './component/Loadingpage/NewChat2'
-import Book from "../src/component/Loadingpage/Book";
-
+// import Book from "../src/component/Loadingpage/Book";
+    import Book2 from '../src/component/Loadingpage/Book2'
 // import Book3 from './component/Loadingpage/Book3'
 // import MyProfile from './component/Loadingpage/MyProfile'
 const App = () => {
   return (
 
-    <div>
-      {/* <PageReducer /> */}
-      {/* <Create /> */}
-      {/* <Navbar /> */}
+    
+
 
     <div className="App">
       {/* <BrowserRouter>
@@ -38,20 +31,21 @@ const App = () => {
         <Route path="/readinghome" element={<ReadersLanding/>} />
         <Route path="/CurrentNovels" element={<CurrentNovels />} />
         <Route path="/SupportFeedback" element={<SupportFeedback />} /> 
+        <Route path="/" element={<Landing/>} />
       </Routes>
       </BrowserRouter> */}
-      <Book/>
+      <Book2/>
       {/* <Book3 /> */}
       {/* <MyProfile /> */}
       {/* <NewChat /> */}
       {/* <NewChat2 /> */}
+       {/* <PageReducer /> */}
+      {/* <Create /> */}
+      {/* <Navbar /> */}
 
     </div> 
-     </div>
    )
  }
 
-
 export default App;
-
 
