@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiHeart, FiAward, FiPlay, FiSquare } from 'react-icons/fi';
-import styles from "../../Pages/Characterpage/BookReader.module.css"
+import styles from "../../writersection/Characterpage/BookReader.module.css"
+
 export default function BookReader() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);

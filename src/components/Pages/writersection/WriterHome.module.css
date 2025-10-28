@@ -35,12 +35,11 @@
   font-size: 2rem;
 }
 
-/* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .homeContainer {
     margin-left: 0 !important;
     width: 100%;
-    padding-top: 60px; /* Space for mobile toggle button */
+    padding-top: 60px; 
   }
   
   .homeHeader {
@@ -48,7 +47,6 @@
   }
 }
 
-/* Rest of your existing styles... */
 .workroomCard {
   border: none;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);

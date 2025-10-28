@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../../Pages/Bookpages/Bookpages.module.css";
+import styles from "./Bookpages.module.css";
 import BookReader from "../Characterpage/BookReader";
 
 const Bookpage = () => {
@@ -18,7 +18,7 @@ const Bookpage = () => {
   }
 
   return (
-    <div className="container py-5 ">
+    <div className={`${styles.wrappper}"container py-5 `}>
       {/* Character One */}
       <div className={`${styles.characterSection} mb-5`}>
         <div
