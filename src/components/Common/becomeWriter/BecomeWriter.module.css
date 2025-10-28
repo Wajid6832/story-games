@@ -1,0 +1,88 @@
+
+.appWrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5; 
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 25px;
+    transition: margin-left 0.3s ease;
+}
+
+:root {
+    --primary-blue: #5A83F8;
+    --light-blue-bg: rgba(90, 131, 248, 0.1);
+    --input-gray: #f5f5f5;
+    --card-border-radius: 8px;
+}
+
+.characterCard {
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    height: 100%;
+    background-color: #fff;
+}
+
+.characterCard.isSelected {
+    border: 2px solid var(--primary-blue) !important;
+    background-color: var(--light-blue-bg) !important;
+}
+
+.cardHeaderBody {
+    padding: 16px; 
+}
+
+.infoLink {
+    color: var(--primary-blue) !important;
+    cursor: pointer;
+    font-size: 0.875rem; 
+    text-decoration: none;
+}
+
+.cardExpandedContent {
+    padding: 0 16px 16px 16px; 
+    border-top: 1px solid #e0e0e0;
+}
+
+.customInput {
+    padding: 12px;
+    border-radius: var(--card-border-radius);
+    background-color: var(--input-gray);
+    border: none;
+    box-shadow: none;
+}
+
+.primaryButton {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    padding: 8px 30px;
+    border-radius: var(--card-border-radius);
+}
+
+.outlineButton {
+    color: #6c757d;
+    border-color: #ced4da;
+    padding: 8px 30px;
+    border-radius: var(--card-border-radius);
+}
+
+.fileUploadBox {
+    border: 2px dashed #e0e0e0;
+    background-color: #fff;
+    border-radius: var(--card-border-radius);
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 150px;
+}
+.fileUploadBox.dragActive {
+    border: 2px dashed var(--primary-blue);
+    background-color: var(--light-blue-bg);
+}
+.uploadIconText {
+    color: #888;
+}
