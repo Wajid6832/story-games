@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
 import styles from "./WorkRoom.module.css";
-import WriterSidebar from "../../components/Sidebar/WriterSidebar";
+import WriterSidebar from "../../../Sidebar/WriterSidebar";
 
 const WorkRoomPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -74,7 +74,7 @@ const WorkRoomPage = () => {
           </div>
 
           <div className="row align-items-center mt-3">
-            <div className="col-md-8">
+            <div className="col-md-6">
               <h4>Synopsis of this week’s Story:</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh
@@ -83,7 +83,7 @@ const WorkRoomPage = () => {
             </div>
 
 
-            <div className="col-md-4 d-flex justify-content-md-end justify-content-start flex-wrap gap-2 mt-3 mt-md-0">
+            <div className="col-md-6 d-flex justify-content-md-end justify-content-start flex-wrap gap-4 mt-3 mt-md-0">
               <button className={`${styles.btn} ${styles.primary}`}>
                 <BsCloudUpload className={styles.icon} />
                 Add a New Chapter
