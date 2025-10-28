@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-// import Sidebar from "../ReaderSidebar/Sidebar";
 import Sidebar from "../../../Sidebar/WriterSidebar.jsx";
-// import supportImage from "../../../assets/Readers-Assets/images/support.png";
-// import supportImage from "../../assets/Readers-Assets/images/support.png";
 import supportImage from "../../../../assets/Readers-Assets/images/support.png";
 import styles from "./SupportFeedback.module.css";
 
@@ -28,7 +25,12 @@ const SupportFeedback = () => {
     const handleResize = () => {
       const mobileCheck = window.innerWidth < 992;
       setIsMobile(mobileCheck);
-      setSidebarOpen(!mobileCheck);
+
+      if (!mobileCheck) {
+        setSidebarOpen(true);
+      } else {
+        setSidebarOpen(false);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -50,7 +52,6 @@ const SupportFeedback = () => {
           transition: "margin-left 0.3s ease",
         }}
       >
-        {/* Header */}
         <div className="d-flex justify-content-start align-items-center mb-4 flex-wrap border-bottom pb-3">
           <button
             className="btn btn-light d-lg-none mb-2 me-3"

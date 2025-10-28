@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./ReadersInfo.module.css";
-import illustration from "../../assets/Readers-Assets/images/Group.png";
-import eyeOpen from "../../assets/Readers-Assets/icons/eye.png";
-import eyeClose from "../../assets/Readers-Assets/icons/eye slashed.png";
-import emailIcon from "../../assets/Readers-Assets/icons/mail.png";
-import userIcon from "../../assets/Readers-Assets/icons/profile.png";
-import lockIcon from "../../assets/Readers-Assets/icons/password.png";
-import closeIcon from "../../assets/Readers-Assets/icons/close.png";
+import illustration from "../../../../assets/Readers-Assets/images/Group.png";
+
+// ✅ React Icons
+import { MdEmail } from "react-icons/md";
+import { FaUser, FaLock } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const ReadersInfo = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,6 @@ const ReadersInfo = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
   const [isOpen, setIsOpen] = useState(true);
 
   const handleInputChange = (e) => {
@@ -44,17 +43,33 @@ const ReadersInfo = () => {
   return (
     <div className={styles.modalContainer}>
       <div className={styles.formCard}>
-        <button className={styles.closeButton} onClick={handleClose} aria-label="Close">
-          <img src={closeIcon} alt="close" />
+        {/* Close Button */}
+        <button
+          className={styles.closeButton}
+          onClick={handleClose}
+          aria-label="Close"
+        >
+          <IoMdClose size={22} />
         </button>
+
+        {/* Illustration */}
         <div className={styles.illustrationContainer}>
-          <img src={illustration} alt="Illustration" className={styles.formIllustration} />
+          <img
+            src={illustration}
+            alt="Illustration"
+            className={styles.formIllustration}
+          />
         </div>
+
+        {/* Title */}
         <h2 className={styles.formTitle}>Add Your Information</h2>
+
+        {/* Form */}
         <form className={styles.infoForm} onSubmit={handleSubmit}>
+          {/* Email */}
           <div className={styles.inputGroup}>
             <span className={styles.inputIcon}>
-              <img src={emailIcon} alt="email icon" />
+              <MdEmail />
             </span>
             <input
               type="email"
@@ -65,9 +80,11 @@ const ReadersInfo = () => {
               required
             />
           </div>
+
+          {/* Username */}
           <div className={styles.inputGroup}>
             <span className={styles.inputIcon}>
-              <img src={userIcon} alt="user icon" />
+              <FaUser />
             </span>
             <input
               type="text"
@@ -78,9 +95,11 @@ const ReadersInfo = () => {
               required
             />
           </div>
+
+          {/* Referring Member ID */}
           <div className={styles.inputGroup}>
             <span className={styles.inputIcon}>
-              <img src={userIcon} alt="referring icon" />
+              <FaUser />
             </span>
             <input
               type="text"
@@ -90,9 +109,11 @@ const ReadersInfo = () => {
               onChange={handleInputChange}
             />
           </div>
+
+          {/* Password */}
           <div className={`${styles.inputGroup} ${styles.passwordGroup}`}>
             <span className={styles.inputIcon}>
-              <img src={lockIcon} alt="lock icon" />
+              <FaLock />
             </span>
             <input
               type={showPassword ? "text" : "password"}
@@ -102,17 +123,19 @@ const ReadersInfo = () => {
               onChange={handleInputChange}
               required
             />
-            <img
-              src={showPassword ? eyeOpen : eyeClose}
-              alt="Toggle password"
-              onClick={() => setShowPassword((s) => !s)}
+            <span
               className={styles.togglePasswordImg}
+              onClick={() => setShowPassword((s) => !s)}
               role="button"
-            />
+            >
+              {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+            </span>
           </div>
+
+          {/* Confirm Password */}
           <div className={`${styles.inputGroup} ${styles.passwordGroup}`}>
             <span className={styles.inputIcon}>
-              <img src={lockIcon} alt="lock icon" />
+              <FaLock />
             </span>
             <input
               type={showConfirmPassword ? "text" : "password"}
@@ -122,14 +145,15 @@ const ReadersInfo = () => {
               onChange={handleInputChange}
               required
             />
-            <img
-              src={showConfirmPassword ? eyeOpen : eyeClose}
-              alt="Toggle confirm password"
-              onClick={() => setShowConfirmPassword((s) => !s)}
+            <span
               className={styles.togglePasswordImg}
+              onClick={() => setShowConfirmPassword((s) => !s)}
               role="button"
-            />
+            >
+              {showConfirmPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+            </span>
           </div>
+
           <button type="submit" className={styles.submitButton}>
             Proceed To Payment
           </button>
