@@ -7,13 +7,13 @@
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
   transition: margin-left 0.3s ease;
-  margin-left: 60px; /* Default for closed sidebar */
+  margin-left: 60px; 
 }
 
 .mainWrapper.sidebarOpen {
-  margin-left: 230px; /* When sidebar is open */
+  margin-left: 230px; 
 }
 
 .mainWrapper.sidebarClosed {
-  margin-left: 60px; /* When sidebar is closed */
+  margin-left: 60px;
 }

@@ -4,9 +4,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
-import WriterHome from "./components/Pages/writersection/WriterHome";
-import AuthorCard from "./components/Pages/writersection/Favourite/AuthorCard"
-import Bookpage from "./components/Pages/writersection/Bookpages/Bookpage";
+import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard"
+import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
 import Layout from "./layout/Layout";
 // import BookReader from "./components/Pages/writersection/Characterpage/BookReader";
 // import EditorLanding from "./components/common/landing/EditorLanding";
@@ -16,6 +16,9 @@ import Layout from "./layout/Layout";
 // import CurrentNovels from "./components/Common/CurrentNovels/CurrentNovels";
 // import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 // import BecomeWriter from "./components/Common/becomeWriter/becomeWriter";
+
+
+
 function App() {
 
   const user = {
@@ -31,6 +34,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+
         <Routes>
           {/* Writer & Editor Routes */}
           {/* <Route path="/writer" element={<WriterHome />} />
@@ -53,8 +57,9 @@ function App() {
             {/* <Route path="/bookReader" element={<BookReader />} /> */}
              {/* <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} /> */}
-          </Route> 
-        </Routes>
+          </Route>
+      </Routes>
+
       </BrowserRouter>
     </div>
   );

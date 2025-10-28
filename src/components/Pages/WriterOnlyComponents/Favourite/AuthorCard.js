@@ -1,11 +1,10 @@
 import React, { useState, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../../writersection/Favourite/Autho.module.css";
+import styles from "../../WriterOnlyComponents/Favourite/Autho.module.css";
 import iconImage from "../../../../assets/icon.png";
 import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
 import { CommonModal } from "../../../Modal/Common-Modal/Modal";
 
-// Author Card
 const AuthorCard = ({ name, image }) => (
   <div className="text-center">
     <div
@@ -21,7 +20,6 @@ const AuthorCard = ({ name, image }) => (
   </div>
 );
 
-// Adventure Log Card
 const LogCard = ({ image }) => (
   <div
     className={`rounded shadow-sm d-flex align-items-center justify-content-center bg-light ${styles.logCard}`}
@@ -68,7 +66,6 @@ const FavoritesPage = () => {
 
   return (
     <>
-      {/* ---------- Tabs ---------- */}
       <ul className="nav nav-tabs mb-4">
         <li className="nav-item">
           <button
@@ -94,7 +91,6 @@ const FavoritesPage = () => {
         </li>
       </ul>
 
-      {/* ---------- Content ---------- */}
       <div className="container-fluid">
         <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
           {activeTab === "authors"
@@ -118,7 +114,6 @@ const FavoritesPage = () => {
         </div>
       </div>
 
-      {/* ---------- Modal ---------- */}
       {openModal && (
         <CommonModal
           show={openModal}

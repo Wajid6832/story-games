@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiHeart, FiAward, FiPlay, FiSquare } from 'react-icons/fi';
-import styles from "../../writersection/Characterpage/BookReader.module.css"
+import styles from "../../WriterOnlyComponents/Characterpage/BookReader.module.css"
 
 export default function BookReader() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -36,7 +36,6 @@ export default function BookReader() {
     <div className={`${styles.wrapper} d-flex justify-content-center align-items-center`}>
       <div className={`${styles.bookContainer} bg-white rounded shadow-lg overflow-hidden`}>
         
-        {/* Header */}
         <div className={`${styles.header} bg-white border-bottom d-flex justify-content-between align-items-center px-4 py-3`}>
           <div className="d-flex align-items-center gap-3">
 
@@ -64,9 +63,7 @@ export default function BookReader() {
           </div>
         </div>
 
-        {/* Book Pages */}
         <div className="row g-0">
-          {/* Left Page */}
           <div className={`col-6 ${styles.leftPage} position-relative`}>
             <div className={styles.pageContent}>
               <h2 className={`${styles.chapterTitle} fw-bold mb-4`}>
@@ -88,7 +85,6 @@ export default function BookReader() {
             </div>
           </div>
 
-          {/* Right Page */}
           <div className={`col-6 ${styles.rightPage} position-relative`}>
             <div className={styles.pageContent}>
               <div className={styles.textContent}>
@@ -97,7 +93,6 @@ export default function BookReader() {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
               <div className={`${styles.imageContainer} my-4`}>
                 <div className={`${styles.imagePlaceholder} bg-light rounded d-flex justify-content-center align-items-center`}>
                   <div className="text-center">
@@ -109,7 +104,6 @@ export default function BookReader() {
                 </div>
               </div>
 
-              {/* Sound Controls */}
               <div className="mb-3">
                 <button 
                   onClick={() => setIsSoundPlaying(!isSoundPlaying)}
@@ -145,7 +139,6 @@ export default function BookReader() {
           </div>
         </div>
 
-        {/* Navigation Button */}
         <button
           onClick={goToNextPage}
           disabled={currentPage >= totalPages - 2}
