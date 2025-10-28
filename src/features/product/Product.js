@@ -12,7 +12,7 @@ import {
   Form,
   Spinner,
 } from "react-bootstrap";
-import { Sidebar } from "../../components/Sidebar/Sidebar";
+import {Sidebar} from "../../components/Sidebar/Sidebar";
 import { TablePagination } from "../../components/Pagination/Pagination";
 import { ConfirmationModal } from "../../components/Modal/ConfirmationModal";
 export function Products() {

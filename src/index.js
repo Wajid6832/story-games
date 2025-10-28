@@ -5,12 +5,17 @@ import { store } from './app/store';
 import App from './App';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <React.StrictMode>
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+      </React.StrictMode>
     </Provider>
   </React.StrictMode>
 );

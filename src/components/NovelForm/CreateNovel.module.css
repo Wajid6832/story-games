@@ -1,0 +1,138 @@
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+
+.title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.divider {
+  border: 1px solid #6f8bdf;
+  margin-bottom: 25px;
+  width: 100vw;
+}
+
+.subHeader {
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1rem;
+}
+
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #7a7a7a;
+}
+
+.input {
+  background-color: #f1f2f5;
+  border: none;
+  border-radius: 10px;
+  padding-left: 35px;
+  height: 45px;
+  font-size: 0.95rem;
+  resize: none;
+}
+
+.input:focus {
+  box-shadow: none;
+  background-color: #eef0f5;
+}
+
+
+.addBtn {
+  width: 50px;
+  height: 50px;
+  background-color: #6f8bdf;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.characterRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+
+.characterCard {
+  flex: 1;
+  background-color: #f4f5f7;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  height: 120px;
+  width: 90px;
+}
+
+.characterTitle {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.characterRole {
+  color: #6f8bdf;
+  font-weight: 500;
+}
+
+.uploadBox {
+  background-color: #f1f2f5;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-weight: 500;
+  cursor: pointer;
+  flex-direction: column;
+
+}
+
+.uploadIcon {
+  font-size: 1.3rem;
+  margin-right: 8px;
+  color: #6f8bdf;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start; 
+}
+
+.submitBtn {
+  background-color: #6f8bdf;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.submitBtn:hover {
+  background-color: #5874c8;
+}

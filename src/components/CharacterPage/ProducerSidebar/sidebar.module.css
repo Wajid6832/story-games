@@ -1,0 +1,55 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 88px; /* Compact width */
+  background-color: #f9f6f6;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Top and bottom alignment */
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 🔹 Top Section (6 icons) */
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 🔹 Bottom Section (3 icons) */
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 30.29pxpx;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.iconTogle{
+  width: 50px;
+  height: 30px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
