@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; 
 import { Container, Card, Modal, Button } from "react-bootstrap";
-import placeholder from "../../../assets/Readers-Assets/images.png";
-import Sidebar from "./Sidebar";
+import placeholder from "../../assets/Readers-Assets/images.png";
 import styles from "./ReadersLanding.module.css";
 
 const sections = [
@@ -73,7 +72,9 @@ const CardContent = ({ section, story }) => {
 
 
 const ReadersLanding = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+  
+  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
 
@@ -88,13 +89,39 @@ const ReadersLanding = () => {
     else if (section.includes("Chapter")) setModalType("chapter");
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobileCheck = window.innerWidth < 992;
+      setIsMobile(mobileCheck);
+      
+      if (!mobileCheck) {
+        setSidebarOpen(true);
+      } else {
+        setSidebarOpen(false);
+      }
+    };
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
+
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      <Container fluid className="p-4 overflow-auto readers-main">
+      
+      <Container 
+        fluid 
+        className={styles.mainContent + " p-4 overflow-auto readers-main"}
+        style={{
+          marginLeft: contentMargin,
+          width: "100%",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
-            className="btn btn-light d-lg-none mb-2"
+            className="btn btn-light d-lg-none mb-2" 
             onClick={toggleSidebar}
             style={{ borderRadius: "50%" }}
           >
@@ -132,6 +159,7 @@ const ReadersLanding = () => {
           </div>
         ))}
       </Container>
+       {/* Modal JS goes here, if needed */}
     </div>
   );
 };

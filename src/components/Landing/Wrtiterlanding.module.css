@@ -1,3 +1,4 @@
+
 .bg {
   position: relative;
   background: #ffffff;
@@ -10,7 +11,6 @@
   clip-path: polygon(4% 2%, 100% 0, 100% 100%, 0 92%);
   border-bottom-left-radius: 150px;
   border-bottom-right-radius: 110px;
-  
 }
 
 
@@ -45,7 +45,7 @@
     width: 82px;
     height: 5px;
     border-radius: 20px;
-    background-color: yellow;
+    background-color: #f8b400;
 }
 
 .signinBtn {

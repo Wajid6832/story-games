@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
-import Frame from "../../../assets/Frame.png";
+import Frame from "../../assets/Frame.png";
 import { useNavigate } from "react-router-dom";
 
 const EditorLanding = () => {

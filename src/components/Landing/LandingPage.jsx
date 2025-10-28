@@ -11,6 +11,7 @@ const LandingPage = () => {
   return (
     <>
      <div className={styles.landingWrapper}>
+      <div className={styles.landingContainer}>
     <div className={styles.bg}>
         <Container fluid className="px-5 py-5">
         <Row className={styles.main}>
@@ -62,6 +63,7 @@ const LandingPage = () => {
           </Row>
         </div>
       </Container>
+    </div>
     </div>
     </div>
     </>

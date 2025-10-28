@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import Sidebar from "./Sidebar";
-import supportImage from "../../../assets/Readers-Assets/images/support.png";
+import supportImage from "../../assets/Readers-Assets/images/support.png";
 import styles from "./SupportFeedback.module.css";
 
 const SupportFeedback = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992); 
+  const [sidebarOpen, setSidebarOpen] = useState(!isMobile); 
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,12 +20,40 @@ const SupportFeedback = () => {
     setMessage("");
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobileCheck = window.innerWidth < 992;
+      setIsMobile(mobileCheck);
+      
+      if (!mobileCheck) {
+        setSidebarOpen(true);
+      } else {
+        setSidebarOpen(false);
+      }
+    };
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
+
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+    
 
-      <Container fluid className="p-4 overflow-auto readers-main">
+     
+      <Container 
+        fluid 
+        className={styles.mainContent + " p-4 overflow-auto readers-main"}
+        style={{
+          marginLeft: contentMargin,
+          width: "100%",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
         <div className="d-flex justify-content-start align-items-center mb-4 flex-wrap border-bottom pb-3">
+         
           <button
             className="btn btn-light d-lg-none mb-2 me-3"
             onClick={toggleSidebar}
@@ -81,10 +110,11 @@ const SupportFeedback = () => {
               </Form>
             </div>
           </Col>
+         
           <Col
             lg={6}
             md={12}
-            className={`d-none d-lg-flex justify-content-center align-items-end position-relative ${styles.illustrationCol}`}
+            className={`d-none d-md-flex justify-content-center align-items-end position-relative ${styles.illustrationCol}`}
           >
             <img
               src={supportImage}
