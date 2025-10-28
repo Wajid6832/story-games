@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { Container, Row, Col, Form, Card } from "react-bootstrap";
-import style from "../Pages/WriterHome.module.css";
-import Sidebar from "../Sidebar/WriterSidebar";
-import { CommonModal } from "../Modal/Common-Modal/Modal"
-import Modalsetup2 from "../Modal/Common-Modal/Modalsetup2";
-import Modalsetup1 from "../Modal/Common-Modal/Modalsetup1";
-import Modal3 from "../Modal/Common-Modal/Modal3";
-import image from "../../assets/icon.png"
+import style from "./WriterHome.module.css";
+import Sidebar from "../../Sidebar/WriterSidebar";
+import { CommonModal } from "../../Modal/Common-Modal/Modal"
+import Modalsetup2 from "../../Modal/Common-Modal/Modalsetup2";
+import Modalsetup1 from "../../Modal/Common-Modal/Modalsetup1";
+import Modal3 from "../../Modal/Common-Modal/Modal3";
+import image from "../../../assets/icon.png"
 import { Link } from "react-router-dom";
 
 const WriterHome = () => {
