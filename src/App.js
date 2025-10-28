@@ -15,7 +15,6 @@ import { Products } from "./features/product/Product";
 import ReaderHome from "./components/Common/Readers-Landing/Reader-Home";
 import ReadersLanding from "./components/Common/Readers-Landing/ReadersLanding";
 import CurrentNovels from "./components/CurrentNovels/CurrentNovels";
-import SupportFeedback from "./components/SupportFeedBack/SupportFeedback";
 import TokenStore from "./components/TokenStore/TokenStore";
 import BecomeWriter from "./components/Common/becomeWriter/becomeWriter";
 // import WriterLanding from "./components/Common/Landing/WriterLanding";
@@ -34,6 +33,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import CurrentNovels from "./components/Common/Landing/CurrentNovels";
 // import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 import PrivacyPolicy from "./components/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback.js";
 
 function App() {
   return (
