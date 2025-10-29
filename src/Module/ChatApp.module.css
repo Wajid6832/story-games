@@ -1,0 +1,219 @@
+.chatContainer {
+  height: 100vh;
+  background: #f7f8fb;
+}
+
+.sidebar {
+  border-right: 1px solid #e6e9ee;
+  height: 100vh;
+  overflow: auto;
+  background: #fff;
+}
+
+.sidebarHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.searchBox {
+  padding-top: 12px;
+}
+
+.contactList {
+  padding: 8px 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: none;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#6c5ce7,#00b894);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.contactMeta {
+  flex: 1 1 auto;
+}
+
+.contactName {
+  font-weight: 600;
+}
+
+.contactPreview {
+  color: #9aa3b2;
+  font-size: 0.86rem;
+}
+
+.contactTime {
+  font-size: 0.78rem;
+  color: #9aa3b2;
+}
+
+.chatArea {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeaderBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eef2f7;
+  background: #fff;
+}
+
+.leftHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.groupTitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.memberAvatars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.smallAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #cfe8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.addBadge {
+  margin-left: 6px;
+  border-radius: 50%;
+  padding: 6px 8px;
+}
+
+.addMemberInput {
+  width: 320px;
+}
+
+.dotsBtn {
+  border-left: 1px solid #eef2f7;
+}
+
+.chatBody {
+  flex: 1 1 auto;
+  padding: 24px;
+  overflow: auto;
+  background: #f7f8fb;
+}
+
+.messageRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.messageMe {
+  flex-direction: row-reverse;
+}
+
+.msgAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffd7a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.msgBubble {
+  max-width: 60%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.messageMe .msgBubble {
+  background: #d1f7e0;
+}
+
+.msgTime {
+  font-size: 0.75rem;
+  color: #97a0aa;
+  margin-top: 6px;
+}
+
+.imagePlaceholder {
+  width: 260px;
+  height: 120px;
+  background: #f0f3f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa3b2;
+  border-radius: 8px;
+}
+
+.chatComposer {
+  padding: 12px 18px;
+  border-top: 1px solid #eef2f7;
+  background: #fff;
+}
+
+.composerInner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.composerLeft, .composerRight {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.messageInput {
+  flex: 1 1 auto;
+  border-radius: 25px;
+  padding: 10px 16px;
+}
+
+.sendBtn {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
