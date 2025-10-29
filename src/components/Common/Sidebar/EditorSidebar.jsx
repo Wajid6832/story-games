@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
-import Logo from "../../assets/logo.png";
-import Menue from "../../assets/menu.png";
-import Profile from "../../assets/profile.png";
-import Novels from "../../assets/novels.png";
-import Producer from "../../assets/producer.png";
-import Application from "../../assets/applications.png";
-import Favourites from "../../assets/favourites.png";
-import Mail from "../../assets/mail.png";
-import Support from "../../assets/support.png"
+import Logo from "../../../assets/logo.png";
+import Menue from "../../../assets/menu.png";
+import Profile from "../../../assets/profile.png";
+import Novels from "../../../assets/novels.png";
+import Producer from "../../../assets/producer.png";
+import Application from "../../../assets/applications.png";
+import Favourites from "../../../assets/favourites.png";
+import Mail from "../../../assets/mail.png";
+// import Support from "../../../assets/"
 
 // import Logout from "../../assets/logout.png";
 import styles from "./EditorSidebar.module.css";
 import { NavLink } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
-const EditorSidebar = () => {
+const EditorSidebar = ({ handleSidebar }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const handlesidebarFunctions = () => {
+    handleOpen();
+    handleSidebar();
+  }
 
   if (!isOpen) {
     return (
@@ -27,13 +32,14 @@ const EditorSidebar = () => {
 
         <div className={styles.shoeMenue}>
           <div className={styles.menue}>
-            <button onClick={handleOpen}>
-              <img src={Menue} alt="menu" />
+            <button  className='border-0' onClick={handlesidebarFunctions}>
+              {/* <img src={Menue} alt="menu" /> */}
+              <i class="bi bi-list"></i>
             </button>
           </div>
           <div className={styles.shoeManueLinks}>
             {[Profile, Novels, Producer, Application, Favourites, Mail].map((icon, index) => (
-              <NavLink key={index} className={styles.navlinks}>
+              <NavLink to="/" key={index} className={styles.navlinks}>
                 <div className={styles.links}>
                   <div className={styles.imgLinks}>
                     <img src={icon} alt="icon" />
@@ -63,8 +69,8 @@ const EditorSidebar = () => {
               </div>
             </div>
             <div className={styles.menue}>
-              <button onClick={handleOpen}>
-                <img src={Menue} alt="menu" />
+              <button className='border-0' onClick={handlesidebarFunctions}>
+               <i class="bi bi-list"></i>
               </button>
             </div>
           </div>
@@ -114,7 +120,7 @@ const EditorSidebar = () => {
               </div>
             </NavLink>
 
-            <NavLink to="" className={styles.navlinks}>
+            <NavLink to="/EditorFavourite" className={styles.navlinks}>
               <div className={styles.links}>
                 <div className={styles.imgLinks}>
                   <img src={Favourites} alt="Favorites" />
@@ -155,7 +161,7 @@ const EditorSidebar = () => {
           </div>
           <div className={`${styles.commonLowercontent} ${styles.suport}`}>
             <NavLink to="/">
-              <img src={Support} alt="support" />
+              {/* <img src={Support} alt="support" /> */}
               <p>Support</p>
             </NavLink>
           </div>
