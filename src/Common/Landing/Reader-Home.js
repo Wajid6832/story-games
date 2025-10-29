@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ebookImg from "../../../assets/Readers-Assets/images/Frame (1).png";
+import image from "../../assets/Frame1.png";
 const ReaderHome = () => {
   const navigate = useNavigate();
   const cards = Array(6).fill(null);
@@ -47,7 +47,7 @@ const ReaderHome = () => {
           </div>
           <div className="col-lg-6 text-center">
             <img
-              src={ebookImg}
+              src={image}
               alt="Reader illustration"
               className="img-fluid"
               style={{ maxHeight: "320px" }}

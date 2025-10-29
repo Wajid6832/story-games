@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import styles from "./EditorHome.module.css";
 
-import EditorHeader from "../header/EditorHeader";
-import EditorHomeFacTopUp from "../../../EditorSection/editorHomeComponents/editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
-import EditorSidebar from "../sidebar/EditorSidebar";
+import EditorHeader from "./EditorHeader";
+import EditorHomeFacTopUp from "./editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
+import EditorSidebar from "../../../Common/sidebar/EditorSidebar";
 
 const EditorHome = () => {
   const [isOpenSidebar,setIsOpenSidebar]=useState(true);

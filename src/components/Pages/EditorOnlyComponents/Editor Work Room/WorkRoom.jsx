@@ -1,5 +1,10 @@
 import React from "react";
-import { ChevronLeft, ChevronRight, Plus, MessageCircle } from "lucide-react";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiPlus,
+  FiMessageCircle,
+} from "react-icons/fi";
 import styles from "./Workroom.module.css";
 
 const WorkroomInterface = () => {
@@ -15,7 +20,7 @@ const WorkroomInterface = () => {
       {/* Header */}
       <header className={styles.header}>
         <button className={styles.backButton}>
-          <ChevronLeft size={20} className={styles.icon} />
+          <FiChevronLeft size={20} className={styles.icon} />
         </button>
         <h1 className={styles.headerTitle}>Workroom Name</h1>
       </header>
@@ -56,7 +61,7 @@ const WorkroomInterface = () => {
                 </span>
                 <button className={styles.readButton}>
                   Read Chapter{" "}
-                  <ChevronRight size={14} className={styles.icon} />
+                  <FiChevronRight size={14} className={styles.icon} />
                 </button>
               </div>
             </div>
@@ -90,10 +95,10 @@ const WorkroomInterface = () => {
 
         <div className={styles.actionButtons}>
           <button className={styles.primaryButton}>
-            <Plus size={18} className={styles.icon} /> Add a New Chapter
+            <FiPlus size={18} className={styles.icon} /> Add a New Chapter
           </button>
           <button className={styles.secondaryButton}>
-            <MessageCircle size={18} className={styles.icon} /> Group Chat
+            <FiMessageCircle size={18} className={styles.icon} /> Group Chat
           </button>
         </div>
       </div>

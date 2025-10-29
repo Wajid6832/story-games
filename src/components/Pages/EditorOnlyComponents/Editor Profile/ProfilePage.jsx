@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import {
-  Eye,
-  EyeOff,
-  Mail,
-  User,
-  Upload,
-  Lock,
-  PencilLine,
-} from "lucide-react";
+  FaEye,
+  FaEyeSlash,
+  FaEnvelope,
+  FaUser,
+  FaUpload,
+  FaLock,
+  FaPen,
+} from "react-icons/fa";
 import styles from "./Profile.module.css";
 
 export default function ProfilePage() {
@@ -52,7 +52,7 @@ export default function ProfilePage() {
         <h2 className={styles.sectionTitle}>Basic Information</h2>
         <div className={styles.inputRow}>
           <div className={styles.inputGroup}>
-            <Mail size={18} className={styles.inputIcon} />
+            <FaEnvelope size={18} className={styles.inputIcon} />
             <input
               type="email"
               name="email"
@@ -62,7 +62,7 @@ export default function ProfilePage() {
             />
           </div>
           <div className={styles.inputGroup}>
-            <User size={18} className={styles.inputIcon} />
+            <FaUser size={18} className={styles.inputIcon} />
             <input
               type="text"
               name="username"
@@ -75,7 +75,7 @@ export default function ProfilePage() {
 
         <div className={styles.inputRow}>
           <div className={styles.textareaGroup}>
-            <PencilLine size={18} className={styles.inputIcon} />
+            <FaPen size={18} className={styles.inputIcon} />
             <textarea
               name="aboutMe"
               placeholder="About Me"
@@ -89,7 +89,7 @@ export default function ProfilePage() {
             className={styles.uploadBox}
             onClick={() => alert("Upload functionality would go here")}
           >
-            <Upload size={24} className={styles.uploadIcon} />
+            <FaUpload size={24} className={styles.uploadIcon} />
             <div className={styles.uploadText}>Upload Profile Picture</div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function ProfilePage() {
 
           {/* Old Password */}
           <div className={styles.inputGroup}>
-            <Lock size={18} className={styles.inputIcon} />
+            <FaLock size={18} className={styles.inputIcon} />
             <input
               type={showOldPassword ? "text" : "password"}
               name="oldPassword"
@@ -113,14 +113,14 @@ export default function ProfilePage() {
               className={styles.eyeIcon}
               onClick={() => setShowOldPassword(!showOldPassword)}
             >
-              {showOldPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              {showOldPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
             </div>
           </div>
 
           {/* New & Confirm Password */}
           <div className={styles.inputRow}>
             <div className={styles.inputGroup}>
-              <Lock size={18} className={styles.inputIcon} />
+              <FaLock size={18} className={styles.inputIcon} />
               <input
                 type={showNewPassword ? "text" : "password"}
                 name="newPassword"
@@ -133,12 +133,16 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowNewPassword(!showNewPassword)}
               >
-                {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                {showNewPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
               </div>
             </div>
 
             <div className={styles.inputGroup}>
-              <Lock size={18} className={styles.inputIcon} />
+              <FaLock size={18} className={styles.inputIcon} />
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
@@ -151,7 +155,11 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                {showConfirmPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
               </div>
             </div>
           </div>
