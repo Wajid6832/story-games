@@ -1,14 +1,16 @@
 
 
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // Writer/Editor Components
 // import WriterHome from "./components/Pages/WriterHome";
-// import EditorLanding from "./components/common/landing/EditorLanding";
-// import Home from "./components/common/home/Home";
+
 // import Bookpage from "./components/Pages/Bookpages/Bookpage";
 // import React from "react";
 // import { Login } from "./features/auth/Login";
 // import { Products } from "./features/product/Product";
-// import Home from "./components/Common/Landing/Reader-Home";
+
 import "./App.css";
 // import ReaderHome from "./Common/Landing/Reader-Home";
 // import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
@@ -17,13 +19,19 @@ import "./App.css";
 // import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
 // import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 // import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 // import "./App.css";
+
+
+
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 import { Login } from "./features/auth/Login";
 // import { Products } from "./features/product/Product";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
@@ -57,6 +65,7 @@ function App() {
 };
   return (
 
+
     <div className="App">
      <BrowserRouter>
       <Routes> 
@@ -66,8 +75,11 @@ function App() {
         <Route path="/landingpage" element={<LandingPage/>} /> 
         <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
         <Route path="/termsconditions" element={<TermsConditions/>} /> 
+           {/* <Route path="/" element={<Landing/>} /> */}
+           
+           {/* <Route path="/editorhome" element={<EditorHome/>} /> */}
         
-   
+
           {/* Writer & Editor Routes */}
           {/* <Route path="/writer" element={<WriterHome />} />
           <Route path="/editor" element={<EditorLanding />} />
