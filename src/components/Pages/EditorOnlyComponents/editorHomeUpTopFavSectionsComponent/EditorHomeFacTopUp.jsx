@@ -43,23 +43,23 @@ const EditorHomeFacTopUp = () => {
     ];
 
 
-    const topChapters = [
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 1 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 7 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 8 Name",
-            writtenBy: "Jon Doe",
-        }
-    ];
+    // const topChapters = [
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 1 Name",
+    //         writtenBy: "Jon Doe",
+    //     },
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 7 Name",
+    //         writtenBy: "Jon Doe",
+    //     },
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 8 Name",
+    //         writtenBy: "Jon Doe",
+    //     }
+    // ];
 
 
     return (
