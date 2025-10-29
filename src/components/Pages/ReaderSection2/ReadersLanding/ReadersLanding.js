@@ -4,7 +4,7 @@ import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
 // import Sidebar from "../../../Common/Readers-Landing/Sidebar";
 import styles from "../../../Pages/ReaderSection2/ReadersLanding/ReadersLanding.module.css";
 // import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
-import styles from "./ReadersLanding.module.css";
+// import styles from "./ReadersLanding.module.css";
 
 const sections = [
   "Uploaded",
