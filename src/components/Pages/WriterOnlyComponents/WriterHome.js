@@ -13,7 +13,7 @@ const WriterHome = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedWorkRoom, setSetselectedWorkRoom] = useState(null);
   const [componentIndex, setcomponentIndex] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768); // Desktop पर default open
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);  
   
   const cards = [1, 2, 3, 4, 5, 6, 7, 9];
   const card = [
