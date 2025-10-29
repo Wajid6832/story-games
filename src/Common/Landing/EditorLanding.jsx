@@ -3,6 +3,7 @@ import styles from "./EditorLanding.module.css";
 import Frame from "../../assets/Frame.png";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const EditorLanding = () => {
   const navigator = useNavigate();
 
