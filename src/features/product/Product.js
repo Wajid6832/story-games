@@ -14,6 +14,7 @@
 // } from "react-bootstrap";
 // import { Sidebar } from "../../components/Sidebar/Sidebar";
 // import { TablePagination } from "../../components/Pagination/Pagination";
+// // import { ConfirmationModal } from "../../components/Modal/ConfirmationModal";
 // import { ConfirmationModal } from "../../components/Modal/ConfirmationModal";
 // export function Products() {
 //   const [currentPage, setCurrentPage] = useState(1);

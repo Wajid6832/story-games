@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card, Modal, Button } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-<<<<<<<< HEAD:src/components/Pages/ReaderSection2/ReadersLanding/ReadersLanding.js
 // import Sidebar from "../../../Common/Readers-Landing/Sidebar";
-import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
-========
-import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
-import styles from "./ReadersLanding.module.css";
+import styles from "../../../Pages/ReaderSection2/ReadersLanding/ReadersLanding.module.css";
+// import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
+// import styles from "./ReadersLanding.module.css";
 
->>>>>>>> origin/staging:src/components/Pages/ReaderSection1/LandingReader/ReadersLanding.js
 const sections = [
   "Uploaded",
   "My Favorites",
