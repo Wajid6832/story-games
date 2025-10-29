@@ -111,18 +111,3 @@
 .searchBox input::placeholder {
   color: #999;
 }
-
-@media (max-width: 992px) {
-  .placeholderCard { width: 140px; height: 200px; }
-  .writerCard { width: 90px; }
-  .writerCircle { width: 60px; height: 60px; }
-  .searchBox input { width: 120px; }
-}
-
-@media (max-width: 576px) {
-  .placeholderCard { width: 120px; height: 180px; }
-  .writerCard { width: 80px; }
-  .writerCircle { width: 55px; height: 55px; }
-  .characterCard, .chapterCard { width: 200px; }
-  .searchBox input { width: 100px; }
-}

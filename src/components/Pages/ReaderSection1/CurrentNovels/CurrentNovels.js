@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card } from "react-bootstrap";
-import placeholder from "../../../assets/Readers-Assets/images.png";
+import placeholder from "../../../../assets/Readers-Assets/images.png";
 import Sidebar from "../ReaderSidebar/Sidebar";
 import styles from "./CurrentNovels.module.css";
 
@@ -13,27 +13,23 @@ const generateNovels = () =>
 
 const CurrentNovels = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 992);
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
   const novels = generateNovels();
 
   useEffect(() => {
     const handleResize = () => {
-      const mobileCheck = window.innerWidth < 992;
-      setIsMobile(mobileCheck);
-
-      if (!mobileCheck) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
+      const mobile = window.innerWidth < 992;
+      setIsMobile(mobile);
+      setSidebarOpen(!mobile); // auto close on mobile, open on desktop
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Sidebar width logic simplified into one line
   const contentMargin = isMobile ? "0px" : sidebarOpen ? "260px" : "80px";
 
   return (
@@ -47,13 +43,10 @@ const CurrentNovels = () => {
         className={styles.mainContent}
         style={{
           marginLeft: contentMargin,
-          width: "100%",
           transition: "margin-left 0.3s ease",
         }}
       >
-        <div
-          className={`d-flex justify-content-between align-items-center flex-wrap ${styles.headerNav}`}
-        >
+        <div className={`d-flex justify-content-between align-items-center flex-wrap ${styles.headerNav}`}>
           <button
             className="btn btn-light d-lg-none mb-2"
             onClick={toggleSidebar}
