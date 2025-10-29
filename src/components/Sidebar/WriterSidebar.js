@@ -13,7 +13,6 @@ import {
   QuestionCircle,
   BoxArrowRight,
 } from "react-bootstrap-icons";
-
 const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <>
@@ -35,7 +34,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
         <div className={style.sidebarTop}>
           <div className={style.sidebarBrand}>
             <span className={style.sidebarTitle}>Story Host</span>
-            <div className={style.icon} onClick={toggleSidebar}>
+            <div className={style.desktopIcon} onClick={toggleSidebar}>
               <IoReorderThree />
             </div>
           </div>
@@ -47,13 +46,13 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
             <Link to="#" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
               <Person className={style.me2} /> <span>Profile</span>
             </Link>
-            <Link to="/Bookpage" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
+            <Link to="/bookpage" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
               <Book className={style.me2} /> <span>Current Novels</span>
             </Link>
             <Link to="#" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
               <PencilSquare className={style.me2} /> <span>Become an Editor</span>
             </Link>
-            <Link to="#" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
+            <Link to="/authorCard" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
               <Heart className={style.me2} /> <span>Favorites</span>
             </Link>
             <Link to="#" className={style.sidebarLink} onClick={() => window.innerWidth <= 768 && toggleSidebar()}>
