@@ -17,8 +17,6 @@ import Layout from "./layout/Layout";
 // import SupportFeedback from "./components/Common/Landing/SupportFeedback";
 // import BecomeWriter from "./components/Common/becomeWriter/becomeWriter";
 
-
-
 function App() {
 
   const user = {
@@ -59,7 +57,6 @@ function App() {
             <Route path="/settings" element={<Settings />} /> */}
           </Route>
       </Routes>
-
       </BrowserRouter>
     </div>
   );

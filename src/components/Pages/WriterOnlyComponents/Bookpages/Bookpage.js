@@ -63,7 +63,6 @@ const Bookpage = () => {
 
         <hr className={styles.sectionDivider} />
 
-        {/* Chapters Grid - All in one row */}
         <div className="row g-3">
           {chapters.map((ch, idx) => (
             <div key={idx} className="col-12 col-sm-6 col-md-3">
