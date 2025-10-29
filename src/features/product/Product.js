@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchAllProducts, addProduct, clearSuccess } from "./product.slice";
 import { ToastContainer, toast } from "react-toastify";
+import TablePagination from "@mui/material/TablePagination";
 import {
   Container,
   Row,
@@ -13,7 +14,7 @@ import {
   Spinner,
 } from "react-bootstrap";
 import {Sidebar} from "../../components/Sidebar/Sidebar";
-import { TablePagination } from "../../components/Pagination/Pagination";
+// import { TablePagination } from "../../components/Pagination/Pagination";
 import { ConfirmationModal } from "../../components/Modal/ConfirmationModal";
 export function Products() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -62,7 +63,7 @@ export function Products() {
   return (
     <Container fluid>
       <Sidebar />
-      <ToastContainer />
+      <ToastContainer/>
       <Row className='m-5'>
         <Col>
           <div className='d-flex pt-5 pb-2 justify-content-start'>
