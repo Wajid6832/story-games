@@ -9,9 +9,9 @@ import { Products } from "./features/product/Product";
 import ReaderHome from "./Common/Landing/Reader-Home";
 import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
 import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
-import ReadersInfo from "./components/Pages/ReaderSection2/ReadersClub/ReadersInfo";
-import TermCondition1 from "./components/Pages/TermConditionPages/TermCondition1";
-import WriterMode from "./components/Pages/WriterMode/WriterMode";
+import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
+import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
+import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./WriterMode.module.css";
-import writerImage from "../../../assets/Readers-Assets/images/Frame (2).png";
+import writerImage from "../../../../assets/Readers-Assets/images/Frame (2).png";
 
 function WriterMode({ onClose }) {
   return (

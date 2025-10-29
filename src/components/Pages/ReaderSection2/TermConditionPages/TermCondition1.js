@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TermCondition1.module.css";
-import backArrow from "../../../assets/Readers-Assets/buttons/square.png";
+import backArrow from "../../../../assets/Readers-Assets/buttons/square.png";
 
 const TermCondition1 = () => {
   return (
