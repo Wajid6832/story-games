@@ -13,7 +13,7 @@ function App() {
       <Routes>
            <Route path="/" element={<Landing/>} />
            <Route path="/editorlogin" element={<EditorLogin/>} />
-           <Route path="/editorhome" element={<EditorHome/>} />
+           <Route path="/editor" element={<EditorHome/>} />
       </Routes>
       </BrowserRouter>
     </div>
