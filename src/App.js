@@ -1,7 +1,7 @@
+
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
+
 
 // Writer/Editor Components
 // import WriterHome from "./components/Pages/WriterHome";
@@ -12,7 +12,6 @@ import "./App.css";
 // import { Login } from "./features/auth/Login";
 // import { Products } from "./features/product/Product";
 // import Home from "./components/Common/Landing/Reader-Home";
-import "./App.css";
 // import ReaderHome from "./Common/Landing/Reader-Home";
 // import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 // import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
@@ -21,10 +20,10 @@ import "./App.css";
 // import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 // import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import  Landing  from "./components/Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
 import ReaderHome from "./Common/Landing/Reader-Home";
@@ -67,6 +66,16 @@ function App() {
           <Route path="/term1" element={<TermCondition1 />} />
           <Route path="/write" element={<WriterMode />} />
 
+      
+    
+           <Route path="/" element={<Landing/>} />
+           <Route path="/editorlogin" element={<EditorLogin/>} />
+           <Route path="/editorhome" element={<EditorHome/>} />
+        <Routes/>
+          {/* Writer & Editor Routes */}
+          {/* <Route path="/writer" element={<WriterHome />} />
+          <Route path="/editor" element={<EditorLanding />} />
+          <Route path="/home" element={<Home />} /> */}
           {/* Reader Routes */}
           {/* <Route path="/" element={<ReaderHome />} /> */}
           {/* <Route path="/readinghome" element={<ReadersLanding />} />
