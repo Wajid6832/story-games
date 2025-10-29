@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Logo from ".././../../../assets/logo.png";
-import Menue from ".././../../../assets/menu.png";
-import Profile from ".././../../../assets/profile.png";
-import Novels from ".././../../../assets/novels.png";
-import Producer from ".././../../../assets/producer.png";
-import Application from ".././../../../assets/applications.png";
-import Favourites from ".././../../../assets/favourites.png";
-import Mail from "../../../../assets/mail.png";
-import Support from "../../../../assets/support.png"
+import Logo from "../../../assets/logo.png";
+import Menue from "../../../assets/menu.png";
+import Profile from "../../../assets/profile.png";
+import Novels from "../../../assets/novels.png";
+import Producer from "../../../assets/producer.png";
+import Application from "../../../assets/applications.png";
+import Favourites from "../../../assets/favourites.png";
+import Mail from "../../../assets/mail.png";
+import Support from "../../../assets/support.png"
 
 // import Logout from "../../assets/logout.png";
 import styles from "./EditorSidebar.module.css";
