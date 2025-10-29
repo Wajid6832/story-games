@@ -19,7 +19,7 @@ import "./App.css";
 // import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./components/Common/Landing/EditorLanding";
+import Landing from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 import { Login } from "./features/auth/Login";

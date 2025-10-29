@@ -3,7 +3,7 @@ import styles from "./EditorHome.module.css";
 
 import EditorHeader from "./EditorHeader";
 import EditorHomeFacTopUp from "./editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
-import EditorSidebar from "../../Common/Sidebar/EditorSidebar";
+// import EditorSidebar from "../../Common/Sidebar/EditorSidebar";
 
 const EditorHome = () => {
   const [isOpenSidebar,setIsOpenSidebar]=useState(true);
@@ -17,7 +17,7 @@ const EditorHome = () => {
     <div className={`${styles.editorHomeContainer} container-fluid`}>
       {/* Sidebar */}
       <div className={ isOpenSidebar?styles.sidebarSection:styles.sidebarClosed}>
-        <EditorSidebar handleSidebar={handleSidebar} />
+        {/* <EditorSidebar handleSidebar={handleSidebar} /> */}
       </div>
 
       {/* Main content area */}

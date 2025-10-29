@@ -1,11 +1,7 @@
 
-import React, { useState } from "react"; 
-import { Container, Card } from "react-bootstrap";
-import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
 import React, { useState, useEffect } from "react";
 import { Container, Card, Modal, Button } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
 import styles from "./ReadersLanding.module.css";
 
 const sections = [
