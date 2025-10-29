@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ebookImg from "../../assets/Frame1.png";
 import image from "../../assets/Readers-Assets/images/Frame (1).png";
 
 const ReaderHome = () => {
