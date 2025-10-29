@@ -1,3 +1,5 @@
+
+
 import "bootstrap/dist/css/bootstrap.min.css";
 // Writer/Editor Components
 // import WriterHome from "./components/Pages/WriterHome";
@@ -16,9 +18,14 @@ import "./App.css";
 // import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
 // import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 // import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import  Landing  from "./components/Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
@@ -47,7 +54,11 @@ function App() {
      
       
       <BrowserRouter>
-        <Routes>
+      <Routes>
+           <Route path="/" element={<Landing/>} />
+           <Route path="/editorlogin" element={<EditorLogin/>} />
+           <Route path="/editorhome" element={<EditorHome/>} />
+        <Routes/>
           {/* Writer & Editor Routes */}
           {/* <Route path="/writer" element={<WriterHome />} />
           <Route path="/editor" element={<EditorLanding />} />

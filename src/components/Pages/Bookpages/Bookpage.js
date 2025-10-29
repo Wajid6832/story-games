@@ -79,7 +79,7 @@ const Bookpage = () => {
               <div key={idx} className={styles.chapterItem}>
                 <p className={styles.date}>{ch.date}</p>
                 <h5>{ch.title}</h5>
-                <a href="#">Read Chapter</a>
+                <a href="/">Read Chapter</a>
               </div>
             ))}
           </div>
