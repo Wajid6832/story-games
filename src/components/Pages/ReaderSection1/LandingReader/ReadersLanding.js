@@ -1,7 +1,11 @@
+
 import React, { useState } from "react"; 
 import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-
+import React, { useState, useEffect } from "react";
+import { Container, Card, Modal, Button } from "react-bootstrap";
+import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
+import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
 import styles from "./ReadersLanding.module.css";
 
 const sections = [
@@ -12,7 +16,6 @@ const sections = [
   "Top 10 Characters",
   "Top 10 Intro Chapters",
 ];
-
 const generateStories = (sectionName) =>
   Array.from({ length: 10 }, (_, i) => ({
     id: `${sectionName}-${i}`,
@@ -28,7 +31,6 @@ const generateStories = (sectionName) =>
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     chapters: 13,
   }));
-
 const CardContent = ({ section, story }) => {
   if (section === "Top 10 Writers") {
     return (
@@ -98,7 +100,6 @@ const ReadersLanding = () => {
             <input type="text" placeholder="Search" />
           </div>
         </div>
-
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>

@@ -1,0 +1,110 @@
+
+.card {
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.defaultCard {
+  background-color: #f8f8fa; 
+  color: #333;
+}
+
+.currentCard {
+  background-color: #3a4760; 
+  color: #ffffff; 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); 
+}
+
+.currentTag {
+  position: absolute;
+  top: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107; 
+  color: #333;
+  padding: 4px 15px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.cardBody {
+  padding: 30px 20px;
+}
+
+.planName {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.imageContainer {
+  height: 120px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.bookImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.priceContainer {
+  margin-bottom: 20px;
+}
+.defaultPrice {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.currentPrice {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; 
+}
+.pricePeriod {
+  font-size: 0.9rem;
+  color: #a0a0a0; 
+  margin-left: 5px;
+  .currentCard & {
+    color: #cccccc;
+  }
+}
+
+.button {
+  width: 90%;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+.featuresList {
+  text-align: left;
+  padding: 0;
+}
+.featureItem {
+  background-color: transparent !important; 
+  border: none !important;
+  padding: 8px 0 !important;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  .currentCard & {
+    color: #ffffff;
+  }
+}
+
+.checkIcon {
+  color: #6c5ce7; 
+  margin-right: 10px;
+  font-size: 1.1rem;
+  .currentCard & {
+    color: #81ecec;
+  }
+}
