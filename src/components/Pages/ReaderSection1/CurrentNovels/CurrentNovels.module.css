@@ -5,28 +5,27 @@
 
 .headerNav {
   border-bottom: 2px solid #5f4a72;
-  margin-bottom: 0 !important; 
-  padding-bottom: 15px; 
-  padding-top: 10px;
+  margin-bottom: 0;
+  padding: 10px 0 15px;
 }
 
 .mainContent {
-  flex-grow: 1; 
-  overflow-y: auto; 
-  min-width: 0; 
+  flex-grow: 1;
   height: 100vh;
   padding: 20px; 
+  overflow-y: auto;
 }
 
 .containerGrid {
-  margin-top: 25px; 
+  margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   justify-items: center;
 }
 .novelCard {
   width: 100%;
+<<<<<<< HEAD:src/Common/Landing/CurrentNovels.module.css
   aspect-ratio: 100 / 140; 
   
   border-radius: 16px;
@@ -36,7 +35,18 @@
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   overflow: hidden;
+=======
+  aspect-ratio: 100 / 140;
+>>>>>>> origin/staging:src/components/Pages/ReaderSection1/CurrentNovels/CurrentNovels.module.css
   border: none;
+  border-radius: 16px;
+  background: #e9ecef;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .novelImage {
   width: 40px;
@@ -46,6 +56,7 @@
 .searchBox {
   display: flex;
   align-items: center;
+  gap: 6px;
   padding: 6px 12px;
   border-radius: 8px;
   background: #F1F1F1;
@@ -56,10 +67,10 @@
 }
 .searchBox input {
   width: 150px;
-  border: none;
-  outline: none;
-  background: transparent;
   font-size: 14px;
+  border: none;
+  background: none;
+  outline: none;
   color: #333;
 }
 .searchBox input::placeholder {
