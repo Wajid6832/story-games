@@ -1,7 +1,5 @@
 import React from 'react'
-import styles from "./EditorHomeFacTopUp.module.css"
 import TopCards from '../editorCards/TopCards';
-import WriterCard from '../editorCards/WriterCard';
 import TopCharacterChapCard from '../editorCards/TopCharacterChapCard';
 const EditorHomeFacTopUp = () => {
     const storySections = [
@@ -45,23 +43,23 @@ const EditorHomeFacTopUp = () => {
     ];
 
 
-    const topChapters = [
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 1 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 7 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 8 Name",
-            writtenBy: "Jon Doe",
-        }
-    ];
+    // const topChapters = [
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 1 Name",
+    //         writtenBy: "Jon Doe",
+    //     },
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 7 Name",
+    //         writtenBy: "Jon Doe",
+    //     },
+    //     {
+    //         bookName: "Book Name",
+    //         chapterName: "Chapter 8 Name",
+    //         writtenBy: "Jon Doe",
+    //     }
+    // ];
 
 
     return (
