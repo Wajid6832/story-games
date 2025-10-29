@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"; 
-import { Container, Card, Modal, Button } from "react-bootstrap";
+import React, { useState } from "react"; 
+import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
+
 import styles from "./ReadersLanding.module.css";
 
 const sections = [
@@ -71,16 +71,9 @@ const CardContent = ({ section, story }) => {
   );
 };
 
-
 const ReadersLanding = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-  
-  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
-
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const handleClose = () => setModalType(null);
 
   const handleCardClick = (storyData, section) => {
     setSelectedStory(storyData);
@@ -90,45 +83,15 @@ const ReadersLanding = () => {
     else if (section.includes("Chapter")) setModalType("chapter");
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const mobileCheck = window.innerWidth < 992;
-      setIsMobile(mobileCheck);
-      
-      if (!mobileCheck) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
-    };
-    
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
+  const handleCloseModal = () => setModalType(null);
 
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      
       <Container 
         fluid 
-        className={styles.mainContent + " p-4 overflow-auto readers-main"}
-        style={{
-          marginLeft: contentMargin,
-          width: "100%",
-          transition: "margin-left 0.3s ease",
-        }}
+        className={`${styles.mainContent} p-4 overflow-auto readers-main`}
       >
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-          <button
-            className="btn btn-light d-lg-none mb-2" 
-            onClick={toggleSidebar}
-            style={{ borderRadius: "50%" }}
-          >
-            <i className="bi bi-list fs-4"></i>
-          </button>
           <h3 className="fw-bold mb-0 me-auto">Home</h3>
           <div className={styles.searchBox + " ms-auto"}>
             <i className="bi bi-search me-2 text-muted"></i>
@@ -161,8 +124,8 @@ const ReadersLanding = () => {
           </div>
         ))}
       </Container>
-       {/* Modal JS goes here, if needed */}
-       
+
+      {/* Modal logic can go here if needed */}
     </div>
   );
 };

@@ -1,10 +1,8 @@
 import React from "react";
-// import { useNavigate } from "react-router";
-// import { Mail } from "lucide-react";
 import styles from "./ForgotPassword.module.css";
 import FORGOT from "../../../../assets/Readers-Assets/icons/FORGOT.png";
+
 function ForgotPassword() {
-  //   const navigate = useNavigate();
   return (
     <div className={styles.mainLandingDiv}>
       <div className={styles.landingSecondDiv}>
@@ -19,7 +17,7 @@ function ForgotPassword() {
                   <p>Forgot your Password? Add your email below.</p>
                   <div className={styles.dashtLine}></div>
                 </div>
-                {/* Email Input */}
+
                 <div className={styles.inputGroup}>
                   <email className={styles.icon} size={20} />
                   <input
@@ -28,7 +26,7 @@ function ForgotPassword() {
                     className={styles.input}
                   />
                 </div>
-                {/* Buttons */}
+
                 <div className={styles.butons}>
                   <div className={styles.btn}>
                     <div className={styles.signup}>
@@ -40,7 +38,7 @@ function ForgotPassword() {
                   </div>
                 </div>
               </div>
-              {/* Right Image Section */}
+
               <div className={styles.image}>
                 <img src={FORGOT} alt="Illustration" />
               </div>
@@ -51,4 +49,5 @@ function ForgotPassword() {
     </div>
   );
 }
+
 export default ForgotPassword;
