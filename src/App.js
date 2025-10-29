@@ -1,65 +1,69 @@
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
+import "./App.css";
 
-// Writer/Editor Components
-// import WriterHome from "./components/Pages/WriterHome";
-import EditorLanding from "./Common/Landing/EditorLanding";
-// import Home from "./components/common/home/Home";
-// import Bookpage from "./components/Pages/Bookpages/Bookpage";
+// Common / Editor Components
+import Landing from "./components/Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
+
 // Reader Components
-// import ReaderHome from "./components/Common/Landing/Reader-Home";
-// import ReadersLanding from "./components/Common/Landing/ReadersLanding";
-// import CurrentNovels from "./components/Common/Landing/CurrentNovels";
-// import SupportFeedback from "./components/Common/Landing/SupportFeedback";
-
-import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
-// import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
-// import CurrentNovels from "./components/Common/CurrentNovels/CurrentNovels";
-// import TokenStore from "./components/TokenStore/TokenStore";
-// import BecomeWriter from "./components/Common/becomeWriter/becomeWriter";
 import ReaderHome from "./Common/Landing/Reader-Home";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
+import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
+import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
+import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
+
+// Writer Components
+import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
+
+// Layout
+import Layout from "./layout/Layout";
+
 function App() {
+  const user = {
+    role: "writer", // You can dynamically set this role later
+  };
+
+  const ROLE_COMPONENTS = {
+    writer: <Bookpage />,
+    reader: <ReaderHome />,
+    author: <AuthorCard />,
+    producer: <></>,
+  };
+
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/WriterHome" element={<WriterHome />} />
-        <Route path="/Bookpage" element={<Bookpage />} /> */}
-
-          {/* Writer & Editor Routes */}
-          {/* <Route path="/writer" element={<WriterHome />} /> */}
-          { <Route path="/" element={<EditorLanding />} /> }
-          {/* <Route path="/home" element={<Home />} /> */}
+          {/* Editor / Landing Routes */}
+          <Route path="/" element={<Landing />} />
+          <Route path="/editorlogin" element={<EditorLogin />} />
+          <Route path="/editorhome" element={<EditorHome />} />
 
           {/* Reader Routes */}
-          {/* <Route path="/" element={<ReaderHome />} />
-          
-          <Route path="/currentnovels" element={<CurrentNovels />} />
+          <Route path="/readinghome" element={<ReadersLanding />} />
           <Route path="/supportfeedback" element={<SupportFeedback />} />
-        
-        // {/* <Route path="/products" element={<Products />} /> */}
-          {/* <Route path="/" element={<Login />} /> */}
-          <Route path="/" element={<ReaderHome />} />
-          <Route path="/readinghome" element={<ReaderHome/>} />
-          {/* <Route path="/CurrentNovels" element={<CurrentNovels />} /> */}
-          {/* <Route path="/becomewriter" element={<BecomeWriter />} />
-          <Route path="/tokenstore" element={<TokenStore />} /> */}
+          <Route path="/info" element={<ReadersInfo />} />
+          <Route path="/term1" element={<TermCondition1 />} />
+
+          {/* Writer Routes */}
+          <Route path="/write" element={<WriterMode />} />
+          <Route path="/authorCard" element={<AuthorCard />} />
+          <Route path="/bookpage" element={<Bookpage />} />
+
+          {/* Role-based Layout */}
+          <Route element={<Layout />}>
+            <Route path="/rolehome" element={ROLE_COMPONENTS[user.role] || null} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-  
+
 export default App;
-
-
-
