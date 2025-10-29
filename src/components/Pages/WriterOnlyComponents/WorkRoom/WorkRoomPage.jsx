@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
 import styles from "./WorkRoom.module.css";
-import WriterSidebar from "../../../Sidebar/WriterSidebar";
+
 
 const WorkRoomPage = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
+ 
 
   return (
-    <div className={`${styles.pageWrapper} ${isSidebarOpen ? styles.shifted : ""}`}>
-      <WriterSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+    <div className={styles.pageWrapper}>
+      
 
       <div className={`container ${styles.container}`}>
       

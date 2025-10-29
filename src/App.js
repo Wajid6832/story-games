@@ -61,8 +61,8 @@ function App() {
      <BrowserRouter>
       <Routes> 
         {/* <Route path="/products" element={<Products />} /> */}
-        <Route path="/" element={<Login />} />
-        <Route path="/workroompage" element={ <WorkRoomPage/>} /> 
+         {/* <Route path="/" element={<Login />} /> */}
+        
         <Route path="/landingpage" element={<LandingPage/>} /> 
         <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
         <Route path="/termsconditions" element={<TermsConditions/>} /> 
@@ -86,6 +86,7 @@ function App() {
             <Route path="/" element={ROLE_COMPONENTS[user.role] || null} />
             <Route path="/authorCard" element={<AuthorCard/>}/> 
             <Route path="/bookpage" element={<Bookpage />} />
+            <Route path="/workroompage" element={ <WorkRoomPage/>} /> 
             {/* <Route path="/bookReader" element={<BookReader />} /> */}
              {/* <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} /> */}

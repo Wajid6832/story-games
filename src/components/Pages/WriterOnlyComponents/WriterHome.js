@@ -99,7 +99,7 @@ const WriterHome = () => {
         </div>
         <Card.Body className={style.cardBody}>
           <Card.Title className="fw-bold">{item.title}</Card.Title>
-          <a href="#" className={style.setlink}>
+          <a href="/workroompage" className={style.setlink}>
             Enter Workroom
           </a>
         </Card.Body>
