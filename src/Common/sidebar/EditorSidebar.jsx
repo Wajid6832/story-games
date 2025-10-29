@@ -114,7 +114,7 @@ const EditorSidebar = () => {
               </div>
             </NavLink>
 
-            <NavLink className={styles.navlinks}>
+            <NavLink to="" className={styles.navlinks}>
               <div className={styles.links}>
                 <div className={styles.imgLinks}>
                   <img src={Favourites} alt="Favorites" />

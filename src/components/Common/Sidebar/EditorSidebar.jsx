@@ -7,7 +7,7 @@ import Producer from "../../../assets/producer.png";
 import Application from "../../../assets/applications.png";
 import Favourites from "../../../assets/favourites.png";
 import Mail from "../../../assets/mail.png";
-import Support from "../../../assets/support.png"
+// import Support from "../../../assets/"
 
 // import Logout from "../../assets/logout.png";
 import styles from "./EditorSidebar.module.css";
@@ -161,7 +161,7 @@ const EditorSidebar = ({ handleSidebar }) => {
           </div>
           <div className={`${styles.commonLowercontent} ${styles.suport}`}>
             <NavLink to="/">
-              <img src={Support} alt="support" />
+              {/* <img src={Support} alt="support" /> */}
               <p>Support</p>
             </NavLink>
           </div>
