@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Container, Row, Col, Form, Card } from "react-bootstrap";
 import style from "./WriterHome.module.css";
-import Sidebar from "../../Sidebar/WriterSidebar";
 import { CommonModal } from "../../Modal/Common-Modal/Modal"
 import Modalsetup2 from "../../Modal/Common-Modal/Modalsetup2";
 import Modalsetup1 from "../../Modal/Common-Modal/Modalsetup1";
@@ -13,7 +12,7 @@ const WriterHome = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedWorkRoom, setSetselectedWorkRoom] = useState(null);
   const [componentIndex, setcomponentIndex] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768); // Desktop पर default open
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768); 
   
   const cards = [1, 2, 3, 4, 5, 6, 7, 9];
   const card = [
@@ -22,9 +21,7 @@ const WriterHome = () => {
     { id: 3, title: "Novel Name 3" },
   ];
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+ 
 
   const steps = useMemo(() => {
     return componentIndex === 0 ?
@@ -44,20 +41,9 @@ const WriterHome = () => {
 
   return (
     <div className={style.merge}>
-      <div>
-        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      </div>
+     
       <Container fluid className={`${style.homeContainer} ${sidebarOpen ? style.sidebarOpen : style.sidebarClosed}`}>
-        <div className={style.homeHeader}>
-          <Link to="/"><h4 className={style.homeTitle}>Home</h4></Link>
-          <div className={style.searchBar}>
-            <input
-              type="search"
-              placeholder="Search"
-              className={style.searchInput}
-            />
-          </div>
-        </div>
+       
         <hr className="divider" />
         <section className="section">
           <h5 className={style.sectionTitle}>Open Adverts</h5>
@@ -66,7 +52,7 @@ const WriterHome = () => {
               <Col key={item} xs={6} sm={4} md={3} lg={2} className="mb-4">
                 <div className={style.placeholderCard}>
                   <i
-                    className="bi bi-image"
+                    className="bi"
                     onClick={() => {
                       setSetselectedWorkRoom(item);
                       setOpenModal(true);
@@ -86,7 +72,7 @@ const WriterHome = () => {
               <Col key={item} xs={6} sm={4} md={3} lg={2} className="mb-4">
                 <div className={style.placeholderCard}>
                   <i
-                    className="bi bi-image"
+                    className="bi"
                     onClick={() => {
                       setSetselectedWorkRoom(item);
                       setOpenModal(true);
