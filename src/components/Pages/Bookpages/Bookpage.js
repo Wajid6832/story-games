@@ -46,7 +46,9 @@ const Bookpage = () => {
         <div key={char.id} className={styles.characterCard}>
           <div className={styles.cardHeader}>
             <h3 className={styles.charTitle}>{char.name}</h3>
-            <button className={styles.readBtn}>Read from Character Perspective</button>
+            <button className={styles.readBtn}>
+              Read from Character Perspective
+            </button>
           </div>
 
           <p className={styles.byline}>
@@ -57,15 +59,17 @@ const Bookpage = () => {
             <div className={styles.traitBox}>
               <h4>Personality Traits</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.
               </p>
             </div>
             <div className={styles.traitBox}>
               <h4>About Character</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.
               </p>
             </div>
           </div>
@@ -75,7 +79,7 @@ const Bookpage = () => {
               <div key={idx} className={styles.chapterItem}>
                 <p className={styles.date}>{ch.date}</p>
                 <h5>{ch.title}</h5>
-                <a href="#">Read Chapter </a>
+                <a href="#">Read Chapter</a>
               </div>
             ))}
           </div>

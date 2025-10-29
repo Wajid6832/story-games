@@ -22,30 +22,30 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard"
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
 import Layout from "./layout/Layout";
+
 // import BookReader from "./components/Pages/writersection/Characterpage/BookReader";
 // import EditorLanding from "./components/common/landing/EditorLanding";
 // import Home from "./components/Common/Landing/Reader-Home";
 // import ReaderHome from "./components/Common/Landing/Reader-Home";
 
-
-
 function App() {
-
   const user = {
-    role: 'writer',
-  }
+    role: "writer",
+  };
 
   const ROLE_COMPONENTS = {
-    writer: <WriterHome/>,
-    reader: <Bookpage/>,
+    writer: <WriterHome />,
+    reader: <Bookpage />,
     author: <></>,
     producer: <></>,
-};
+  };
   return (
     <div>
+     
+      
       <BrowserRouter>
         <Routes>
           {/* Writer & Editor Routes */}
@@ -53,33 +53,33 @@ function App() {
           <Route path="/editor" element={<EditorLanding />} />
           <Route path="/home" element={<Home />} /> */}
           {/* Reader Routes */}
-           {/* <Route path="/" element={<ReaderHome />} /> */}
+          {/* <Route path="/" element={<ReaderHome />} /> */}
           {/* <Route path="/readinghome" element={<ReadersLanding />} />
           <Route path="/currentnovels" element={<CurrentNovels />} />
           <Route path="/supportfeedback" element={<SupportFeedback />} />
           <Route path="/becomewriter" element={<BecomeWriter />} />
-          <Route path="/tokenstore" element={<TokenStore />} /> */} 
+          <Route path="/tokenstore" element={<TokenStore />} /> */}
           {/* Optional / commented routes */}
-          { <Route path="/products" element={<Products />} /> }
-          { <Route path="/" element={<Login />} /> }
+          {<Route path="/products" element={<Products />} />}
+          {<Route path="/" element={<Login />} />}
           <Route element={<Layout />}>
             <Route path="/" element={ROLE_COMPONENTS[user.role] || null} />
-            <Route path="/authorCard" element={<AuthorCard/>}/> 
+            <Route path="/authorCard" element={<AuthorCard />} />
             <Route path="/bookpage" element={<Bookpage />} />
             {/* <Route path="/bookReader" element={<BookReader />} /> */}
-             {/* <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} /> */}
           </Route>
-      
-        {/* <Route path="/WriterHome" element={<WriterHome />} />
+
+          {/* <Route path="/WriterHome" element={<WriterHome />} />
         <Route path="/Bookpage" element={<Bookpage />} /> */}
-         {/* Writer & Editor Routes */} 
-         {/* <Route path="/writer" element={<WriterHome />} />
+          {/* Writer & Editor Routes */}
+          {/* <Route path="/writer" element={<WriterHome />} />
           <Route path="/editor" element={<EditorLanding />} />
           <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/products" element={<Products />} /> */}
-        {/* <Route path="/" element={<Login />} /> */}
-        {/* <Route path="/" element={<ReaderHome/>} />
+          {/* <Route path="/products" element={<Products />} /> */}
+          {/* <Route path="/" element={<Login />} /> */}
+          {/* <Route path="/" element={<ReaderHome/>} />
         <Route path="/readinghome" element={<ReadersLanding/>} />
         <Route path="/CurrentNovels" element={<CurrentNovels/>} />
         <Route path="/becomeWriter" element={<BecomeWriter />} />
@@ -87,24 +87,16 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword/>}/>
         <Route path="/LinkBankAccount" element={<LinkBankAccount/>}/>
         <Route path="/" element={<Landing/>} /> */}
-      </Routes>
-      </BrowserRouter> 
+        </Routes>
+      </BrowserRouter>
 
       {/* <WriterLanding/> */}
-{/* <LandingPage/> */}
+      {/* <LandingPage/> */}
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import { Button } from "react-bootstrap";
