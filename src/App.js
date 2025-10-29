@@ -1,6 +1,8 @@
 
+import React from "react";
+import "./App.css";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+
 // Writer/Editor Components
 // import WriterHome from "./components/Pages/WriterHome";
 // import EditorLanding from "./components/common/landing/EditorLanding";
@@ -10,7 +12,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import { Login } from "./features/auth/Login";
 // import { Products } from "./features/product/Product";
 // import Home from "./components/Common/Landing/Reader-Home";
-import "./App.css";
 // import ReaderHome from "./Common/Landing/Reader-Home";
 // import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 // import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
@@ -19,17 +20,20 @@ import "./App.css";
 // import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 // import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Landing  from "./components/Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 import { Login } from "./features/auth/Login";
 import { Products } from "./features/product/Product";
-import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard"
+import ReaderHome from "./Common/Landing/Reader-Home";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
+import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
+import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
+import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
+import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
+// import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
 import Layout from "./layout/Layout";
 // import BookReader from "./components/Pages/writersection/Characterpage/BookReader";
@@ -37,24 +41,33 @@ import Layout from "./layout/Layout";
 // import Home from "./components/Common/Landing/Reader-Home";
 // import ReaderHome from "./components/Common/Landing/Reader-Home";
 
-
-
 function App() {
-
   const user = {
-    role: 'writer',
-  }
+    role: "writer",
+  };
 
   const ROLE_COMPONENTS = {
-    writer: <WriterHome/>,
-    reader: <Bookpage/>,
+    // writer: <WriterHome />,
+    reader: <Bookpage />,
     author: <></>,
     producer: <></>,
-};
+  };
+
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
-      <Routes>
+        <Routes>
+          {/* <Route path="/products" element={<Products />} /> */}
+          {/* <Route path="/" element={<Login />} /> */}
+          {/* <Route path="/" element={<ReaderHome />} /> */}
+          {/* <Route path="/readinghome" element={<ReadersLanding />} /> */}
+          <Route path="/SupportFeedback" element={<SupportFeedback />} />
+          <Route path="/info" element={<ReadersInfo />} />
+          <Route path="/term1" element={<TermCondition1 />} />
+          <Route path="/write" element={<WriterMode />} />
+
+      
+    
            <Route path="/" element={<Landing/>} />
            <Route path="/editorlogin" element={<EditorLogin/>} />
            <Route path="/editorhome" element={<EditorHome/>} />
@@ -64,41 +77,25 @@ function App() {
           <Route path="/editor" element={<EditorLanding />} />
           <Route path="/home" element={<Home />} /> */}
           {/* Reader Routes */}
-           {/* <Route path="/" element={<ReaderHome />} /> */}
+          {/* <Route path="/" element={<ReaderHome />} /> */}
           {/* <Route path="/readinghome" element={<ReadersLanding />} />
           <Route path="/currentnovels" element={<CurrentNovels />} />
           <Route path="/supportfeedback" element={<SupportFeedback />} />
           <Route path="/becomewriter" element={<BecomeWriter />} />
-          <Route path="/tokenstore" element={<TokenStore />} /> */} 
+          <Route path="/tokenstore" element={<TokenStore />} /> */}
           {/* Optional / commented routes */}
           {/* <Route path="/products" element={<Products />} /> */}
           {/* <Route path="/" element={<Login />} /> */}
+
           <Route element={<Layout />}>
             <Route path="/" element={ROLE_COMPONENTS[user.role] || null} />
-            <Route path="/authorCard" element={<AuthorCard/>}/> 
+            <Route path="/authorCard" element={<AuthorCard />} />
             <Route path="/bookpage" element={<Bookpage />} />
             {/* <Route path="/bookReader" element={<BookReader />} /> */}
-             {/* <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} /> */}
           </Route>
-      
-        {/* <Route path="/WriterHome" element={<WriterHome />} />
-        <Route path="/Bookpage" element={<Bookpage />} /> */}
-         {/* Writer & Editor Routes */} 
-         {/* <Route path="/writer" element={<WriterHome />} />
-          <Route path="/editor" element={<EditorLanding />} />
-          <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/products" element={<Products />} /> */}
-        {/* <Route path="/" element={<Login />} /> */}
-        {/* <Route path="/" element={<ReaderHome/>} />
-        <Route path="/readinghome" element={<ReadersLanding/>} />
-        <Route path="/CurrentNovels" element={<CurrentNovels/>} />
-        <Route path="/becomeWriter" element={<BecomeWriter />} />
-        <Route path="/tokenstore" element={<TokenStore />} />
-        <Route path="/forgotPassword" element={<ForgotPassword/>}/>
-        <Route path="/LinkBankAccount" element={<LinkBankAccount/>}/>
-        <Route path="/" element={<Landing/>} /> */}
-      </Routes>
+        </Routes>
       </BrowserRouter>
     </div>
   );
