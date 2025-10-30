@@ -1,21 +1,18 @@
 .sidebarWrapper {
-  border-right: 4px solid #8a2be2;
+  border-right: 4px solid #8A2BE2;
   height: 100vh;
 }
-
 .headerNav {
-  border-bottom: 2px solid #5f4a72;
+  border-bottom: 2px solid #5F4A72;
   margin-bottom: 0;
   padding: 10px 0 15px;
 }
-
 .mainContent {
   flex-grow: 1;
   height: 100vh;
-  padding: 20px; 
+  padding: 20px;
   overflow-y: auto;
 }
-
 .containerGrid {
   margin-top: 25px;
   display: grid;
@@ -23,13 +20,12 @@
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   justify-items: center;
 }
-
 .novelCard {
   width: 100%;
   aspect-ratio: 100 / 140;
   border: none;
   border-radius: 16px;
-  background: #e9ecef;
+  background: #E9ECEF;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -37,27 +33,23 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 .novelImage {
   width: 40px;
   height: 40px;
   opacity: 0.6;
 }
-
 .searchBox {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
   border-radius: 8px;
-  background: #f1f1f1;
+  background: #F1F1F1;
 }
-
 .searchBox i {
   font-size: 14px;
   color: #888;
 }
-
 .searchBox input {
   width: 150px;
   font-size: 14px;
@@ -66,7 +58,6 @@
   outline: none;
   color: #333;
 }
-
 .searchBox input::placeholder {
   color: #999;
 }

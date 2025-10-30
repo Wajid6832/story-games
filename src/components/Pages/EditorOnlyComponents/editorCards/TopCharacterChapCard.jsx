@@ -7,7 +7,6 @@ const TopCharacterChapCard = ({ section }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleOpen = (item) => setSelectedItem(item);
-  const handleClose = () => setSelectedItem(null);
 
   return (
     <>
