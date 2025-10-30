@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import Mail from "../../../assets/mail.png"
+// import Mail from "../../../assets/mail.png"
 import Password from "../../../assets/password.png"
 import styles from "./EditorLogin.module.css";
 import illustration from "../../../assets/Frame (2).png";
@@ -49,7 +49,7 @@ const handleLoginForm=()=>{
 
                 {/* Email Input */}
                 <div className={styles.inputGroup}>
-                  <img src={Mail} alt="" />
+                  {/* <img src={Mail} alt="" /> */}
                   {/* <Mail className={styles.icon} size={20} /> */}
                   <input
                     type="email"
