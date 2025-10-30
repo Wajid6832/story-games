@@ -1,0 +1,48 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #F1F1F1;
+}
+.formContainer {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.inputGroup {
+  height: 45px;
+}
+.inputGroupText {
+  background-color: #F5F5F5;
+  border-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formControl {
+  background-color: #F5F5F5;
+  border-left: 0;
+  height: 100%;
+}
+.textareaControl {
+  background-color: #F5F5F5;
+  border-left: 0;
+  resize: none;
+}
+.submitButton {
+  background-color: #8797E8;
+  border-color: #8797E8;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+}
+.illustrationCol {
+  min-height: 400px;
+}
+.illustrationImg {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
