@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { Container, Card, Modal, Button } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
+<<<<<<<< HEAD:src/components/Pages/ReaderSection2/ReadersLanding/ReadersLanding.js
+// import Sidebar from "../../../Common/Readers-Landing/Sidebar";
+import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
+========
 import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
 import styles from "./ReadersLanding.module.css";
 
+>>>>>>>> origin/staging:src/components/Pages/ReaderSection1/LandingReader/ReadersLanding.js
 const sections = [
   "Uploaded",
   "My Favorites",
@@ -12,7 +17,6 @@ const sections = [
   "Top 10 Characters",
   "Top 10 Intro Chapters",
 ];
-
 const generateStories = (sectionName) =>
   Array.from({ length: 10 }, (_, i) => ({
     id: `${sectionName}-${i}`,
@@ -28,7 +32,6 @@ const generateStories = (sectionName) =>
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     chapters: 13,
   }));
-
 const CardContent = ({ section, story }) => {
   if (section === "Top 10 Writers") {
     return (
@@ -70,18 +73,13 @@ const CardContent = ({ section, story }) => {
     </div>
   );
 };
-
-
 const ReadersLanding = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-  
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
-
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const handleClose = () => setModalType(null);
-
   const handleCardClick = (storyData, section) => {
     setSelectedStory(storyData);
     if (section === "Uploaded" || section === "My Favorites" || section === "Top 10 Stories")
@@ -89,31 +87,25 @@ const ReadersLanding = () => {
     else if (section.includes("Character")) setModalType("character");
     else if (section.includes("Chapter")) setModalType("chapter");
   };
-
   useEffect(() => {
     const handleResize = () => {
       const mobileCheck = window.innerWidth < 992;
       setIsMobile(mobileCheck);
-      
       if (!mobileCheck) {
         setSidebarOpen(true);
       } else {
         setSidebarOpen(false);
       }
     };
-    
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
-
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      
-      <Container 
-        fluid 
+      {/* <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} /> */}
+      <Container
+        fluid
         className={styles.mainContent + " p-4 overflow-auto readers-main"}
         style={{
           marginLeft: contentMargin,
@@ -123,7 +115,7 @@ const ReadersLanding = () => {
       >
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
-            className="btn btn-light d-lg-none mb-2" 
+            className="btn btn-light d-lg-none mb-2"
             onClick={toggleSidebar}
             style={{ borderRadius: "50%" }}
           >
@@ -135,7 +127,6 @@ const ReadersLanding = () => {
             <input type="text" placeholder="Search" />
           </div>
         </div>
-
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>
@@ -165,5 +156,4 @@ const ReadersLanding = () => {
     </div>
   );
 };
-
 export default ReadersLanding;
