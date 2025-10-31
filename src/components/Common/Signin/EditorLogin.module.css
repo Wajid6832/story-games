@@ -5,6 +5,7 @@
   height: 100vh;
   background-color: #F9FAFB;
 }
+
 .loginCard {
   display: flex;
   justify-content: space-between;
@@ -34,6 +35,20 @@
   height: 4px;
   width: 80px;
   background-color: #FBBF24;
+  border-radius: 4px;
+  margin-bottom: 28px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.line {
+  height: 4px;
+  width: 80px;
+  background-color: #fbbf24;
   border-radius: 4px;
   margin-bottom: 28px;
 }
@@ -71,16 +86,20 @@
 }
 .input {
   width: 100%;
-  padding: 12px 40px 12px 45px; /* space for left icon */
+  padding: 12px 40px 12px 45px; 
+
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   background-color: #F3F4F6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f3f4f6;
   font-size: 0.95rem;
   outline: none;
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 .input:focus {
-  border-color: #3B82F6;
+  border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
 .buttonGroup {
@@ -89,8 +108,9 @@
   align-items: center;
   margin-top: 24px;
 }
+
 .signIn {
-  background-color: #3B82F6;
+  background-color: #3b82f6;
   color: white;
   border: none;
   padding: 10px 24px;
@@ -100,11 +120,12 @@
   transition: background 0.3s ease;
 }
 .signIn:hover {
-  background-color: #2563EB;
+  background-color: #2563eb;
 }
+
 .forgot {
-  border: 1px solid #3B82F6;
-  color: #3B82F6;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
   background-color: transparent;
   padding: 10px 24px;
   border-radius: 8px;
@@ -112,10 +133,14 @@
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
 .forgot:hover {
   background-color: #EFF6FF;
 }
-/* Right Side: Illustration */
+
+.forgot:hover {
+  background-color: #eff6ff;
+}
 .imageSection {
   flex: 1;
   display: flex;
@@ -127,16 +152,17 @@
   height: auto;
   object-fit: contain;
 }
-/* Responsive */
 @media (max-width: 768px) {
   .loginCard {
     flex-direction: column;
     text-align: center;
     padding: 30px;
   }
+
   .formSection {
     max-width: 100%;
   }
+
   .imageSection {
     margin-top: 30px;
   }
@@ -225,6 +251,7 @@
   width: 130px;
   height: 4px;
   border-radius: 50px;
+
   background-color: #F6B21A;
 }
 .text {
@@ -250,6 +277,7 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 15px;
+
   border: 2px solid #6F8BDF;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -267,11 +295,19 @@
 }
 .signin button:hover {
   background-color: #6F8BDF;
+  color: #6f8bdf;
+}
+.signup button:hover {
+  background-color: #5872c7;
+}
+.signin button:hover {
+  background-color: #6f8bdf;
   color: #fff;
 }
 .browse {
   padding-top: 10px;
   color: #6F8BDF;
+  color: #6f8bdf;
 }
 .browse p {
   text-decoration: underline;
@@ -479,6 +515,7 @@
   height: 4px;
   border-radius: 50px;
   background-color: #F6B21A;
+
 }
 .text {
   max-width: 480px;
@@ -503,6 +540,7 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 15px;
+
   border: 2px solid #6F8BDF;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -520,6 +558,13 @@
 }
 .signin button:hover {
   background-color: #6F8BDF;
+  color: #6f8bdf;
+}
+.signup button:hover {
+  background-color: #5872c7;
+}
+.signin button:hover {
+  background-color: #6f8bdf;
   color: #fff;
 }
 .browse {
@@ -654,13 +699,3 @@
     justify-content: space-between;
   }
 }
-
-
-
-
-
-
-
-
-
-

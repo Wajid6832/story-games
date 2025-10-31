@@ -58,7 +58,7 @@ const PageReducer = () => {
 
     
         <div className={styles.footerBtn}>
-          <button>Create Next Chapter →</button>
+          <button>Create Next Chapter </button>
         </div>
       </div>
 

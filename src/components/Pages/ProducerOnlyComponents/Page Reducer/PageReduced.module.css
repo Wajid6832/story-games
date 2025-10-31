@@ -12,6 +12,7 @@ body {
     margin: 80px;
     padding: 20px;
     border-radius: 20px;
+
  
 }
 .icons {
@@ -31,7 +32,6 @@ body {
    gap: 5px;
    background-color: #6F8BDF;
    color: white;
-   
 }
 .layout2 {
     width: 200px;
@@ -45,6 +45,7 @@ body {
     padding-bottom: 14px;
     padding-left: 70px;
     gap: 10px;
+    
 }
 .item2 {
     width: 500px;
@@ -67,6 +68,7 @@ body {
   align-items: center;
   justify-content: center;
   left: 20px;
+
   
 }.pageContainer {
   display: flex;
