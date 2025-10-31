@@ -35,6 +35,7 @@ import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage
 
 // Layout
 import Layout from "./layout/Layout";
+import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         <Route path="/landingpage" element={<LandingPage/>} /> 
         <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
         <Route path="/termsconditions" element={<TermsConditions/>} /> 
+        <Route path="/signup" element={<WriterSignUp/>} /> 
                     
           
           {/* <Route path="/products" element={<Products />} /> */}
