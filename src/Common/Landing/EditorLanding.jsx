@@ -1,10 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
-import Frame from "../../assets/Frame.png";
+import Frame from "../../assets/Landing-img.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchAllProducts } from "../../features/product/product.slice";
 
 const EditorLanding = () => {
   const navigator = useNavigate();
+  const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchAllProducts("http://localhost:3000/allData"));
+    }, [])
 
   return (
     <div className={styles.mainLandingDiv}>
@@ -33,7 +40,7 @@ const EditorLanding = () => {
                       <button>Signup</button>
                     </div>
                     <div className={styles.signin}>
-                      <button>SignIN</button>
+                      <button onClick={()=>navigator("/editorlogin")}>SignIn</button>
                     </div>
                   </div>
                 </div>
