@@ -78,6 +78,7 @@ body {
   border-radius: 16px;
   padding: 20px;
   width: 900px;
+  z-index: 2px;
   margin: 50px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -233,6 +234,9 @@ body {
 .rightArrow {
   right: -30px;
 }
+
+
+
 
 
 
