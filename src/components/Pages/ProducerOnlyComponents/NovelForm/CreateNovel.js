@@ -7,14 +7,14 @@ import styles from "./CreateNovel.module.css";
 const CreateNovel = () => {
   return (
     <div className={`container-fluid bg-white p-5 rounded shadow-sm ${styles.pageWrapper}`}>
-      {/* Header */}
+     
       <div className="mb-3">
         <h3 className="fw-semibold text-dark">Create New Novel</h3>
         <hr className={styles.divider} />
       </div>
 
       <Form>
-        {/* Section 1 */}
+       
         <p className="fw-medium text-secondary mb-3">Fill the boxes below:</p>
         <Row className="gy-3">
           <Col md={6}>
@@ -40,7 +40,7 @@ const CreateNovel = () => {
 
           <Col md={6}>
             <Row className="g-3">
-              {/* --- Date 1 --- */}
+          
               <Col md={6}>
                 <div className={styles.inputBox}>
                   <FaCalendarAlt className={styles.icon} />
@@ -48,7 +48,7 @@ const CreateNovel = () => {
                 </div>
               </Col>
 
-              {/* --- Date 2 --- */}
+            
               <Col md={6}>
                 <div className={styles.inputBox}>
                   <FaCalendarAlt className={styles.icon} />
@@ -56,10 +56,10 @@ const CreateNovel = () => {
                 </div>
               </Col>
 
-              {/* --- Role + ID + Add Button (Single Row) --- */}
+       
               <Col md={12}>
                 <div className={`${styles.inputBoxGroup} d-flex align-items-center`}>
-                  {/* Role Dropdown */}
+                
                   <div className={`${styles.inputBox} flex-grow-1 me-2`}>
                     <FaUserAlt className={styles.icon} />
                     <Form.Select className={styles.inputField}>
@@ -70,13 +70,13 @@ const CreateNovel = () => {
                     </Form.Select>
                   </div>
 
-                  {/* ID Field */}
+                  
                   <div className={`${styles.inputBox} flex-grow-1 me-2`}>
                     <FaPen className={styles.icon} />
                     <Form.Control type="text" placeholder="ID" className={styles.inputField} />
                   </div>
 
-                  {/* Add Button */}
+                 
                   <Button className={styles.squareAddBtn}>+</Button>
                 </div>
               </Col>
@@ -92,7 +92,7 @@ const CreateNovel = () => {
           </Col>
         </Row>
 
-        {/* Section 2 - Characters */}
+      
         <h5 className="fw-semibold mt-4 mb-3 text-secondary">Characters Involved</h5>
         <Row className="g-3 mb-4">
           {[1, 2, 3].map((i) => (
@@ -107,7 +107,7 @@ const CreateNovel = () => {
           ))}
         </Row>
 
-        {/* Section 3 - Additional Info */}
+      
         <h5 className="fw-semibold mb-3 text-secondary">Add Additional Info</h5>
         <Row className="g-3 mb-3">
           <Col md={6}>

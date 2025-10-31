@@ -3,18 +3,18 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 88px; /* Compact width */
+  width: 88px; 
   background-color: #f9f6f6;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Top and bottom alignment */
+  justify-content: space-between; 
   align-items: center;
   padding: 10px 0;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
 }
 
-/* 🔹 Top Section (6 icons) */
+
 .topSection {
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   gap: 14px;
 }
 
-/* 🔹 Bottom Section (3 icons) */
+
 .bottomSection {
   display: flex;
   flex-direction: column;
