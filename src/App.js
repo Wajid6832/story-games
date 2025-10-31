@@ -1,74 +1,80 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Routes, Route } from "react-router-dom";
-import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
-import CharacterPage from "./components/CharacterPage/CharacterPage";
-import CreateNovel from "./components/NovelForm/CreateNovel";
-import HomePage from "./components/HomePage/HomePage";
-import CreateChapter from "./components/CreateChapter/CreateChapter";
+import "./App.css";
+
+// Common / Editor Components
+import Landing from "./components/Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import EditorLanding from "./Common/Landing/EditorLanding";
+
+// Reader Components
+import ReaderHome from "./Common/Landing/Reader-Home";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
+import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
+import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
+import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
+
+// Writer Components
+import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
+
+// Producer Components
+import HomePage from "./components/Pages/ProducerOnlyComponents/HomePage/HomePage";
+
+import CharacterPage from "./components/Pages/ProducerOnlyComponents/CharacterPage/CharacterPage";
+import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
+import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
+
+
+// Layout
+import Layout from "./layout/Layout";
 
 function App() {
   const user = {
-    role: "writer",
+    role: "writer", // You can dynamically set this role later
   };
 
   const ROLE_COMPONENTS = {
-    // writer: <WriterHome />,
-    reader: <Bookpage />,
-    author: <></>,
+    writer: <Bookpage />,
+    reader: <ReaderHome />,
+    author: <AuthorCard />,
     producer: <></>,
   };
 
   return (
     <div className="App">
 
-      <Routes>
-        <Route path="/" element={<CreateNovel/>} />  
-        <Route path="/" element={<HomePage />} />
-        <Route path="/create-novel" element={<CreateNovel />} />
-        <Route path="/character" element={<CharacterPage />} />
-        <Route path="/create-chapter" element={<CreateChapter />} />
-      </Routes>
-
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/products" element={<Products />} /> */}
-          {/* <Route path="/" element={<Login />} /> */}
-          {/* <Route path="/" element={<ReaderHome />} /> */}
-          {/* <Route path="/readinghome" element={<ReadersLanding />} /> */}
-          <Route path="/SupportFeedback" element={<SupportFeedback />} />
-          <Route path="/info" element={<ReadersInfo/>} />
-          <Route path="/term1" element={<TermCondition1 />} />
-          <Route path="/write" element={<WriterMode />} />
 
-      
-    
-           <Route path="/" element={<Landing/>} />
-           <Route path="/editorlogin" element={<EditorLogin/>} />
-           <Route path="/editorhome" element={<EditorHome/>} />
-        <Routes/>
-          {/* Writer & Editor Routes */}
-          {/* <Route path="/writer" element={<WriterHome />} />
-          <Route path="/editor" element={<EditorLanding />} />
-          <Route path="/home" element={<Home />} /> */}
+          {/* Editor / Landing Routes */}
+          <Route path="/" element={<Landing />} />
+          <Route path="/editorlogin" element={<EditorLogin />} />
+          <Route path="/editorhome" element={<EditorLanding/>} />
+
           {/* Reader Routes */}
-          {/* <Route path="/" element={<ReaderHome />} /> */}
-          {/* <Route path="/readinghome" element={<ReadersLanding />} />
-          <Route path="/currentnovels" element={<CurrentNovels />} />
+          <Route path="/readinghome" element={<ReadersLanding />} />
           <Route path="/supportfeedback" element={<SupportFeedback />} />
-          <Route path="/becomewriter" element={<BecomeWriter />} />
-          <Route path="/tokenstore" element={<TokenStore />} /> */}
-          {/* Optional / commented routes */}
-          {/* <Route path="/products" element={<Products />} /> */}
-          {/* <Route path="/" element={<Login />} /> */}
+          <Route path="/info" element={<ReadersInfo />} />
+          <Route path="/term1" element={<TermCondition1 />} />
 
+          {/* Writer Routes */}
+          <Route path="/write" element={<WriterMode />} />
+          <Route path="/authorCard" element={<AuthorCard />} />
+          <Route path="/bookpage" element={<Bookpage />} />
+
+          {/*Producer Routes*/}
+          <Route path="/producerhome" element={<HomePage />} />
+          <Route path="/CharacterPage" element={<CharacterPage />} />
+          <Route path="/CreateChapter" element={<CreateChapter />} />
+          <Route path="/NovelForm" element={<CreateNovel />} />
+
+          {/* Role-based Layout */}
           <Route element={<Layout />}>
-            <Route path="/" element={ROLE_COMPONENTS[user.role] || null} />
-            <Route path="/authorCard" element={<AuthorCard />} />
-            <Route path="/bookpage" element={<Bookpage />} />
-            {/* <Route path="/bookReader" element={<BookReader />} /> */}
-            {/* <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Settings />} /> */}
+            <Route path="/rolehome" element={ROLE_COMPONENTS[user.role] || null} />
           </Route>
         </Routes>
       </BrowserRouter>

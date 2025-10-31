@@ -38,39 +38,51 @@ const CreateNovel = () => {
             </div>
           </Col>
 
-          <Col md={3}>
-            <div className={styles.inputBox}>
-              <FaCalendarAlt className={styles.icon} />
-              <Form.Control type="date" className={styles.inputField} />
-            </div>
+          <Col md={6}>
+            <Row className="g-3">
+              {/* --- Date 1 --- */}
+              <Col md={6}>
+                <div className={styles.inputBox}>
+                  <FaCalendarAlt className={styles.icon} />
+                  <Form.Control type="date" className={styles.inputField} />
+                </div>
+              </Col>
+
+              {/* --- Date 2 --- */}
+              <Col md={6}>
+                <div className={styles.inputBox}>
+                  <FaCalendarAlt className={styles.icon} />
+                  <Form.Control type="date" className={styles.inputField} />
+                </div>
+              </Col>
+
+              {/* --- Role + ID + Add Button (Single Row) --- */}
+              <Col md={12}>
+                <div className={`${styles.inputBoxGroup} d-flex align-items-center`}>
+                  {/* Role Dropdown */}
+                  <div className={`${styles.inputBox} flex-grow-1 me-2`}>
+                    <FaUserAlt className={styles.icon} />
+                    <Form.Select className={styles.inputField}>
+                      <option>Select Role</option>
+                      <option>Hero</option>
+                      <option>Villain</option>
+                      <option>Side Character</option>
+                    </Form.Select>
+                  </div>
+
+                  {/* ID Field */}
+                  <div className={`${styles.inputBox} flex-grow-1 me-2`}>
+                    <FaPen className={styles.icon} />
+                    <Form.Control type="text" placeholder="ID" className={styles.inputField} />
+                  </div>
+
+                  {/* Add Button */}
+                  <Button className={styles.squareAddBtn}>+</Button>
+                </div>
+              </Col>
+            </Row>
           </Col>
 
-          <Col md={3}>
-            <div className={styles.inputBox}>
-              <FaCalendarAlt className={styles.icon} />
-              <Form.Control type="date" className={styles.inputField} />
-            </div>
-          </Col>
-
-          <Col md={4}>
-            <div className={styles.inputBox}>
-              <FaUserAlt className={styles.icon} />
-              <Form.Select className={styles.inputField}>
-                <option>Select Role</option>
-                <option>Hero</option>
-                <option>Villain</option>
-                <option>Side Character</option>
-              </Form.Select>
-            </div>
-          </Col>
-
-          <Col md={4}>
-            <Form.Control type="text" placeholder="ID" className={styles.inputField} />
-          </Col>
-
-          <Col md={4} className="d-flex align-items-center">
-            <Button className={styles.addBtn}>+</Button>
-          </Col>
 
           <Col md={12}>
             <div className={styles.inputBox}>
@@ -84,7 +96,7 @@ const CreateNovel = () => {
         <h5 className="fw-semibold mt-4 mb-3 text-secondary">Characters Involved</h5>
         <Row className="g-3 mb-4">
           {[1, 2, 3].map((i) => (
-            <Col md={4} key={i}>
+            <Col md={2} key={i}>
               <Card className={styles.characterCard}>
                 <Card.Body>
                   <Card.Title className="fw-semibold">Character Name</Card.Title>
@@ -107,8 +119,8 @@ const CreateNovel = () => {
 
           <Col md={6}>
             <div className={styles.inputBox}>
-              <FaPen className={styles.icon} />
-              <Form.Control type="text" placeholder="Set the Opening Scene" className={styles.inputField} />
+              <FaPen className={styles.iconTop} />
+              <Form.Control as="textarea" rows={6} placeholder="Set the Opening Scene" className={styles.inputArea} />
             </div>
           </Col>
 
