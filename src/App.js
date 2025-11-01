@@ -2,11 +2,18 @@
 
 
 
+
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import { Login } from "./features/auth/Login";
 // import { Products } from "./features/product/Product";
@@ -19,35 +26,31 @@ import { Products } from "./features/product/Product";
 
 // Common / Editor Components
 
+import  Landing  from "./Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+
 import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
 
-// Reader Components
-import ReaderHome from "./Common/Landing/Reader-Home";
-import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
-import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
-import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
-import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
 
-// Writer Components
-import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import WriterHome from "./components/Pages/WriterHome";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard"
 import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
-
-// Layout
 import Layout from "./layout/Layout";
 import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
 
 
+
 function App() {
+
   const user = {
-    role: "writer", // You can dynamically set this role later
-  };
+    role: 'editor',
+  }
 
   const ROLE_COMPONENTS = {
-    writer: <Bookpage />,
-    reader: <ReaderHome />,
-    author: <AuthorCard />,
+    writer: <WriterHome/>,
+    reader: <Bookpage/>,
     producer: <></>,
+
 
 };
   return (
@@ -66,25 +69,18 @@ function App() {
         <Route path="/signup" element={<WriterSignUp/>} /> 
                     
           
-          {/* <Route path="/products" element={<Products />} /> */}
-          {/* <Route path="/" element={<Login />} /> */}
-          {/* <Route path="/" element={<ReaderHome />} /> */}
-          {/* <Route path="/readinghome" element={<ReadersLanding />} /> */}
-          <Route path="/SupportFeedback" element={<SupportFeedback />} />
-          {/* Editor / Landing Routes */}
-          {/* <Route path="/" element={<Landing />} />
-          <Route path="/editorlogin" element={<EditorLogin />} /> */}
+          {/* <Route path="/SupportFeedback" element={<SupportFeedback />} /> */}
           <Route path="/editorhome" element={<EditorHome />} />
 
           {/* Reader Routes */}
-          <Route path="/readinghome" element={<ReadersLanding />} />
-          <Route path="/supportfeedback" element={<SupportFeedback />} />
+          {/* <Route path="/readinghome" element={<ReadersLanding />} />
+          <Route path="/supportfeedback" element={<SupportFeedback />} /> */}
 
-          <Route path="/info" element={<ReadersInfo />} />
-          <Route path="/term1" element={<TermCondition1 />} />
+          {/* <Route path="/info" element={<ReadersInfo />} />
+          <Route path="/term1" element={<TermCondition1 />} /> */}
 
           {/* Writer Routes */}
-          <Route path="/write" element={<WriterMode />} />
+          {/* <Route path="/write" element={<WriterMode />} /> */}
            {/* <Route path="/" element={<Landing/>} />
            <Route path="/editorlogin" element={<EditorLogin/>} /> */}
            <Route path="/editorhome" element={<EditorHome/>} />
@@ -113,8 +109,9 @@ function App() {
 
       </BrowserRouter>
       </div>
-  );
-}
+  )
+};
+ 
 
 export default App;
 
