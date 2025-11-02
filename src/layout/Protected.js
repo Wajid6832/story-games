@@ -1,18 +1,22 @@
+import React from "react";
+import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({ allowedRoles }) => {
-  
-  const user = JSON.parse(localStorage.getItem("user")); 
-  console.log('user', user)
-  if (!user) {
+  const { data } = useSelector((state) => state.auth);
+
+  // No user? redirect to login
+  if (!data || !data.role) {
     return <Navigate to="/editorLogin" replace />;
   }
 
-  if (allowedRoles && !allowedRoles.includes(user.role)) {
-    return <Navigate to="/" replace />;
+  // Role not allowed? redirect to their home
+  if (allowedRoles && !allowedRoles.includes(data.role)) {
+    return <Navigate to={`/${data.role}Home`} replace />;
   }
 
-  return <Outlet />; 
+  // User is allowed
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

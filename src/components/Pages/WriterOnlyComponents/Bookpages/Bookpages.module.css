@@ -3,7 +3,6 @@
   border-radius: 8px;
   padding: 25px;
 }
-
 .characterHeader {
   display: flex;
   align-items: center;
@@ -11,6 +10,10 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 10px;
+}
+html, body {
+  overflow-x: auto !important;  
+  overflow-y: auto !important;  
 }
 
 .characterName {

@@ -2,20 +2,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
 import Frame from "../../assets/Landing-img.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchAllProducts } from "../../features/product/product.slice";
 
 const EditorLanding = () => {
-  const navigator = useNavigate();
-  const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchAllProducts("http://localhost:3000/allData"));
-    }, [])
+  const navigate = useNavigate(); 
+
+  const handleSignin = () => {
+    navigate("/editorlogin"); 
+  };
 
   return (
     <div className={styles.mainLandingDiv}>
-      <div className={styles.landingSecondDiv}>
+      <div className={styles.landingSecondDiv}> 
         <div className={styles.ladingContentDiv}>
           <div className={styles.landignContent}>
             <div className={styles.contentUpper}>
@@ -23,10 +20,12 @@ const EditorLanding = () => {
                 <div className={styles.heading}>
                   <p>STORY HOST</p>
                 </div>
+
                 <div className={styles.secondHeading}>
                   <p>Lorem ipsum dolor it amet</p>
                   <div className={styles.dashtLine}></div>
                 </div>
+
                 <div className={styles.text}>
                   <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -34,23 +33,25 @@ const EditorLanding = () => {
                     magna aliquam erat volutpat
                   </p>
                 </div>
+
                 <div className={styles.butons}>
                   <div className={styles.btn}>
                     <div className={styles.signup}>
                       <button>Signup</button>
                     </div>
                     <div className={styles.signin}>
-                      <button onClick={()=>navigator("/editorlogin")}>SignIn</button>
+                      <button onClick={handleSignin}>SignIN</button>
                     </div>
                   </div>
                 </div>
+
                 <div className={styles.browse}>
                   <p>Browse as guest</p>
                 </div>
               </div>
 
               <div className={styles.image}>
-                <img src={Frame} alt="" />
+                <img src={Frame} alt="Landing visual" />
               </div>
             </div>
           </div>
@@ -68,8 +69,7 @@ const EditorLanding = () => {
               </div>
 
               <div className={styles.topListLabel}>
-                {/* <button onClick={() => navigator("/EditorHome")}>Top List</button> */}
-                <Link to="/EditorHome">Top List</Link>
+                <Link>Top List</Link>
               </div>
             </div>
           </div>
