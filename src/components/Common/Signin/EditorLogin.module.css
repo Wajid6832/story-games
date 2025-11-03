@@ -20,8 +20,6 @@
   flex: 1;
   max-width: 400px;
 }
-
-
 .title {
   font-size: 2rem;
   font-weight: 700;
@@ -39,10 +37,8 @@
   border-radius: 4px;
   margin-bottom: 28px;
 }
-
-
 .subtitle {
-  color: #6b7280;
+  color: #6B7280;
   margin-top: 8px;
   margin-bottom: 12px;
 }
@@ -53,25 +49,18 @@
   border-radius: 4px;
   margin-bottom: 28px;
 }
-
-
 .inputGroup {
   position: relative;
   width: 100%;
   max-width: 400px;
   margin-bottom: 16px;
 }
-
-
-
 .icon {
   position: absolute;
   left: 12px;
   top: 12px;
-
   color: #9CA3AF;
 }
-
  .eyeIcon {
   position: absolute;
   right: 12px;
@@ -83,7 +72,6 @@
   color: #9CA3AF;
   font-size: 1.1rem;
 }
-
 .inputGroup img {
   position: absolute;
   left: 12px;
@@ -93,7 +81,6 @@
   height: 20px;
   object-fit: contain;
 }
-
 .input {
   width: 100%;
   padding: 12px 40px 12px 45px; /* space for left icon */
@@ -108,8 +95,6 @@
   border-color: #3B82F6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
-
-
 .buttonGroup {
   display: flex;
   justify-content: space-between;
@@ -133,9 +118,8 @@
   border: 1px solid #3B82F6;
   color: #3B82F6;
 }
-
 .signIn:hover {
-  background-color: #2563eb;
+  background-color: #2563EB;
 }
 .forgot {
   border: 1px solid #3B82F6;
@@ -150,8 +134,6 @@
 .forgot:hover {
   background-color: #EFF6FF;
 }
-
-
 /* Right Side: Illustration */
 .imageSection {
   flex: 1;
@@ -159,15 +141,11 @@
   justify-content: center;
   align-items: center;
 }
-
-
 .image {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
-
-
 /* Responsive */
 @media (max-width: 768px) {
   .loginCard {
@@ -210,7 +188,6 @@
   overflow: hidden;
   margin-top: -100px;
 }
-
 .ladingContentDiv {
   margin-top: -70px;
   width: 100%;
@@ -228,7 +205,6 @@
   justify-content: space-between;
   margin-top: 100px;
 }
-
 .landignContent {
   margin-top: 30px;
   display: flex;
@@ -554,9 +530,8 @@
 }
 .signup button:hover {
   background-color: #5872C7;
-  color: #6f8bdf;
+  color: #6F8BDF;
 }
-
 .signin button:hover {
   background-color: #6F8BDF;
   color: #fff;

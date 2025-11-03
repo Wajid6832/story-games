@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -7,8 +8,11 @@ import {
   Button
 } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-// import Sidebar from "../../../Common/Readers-Landing/Sidebar";
-import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
+import styles from "./ReadersLanding.module.css";
+import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
+import { CommonModal } from "../../../Modal/Common-Modal/Modal";
+
+
 const sections = [
   "Uploaded",
   "My Favorites",
@@ -73,15 +77,14 @@ const CardContent = ({ section, story }) => {
     </div>
   );
 };
+
 const ReadersLanding = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-  const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
-  const handleCloseModal = () => {
-    setModalType(null);
-    setSelectedStory(null);
-  };
+    const [openModal, setOpenModal] = useState(false);
+  // const [selectedWorkRoom, setSetselectedWorkRoom] = useState(null);
+
+
   const handleCardClick = (storyData, section) => {
     setSelectedStory(storyData);
     if (
@@ -98,51 +101,16 @@ const ReadersLanding = () => {
       setModalType("story");
     }
   };
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 992);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-  const contentMargin = isMobile ? "0px" : "80px";
+
+  const handleCloseModal = () => setModalType(null);
+
   return (
     <div className="d-flex bg-light vh-100">
-      <Offcanvas
-        show={showOffcanvas}
-        onHide={() => setShowOffcanvas(false)}
-        placement="start"
-      >
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          {/* <Sidebar /> */}
-          <div className="d-flex flex-column gap-2">
-            {sections.map((s) => (
-              <button key={s} className="btn btn-link text-start">
-                {s}
-              </button>
-            ))}
-          </div>
-        </Offcanvas.Body>
-      </Offcanvas>
-      <Container
-        fluid
+      <Container 
+        fluid 
         className={`${styles.mainContent} p-4 overflow-auto readers-main`}
-        style={{
-          marginLeft: contentMargin,
-          width: "100%",
-          transition: "margin-left 0.3s ease",
-        }}
       >
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-          <button
-            className="btn btn-light d-lg-none mb-2"
-            onClick={() => setShowOffcanvas(true)}
-            style={{ borderRadius: "50%" }}
-            aria-label="open menu"
-          >
-            <i className="bi bi-list fs-4"></i>
-          </button>
           <h3 className="fw-bold mb-0 me-auto">Home</h3>
           <div className={`${styles.searchBox} ms-auto`}>
             <i className="bi bi-search me-2 text-muted"></i>
@@ -166,11 +134,10 @@ const ReadersLanding = () => {
                       ? styles.chapterCard
                       : ""
                   }`}
-                  onClick={() => handleCardClick(story, section)}
-                  style={{
-                    border: "none",
-                    background: "transparent",
-                    padding: 0,
+                  // onClick={() => handleCardClick(story, section)}
+                   onClick={() => {
+                    setOpenModal(true);
+                    // setSetselectedWorkRoom(id);
                   }}
                 >
                   <Card.Body className="p-0">
@@ -182,54 +149,17 @@ const ReadersLanding = () => {
           </div>
         ))}
       </Container>
-      <Modal show={!!modalType} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {modalType === "story"
-              ? "Story"
-              : modalType === "character"
-              ? "Character"
-              : modalType === "chapter"
-              ? "Chapter"
-              : "Details"}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedStory ? (
-            <>
-              <div className="d-flex gap-3 align-items-start">
-                <img
-                  src={selectedStory.image}
-                  alt={selectedStory.title}
-                  style={{ width: 80, height: 80, objectFit: "cover", borderRadius: 8 }}
-                />
-                <div>
-                  <h6 className="mb-1 fw-bold">{selectedStory.title}</h6>
-                  <p className="mb-1 small text-muted">{selectedStory.book}</p>
-                  <p className="mb-0 small">{selectedStory.description}</p>
-                </div>
-              </div>
-              <hr />
-              <div className="small text-muted">
-                <p className="mb-1">Author: {selectedStory.author}</p>
-                <p className="mb-1">Writer: {selectedStory.writer}</p>
-                <p className="mb-0">Chapters: {selectedStory.chapters}</p>
-              </div>
-            </>
-          ) : (
-            <p>No data</p>
-          )}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={() => alert("Proceed action")}>
-            Open
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {openModal && (
+             <CommonModal
+               show={openModal}
+              //  selectedWorkRoom={selectedWorkRoom}
+               onHide={() => setOpenModal(false)}
+             >
+               <Modalsetup4 onHide={() => setOpenModal(false)} />
+             </CommonModal>
+           )}
     </div>
   );
 };
+
 export default ReadersLanding;

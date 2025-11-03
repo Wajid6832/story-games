@@ -14,13 +14,10 @@ const EditorLogin = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const { isLoading } = useSelector(
     (state) => state.auth
   );
-
   const togglePassword = () => setShowPassword(!showPassword);
-
   const handleLoginForm = async () => {
     setErrorMessage("");
     if (!email.trim() || !password.trim()) {
@@ -47,7 +44,6 @@ const EditorLogin = () => {
       }
     }
   };
-
   return (
     <div className={styles.mainLandingDiv}>
       <div className={styles.landingSecondDiv}>
@@ -62,9 +58,7 @@ const EditorLogin = () => {
                   <p>Lorem ipsum dolor sit amet</p>
                   <div className={styles.dashtLine}></div>
                 </div>
-
                 {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-
                 {/* Email Input */}
                 <div className={styles.inputGroup}>
                   <img src={Mail} alt="" />
@@ -76,7 +70,6 @@ const EditorLogin = () => {
                     className={styles.input}
                   />
                 </div>
-
                 {/* Password Input */}
                 <div className={styles.inputGroup}>
                   <img src={Password} alt="" />
@@ -91,7 +84,6 @@ const EditorLogin = () => {
                     <i className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
                   </button>
                 </div>
-
                 <div className={styles.butons}>
                   <div className={styles.btn}>
                     <div className={styles.signup}>
@@ -105,7 +97,6 @@ const EditorLogin = () => {
                   </div>
                 </div>
               </div>
-
               <div className={styles.image}>
                 <img src={illustration} alt="Illustration" />
               </div>
@@ -116,5 +107,4 @@ const EditorLogin = () => {
     </div>
   );
 };
-
 export default EditorLogin;

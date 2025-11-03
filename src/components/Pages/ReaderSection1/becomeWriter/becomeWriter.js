@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button, Collapse } from "react-bootstrap";
-import Sidebar from "../ReaderSidebar/Sidebar";
+
 import styles from "./BecomeWriter.module.css";
 
 const characterData = [
@@ -57,13 +57,10 @@ const FileUploadBox = ({ onFileChange }) => {
 };
 
 const BecomeWriter = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [expandedCharacter, setExpandedCharacter] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ fullName: "", email: "", sampleFile: null });
-
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   const handleSelect = (name) => {
     setSelectedCharacter(name);
@@ -98,12 +95,9 @@ const BecomeWriter = () => {
     setShowForm(false);
   };
 
-  const contentMargin = isSidebarOpen ? "260px" : "70px";
-
   return (
     <div className={styles.appWrapper}>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className={styles.mainContent} style={{ marginLeft: contentMargin }}>
+      <div className={styles.mainContent}>
         <Container fluid>
           <h3 className="mb-4 fw-bold">Become a Writer</h3>
           <h5 className="mb-3">Open Characters</h5>
