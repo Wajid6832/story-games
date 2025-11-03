@@ -1,0 +1,136 @@
+.pageWrapper {
+  min-height: 100vh;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #6F8BDF;
+  margin-bottom: 30px;
+  margin-left: -50px;  
+  margin-right: -50px; 
+  width: calc(100% + 100px);
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  margin-left: 8px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.iconTop {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.inputField,
+.inputArea {
+  width: 100%;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding-left: 35px;
+
+}
+
+.inputArea {
+  padding-top: 25px;
+  resize: none; 
+  height: 58px;
+   padding-top: 5px !important;
+}
+
+.inputField:focus,
+.inputArea:focus,
+.form-select:focus {
+  box-shadow: none;
+  border-color: #6f8bdf;
+}
+
+.addBtn {
+  width: 45px;
+  height: 45px;
+  background-color: #6f8bdf;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.addBtn:hover {
+  background-color: #5874c8;
+}
+
+.characterCard {
+  background-color: #f4f5f7;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.characterRole {
+  color: #6f8bdf;
+  text-transform: capitalize;
+  margin-left: 0px; 
+}
+
+.uploadBox {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.uploadBox:hover {
+  background-color: #eef0f5;
+}
+.uploadIcon {
+  font-size: 1.4rem;
+  color: #6f8bdf;
+  margin-bottom: 5px;
+}
+
+
+.submitBtn {
+  background-color: #6f8bdf;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+.submitBtn:hover {
+  background-color: #5874c8;
+}
+
+.inputArea:nth-of-type(1) {
+  height: 95px !important;
+}
+
+
+.inputArea:nth-of-type(2) {
+  height: 200px !important;
+}
+
+
+.inputArea:nth-of-type(3) {
+  height: 400px !important;
+}

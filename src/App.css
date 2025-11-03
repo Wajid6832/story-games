@@ -63,12 +63,8 @@
   padding: "20px";
 }
 
-
-/* Writer Home */
-.side-main{
-  display: flex;
-}
-.main{
-  flex: 1;
-  padding: "20px";
+.App {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
 }

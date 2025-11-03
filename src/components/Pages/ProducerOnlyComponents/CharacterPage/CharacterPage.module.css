@@ -1,0 +1,216 @@
+.characterPage {
+  padding: 2px 20px;
+  background-color: #faf9ff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e6e6f9;
+  padding-bottom: 10px;
+}
+
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bookTitle {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0;
+}
+
+.backButton {
+  border: none;
+  background-color: transparent;
+}
+
+.backIcon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+}
+
+.awardButton {
+  border-radius: 18px;
+  background-color: #6c63ff;
+  border: none;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.heartIcon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  cursor: pointer;
+  margin-left: -3px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
+}
+
+.heartIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.navIcon{
+  width: 40px;
+  height: 40px;
+}
+
+.pageContainer {
+  margin-top: 15px;
+}
+
+.page {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.chapterTitle {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 15px;
+  color: #444;
+  text-align: justify;
+  line-height: 1.6;
+  text-justify: inter-word;
+}
+
+.pageNumber {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.imageBox {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.iconBox {
+  width: 500px;            
+  height: 216px;
+  border: 2px solid #ddd; 
+  border-radius: 10px;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.imageIcon {
+  width: 60px;              
+  height: 60px;
+  color: #333;
+}
+
+.image {
+  border-radius: 12px;
+}
+
+.caption {
+  color: #777;
+  font-size: 13px;
+}
+
+.soundButtons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.soundIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.pageNav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #faf9ff;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layout > :first-child {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px; 
+  z-index: 1000;
+}
+
+.characterPage {
+  margin-left: 80px; 
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px 40px;
+}
+
+.pageNav {
+  position: fixed;
+  bottom: 20px;          
+  right: 40px;           
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;            
+  z-index: 100;
+}
+
+.pageNav button {
+  border-radius: 8px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
