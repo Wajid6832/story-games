@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Container, Card, Modal, Button } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
 import styles from "./ReadersLanding.module.css";
+import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
+import { CommonModal } from "../../../Modal/Common-Modal/Modal";
+
 
 const sections = [
   "Uploaded",
@@ -72,6 +75,9 @@ const CardContent = ({ section, story }) => {
 const ReadersLanding = () => {
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
+  // const [selectedWorkRoom, setSetselectedWorkRoom] = useState(null);
+
 
   const handleCardClick = (storyData, section) => {
     setSelectedStory(storyData);
@@ -112,7 +118,11 @@ const ReadersLanding = () => {
                       ? styles.chapterCard
                       : ""
                   }`}
-                  onClick={() => handleCardClick(story, section)}
+                  // onClick={() => handleCardClick(story, section)}
+                   onClick={() => {
+                    setOpenModal(true);
+                    // setSetselectedWorkRoom(id);
+                  }}
                 >
                   <CardContent section={section} story={story} />
                 </Card>
@@ -121,8 +131,15 @@ const ReadersLanding = () => {
           </div>
         ))}
       </Container>
-
-      {/* Modal logic can go here if needed */}
+      {openModal && (
+             <CommonModal
+               show={openModal}
+              //  selectedWorkRoom={selectedWorkRoom}
+               onHide={() => setOpenModal(false)}
+             >
+               <Modalsetup4 onHide={() => setOpenModal(false)} />
+             </CommonModal>
+           )}
     </div>
   );
 };

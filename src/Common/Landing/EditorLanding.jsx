@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
 
 import Frame from "../../assets/1stimage.png";
-import Frame from "../../assets/Landing-img.png";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
