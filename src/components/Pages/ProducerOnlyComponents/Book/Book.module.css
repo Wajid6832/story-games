@@ -1,8 +1,7 @@
-
+/* 
 .card {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
-   /* margin-left: 400px;  */
    width: 726px;
   height: 920px;
   top: 52px;
@@ -115,10 +114,6 @@
   height: 50px;
   border-radius: 13.13px;
   border: none;
-  /* padding-top: 12.26px;
-  padding-right: 61.28px;
-  padding-bottom: 12.26px;
-  padding-left: 61.28px; */
   gap: 8.75px;
   color: #fff;
   margin-left: 230px;
@@ -277,7 +272,7 @@
   padding: 10px 0;
   margin-left: 40px;
   margin-top: 20px;
-}
+} */
 
 
 
