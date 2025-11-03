@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Card, Modal, Button } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Offcanvas,
+  Modal,
+  Button
+} from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-<<<<<<<< HEAD:src/components/Pages/ReaderSection2/ReadersLanding/ReadersLanding.js
 // import Sidebar from "../../../Common/Readers-Landing/Sidebar";
 import styles from "../../ReaderSection2/ReadersLanding/ReadersLanding.module.css";
-========
-import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
-import styles from "./ReadersLanding.module.css";
-
->>>>>>>> origin/staging:src/components/Pages/ReaderSection1/LandingReader/ReadersLanding.js
 const sections = [
   "Uploaded",
   "My Favorites",
@@ -75,38 +75,59 @@ const CardContent = ({ section, story }) => {
 };
 const ReadersLanding = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-  const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [selectedStory, setSelectedStory] = useState(null);
   const [modalType, setModalType] = useState(null);
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const handleClose = () => setModalType(null);
+  const handleCloseModal = () => {
+    setModalType(null);
+    setSelectedStory(null);
+  };
   const handleCardClick = (storyData, section) => {
     setSelectedStory(storyData);
-    if (section === "Uploaded" || section === "My Favorites" || section === "Top 10 Stories")
+    if (
+      section === "Uploaded" ||
+      section === "My Favorites" ||
+      section === "Top 10 Stories"
+    ) {
       setModalType("story");
-    else if (section.includes("Character")) setModalType("character");
-    else if (section.includes("Chapter")) setModalType("chapter");
+    } else if (section.includes("Character")) {
+      setModalType("character");
+    } else if (section.includes("Chapter")) {
+      setModalType("chapter");
+    } else {
+      setModalType("story");
+    }
   };
   useEffect(() => {
-    const handleResize = () => {
-      const mobileCheck = window.innerWidth < 992;
-      setIsMobile(mobileCheck);
-      if (!mobileCheck) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const onResize = () => setIsMobile(window.innerWidth < 992);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
-  const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
+  const contentMargin = isMobile ? "0px" : "80px";
   return (
     <div className="d-flex bg-light vh-100">
-      {/* <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} /> */}
+      <Offcanvas
+        show={showOffcanvas}
+        onHide={() => setShowOffcanvas(false)}
+        placement="start"
+      >
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {/* <Sidebar /> */}
+          <div className="d-flex flex-column gap-2">
+            {sections.map((s) => (
+              <button key={s} className="btn btn-link text-start">
+                {s}
+              </button>
+            ))}
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
       <Container
         fluid
-        className={styles.mainContent + " p-4 overflow-auto readers-main"}
+        className={`${styles.mainContent} p-4 overflow-auto readers-main`}
         style={{
           marginLeft: contentMargin,
           width: "100%",
@@ -116,13 +137,14 @@ const ReadersLanding = () => {
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
             className="btn btn-light d-lg-none mb-2"
-            onClick={toggleSidebar}
+            onClick={() => setShowOffcanvas(true)}
             style={{ borderRadius: "50%" }}
+            aria-label="open menu"
           >
             <i className="bi bi-list fs-4"></i>
           </button>
           <h3 className="fw-bold mb-0 me-auto">Home</h3>
-          <div className={styles.searchBox + " ms-auto"}>
+          <div className={`${styles.searchBox} ms-auto`}>
             <i className="bi bi-search me-2 text-muted"></i>
             <input type="text" placeholder="Search" />
           </div>
@@ -130,9 +152,10 @@ const ReadersLanding = () => {
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>
-            <div className={styles.scrollContainer}>
+            <div className={styles.scrollContainer} role="list">
               {generateStories(section).map((story) => (
                 <Card
+                  as="button"
                   key={story.id}
                   className={`${styles.storyCard} ${
                     section === "Top 10 Writers"
@@ -144,15 +167,68 @@ const ReadersLanding = () => {
                       : ""
                   }`}
                   onClick={() => handleCardClick(story, section)}
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                  }}
                 >
-                  <CardContent section={section} story={story} />
+                  <Card.Body className="p-0">
+                    <CardContent section={section} story={story} />
+                  </Card.Body>
                 </Card>
               ))}
             </div>
           </div>
         ))}
       </Container>
-       {/* Modal JS goes here, if needed */}
+      <Modal show={!!modalType} onHide={handleCloseModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {modalType === "story"
+              ? "Story"
+              : modalType === "character"
+              ? "Character"
+              : modalType === "chapter"
+              ? "Chapter"
+              : "Details"}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selectedStory ? (
+            <>
+              <div className="d-flex gap-3 align-items-start">
+                <img
+                  src={selectedStory.image}
+                  alt={selectedStory.title}
+                  style={{ width: 80, height: 80, objectFit: "cover", borderRadius: 8 }}
+                />
+                <div>
+                  <h6 className="mb-1 fw-bold">{selectedStory.title}</h6>
+                  <p className="mb-1 small text-muted">{selectedStory.book}</p>
+                  <p className="mb-0 small">{selectedStory.description}</p>
+                </div>
+              </div>
+              <hr />
+              <div className="small text-muted">
+                <p className="mb-1">Author: {selectedStory.author}</p>
+                <p className="mb-1">Writer: {selectedStory.writer}</p>
+                <p className="mb-0">Chapters: {selectedStory.chapters}</p>
+              </div>
+            </>
+          ) : (
+            <p>No data</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => alert("Proceed action")}>
+            Open
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

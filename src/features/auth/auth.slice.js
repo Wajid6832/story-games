@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosClient from "../../app/config";
 
+const savedUser = localStorage.getItem("user");
+
 const initialState = {
-  data: {},
+  data: savedUser ? JSON.parse(savedUser) : {}, 
   isLoading: false,
   isSuccess: false,
   isError: false,
@@ -11,47 +13,58 @@ const initialState = {
 
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
-  async (user, thunkAPI) => {
+  async ({ email, password }, thunkAPI) => {
     try {
-      const { username, password } = user;
-      let response = await axiosClient.post(`/login`, {
-        username,
-        password,
-      });
-      let data = await response.data;
-      if (data) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data));
-        return data;
-      }
+      const response = await axiosClient.get("/users", { params: { email, password } });
+      const users = response.data;
+      const foundUser = Array.isArray(users) && users.length ? users[0] : null;
+
+      if (!foundUser) return thunkAPI.rejectWithValue({ error: "User not found!" });
+      if (foundUser.password !== password) return thunkAPI.rejectWithValue({ error: "Invalid password" });
+
+      localStorage.setItem("user", JSON.stringify({ email: foundUser.email, role: foundUser.role }));
+
+      return { email: foundUser.email, role: foundUser.role };
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
+      return thunkAPI.rejectWithValue({ error: "Something went wrong" });
     }
   }
 );
 
-export const authSlice = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    clearState: () => initialState,
+    clearState: (state) => {
+      localStorage.removeItem("user"); 
+      return {
+        data: {},
+        isLoading: false,
+        isSuccess: false,
+        isError: false,
+        error: null,
+      };
+    },
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.pending, (state) => {
-      state.isLoading = true;
-    });
-    builder.addCase(loginUser.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.isError = false;
-      state.isSuccess = true;
-      state.data = action.payload;
-    });
-    builder.addCase(loginUser.rejected, (state, action) => {
-      state.isLoading = false;
-      state.isError = true;
-      state.isSuccess = false;
-      state.error = action.payload.error;
-    });
+    builder
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.isSuccess = false;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.isError = false;
+        state.data = action.payload;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.error = action.payload?.error || "Login failed";
+      });
   },
 });
 

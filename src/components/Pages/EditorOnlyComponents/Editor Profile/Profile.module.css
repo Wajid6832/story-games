@@ -1,6 +1,6 @@
 .container {
-  max-width: 650px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 20px;
   background: #f5f5f5;
   min-height: 100vh;
@@ -21,11 +21,6 @@
 }
 
 /* Gifts */
-.giftsSection {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-}
 .giftCard {
   background: #6b8fe8;
   border-radius: 12px;
@@ -52,33 +47,6 @@
 }
 
 /* Form */
-.inputRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-.inputGroup,
-.textareaGroup {
-  position: relative;
-  margin-bottom: 15px;
-}
-.input,
-.textarea {
-  width: 100%;
-  padding: 12px 12px 12px 40px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 14px;
-  background: #f9f9f9;
-  box-sizing: border-box;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.input:focus,
-.textarea:focus {
-  border-color: #6b8fe8;
-}
 .inputIcon {
   position: absolute;
   left: 12px;
@@ -86,14 +54,7 @@
   transform: translateY(-50%);
   color: #666;
 }
-.textareaGroup .inputIcon {
-  left: 10px;
-  top: 23px;
-  color: #999;
-  pointer-events: none;
-}
 .textarea {
-  min-height: 60px;
   resize: vertical;
   font-family: inherit;
 }
@@ -121,15 +82,6 @@
 }
 
 /* Buttons */
-.button {
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
 .primaryButton {
   background: #6b8fe8;
   color: #fff;
@@ -147,7 +99,7 @@
   margin-top: 20px;
 }
 
-/* Misc */
+
 .eyeIcon {
   position: absolute;
   right: 12px;
@@ -159,22 +111,4 @@
 .passwordSection,
 .bankSection {
   margin: 30px 0;
-}
-
-/* ✅ Single Media Query with Range Conditions */
-@media (max-width: 1024px) and (min-width: 769px),
-  (max-width: 768px) and (min-width: 481px),
-  (max-width: 480px) {
-  .inputRow {
-    grid-template-columns: 1fr;
-  }
-  .giftsSection {
-    flex-direction: column;
-  }
-  .card {
-    padding: 20px;
-  }
-  .updateButton {
-    width: 100%;
-  }
 }
