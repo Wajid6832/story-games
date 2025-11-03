@@ -1,0 +1,86 @@
+.modalDialog {
+  max-width: 900px !important;
+  width: 100%;
+  margin: auto;
+}
+
+.whiteModal {
+  background: #fff !important;
+  border-radius: 24px;
+  padding: 0;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Close Icon */
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #444;
+  z-index: 20;
+  transition: transform 0.2s ease;
+}
+.closeBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Slide wrapper */
+.flowWrapper {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease-in-out;
+  height: 620px;
+}
+
+/* Each step */
+.flowStep {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+/* Dots Navigation */
+.dotsWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0 28px;
+  gap: 10px;
+}
+
+.dot {
+  width: 34px;
+  height: 6px;
+  border-radius: 6px;
+  background: #d2d2d2;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.active {
+  background: #6a85f1;
+  transform: scaleX(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flowWrapper {
+    height: auto;
+    flex-direction: row;
+  }
+  .flowStep {
+    padding-top: 40px;
+  }
+  .dot {
+    width: 26px;
+  }
+}
