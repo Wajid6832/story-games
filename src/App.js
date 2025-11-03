@@ -12,8 +12,6 @@ import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import ProtectedRoute from "./layout/Protected";
 import WorkRoom from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage"
-import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
-import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
 function App() {
 
   return (
@@ -29,8 +27,6 @@ function App() {
             <Route path="/authorCard" element={<AuthorCard />} />
             <Route path="/chatApp" element={<ChatApp />} />
             <Route path="/workRoom" element={<WorkRoom/>}/>
-            <Route path="/profilePage" element={<ProfilePage/>}/>
-            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
           </Route>
         </Route>
 
@@ -43,6 +39,7 @@ function App() {
         <Route element={<ProtectedRoute allowedRoles={["reader"]} />}>
           <Route element={<Layout role="reader" />}>
             <Route path="/readerHome" element={<ReadersLanding />} />
+            <Route path="/chatApp" element={<ChatApp />} />
           </Route>
         </Route>
 

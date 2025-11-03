@@ -20,6 +20,11 @@
   flex: 1;
   max-width: 400px;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 .title {
   font-size: 2rem;
   font-weight: 700;
@@ -27,6 +32,8 @@
 }
 .subtitle {
   color: #6B7280;
+<<<<<<< HEAD
+=======
   margin-top: 8px;
   margin-bottom: 12px;
 }
@@ -37,18 +44,51 @@
   border-radius: 4px;
   margin-bottom: 28px;
 }
+
+
+.subtitle {
+  color: #6b7280;
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.line {
+  height: 4px;
+  width: 80px;
+  background-color: #FBBF24;
+  border-radius: 4px;
+  margin-bottom: 28px;
+}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 .inputGroup {
   position: relative;
   width: 100%;
   max-width: 400px;
   margin-bottom: 16px;
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 .icon {
   position: absolute;
   left: 12px;
   top: 12px;
+<<<<<<< HEAD
   color: #9CA3AF;
 }
+=======
+
+  color: #9CA3AF;
+}
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
  .eyeIcon {
   position: absolute;
   right: 12px;
@@ -60,6 +100,7 @@
   color: #9CA3AF;
   font-size: 1.1rem;
 }
+
 .inputGroup img {
   position: absolute;
   left: 12px;
@@ -69,9 +110,14 @@
   height: 20px;
   object-fit: contain;
 }
+
 .input {
   width: 100%;
   padding: 12px 40px 12px 45px; /* space for left icon */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   background-color: #F3F4F6;
@@ -83,6 +129,8 @@
   border-color: #3B82F6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
+
+
 .buttonGroup {
   display: flex;
   justify-content: space-between;
@@ -101,6 +149,17 @@
 }
 .signIn:hover {
   background-color: #2563EB;
+<<<<<<< HEAD
+=======
+}
+.forgot {
+  border: 1px solid #3B82F6;
+  color: #3B82F6;
+}
+
+.signIn:hover {
+  background-color: #2563eb;
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 }
 .forgot {
   border: 1px solid #3B82F6;
@@ -115,6 +174,11 @@
 .forgot:hover {
   background-color: #EFF6FF;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 /* Right Side: Illustration */
 .imageSection {
   flex: 1;
@@ -122,11 +186,21 @@
   justify-content: center;
   align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 .image {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 /* Responsive */
 @media (max-width: 768px) {
   .loginCard {
@@ -169,6 +243,7 @@
   overflow: hidden;
   margin-top: -100px;
 }
+
 .ladingContentDiv {
   margin-top: -70px;
   width: 100%;
@@ -186,6 +261,7 @@
   justify-content: space-between;
   margin-top: 100px;
 }
+
 .landignContent {
   margin-top: 30px;
   display: flex;
@@ -264,9 +340,12 @@
 }
 .signup button:hover {
   background-color: #5872C7;
+<<<<<<< HEAD
 }
 .signin button:hover {
   background-color: #6F8BDF;
+=======
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
   color: #fff;
 }
 .browse {
@@ -506,9 +585,12 @@
   border: 2px solid #6F8BDF;
   cursor: pointer;
   transition: all 0.3s ease;
+<<<<<<< HEAD
 }
 .signup button {
   background-color: #6F8BDF;
+=======
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
   color: #fff;
 }
 .signin button {
@@ -517,7 +599,12 @@
 }
 .signup button:hover {
   background-color: #5872C7;
+<<<<<<< HEAD
+=======
+  color: #6f8bdf;
+>>>>>>> 0c7d0dc31cc7301d7f1d73f0251ccee7d4ed460a
 }
+
 .signin button:hover {
   background-color: #6F8BDF;
   color: #fff;
