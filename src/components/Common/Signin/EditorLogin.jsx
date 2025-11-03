@@ -6,6 +6,7 @@ import Mail from "../../../assets/icon.png";
 import Password from "../../../assets/password.png";
 import styles from "./EditorLogin.module.css";
 import illustration from "../../../assets/Frame (2).png";
+
 const EditorLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");

@@ -19,7 +19,6 @@ const Bookpage = () => {
 
   return (
     <div className={`${styles.wrappper}"container py-5 `}>
-      {/* Character One */}
       <div className={`${styles.characterSection} mb-5`}>
         <div
           className={`${styles.characterHeader} d-flex align-items-center justify-content-between flex-wrap`}
@@ -34,9 +33,7 @@ const Bookpage = () => {
           Played & Written by <span>Jon Doe</span>
         </p>
 
-        {/* Personality Traits and About Character - SIDE BY SIDE */}
         <div className="row g-4 mb-4">
-          {/* Personality Traits - Left Side */}
           <div className="col-12 col-md-6">
             <div className={`${styles.traitSection} h-100`}>
               <h3 className={styles.traitTitle}>Personality Traits</h3>
@@ -48,7 +45,6 @@ const Bookpage = () => {
             </div>
           </div>
 
-          {/* About Character - Right Side */}
           <div className="col-12 col-md-6">
             <div className={`${styles.traitSection} h-100`}>
               <h3 className={styles.traitTitle}>About Character</h3>
@@ -85,7 +81,6 @@ const Bookpage = () => {
         </div>
       </div>
 
-      {/* Character Two - Same Layout */}
       <div className={`${styles.characterSection} mb-5`}>
         <div
           className={`${styles.characterHeader} d-flex align-items-center justify-content-between flex-wrap`}
@@ -100,7 +95,6 @@ const Bookpage = () => {
           Played & Written by <span>Jane Smith</span>
         </p>
 
-        {/* Personality Traits and About Character - SIDE BY SIDE */}
         <div className="row g-4 mb-4">
           <div className="col-12 col-md-6">
             <div className={`${styles.traitSection} h-100`}>
@@ -127,7 +121,6 @@ const Bookpage = () => {
 
         <hr className={styles.sectionDivider} />
 
-        {/* Chapters Grid */}
         <div className="row g-3">
           {chapters.map((ch, idx) => (
             <div key={idx} className="col-12 col-sm-6 col-md-3">

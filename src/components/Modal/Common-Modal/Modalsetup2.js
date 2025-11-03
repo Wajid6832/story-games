@@ -7,14 +7,12 @@ function Modalsetup2({ onHide, setcomponentIndex }) {
   return (
     <div className={styles.wrapper}>
       <div className={`${styles.main} bg-white rounded-4 p-4 position-relative text-center`}>
-        {/* Close Button */}
         <button onClick={onHide} className={styles.closeBtn}>
           <ImCross size={12} />
         </button>
 
-        {/* Image */}
         <div className={styles.imgBox}>
-          <img src={image} alt="apply" className={styles.img} />
+          <img src={image} alt="apply" className={styles.img} /> 
         </div>
 
         <h5 className={styles.heading}>Apply for Position</h5>

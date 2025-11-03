@@ -1,75 +1,61 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
-
-import Landing from "./Common/Landing/EditorLanding";
-import EditorLogin from "./components/Common/Signin/EditorLogin";
-import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
-
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
-import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
-
-import ReaderHome from "./Common/Landing/Reader-Home";
-import ReadersLandingSection1 from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
-import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
-import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
-import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
-import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore";
-import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels";
-import ModalFlow from "./components/Pages/ReaderSection1/ModalFLow/SubscriptionModalFlow";
-import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback";
-import ReadersLanding from "./components/Pages/ReaderSection2/ReadersLanding/ReadersLanding";
-import ReadersInfo from "./components/Pages/EditorOnlyComponents/ReadersClub/ReadersInfo";
-import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages/TermCondition1";
-
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import ChatApp from "./components/Pages/WriterOnlyComponents/ChatApp/ChatApp";
+import EditorLanding from "./Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
+import ProtectedRoute from "./layout/Protected";
+import WorkRoom from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage"
+import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
 function App() {
-  const user = {
-    role: "editor", 
-  };
-
-  const ROLE_COMPONENTS = {
-    writer: <WriterHome />,
-    reader: <Bookpage />,
-    editor: <EditorHome />,
-  };
 
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/editorlogin" element={<EditorLogin />} />
-          <Route path="/EditorHome" element={<EditorHome />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<EditorLanding />} />
+        <Route path="/editorLogin" element={<EditorLogin />} />
 
-          <Route element={<Layout />}>
-            <Route path="/role" element={ROLE_COMPONENTS[user.role] || null} />
-
-            <Route path="/writerhome" element={<WriterHome />} />
-            <Route path="/authorCard" element={<AuthorCard />} />
+        <Route element={<ProtectedRoute allowedRoles={["writer"]} />}>
+          <Route element={<Layout role="writer" />}>
+            <Route path="/writerHome" element={<WriterHome />} />
             <Route path="/bookpage" element={<Bookpage />} />
-            <Route path="/WriterMode" element={<WriterMode />} />
-
-            <Route path="/ForgotPassword" element={<ForgotPassword />} />
-            <Route path="/LinkBankAccount" element={<LinkBankAccount />} />
-            <Route path="/CurrentNovels" element={<CurrentNovels />} />
-            <Route path="/becomeWriter" element={<BecomeWriter />} />
-            <Route path="/tokenstore" element={<TokenStore />} />
-            <Route path="/readinghome" element={<ReadersLandingSection1 />} />
-            <Route path="/ModalFlow" element={<ModalFlow />} /> 
-
-            <Route path="/SupportFeedback" element={<SupportFeedback />} />
-            <Route path="/ReadersLanding" element={<ReadersLanding />} />
-            <Route path="/ReadersInfo" element={<ReadersInfo />} />
-            <Route path="/TermCondition1" element={<TermCondition1 />} />
+            <Route path="/authorCard" element={<AuthorCard />} />
+            <Route path="/chatApp" element={<ChatApp />} />
+            <Route path="/workRoom" element={<WorkRoom/>}/>
+            <Route path="/profilePage" element={<ProfilePage/>}/>
+            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
           </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["editor"]} />}>
+          <Route element={<Layout role="editor" />}>
+            <Route path="/editorHome" element={<Bookpage />} />
+          </Route>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["reader"]} />}>
+          <Route element={<Layout role="reader" />}>
+            <Route path="/reader" element={<ReadersLanding />} />
+          </Route>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["producer"]} />}>
+          <Route element={<Layout role="producer" />}>
+            <Route
+              path="/producerHome"
+              element={<h2>Welcome Producer!</h2>}
+            />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
