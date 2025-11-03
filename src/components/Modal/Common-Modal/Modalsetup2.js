@@ -12,7 +12,7 @@ function Modalsetup2({ onHide, setcomponentIndex }) {
         </button>
 
         <div className={styles.imgBox}>
-          <img src={image} alt="apply" className={styles.img} />
+          <img src={image} alt="apply" className={styles.img} /> 
         </div>
 
         <h5 className={styles.heading}>Apply for Position</h5>

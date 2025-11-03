@@ -14,6 +14,7 @@
   flex: 0 0 auto;
   cursor: pointer;
   transition: transform 0.2s ease;
+  background: transparent;
 }
 .storyCard:hover {
   transform: translateY(-4px);
@@ -93,4 +94,12 @@
 }
 .searchBox input::placeholder {
   color: #999;
+}
+.mainContent {
+  padding: 20px;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
