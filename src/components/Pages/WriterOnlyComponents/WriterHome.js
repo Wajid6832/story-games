@@ -103,7 +103,6 @@ const WriterHome = () => {
         </Row>
       </section>
 
-      {/* Available Workrooms Section - 3 CARDS IN SAME LINE */}
       <section className="section">
         <h5 className={style.sectionTitle}>Available Workrooms</h5>
         <Row className="g-3">

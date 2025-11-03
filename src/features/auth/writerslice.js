@@ -22,17 +22,17 @@ export const fetchFavourite = createAsyncThunk("writer/fetchFavourite", async ()
   const res = await axios.get(`${BASE_URL}/favourite`);
   return res.data;
 });
-
-const writerSlice = createSlice({
-  name: "writer",
-  initialState: {
+  const initialState ={
     books: [],
     chapters: [],
     characters: [],
     favourite: [],   
     loading: false,
     error: null,
-  },
+  }
+const writerSlice = createSlice({
+  name: "writer",
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

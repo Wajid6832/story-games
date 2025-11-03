@@ -8,7 +8,8 @@ import {
   FaLock,
   FaPen,
 } from "react-icons/fa";
-import styles from "./Profile.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./Profile.module.css"; // still used for colors/theme
 
 export default function ProfilePage() {
   const [showOldPassword, setShowOldPassword] = useState(false);
@@ -32,74 +33,80 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <h1 className={styles.header}>My Profile</h1>
+    <div className={`container-fluid ${styles.pageWrapper}`}>
+      <div className={`card shadow p-4 border-0 ${styles.card}`}>
+        <h1 className={`${styles.header} mb-4`}>My Profile</h1>
 
         {/* Gifts Section */}
-        <div className={styles.giftsSection}>
-          <div className={styles.giftCard}>
-            <div className={styles.giftLabel}>Available Gift</div>
-            <div className={styles.giftAmount}>100</div>
+        <div className="row g-3 mb-4">
+          <div className="col-12 col-md-6">
+            <div className={`${styles.giftCard}`}>
+              <div className={styles.giftLabel}>Available Gift</div>
+              <div className={styles.giftAmount}>100</div>
+            </div>
           </div>
-          <div className={styles.giftCard}>
-            <div className={styles.giftLabel}>Given Out Gift</div>
-            <div className={styles.giftAmount}>100</div>
+          <div className="col-12 col-md-6">
+            <div className={`${styles.giftCard}`}>
+              <div className={styles.giftLabel}>Given Out Gift</div>
+              <div className={styles.giftAmount}>100</div>
+            </div>
           </div>
         </div>
 
         {/* Basic Information */}
-        <h2 className={styles.sectionTitle}>Basic Information</h2>
-        <div className={styles.inputRow}>
-          <div className={styles.inputGroup}>
+        <h2 className={`${styles.sectionTitle} mb-3`}>Basic Information</h2>
+        <div className="row g-3 mb-3">
+          <div className="col-12 col-md-6 position-relative">
             <FaEnvelope size={18} className={styles.inputIcon} />
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className={styles.input}
+              className="form-control ps-5"
             />
           </div>
-          <div className={styles.inputGroup}>
+          <div className="col-12 col-md-6 position-relative">
             <FaUser size={18} className={styles.inputIcon} />
             <input
               type="text"
               name="username"
               value={formData.username}
               onChange={handleInputChange}
-              className={styles.input}
+              className="form-control ps-5"
             />
           </div>
         </div>
 
-        <div className={styles.inputRow}>
-          <div className={styles.textareaGroup}>
+        <div className="row g-3 mb-4">
+          <div className="col-12 col-md-6 position-relative">
             <FaPen size={18} className={styles.inputIcon} />
             <textarea
               name="aboutMe"
               placeholder="About Me"
               value={formData.aboutMe}
               onChange={handleInputChange}
-              className={styles.textarea}
+              className="form-control ps-5"
+              rows="3"
             />
           </div>
-
-          <div
-            className={styles.uploadBox}
-            onClick={() => alert("Upload functionality would go here")}
-          >
-            <FaUpload size={24} className={styles.uploadIcon} />
-            <div className={styles.uploadText}>Upload Profile Picture</div>
+          <div className="col-12 col-md-6">
+            <div
+              className={`${styles.uploadBox}`}
+              onClick={() => alert("Upload functionality would go here")}
+            >
+              <FaUpload size={24} className={styles.uploadIcon} />
+              <div className={styles.uploadText}>Upload Profile Picture</div>
+            </div>
           </div>
         </div>
 
         {/* Password Section */}
-        <div className={styles.passwordSection}>
-          <h2 className={styles.sectionTitle}>Password</h2>
+        <div className={`${styles.passwordSection} mb-4`}>
+          <h2 className={`${styles.sectionTitle} mb-3`}>Password</h2>
 
           {/* Old Password */}
-          <div className={styles.inputGroup}>
+          <div className="position-relative mb-3">
             <FaLock size={18} className={styles.inputIcon} />
             <input
               type={showOldPassword ? "text" : "password"}
@@ -107,7 +114,7 @@ export default function ProfilePage() {
               placeholder="Enter Old Password"
               value={formData.oldPassword}
               onChange={handleInputChange}
-              className={styles.input}
+              className="form-control ps-5"
             />
             <div
               className={styles.eyeIcon}
@@ -118,8 +125,8 @@ export default function ProfilePage() {
           </div>
 
           {/* New & Confirm Password */}
-          <div className={styles.inputRow}>
-            <div className={styles.inputGroup}>
+          <div className="row g-3">
+            <div className="col-12 col-md-6 position-relative">
               <FaLock size={18} className={styles.inputIcon} />
               <input
                 type={showNewPassword ? "text" : "password"}
@@ -127,7 +134,7 @@ export default function ProfilePage() {
                 placeholder="Create New Password"
                 value={formData.newPassword}
                 onChange={handleInputChange}
-                className={styles.input}
+                className="form-control ps-5"
               />
               <div
                 className={styles.eyeIcon}
@@ -141,7 +148,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className={styles.inputGroup}>
+            <div className="col-12 col-md-6 position-relative">
               <FaLock size={18} className={styles.inputIcon} />
               <input
                 type={showConfirmPassword ? "text" : "password"}
@@ -149,7 +156,7 @@ export default function ProfilePage() {
                 placeholder="Confirm New Password"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
-                className={styles.input}
+                className="form-control ps-5"
               />
               <div
                 className={styles.eyeIcon}
@@ -165,7 +172,7 @@ export default function ProfilePage() {
           </div>
 
           <button
-            className={`${styles.button} ${styles.primaryButton}`}
+            className={`btn btn-primary mt-3 ${styles.primaryButton}`}
             onClick={() => alert("Password updated!")}
           >
             Update Password
@@ -173,10 +180,10 @@ export default function ProfilePage() {
         </div>
 
         {/* Bank Account Section */}
-        <div className={styles.bankSection}>
-          <h2 className={styles.sectionTitle}>Bank Account</h2>
+        <div className={`${styles.bankSection} mb-4`}>
+          <h2 className={`${styles.sectionTitle} mb-3`}>Bank Account</h2>
           <button
-            className={`${styles.button} ${styles.secondaryButton}`}
+            className={`btn btn-outline-primary ${styles.secondaryButton}`}
             onClick={() => alert("Link bank account")}
           >
             Link Bank Account
@@ -184,12 +191,14 @@ export default function ProfilePage() {
         </div>
 
         {/* Update Profile Button */}
-        <button
-          className={`${styles.button} ${styles.updateButton}`}
-          onClick={() => alert("Profile updated!")}
-        >
-          Update Profile
-        </button>
+        <div className="d-grid">
+          <button
+            className={`btn btn-warning text-white fw-semibold ${styles.updateButton}`}
+            onClick={() => alert("Profile updated!")}
+          >
+            Update Profile
+          </button>
+        </div>
       </div>
     </div>
   );

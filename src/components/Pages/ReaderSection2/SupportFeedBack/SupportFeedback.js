@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import Sidebar from "../../../Sidebar/WriterSidebar.jsx";
 import supportImage from "../../../../assets/Readers-Assets/images/support.png";
 import styles from "./SupportFeedback.module.css";
 
@@ -41,7 +40,6 @@ const SupportFeedback = () => {
 
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
       <Container
         fluid
@@ -64,7 +62,6 @@ const SupportFeedback = () => {
         </div>
 
         <Row className="mt-4">
-          {/* Left Column: Form */}
           <Col lg={6} md={12}>
             <div className={styles.formContainer}>
               <h6 className="fw-bold mb-3">Input your information:</h6>

@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosClient from "../../app/config";
 
-// Load user from localStorage
 const savedUser = localStorage.getItem("user");
 
 const initialState = {
-  data: savedUser ? JSON.parse(savedUser) : {}, // persist user on refresh
+  data: savedUser ? JSON.parse(savedUser) : {}, 
   isLoading: false,
   isSuccess: false,
   isError: false,
@@ -23,7 +22,6 @@ export const loginUser = createAsyncThunk(
       if (!foundUser) return thunkAPI.rejectWithValue({ error: "User not found!" });
       if (foundUser.password !== password) return thunkAPI.rejectWithValue({ error: "Invalid password" });
 
-      // Save user to localStorage
       localStorage.setItem("user", JSON.stringify({ email: foundUser.email, role: foundUser.role }));
 
       return { email: foundUser.email, role: foundUser.role };
@@ -38,7 +36,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     clearState: (state) => {
-      localStorage.removeItem("user"); // remove user on logout
+      localStorage.removeItem("user"); 
       return {
         data: {},
         isLoading: false,

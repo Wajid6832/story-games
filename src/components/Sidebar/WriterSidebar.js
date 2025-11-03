@@ -43,7 +43,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 <Link to="/writerHome" className={style.sidebarLink} onClick={toggleSidebar}>
                   <House className={style.me2} /> <span>Home</span>
                 </Link>
-                <Link to="#" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link to="/ProfilePage" className={style.sidebarLink} onClick={toggleSidebar}>
                   <img src={image} alt=""/> &nbsp;&nbsp;<span>Profile</span>
                 </Link>
                 <Link to="/bookpage" className={style.sidebarLink} onClick={toggleSidebar}>
@@ -55,7 +55,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
-                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link to="#" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Envelope className={style.me2} /> <span>Messages</span>
                 </Link>
               </>
@@ -74,7 +74,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
             {role === "reader" && (
               <>
-                <Link to="/readerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link to="/readersLanding" className={style.sidebarLink} onClick={toggleSidebar}>
                   <House className={style.me2} /> <span>Reader Home</span>
                 </Link>
                 <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
@@ -87,7 +87,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
         <div className={style.sidebarBottom}>
           <Nav className="flex-column">
-            <Nav.Link href="#" className={style.sidebarLink}>
+            <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
             <Nav.Link href="#" className={style.sidebarLink}>
