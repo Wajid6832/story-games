@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import {
   Container,
   Card,
@@ -8,6 +8,10 @@ import {
   Button
 } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
+import React, { useState, useEffect } from "react"; 
+// import { Container, Card, Modal, Button } from "react-bootstrap";
+// import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
+// import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
 import styles from "./ReadersLanding.module.css";
 import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
 import { CommonModal } from "../../../Modal/Common-Modal/Modal";

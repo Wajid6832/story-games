@@ -5,6 +5,7 @@ import Frame from "../../assets/Landing-img.png";
 
 import { Link, useNavigate } from "react-router-dom";
 
+
 const EditorLanding = () => {
   const navigate = useNavigate(); 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../Sidebar/WriterSidebar.module.css";
+import style from "../../components/Sidebar/WriterSidebar.module.css";
 import { Nav } from "react-bootstrap";
 import { IoReorderThree, IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
