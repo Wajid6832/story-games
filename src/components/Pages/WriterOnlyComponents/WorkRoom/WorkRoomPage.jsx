@@ -10,7 +10,7 @@ const WorkRoomPage = () => {
 
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
-      {/* Sidebar */}
+     
       <div
         className={`${styles.sidebarContainer} ${
           isSidebarOpen ? styles.sidebarOpen : styles.sidebarClosed
@@ -19,10 +19,9 @@ const WorkRoomPage = () => {
         <WriterSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       </div>
 
-      {/* Main Content */}
       <div className={`flex-grow-1 ${styles.mainContent}`}>
         <div className={`container ${styles.container}`}>
-          {/* Header */}
+        
           <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap">
             <div className="d-flex align-items-center mb-2 mb-sm-0">
               <button
@@ -39,7 +38,7 @@ const WorkRoomPage = () => {
         <div className={styles.divider}></div>
 
         <div className={`container ${styles.container}`}>
-          {/* Character Box */}
+      
           <div className={styles.characterBox}>
             <h3 className={styles.sectionTitle}>Character 1 Name</h3>
             <div className="row g-3">
@@ -62,7 +61,6 @@ const WorkRoomPage = () => {
             </div>
           </div>
 
-          {/* Completed Chapters */}
           <div className={styles.completedBox}>
             <h3 className={styles.sectionTitle}>Completed Chapters</h3>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
@@ -79,8 +77,6 @@ const WorkRoomPage = () => {
               ))}
             </div>
           </div>
-
-          {/* Upcoming Chapter */}
           <div className={styles.upcomingBox}>
             <h3 className={styles.sectionTitle}>Upcoming Chapter</h3>
 
