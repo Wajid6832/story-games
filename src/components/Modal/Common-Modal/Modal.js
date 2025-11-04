@@ -11,7 +11,11 @@ export const CommonModal = (props) => {
         background: transparent !important;
       }
       .modal-dialog {
-        box-shadow: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 100vh !important;
+        margin: 0 auto !important;
       }
     `;
     document.head.appendChild(style);
@@ -19,13 +23,14 @@ export const CommonModal = (props) => {
   }, []);
 
   return (
-    <Modal {...props} size="lg" centered>
+    <Modal {...props} centered size="lg">
       <Modal.Body
         className={props.bodyClasses}
         style={{
           border: "none",
           boxShadow: "none",
           background: "transparent",
+          padding: "0"
         }}
       >
         {props.children}
