@@ -2,7 +2,7 @@ import axios from "axios";
 const token = "fakeExampleToken";
 
 export default axios.create({
-  baseURL: "http://172.104.187.33:5032/api", //API in Server
+  baseURL: "http://localhost:3000", 
   headers: {
     "Content-type": "application/json",
     Authorization: `Bearer ${token}`,

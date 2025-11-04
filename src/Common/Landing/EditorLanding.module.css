@@ -112,40 +112,33 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 15px;
-  border: 2px solid #6f8bdf;
+  border: 2px solid #6F8BDF;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .signup button {
-  background-color: #6f8bdf;
+  background-color: #6F8BDF;
   color: #fff;
 }
-
 .signin button {
   background-color: transparent;
-  color: #6f8bdf;
+  color: #6F8BDF;
 }
-
 .signup button:hover {
-  background-color: #5872c7;
+  background-color: #5872C7;
 }
-
 .signin button:hover {
-  background-color: #6f8bdf;
+  background-color: #6F8BDF;
   color: #fff;
 }
-
 .browse {
   padding-top: 10px;
-  color: #6f8bdf;
+  color: #6F8BDF;
 }
-
 .browse p {
   text-decoration: underline;
   cursor: pointer;
 }
-
 /* ---------- Image Section ---------- */
 .image {
   flex: 1 1 300px;
@@ -153,26 +146,23 @@
   justify-content: center;
   align-items: center;
 }
-
 .image img {
   width: 100%;
   max-width: 260px;
   height: auto;
   object-fit: contain;
 }
-
 /* ---------- Top List Cards ---------- */
 .topListContainer {
   width: 96%;
   overflow-x: auto;
   margin-top: 1rem;
   padding: 10px;
-  background: #f0f0f0;
+  background: #F0F0F0;
   border-radius: 20px;
   transform: rotate(-1.8deg);
   box-sizing: border-box;
 }
-
 .cardList {
   display: flex;
   gap: 10px;
@@ -182,13 +172,11 @@
   justify-content: space-between;
   gap: 1.5px;
 }
-
 .lowerSetctionCards {
   display: flex;
   width: 80%;
   justify-content: space-between;
 }
-
 .card {
   flex: 0 0 70px;
   height: 80px;
@@ -198,20 +186,17 @@
   align-items: center;
   justify-content: center;
 }
-
 .card img {
   width: 50%;
   height: 50%;
   object-fit: contain;
 }
-
 .topListLabel {
   font-weight: bold;
   color: #333;
   white-space: nowrap;
   margin-left: 10px;
 }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 992px) {
   .landignContent {
@@ -219,64 +204,51 @@
     align-items: center;
     transform: none;
   }
-
   .landingSecondDiv {
     transform: none;
   }
-
   .ladingContentDiv {
     margin: 0;
     border-radius: 60px;
   }
-
   .content {
     text-align: center;
     align-items: center;
   }
-
   .secondHeading {
     justify-content: center;
     gap: 1rem;
   }
-
   .text {
     text-align: center;
   }
-
   .btn {
     justify-content: center;
   }
-
   .topListContainer {
     transform: none;
     margin-left: 0;
   }
 }
-
 @media (max-width: 600px) {
   .signup button,
   .signin button {
     width: 100%;
     font-size: 0.9rem;
   }
-
   .card {
     flex: 0 0 50px;
     height: 60px;
   }
-
   .heading p {
     font-size: 1.3rem;
   }
-
   .text p {
     font-size: 0.9rem;
   }
-
   .dashtLine {
     width: 60px;
   }
-
   .contentUpper {
     width: 100%;
     display: flex;
@@ -284,7 +256,6 @@
     justify-content: space-between;
     margin-top: 100px;
   }
-
   .lowerSetctionCards {
     display: flex;
     flex-wrap: wrap;

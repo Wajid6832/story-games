@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import Sidebar from "../ReaderSidebar/Sidebar";
+
 import illustration from "../../../../assets/Readers-Assets/images/link-account.png"; 
 import styles from "./LinkBankAccount.module.css";
 
 const LinkBankAccount = () => {
-  const checkMobile = () => window.innerWidth < 992;
-
-  const [isMobile, setIsMobile] = useState(checkMobile());
-  const [sidebarOpen, setSidebarOpen] = useState(!checkMobile());
   const [selected, setSelected] = useState(0);
-
-  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const mobile = checkMobile();
-      setIsMobile(mobile);
-      setSidebarOpen(!mobile);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const contentMargin = isMobile ? "0" : sidebarOpen ? "260px" : "80px";
 
   const accounts = [
     { id: 1, name: "Account Name", balance: "$2000.00" },
@@ -34,25 +15,11 @@ const LinkBankAccount = () => {
 
   return (
     <div className="d-flex bg-light vh-100">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-
       <Container
         fluid
         className={`${styles.mainContent} readers-main p-4 overflow-auto`}
-        style={{
-          marginLeft: contentMargin,
-          transition: "margin-left 0.28s cubic-bezier(.4,0,.2,1)",
-        }}
       >
         <div className="d-flex align-items-center mb-4 border-bottom pb-3 flex-wrap">
-          <button
-            className="btn btn-light d-lg-none me-3 mb-2"
-            onClick={toggleSidebar}
-            style={{ borderRadius: "50%" }}
-            aria-label="Toggle sidebar"
-          >
-            <i className="bi bi-list fs-4"></i>
-          </button>
           <h4 className="fw-bold mb-0">Link Bank Account</h4>
         </div>
 
