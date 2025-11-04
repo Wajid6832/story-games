@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
-import Password from "../../assets/password.png";
 import illustration from "../../assets/Frame (2).png";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,7 +7,7 @@ import styles from "./WriterSignUp.module.css";
 const WriterSignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const navigate = useNavigate();
+  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,13 +33,12 @@ const WriterSignUp = () => {
       return;
     }
 
-    // Reset
+
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     setRole("");
 
-    navigate("/editorhome");
   };
 
   return (
@@ -55,8 +52,8 @@ const WriterSignUp = () => {
             <p>Create your account</p>
             <div className={styles.dashtLine}></div>
           </div>
-             
-            <Form.Group>
+
+          <Form.Group>
             <Form.Select
               value={role}
               onChange={(e) => setRole(e.target.value)}
@@ -70,7 +67,9 @@ const WriterSignUp = () => {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group className={styles.inputGroup}>
+
+          <Form.Group className={`${styles.inputGroup} ${styles.emailGroup}`}>
+            <i className="bi bi-envelope"></i>
             <Form.Control
               type="email"
               placeholder="Enter Email Address"
@@ -80,46 +79,44 @@ const WriterSignUp = () => {
             />
           </Form.Group>
 
-        
-          <Form.Group className={styles.inputGroup} style={{ position: "relative" }}>
-            <img src={Password} alt="Password" className="position-absolute" style={{ left: "12px", top: "50%", transform: "translateY(-50%)", width: "20px", height: "20px" }} />
+          <Form.Group className={`${styles.inputGroup} ${styles.passwordGroup}`}>
+            <i className="bi bi-lock"></i>
             <Form.Control
               type={showPassword ? "text" : "password"}
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
-              style={{ paddingLeft: "45px" }}
             />
             <Button
               variant="link"
               className={styles.eyeIcon}
               onClick={() => setShowPassword(!showPassword)}
-              style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)" }}
             >
               <i className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
             </Button>
           </Form.Group>
 
-          <Form.Group className={styles.inputGroup} style={{ position: "relative" }}>
-            <img src={Password} alt="Password" className="position-absolute" style={{ left: "12px", top: "50%", transform: "translateY(-50%)", width: "20px", height: "20px" }} />
+
+          <Form.Group className={`${styles.inputGroup} ${styles.passwordGroup}`}>
+            <i className="bi bi-lock"></i>
             <Form.Control
               type={showConfirmPassword ? "text" : "password"}
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className={styles.input}
-              style={{ paddingLeft: "45px" }}
             />
             <Button
               variant="link"
               className={styles.eyeIcon}
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)" }}
             >
               <i className={showConfirmPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
             </Button>
           </Form.Group>
+
+
 
 
           <div className={`${styles.butons} d-flex flex-wrap gap-3`}>
