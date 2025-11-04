@@ -83,9 +83,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Editor / Landing Routes */}
-          <Route path="/" element={<Landing />} />
+          {/* <Route path="/" element={<Landing />} />
           <Route path="/editorlogin" element={<EditorLogin />} />
-          <Route path="/editorhome" element={<EditorHome />} />
+          <Route path="/editorhome" element={<EditorHome />} /> */}
 
         {/* Public Routes */}
         <Route path="/" element={<Landing />} />

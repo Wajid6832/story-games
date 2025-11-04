@@ -1,151 +1,37 @@
-body {
-    background-color: blur(#7a7a7a);
-}
-
- .pageContainer {
-
-    justify-content: center;
-    
-    width: 1102px;
-    height: 549px;
-    color: Light Grey;
-    margin: 80px;
-    padding: 20px;
-    border-radius: 20px;
- } 
- .pageContainer {
+ 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fafafa;
-  border-radius: 16px;
-  padding: 20px;
-  width: 900px;
-  z-index: 2px;
-  margin: 50px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
 
-  flex-direction: row; 
+  z-index: 50;
 }
-
-
-.icons {
-    color: #F6B21A;
-    margin: 10px;
+.span{
+        color: #3B57F5;
 }
-.layout {
-    width: 235px;
-    height: 50px;
-    top: 400px;
-    left: 24;
-   border-radius: 15px;
-   padding-top: 13px;
-   padding-right: 56px;
-   padding-bottom: 13px;
-   padding-left: 56px;
-   gap: 5px;
-   background-color: #6F8BDF;
-   color: white;
-}
-.layout2 {
-    width: 200px;
-    height: 50px;
-    Top: 400px;
-    left: 288;
-    border: 2px solid #6F8BDF;
-    border-radius: 15px;
-    padding-top: 14px;
-    padding-right: 70px;
-    padding-bottom: 14px;
-    padding-left: 70px;
-    gap: 10px;
-}
-.item2 {
-    width: 500px;
-    size: 18px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    color: #6F8BDF;
-
-}
-
-.footer {
-  width: 100%;
-  height: 50px;
-  background-color: #6F8BDF;
-  color: white;
-  border-radius: 20px;
-  padding: 15px;
-  margin-top: 20px;
-  text-align: center;
+.wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 20px;
-
-  
-}
-
-
-.imageSection {
-  flex: 1;
-  background: #e6e6e6;
-  height: 420px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
- width: 900px;
-  
-}
-
-.imagePlaceholder {
-  width: 120px;
-  height: 120px;
-  background-color: #d0d0d0;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7a7a7a;
-  font-size: 36px;
-}
-
-
-
-.contentSection {
-  flex: 1.2;
   background: white;
   border-radius: 16px;
-  padding: 25px;
-  margin-left: 20px;
-  position: relative;
-
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
-.crossIcon {
-    height: 40px;
-    width: 40px;
-    margin-left: 520px;
-    margin-bottom: 30px;
-
-    
-
+.Body{
+        display: none;
 }
-
-
-.genre {
-  color: #888;
-  font-size: 14px;
-  margin-bottom: 5px;
+.icon {
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 392px;
+  height: 470px;
 }
 
-.novelTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 5px 0;
-}
+
 
 .author {
   color: #6f8bdf;
@@ -154,18 +40,12 @@ body {
   margin-bottom: 15px;
 }
 
-.description {
-  color: #555;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
 .stats {
   display: flex;
   gap: 20px;
   color: #f6b21a;
-  margin: 15px 0;
   font-weight: 500;
+
 }
 
 .icon {
@@ -174,10 +54,52 @@ body {
 }
 
 
+
+.text {
+  position: relative;
+  width: 516px;
+  height: 470px;
+  background-color: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.genre {
+  color: #3b5cc9;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+
+.desc {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-y: auto;
+}
 .buttons {
   display: flex;
   gap: 15px;
-  margin-top: 15px;
 }
 
 .prevBtn {
@@ -199,156 +121,27 @@ body {
   font-weight: 500;
 }
 
-.footerBtn {
-  margin-top: 20px;
-  background-color: #6f8bdf;
-  color: white;
-  border-radius: 12px;
-  text-align: center;
-  
-}
-
-.footerBtn Button {
-  background: none;
-  margin-left: -400px;
-  border: none;
-  color: white;
-  padding: 12px;
+.applyBtn {
   width: 100%;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.arrowBtn {
-  background-color: #6f8bdf;
-  border: none;
+  background-color: #4e73df;
   color: white;
-  font-size: 22px;
-  border-radius: 8px;
-  padding: 6px 10px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0 0 16px 0;
+  padding: 12px 0;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+}
+.applyBtnText {
+ background: transparent;
+ border: none;
+ color: #efefef;
 }
 
-.leftArrow {
-  left: -30px;
+.applyBtn:hover {
+  background-color: #3b5cc9;
 }
-
-.rightArrow {
-  right: -30px;
-}
-
-
-
-
-@media (max-width: 1024px) {
-  .pageContainer {
-    flex-direction: column;
-    width: 90%;
-    height: auto;
-    margin: 30px auto;
-    padding: 15px;
-  }
-
-  .imageSection {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .contentSection {
-    width: 100%;
-    margin-left: 0;
-    padding: 20px;
-  }
-
-  .crossIcon {
-    margin-left: auto;
-    display: block;
-  }
-
-  .layout, .layout2 {
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-  }
-
-  .item2 {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .pageContainer {
-    width: 95%;
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .imageSection {
-    height: 250px;
-  }
-
-  .imagePlaceholder {
-    width: 90px;
-    height: 90px;
-    font-size: 28px;
-  }
-
-  .contentSection {
-    margin-left: 0;
-    padding: 15px;
-  }
-
-  .novelTitle {
-    font-size: 20px;
-  }
-
-  .author {
-    font-size: 14px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .prevBtn, .enterBtn {
-    width: 100%;
-  }
-
-  .footer {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .pageContainer {
-    width: 100%;
-    margin: 10px auto;
-    box-shadow: none;
-  }
-
-  .description {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .footer {
-    font-size: 13px;
-  }
+.like{
+       color:#F6B21A ;   
 }
 
 

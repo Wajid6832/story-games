@@ -1,21 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./EditorLanding.module.css";
-
-import Frame from "../../assets/1stimage.png";
-// import Frame from "../../assets/Landing-img.png";
-
+// import Frame from "../../assets/1stimage.png";
+import Frame from "../../assets/Landing-img.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchAllProducts } from "../../features/product/product.slice";
-
 const EditorLanding = () => {
   const navigator = useNavigate();
   const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchAllProducts("http://localhost:3000/allData"));
     }, [])
-
   return (
     <div className={styles.mainLandingDiv}>
       <div className={styles.landingSecondDiv}>
@@ -51,13 +47,11 @@ const EditorLanding = () => {
                   <p>Browse as guest</p>
                 </div>
               </div>
-
               <div className={styles.image}>
                 <img src={Frame} alt="" />
               </div>
             </div>
           </div>
-
           <div className={styles.topListContainer}>
             <div className={styles.cardList}>
               <div className={styles.lowerSetctionCards}>
@@ -69,7 +63,6 @@ const EditorLanding = () => {
                     </div>
                   ))}
               </div>
-
               <div className={styles.topListLabel}>
                 {/* <button onClick={() => navigator("/EditorHome")}>Top List</button> */}
                 <Link to="/EditorHome">Top List</Link>
@@ -81,5 +74,4 @@ const EditorLanding = () => {
     </div>
   );
 };
-
 export default EditorLanding;
