@@ -5,8 +5,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 
 // Common / Editor Components
-import Landing from "./components/Common/Landing/EditorLanding";
-import EditorLogin from "./components/Common/Signin/EditorLogin";
+// import Landing from "./components/Common/Landing/EditorLanding";
+// import EditorLogin from "./components/Common/Signin/EditorLogin";
 import EditorLanding from "./Common/Landing/EditorLanding";
 
 // Reader Components
@@ -18,7 +18,7 @@ import TermCondition1 from "./components/Pages/ReaderSection2/TermConditionPages
 
 // Writer Components
 import WriterMode from "./components/Pages/EditorOnlyComponents/WriterMode/WriterMode";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+// import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,7 +28,7 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Landing  from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import EditorHome from "./components/Pages/EditorOnlyComponents/EditorHome";

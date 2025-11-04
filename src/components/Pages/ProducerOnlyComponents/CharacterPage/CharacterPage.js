@@ -10,12 +10,8 @@ import { CiImageOn } from "react-icons/ci";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-
-
-
 const CharacterPage = () => {
   return (
-
 
     <div className={styles.characterPage}>
       <div className={styles.header}>
@@ -34,7 +30,6 @@ const CharacterPage = () => {
         </div>
       </div>
 
-
       <Container fluid className={styles.pageContainer}>
         <Row>
 
@@ -47,18 +42,20 @@ const CharacterPage = () => {
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.
 
             </p>
+
             <p className={styles.text}>
+              Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
+              aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
               Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 
             </p>
-            <p className={styles.text}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
-              aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-            </p>
             <p className={styles.pageNumber}>Page 1 of 20</p>
           </Col>
-
 
           <Col md={6} className={styles.page}>
             <p className={styles.text}>
@@ -70,7 +67,7 @@ const CharacterPage = () => {
             <div className={styles.imageBox}>
               <div className={styles.iconBox}>
                 <CiImageOn className={styles.imageIcon} />
-               </div>
+              </div>
               <p className={styles.caption}>
                 <em>Lorem Ipsum, dor sit amet</em>
               </p>

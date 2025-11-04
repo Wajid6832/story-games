@@ -15,7 +15,7 @@ import logout from "../../../assets/logout.png";
 const ProducerSidebar = () => {
   return (
     <div className={styles.sidebar}>
-      {/* 🔹 Top Section (6 Icons) */}
+     
       <div className={styles.topSection}>
         <img src={logo} alt="Logo" className={styles.logo} />
         <img src={home} alt="Home" className={styles.icon} />
@@ -25,7 +25,6 @@ const ProducerSidebar = () => {
         <img src={favourites} alt="Favourites" className={styles.icon} />
       </div>
 
-      {/* 🔹 Bottom Section (3 Icons) */}
       <div className={styles.bottomSection}>
         <img src={toggle} alt="Toggle" className={styles.iconTogle} />
         <img src={support} alt="Support" className={styles.icon} />

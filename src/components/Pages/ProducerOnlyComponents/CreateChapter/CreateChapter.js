@@ -7,21 +7,21 @@ import styles from "./CreateChapter.module.css";
 const CreateChapter = () => {
   return (
     <div className={`${styles.createChapter} container bg-white p-4 p-md-5 rounded-4 shadow-sm`}>
-      {/* Header */}
+
       <h3 className="fw-semibold fs-4 mb-2">
         Create New Chapter - Chapter x out of 13
       </h3>
 
       <hr className={styles.divider} />
 
-      {/* Form Section */}
+
       <div>
         <h5 className="fw-medium mb-4">Fill the boxes below:</h5>
 
         <Row className="align-items-start g-4 mb-4">
-          {/* LEFT SIDE */}
+
           <Col md={6} sm={12}>
-            {/* Chapter Title */}
+
             <Form.Group className="position-relative mb-4">
               <FaPen className={`${styles.icon} text-muted`} />
               <Form.Control
@@ -31,7 +31,7 @@ const CreateChapter = () => {
               />
             </Form.Group>
 
-            {/* Opening Scene */}
+
             <Form.Group className="position-relative">
               <FaPen className={`${styles.iconTop} text-muted`} />
               <Form.Control
@@ -43,27 +43,27 @@ const CreateChapter = () => {
             </Form.Group>
           </Col>
 
-          {/* RIGHT SIDE */}
+
           <Col md={6} sm={12}>
-  <Row className="g-3">
-    <Col sm={6} xs={12}>
-      <Card className={`${styles.uploadCard} text-center border-0`}>
-        <IoCloudUploadOutline className={styles.uploadIcon} />
-        <span>Upload Image</span>
-      </Card>
-    </Col>
-    <Col sm={6} xs={12}>
-      <Card className={`${styles.uploadCard} text-center border-0`}>
-        <IoCloudUploadOutline className={styles.uploadIcon} />
-        <span>Upload MP3 File</span>
-      </Card>
-    </Col>
-  </Row>
-</Col>
+            <Row className="g-3">
+              <Col sm={6} xs={12}>
+                <Card className={`${styles.uploadCard} text-center border-0`}>
+                  <IoCloudUploadOutline className={styles.uploadIcon} />
+                  <span>Upload Image</span>
+                </Card>
+              </Col>
+              <Col sm={6} xs={12}>
+                <Card className={`${styles.uploadCard} text-center border-0`}>
+                  <IoCloudUploadOutline className={styles.uploadIcon} />
+                  <span>Upload MP3 File</span>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
 
         </Row>
 
-        {/* CHARACTERS */}
+
         <h5 className="fw-medium mb-3">Characters</h5>
 
         <Row className="g-3 mb-5">
@@ -81,7 +81,7 @@ const CreateChapter = () => {
           ))}
         </Row>
 
-        {/* BOTTOM BUTTONS */}
+
         <div className="d-flex flex-wrap gap-3">
           <Button className={`${styles.saveBtn} px-4 py-2`}>
             Save & Review
