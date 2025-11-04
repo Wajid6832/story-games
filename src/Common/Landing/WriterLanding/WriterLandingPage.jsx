@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import image from "../../assets/1stimage.png"
-import styles from "../Landing/Wrtiterlanding.module.css"
+import image from "../../../assets/1stimage.png"
+import styles from "../../../Common/Landing/WriterLanding/Wrtiterlanding.module.css"
 const LandingPage = () => {
     const footer=[
           1,2,3,4,5,6
@@ -11,6 +11,7 @@ const LandingPage = () => {
   return (
     <>
      <div className={styles.landingWrapper}>
+      <div className={styles.landingContainer}>
     <div className={styles.bg}>
         <Container fluid className="px-5 py-5">
         <Row className={styles.main}>
@@ -62,6 +63,7 @@ const LandingPage = () => {
           </Row>
         </div>
       </Container>
+    </div>
     </div>
     </div>
     </>

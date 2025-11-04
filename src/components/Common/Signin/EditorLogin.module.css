@@ -5,7 +5,6 @@
   height: 100vh;
   background-color: #F9FAFB;
 }
-
 .loginCard {
   display: flex;
   justify-content: space-between;
@@ -38,20 +37,18 @@
   border-radius: 4px;
   margin-bottom: 28px;
 }
-
-.subtitle {
-  color: #6b7280;
+/* .subtitle {
+  color: #6B7280;
   margin-top: 8px;
   margin-bottom: 12px;
 }
-
 .line {
   height: 4px;
   width: 80px;
-  background-color: #fbbf24;
+  background-color: #FBBF24;
   border-radius: 4px;
   margin-bottom: 28px;
-}
+} */
 .inputGroup {
   position: relative;
   width: 100%;
@@ -87,7 +84,6 @@
 .input {
   width: 100%;
   padding: 12px 40px 12px 45px; 
-
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   background-color: #F3F4F6;
@@ -108,9 +104,8 @@
   align-items: center;
   margin-top: 24px;
 }
-
 .signIn {
-  background-color: #3b82f6;
+  background-color: #3B82F6;
   color: white;
   border: none;
   padding: 10px 24px;
@@ -120,12 +115,18 @@
   transition: background 0.3s ease;
 }
 .signIn:hover {
-  background-color: #2563eb;
+  background-color: #2563EB;
 }
-
 .forgot {
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  border: 1px solid #3B82F6;
+  color: #3B82F6;
+}
+.signIn:hover {
+  background-color: #2563EB;
+}
+.forgot {
+  border: 1px solid #3B82F6;
+  color: #3B82F6;
   background-color: transparent;
   padding: 10px 24px;
   border-radius: 8px;
@@ -133,13 +134,8 @@
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
 .forgot:hover {
   background-color: #EFF6FF;
-}
-
-.forgot:hover {
-  background-color: #eff6ff;
 }
 .imageSection {
   flex: 1;
@@ -158,7 +154,6 @@
     text-align: center;
     padding: 30px;
   }
-
   .formSection {
     max-width: 100%;
   }
@@ -562,9 +557,10 @@
 }
 .signup button:hover {
   background-color: #5872c7;
+  color: #6F8BDF;
 }
 .signin button:hover {
-  background-color: #6f8bdf;
+  background-color: #6F8BDF;
   color: #fff;
 }
 .browse {

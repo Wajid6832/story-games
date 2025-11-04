@@ -144,7 +144,7 @@
 }
 
 @media (max-width: 768px) {
-  .main {
+  .main { 
     width: 95%;
     padding: 1.5rem !important;
   }
