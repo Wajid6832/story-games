@@ -1,113 +1,66 @@
 import React from 'react'
-import styles from "./EditorHomeFacTopUp.module.css"
 import TopCards from '../editorCards/TopCards';
-import WriterCard from '../editorCards/WriterCard';
 import TopCharacterChapCard from '../editorCards/TopCharacterChapCard';
-const EditorHomeFacTopUp = () => {
-    const storySections = [
-        {
-            title: "Uploaded",
-            items: Array(8).fill({ image: "", name: "Uploaded Story" }),
-        },
-        {
-            title: "My Favorites",
-            items: Array(6).fill({ image: "", name: "Favorite Story" }),
-        },
-        {
-            title: "Top 10 Stories",
-            items: Array(10).fill({ image: "", name: "Top Story" }),
-        },
-    ];
+const EditorHomeFacTopUp = ({data}) => {
+    // const advertsAlicationReview = {
+    //     "data": [
+    //         {
+    //             "section": "Open Adverts",
+    //             "items": [
+    //                 { "id": 1, "image": "/images/story1.png", "name": "Uploaded Story 1" },
+    //                 { "id": 2, "image": "/images/story2.png", "name": "Uploaded Story 2" },
+    //                 { "id": 3, "image": "/images/story3.png", "name": "Uploaded Story 3" },
+    //                 { "id": 4, "image": "/images/story4.png", "name": "Uploaded Story 4" },
+    //                 { "id": 5, "image": "/images/story5.png", "name": "Uploaded Story 5" },
+    //                 { "id": 6, "image": "/images/story6.png", "name": "Uploaded Story 6" },
+    //                 { "id": 7, "image": "/images/story7.png", "name": "Uploaded Story 7" },
+    //                 { "id": 8, "image": "/images/story8.png", "name": "Uploaded Story 8" }
+    //             ]
+    //         },
+    //         {
+    //             "section": "Current Applications",
+    //             "items": [
+    //                 { "id": 1, "image": "/images/fav1.png", "name": "Favorite Story 1" },
+    //                 { "id": 2, "image": "/images/fav2.png", "name": "Favorite Story 2" },
+    //                 { "id": 3, "image": "/images/fav3.png", "name": "Favorite Story 3" },
+    //                 { "id": 4, "image": "/images/fav4.png", "name": "Favorite Story 4" },
+    //                 { "id": 5, "image": "/images/fav5.png", "name": "Favorite Story 5" },
+    //                 { "id": 6, "image": "/images/fav6.png", "name": "Favorite Story 6" }
+    //             ]
+    //         },
+    //         {
+    //             "section": "Saved for Review by the Producer",
+    //             "items": [
+    //                 { "id": 1, "image": "/images/top1.png", "name": "Top Story 1" },
+    //                 { "id": 2, "image": "/images/top2.png", "name": "Top Story 2" },
+    //                 { "id": 3, "image": "/images/top3.png", "name": "Top Story 3" },
+    //                 { "id": 4, "image": "/images/top4.png", "name": "Top Story 4" },
+    //                 { "id": 5, "image": "/images/top5.png", "name": "Top Story 5" },
+    //                 { "id": 6, "image": "/images/top6.png", "name": "Top Story 6" },
+    //                 { "id": 7, "image": "/images/top7.png", "name": "Top Story 7" },
+    //                 { "id": 8, "image": "/images/top8.png", "name": "Top Story 8" },
+    //                 { "id": 9, "image": "/images/top9.png", "name": "Top Story 9" },
+    //                 { "id": 10, "image": "/images/top10.png", "name": "Top Story 10" }
+    //             ]
+    //         }
+    //     ]
+    // }
 
 
-    const storySectionWriter = [
-        {
-            title: "Top 10 Writers",
-            items: [
-                { name: "Author 1", image: "/writer1.png" },
-                { name: "Author 2", image: "/writer2.png" },
-                { name: "Author 3", image: "/writer3.png" },
-                { name: "Author 4", image: "/writer4.png" },
-                { name: "Author 5", image: "/writer5.png" },
-                { name: "Author 6", image: "/writer6.png" },
-                { name: "Author 7", image: "/writer7.png" },
-                { name: "Author 8", image: "/writer8.png" },
-                { name: "Author 9", image: "/writer9.png" },
-                { name: "Author 10", image: "/writer10.png" },
-            ],
-        },
-    ];
 
-
-    const topCharacters = [
-        {
-            bookName: "Book Name",
-            characterName: "Character 1 Name",
-            playedBy: "Jon Doe",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            characterName: "Character 2 Name",
-            playedBy: "Jon Doe",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            characterName: "Character 3 Name",
-            playedBy: "Jon Doe",
-            writtenBy: "Jon Doe",
-        }
-    ];
-
-
-    const topChapters = [
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 1 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 7 Name",
-            writtenBy: "Jon Doe",
-        },
-        {
-            bookName: "Book Name",
-            chapterName: "Chapter 8 Name",
-            writtenBy: "Jon Doe",
-        }
-    ];
 
 
     return (
         <>
             <div className="container-fluid mt-4">
-                {storySections.map((section, index) => (
-                    <TopCards key={index} title={section.title} items={section.items} />
-                ))}
-            </div>
-
-
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div className="div">
-                {storySectionWriter.map((section, index) => (
-                    <WriterCard key={index} title={section.title} items={section.items} />
-                ))}
-            </div>
-                </div>
+                <TopCards data={data} />
             </div>
 
             <div className="d-flex gap-5">
-                {topCharacters.map((section, index) => (
-                    <TopCharacterChapCard key={index} section={section} />
-                ))}
-            </div>
-            <div className="d-flex gap-5">
-                {topChapters.map((section, index) => (
-                    <TopCharacterChapCard key={index} section={section} />
-                ))}
+
+
+                {/* <TopCharacterChapCard section={topCharacters} /> */}
+
             </div>
         </>
 

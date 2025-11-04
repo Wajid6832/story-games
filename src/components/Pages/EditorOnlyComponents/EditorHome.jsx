@@ -1,24 +1,19 @@
-import React, { useState } from "react";
-import styles from "./EditorHome.module.css";
-
-import EditorHeader from "../header/EditorHeader";
-import EditorHomeFacTopUp from "../../../EditorSection/editorHomeComponents/editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
-import EditorSidebar from "../sidebar/EditorSidebar";
-
+import React, { useSelector, useState } from "react";
+import EditorHeader from "./EditorHeader";
+import EditorHomeFacTopUp from "./editorHomeUpTopFavSectionsComponent/EditorHomeFacTopUp";
+// import EditorSidebar from "../../Common/Sidebar/EditorSidebar";
+import styles from "./EditorHome.module.css"
 const EditorHome = () => {
-  const [isOpenSidebar,setIsOpenSidebar]=useState(true);
 
-  const handleSidebar =()=>{
-    setIsOpenSidebar((prev)=>!prev);
-    console.log("handleSidebar :",isOpenSidebar);
-  }
-
+  const { data, isLoading, isError, isSuccess, error } = useSelector((state) => state.product);
+  //  console.log(data);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(true);
   return (
     <div className={`${styles.editorHomeContainer} container-fluid`}>
       {/* Sidebar */}
-      <div className={ isOpenSidebar?styles.sidebarSection:styles.sidebarClosed}>
+      {/* <div className={ isOpenSidebar?styles.sidebarSection:styles.sidebarClosed}>
         <EditorSidebar handleSidebar={handleSidebar} />
-      </div>
+      </div> */}
 
       {/* Main content area */}
       <div className={styles.mainSection}>

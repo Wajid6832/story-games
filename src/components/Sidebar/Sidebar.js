@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { clearState } from "../../features/product/product.slice";
-
 export const Sidebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,12 +13,10 @@ export const Sidebar = () => {
     navigate("/");
   };
   const [toggle, setToggle] = useState(false);
-
   const handleChange = (event) => {
     setToggle(event.target.checked);
     console.log(event.target.checked);
   };
-
   useEffect(() => {
     console.log(toggle);
   });
@@ -58,7 +55,6 @@ export const Sidebar = () => {
                 <i className='bi bi-person-vcard'></i>
                 <span className='nav_name'>Customers</span>
               </NavLink>
-
               <NavLink href='#' className='nav_link'>
                 <i className='bi bi-gear'></i>
                 <span className='nav_name'>Transactions</span>
@@ -82,4 +78,3 @@ export const Sidebar = () => {
     </>
   );
 };
-

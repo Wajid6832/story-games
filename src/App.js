@@ -1,104 +1,74 @@
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-import ChatApp from "./components/Pages/WriterOnlyComponents/ChatApp/ChatApp"
-=======
-// Writer/Editor Components
-// import WriterHome from "./components/Pages/WriterHome";
-// import EditorLanding from "./components/common/landing/EditorLanding";
-// import Home from "./components/common/home/Home";
-// import Bookpage from "./components/Pages/Bookpages/Bookpage";
-// import React from "react";
-// import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
-// import Home from "./components/Common/Landing/Reader-Home";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import ReaderHome from "./Common/Landing/Reader-Home";
-import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
 import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore";
 import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
 import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
->>>>>>> b9ea2fee96e278f8ebf004adb28cd04d32716008
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
+import Layout from "./layout/Layout";
+import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
+import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
+import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import ChatApp from "./components/Pages/WriterOnlyComponents/ChatApp/ChatApp";
+import EditorLanding from "./Common/Landing/EditorLanding";
+import EditorLogin from "./components/Common/Signin/EditorLogin";
+import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
+import ProtectedRoute from "./layout/Protected";
+import WorkRoom from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage"
+import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
+import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
 function App() {
+
   return (
-    <div>
-      
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
-           <Route path="/" element={<ChatApp/>} />
-=======
-        {/* <Route path="/WriterHome" element={<WriterHome />} />
-        <Route path="/Bookpage" element={<Bookpage />} /> */}
-         {/* Writer & Editor Routes */} 
-         {/* <Route path="/writer" element={<WriterHome />} />
-          <Route path="/editor" element={<EditorLanding />} />
-          <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/products" element={<Products />} /> */}
-        {/* <Route path="/" element={<Login />} /> */}
-        <Route path="/" element={<ReaderHome/>} />
-        <Route path="/readinghome" element={<ReadersLanding/>} />
-        <Route path="/CurrentNovels" element={<CurrentNovels/>} />
-        <Route path="/becomeWriter" element={<BecomeWriter />} />
-        <Route path="/tokenstore" element={<TokenStore />} />
-        <Route path="/forgotPassword" element={<ForgotPassword/>}/>
-        <Route path="/LinkBankAccount" element={<LinkBankAccount/>}/>
-        <Route path="/" element={<Landing/>} />
->>>>>>> b9ea2fee96e278f8ebf004adb28cd04d32716008
+        <Route path="/" element={<EditorLanding />} />
+        <Route path="/editorLogin" element={<EditorLogin />} />
+
+        <Route element={<ProtectedRoute allowedRoles={["writer"]} />}>
+          <Route element={<Layout role="writer" />}>
+            <Route path="/writerHome" element={<WriterHome />} />
+            <Route path="/bookpage" element={<Bookpage />} />
+            <Route path="/authorCard" element={<AuthorCard />} />
+            <Route path="/chatApp" element={<ChatApp />} />
+            <Route path="/workRoom" element={<WorkRoom/>}/>
+            <Route path="/profilePage" element={<ProfilePage/>}/>
+            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
+          </Route>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["editor"]} />}>
+          <Route element={<Layout role="editor" />}>
+            <Route path="/editorHome" element={<Bookpage />} />
+          </Route>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["reader"]} />}>
+          <Route element={<Layout role="reader" />}>
+            <Route path="/reader" element={<ReadersLanding />} />
+          </Route>
+        </Route>
+
+        <Route element={<ProtectedRoute allowedRoles={["producer"]} />}>
+          <Route element={<Layout role="producer" />}>
+            <Route
+              path="/producerHome"
+              element={<h2>Welcome Producer!</h2>}
+            />
+          </Route>
+        </Route>
+         
+
       </Routes>
-      </BrowserRouter>
-    </div>
+    </BrowserRouter>
   );
 }
-  
+
+
 export default App;
 
-
-=======
-import React from "react";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-import "bootstrap-icons/font/bootstrap-icons.css";
-// import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { Login } from "./features/auth/Login";
-// import { Products } from "./features/product/Product";
-import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
-import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
-import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
-import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
-
-
-
-
-function App() {
-  return (
-    <div className="App">
-     <BrowserRouter>
-      <Routes> 
-        {/* <Route path="/products" element={<Products />} /> */}
-        <Route path="/" element={<Login />} />
-        <Route path="/workroompage" element={ <WorkRoomPage/>} /> 
-        <Route path="/landingpage" element={<LandingPage/>} /> 
-        <Route path="/privacypolicypage" element={<PrivacyPolicy/>} /> 
-        <Route path="/termsconditions" element={<TermsConditions/>} /> 
-        
-      </Routes>
-      </BrowserRouter>
-      </div>
-  );
-}
-export default App;
->>>>>>> 8bb858a9542d4bb2af90c4ced725194ece2cce80

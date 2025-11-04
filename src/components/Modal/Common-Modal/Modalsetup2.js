@@ -1,26 +1,22 @@
 import { ImCross } from "react-icons/im";
 import { FaUser, FaEnvelope, FaCloudUploadAlt } from "react-icons/fa";
 import styles from "../Common-Modal/Modal2.module.css";
-import image from "../../../assets/Frame1.png"
+import image from "../../../assets/Frame1.png";
 
 function Modalsetup2({ onHide, setcomponentIndex }) {
   return (
-    <div className={`d-flex justify-content-center align-items-center ${styles.wrapper}`}>
-      <div className={`bg-white rounded-4 p-4 position-relative text-center ${styles.main}`}>
-        
-        <button
-          onClick={onHide}
-          className={`${styles.closeBtn}`}
-        >
+    <div className={styles.wrapper}>
+      <div className={`${styles.main} bg-white rounded-4 p-4 position-relative text-center`}>
+        <button onClick={onHide} className={styles.closeBtn}>
           <ImCross size={12} />
         </button>
 
-        <div className={styles.img}>
-          <img src={image} alt="apply" />
+        <div className={styles.imgBox}>
+          <img src={image} alt="apply" className={styles.img} /> 
         </div>
-        
-        <h5 className={`${styles.heading}`}>Apply for Position</h5>
-        
+
+        <h5 className={styles.heading}>Apply for Position</h5>
+
         <form>
           <div className={styles.inputGroup}>
             <FaUser className={styles.icon} />
@@ -30,7 +26,7 @@ function Modalsetup2({ onHide, setcomponentIndex }) {
               className={styles.input}
             />
           </div>
-          
+
           <div className={styles.inputGroup}>
             <FaEnvelope className={styles.icon} />
             <input
@@ -39,14 +35,14 @@ function Modalsetup2({ onHide, setcomponentIndex }) {
               className={styles.input}
             />
           </div>
-          
+
           <div className={styles.uploadBox}>
             <FaCloudUploadAlt className={styles.uploadIcon} />
             <p className={styles.uploadText}>Upload Sample Work</p>
           </div>
-        
-          <button 
-            type="submit" 
+
+          <button
+            type="button"
             className={styles.applyBtn}
             onClick={() => setcomponentIndex(2)}
           >
