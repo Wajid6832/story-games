@@ -3,18 +3,24 @@ import { Form, Row, Col, Card, Button } from "react-bootstrap";
 import { FaPen, FaCalendarAlt, FaUserAlt } from "react-icons/fa";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import styles from "./CreateNovel.module.css";
+import { useNavigate } from "react-router-dom";
 
 const CreateNovel = () => {
+  const navigate = useNavigate();
+
+  // ✅ Correct handleClick function
+  const handleClick = () => {
+    navigate("/createchapter"); // matches your App.js route
+  };
+
   return (
     <div className={`container-fluid bg-white p-5 rounded shadow-sm ${styles.pageWrapper}`}>
-
       <div className="mb-3">
         <h3 className="fw-semibold text-dark">Create New Novel</h3>
         <hr className={styles.divider} />
       </div>
 
       <Form>
-
         <p className="fw-medium text-secondary mb-3">Fill the boxes below:</p>
         <Row className="gy-3">
           <Col md={6}>
@@ -40,7 +46,6 @@ const CreateNovel = () => {
 
           <Col md={6}>
             <Row className="g-3">
-
               <Col md={6}>
                 <div className={styles.inputBox}>
                   <FaCalendarAlt className={styles.icon} />
@@ -48,18 +53,15 @@ const CreateNovel = () => {
                 </div>
               </Col>
 
-
               <Col md={6}>
                 <div className={styles.inputBox}>
                   <FaCalendarAlt className={styles.icon} />
                   <Form.Control type="date" className={styles.inputField} />
                 </div>
               </Col>
-
 
               <Col md={12}>
                 <div className={`${styles.inputBoxGroup} d-flex align-items-center`}>
-
                   <div className={`${styles.inputBox} flex-grow-1 me-2`}>
                     <FaUserAlt className={styles.icon} />
                     <Form.Select className={styles.inputField}>
@@ -70,19 +72,16 @@ const CreateNovel = () => {
                     </Form.Select>
                   </div>
 
-
                   <div className={`${styles.inputBox} flex-grow-1 me-2`}>
                     <FaPen className={styles.icon} />
                     <Form.Control type="text" placeholder="ID" className={styles.inputField} />
                   </div>
-
 
                   <Button className={styles.squareAddBtn}>+</Button>
                 </div>
               </Col>
             </Row>
           </Col>
-
 
           <Col md={12}>
             <div className={styles.inputBox}>
@@ -91,7 +90,6 @@ const CreateNovel = () => {
             </div>
           </Col>
         </Row>
-
 
         <h5 className="fw-semibold mt-4 mb-3 text-secondary">Characters Involved</h5>
         <Row className="g-3 mb-4">
@@ -106,7 +104,6 @@ const CreateNovel = () => {
             </Col>
           ))}
         </Row>
-
 
         <h5 className="fw-semibold mb-3 text-secondary">Add Additional Info</h5>
         <Row className="g-3 mb-3">
@@ -130,7 +127,10 @@ const CreateNovel = () => {
               <Form.Control type="text" placeholder="Enter Genre" className={styles.inputField} />
             </div>
             <div className="mt-3">
-              <Button className={styles.submitBtn}>Submit & Create</Button>
+              {/* ✅ handleClick navigation */}
+              <Button className={styles.submitBtn} onClick={handleClick}>
+                Submit & Create
+              </Button>
             </div>
           </Col>
         </Row>

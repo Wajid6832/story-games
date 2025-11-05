@@ -27,7 +27,8 @@ import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/S
 import CharacterPage from "./components/Pages/ProducerOnlyComponents/CharacterPage/CharacterPage";
 import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
 import HomePage from "./components/Pages/ProducerOnlyComponents/HomePage/HomePage";
-import NovelForm from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
+import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
+
 
 function App() {
   return (
@@ -68,7 +69,7 @@ function App() {
           <Route element={<Layout role="producer" />}>
             <Route path="/producerHome" element={<HomePage />} />
             <Route path="/characterpage" element={<CharacterPage />} />
-            <Route path="/novelform" element={<NovelForm />} />
+            <Route path="/create-novel" element={<CreateNovel />} />
             <Route path="/createchapter" element={<CreateChapter />} />
           </Route>
         </Route>

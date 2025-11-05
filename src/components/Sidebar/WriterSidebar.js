@@ -5,8 +5,10 @@ import { IoReorderThree, IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
-import image from  "../../assets/profile.png";
-import editor from  "../../assets/editor.png";
+import image from "../../assets/profile.png";
+import editor from "../../assets/editor.png";
+import image2 from "../../assets/review.png";
+import image3 from "../../assets/applications.png";
 import {
   House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
 } from "react-bootstrap-icons";
@@ -44,13 +46,13 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                   <House className={style.me2} /> <span>Home</span>
                 </Link>
                 <Link to="/ProfilePage" className={style.sidebarLink} onClick={toggleSidebar}>
-                  <img src={image} alt=""/> &nbsp;&nbsp;<span>Profile</span>
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
                 </Link>
                 <Link to="/bookpage" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Book className={style.me2} /> <span>Current Novels</span>
                 </Link>
-                 <Link to="/editorLogin" className={style.sidebarLink} onClick={toggleSidebar}>
-                      <img src={editor} alt=""/>&nbsp;&nbsp; <span>Become an Editor</span>
+                <Link to="/editorLogin" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={editor} alt="" />&nbsp;&nbsp; <span>Become an Editor</span>
                 </Link>
                 <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Heart className={style.me2} /> <span>Favorites</span>
@@ -79,6 +81,28 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
                 <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Envelope className={style.me2} /> <span>Messages</span>
+                </Link>
+              </>
+            )}
+            {role === "producer" && (
+              <>
+                <Link to="/producerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <House className={style.me2} /> <span>Home</span>
+                </Link>
+                <Link to="/profilePage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
+                </Link>
+                <Link to="/characterpage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image2} alt="" /> &nbsp;&nbsp;<span>Review Responses</span>
+                </Link>
+                <Link to="/create-novel" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image3} alt="" /> &nbsp;&nbsp;<span>Open Application</span>
+                </Link>
+                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Envelope className={style.me2} /> <span>Messages</span>
+                </Link>
+                <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
               </>
             )}
