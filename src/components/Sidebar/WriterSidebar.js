@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
 import image from  "../../assets/profile.png";
+import image2 from "../../../../story-games/src/assets/review.png";
+import image3 from "../../../../story-games/src/assets/applications.png";
 import editor from  "../../assets/editor.png";
 import {
   House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
@@ -60,7 +62,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
               </>
             )}
-
+            
             {role === "editor" && (
               <>
                 <Link to="/editorHome" className={style.sidebarLink} onClick={toggleSidebar}>
@@ -68,6 +70,30 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
                 <Link to="/bookpage" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Book className={style.me2} /> <span>Current Novels</span>
+                </Link>
+              </>
+            )}
+
+             
+            {role === "producer" && (
+              <>
+                <Link to="/producerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <House className={style.me2} /> <span>Home</span>
+                </Link>
+                <Link to="/profilePage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
+                </Link>
+                <Link to="/characterpage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image2} alt="" /> &nbsp;&nbsp;<span>Review Responses</span>
+                </Link>
+                <Link to="/" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image3} alt="" /> &nbsp;&nbsp;<span>Open Application</span>
+                </Link>
+                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Envelope className={style.me2} /> <span>Messages</span>
+                </Link>
+                <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
               </>
             )}

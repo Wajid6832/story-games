@@ -8,7 +8,7 @@ import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPasswo
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
@@ -22,8 +22,9 @@ import ProtectedRoute from "./layout/Protected";
 import WorkRoom from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage"
 import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
 import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
+ 
 // producer component
-
+import HomePage from "./components/Pages/ProducerOnlyComponents/HomePage/HomePage"
 import Book from "./components/Pages/ProducerOnlyComponents/Book/Book";
 import Book2 from "./components/Pages/ProducerOnlyComponents/Book2/Book2";
 import Book3 from "./components/Pages/ProducerOnlyComponents/Book3/Book3";
@@ -70,14 +71,15 @@ function App() {
         <Route element={<ProtectedRoute allowedRoles={["producer"]} />}>
           <Route element={<Layout role="producer" />}>
             <Route
-              path="/producerHome"
-              element={<h2>Welcome Producer!</h2>}/>
+              path="/producerHome" element={<HomePage/>}/>
+               {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
               <Route path="/book" element={<Book />}/>
               <Route path="/book2" element={<Book2 />}/>
               <Route path="/book3" element={<Book3 />}/>
               <Route path="/pageReducer" element={<pageReducer />}/>
               <Route path="/create" element={<Create />} />
-               
+               <Route path="/newChat" element={<NewChat />}/>
+               <Route path="newChat2" element={<NewChat2 />}/>
           </Route>
         </Route>
          
