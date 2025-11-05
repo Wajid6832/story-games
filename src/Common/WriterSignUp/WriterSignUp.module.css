@@ -1,11 +1,11 @@
 .mainLandingDiv {
   width: 100%;
-  min-height: 100vh;   /* ✅ Use min-height instead of fixed height */
+  min-height: 100vh;  
   background-color: #EFEFEF;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* ✅ Start content from top */
-  padding: 2rem 0;         /* ✅ Adds breathing room for top/bottom scroll */
+  align-items: flex-start; 
+  padding: 2rem 0;         
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
