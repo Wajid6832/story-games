@@ -4,7 +4,6 @@ import ReaderHome from "./Common/Landing/Reader-Home";
 import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
 import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore";
 import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
-import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -26,6 +25,7 @@ import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsC
 import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
 import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
+import ForgotPass from "./components/Common/Signin/ForgotPassword/ForgotPassword";
 function App() {
 
   return (
@@ -33,6 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<EditorLanding />} />
         <Route path="/editorLogin" element={<EditorLogin />} />
+        <Route path="/forgot-password" element={<ForgotPass/>} />
 
         <Route element={<ProtectedRoute allowedRoles={["writer"]} />}>
           <Route element={<Layout role="writer" />}>

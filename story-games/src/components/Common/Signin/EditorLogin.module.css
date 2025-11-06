@@ -53,7 +53,6 @@
   position: relative;
   width: 100%;
   max-width: 400px;
-  margin-bottom: 16px;
 }
 .icon {
   position: absolute;
@@ -121,18 +120,20 @@
 .signIn:hover {
   background-color: #2563EB;
 }
-.forgot {
-  border: 1px solid #3B82F6;
-  color: #3B82F6;
-  background-color: transparent;
-  padding: 10px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
+.forgotPasswordDiv {
+  display: flex;
 }
-.forgot:hover {
-  background-color: #EFF6FF;
+
+.forgotPassword {
+  color: #007bff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 /* Right Side: Illustration */
 .imageSection {

@@ -102,6 +102,14 @@ const EditorLogin = () => {
                     ></i>
                   </button>
                 </div>
+                <div className={styles.forgotPasswordDiv}>
+                  <span
+                    className={styles.forgotPassword}
+                    onClick={() => navigate("/forgot-password")}
+                  >
+                    Forgot Password?
+                  </span>
+                </div>
 
                 <div className={styles.butons}>
                   <div className={styles.btn}>
