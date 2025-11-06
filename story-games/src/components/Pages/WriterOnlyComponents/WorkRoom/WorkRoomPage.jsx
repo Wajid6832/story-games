@@ -3,9 +3,15 @@ import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
 import styles from "./WorkRoom.module.css";
 import { useNavigate } from "react-router-dom";
+import BookReader from "../Characterpage/BookReader";
 
 const WorkRoomPage = () => {
    const navigate = useNavigate();
+   const [openReader, setOpenReader] = useState(false);
+    if (openReader) {
+       return <BookReader setOpenReader={setOpenReader} />;
+     }
+
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
      
@@ -21,8 +27,8 @@ const WorkRoomPage = () => {
           <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap">
             <div className="d-flex align-items-center mb-2 mb-sm-0">
               <button
-                className={`${styles.backBtn} me-2`}
-                
+                onClick={()=>(navigate("/writerHome"))}
+                className={`${styles.backBtn} me-2`} 
               >
                 <FaAngleLeft />
               </button>
@@ -65,7 +71,11 @@ const WorkRoomPage = () => {
                   <div className={styles.chapterCard}>
                     <p className={styles.date}>1 Oct 22</p>
                     <h4>Chapter {num}</h4>
-                    <a href="#" className={styles.readLink}>
+                    <a onClick={(e) => {
+                    e.preventDefault();
+                    setOpenReader(true);
+                  }} 
+                    href="#" className={styles.readLink}>
                       Read Chapter →
                     </a>
                   </div>

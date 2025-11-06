@@ -55,7 +55,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
-                <Link to="#" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Envelope className={style.me2} /> <span>Messages</span>
                 </Link>
               </>
