@@ -8,7 +8,7 @@ import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPasswo
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import "./App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
@@ -32,6 +32,8 @@ import Create from "./components/Pages/ProducerOnlyComponents/Create/Create";
 import NewChat from "./components/Pages/ProducerOnlyComponents/New Chat/NewChat";
 import NewChat2 from "./components/Pages/ProducerOnlyComponents/New Chat2/NewChat2";
 import PageReducer from "./components/Pages/ProducerOnlyComponents/Page Reducer/PageReducer"
+import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
+import FavoritesPage from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
  
 function App() {
   return (
@@ -48,8 +50,8 @@ function App() {
             <Route path="/authorCard" element={<AuthorCard />} />
             <Route path="/chatApp" element={<ChatApp />} />
             <Route path="/workRoom" element={<WorkRoom/>}/>
-            <Route path="/profilePage" element={<ProfilePage/>}/>
-            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
+            {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
+            {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
           </Route>
         </Route>
 
@@ -73,13 +75,19 @@ function App() {
             <Route
               path="/producerHome" element={<HomePage/>}/>
                {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
+               <Route path="/create-novel" element={<CreateNovel />}/>
               <Route path="/book" element={<Book />}/>
               <Route path="/book2" element={<Book2 />}/>
               <Route path="/book3" element={<Book3 />}/>
-              <Route path="/pageReducer" element={<pageReducer />}/>
+              <Route path="/pagereducer" element={<PageReducer />}/>
               <Route path="/create" element={<Create />} />
                <Route path="/newChat" element={<NewChat />}/>
                <Route path="newChat2" element={<NewChat2 />}/>
+               <Route path="/favorites" element={<FavoritesPage />} />
+               <Route path="/profilePage" element={<ProfilePage/>}/>
+                <Route path="/supportFeedback" element={<SupportFeedback/>}/>
+                <Route path="/workRoom" element={<WorkRoom />} />
+
           </Route>
         </Route>
          

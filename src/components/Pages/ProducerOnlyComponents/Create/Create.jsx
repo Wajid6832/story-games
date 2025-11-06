@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Create.module.css'
 
 import Group from '../../../../assets/Group.png'
@@ -6,6 +6,9 @@ import write from '../../../../assets/write.png'
 import document from '../../../../assets/document.png'
 import { RxCrossCircled } from "react-icons/rx";
 const Create = () => {
+   const [data , setData] = useState({
+    
+   });
   return (
     <div className={styles.createContainer}>
       <div >
