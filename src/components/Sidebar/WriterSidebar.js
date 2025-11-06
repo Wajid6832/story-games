@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "../../components/Sidebar/WriterSidebar.module.css";
 import { Nav } from "react-bootstrap";
 import { IoReorderThree, IoClose } from "react-icons/io5";
@@ -9,8 +9,15 @@ import image from "../../assets/profile.png";
 import editor from "../../assets/editor.png";
 import image2 from "../../assets/review.png";
 import image3 from "../../assets/applications.png";
+import toggleIcon from "../../assets/toogle.png";
+
 import {
-  House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
+  House,
+  Book,
+  Heart,
+  Envelope,
+  QuestionCircle,
+  BoxArrowRight,
 } from "react-bootstrap-icons";
 
 const WriterSidebar = ({ isOpen, toggleSidebar }) => {
@@ -18,6 +25,10 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
+
+  // ✅ Added missing Reader Mode state & toggle
+  const [isReaderMode, setIsReaderMode] = useState(false);
+  const toggleReaderMode = () => setIsReaderMode((prev) => !prev);
 
   const handleSignOut = () => {
     dispatch(clearState());
@@ -36,7 +47,9 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
         <div className={style.sidebarTop}>
           <div className={style.sidebarBrand}>
             <span className={style.sidebarTitle}>Story Host</span>
-            <div className={style.desktopIcon} onClick={toggleSidebar}><IoReorderThree /></div>
+            <div className={style.desktopIcon} onClick={toggleSidebar}>
+              <IoReorderThree />
+            </div>
           </div>
 
           <Nav className="flex-column mt-1">
@@ -101,7 +114,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Envelope className={style.me2} /> <span>Messages</span>
                 </Link>
-                <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link to="/favorites" className={style.sidebarLink} onClick={toggleSidebar}>
                   <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
               </>
@@ -111,11 +124,22 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
         <div className={style.sidebarBottom}>
           <Nav className="flex-column">
+            <Nav.Link href="#" className={style.sidebarLink} onClick={toggleReaderMode}>
+              <img
+                src={toggleIcon}
+                alt="Toggle"
+                className={`${style.toggleIcon} ${isReaderMode ? style.on : style.off}`}
+              />
+              <span>Reader Mode {isReaderMode ? "ON" : "OFF"}</span>
+            </Nav.Link>
+
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
+
             <Nav.Link href="#" className={style.sidebarLink}>
-              <BoxArrowRight className={style.me2} /> <span onClick={handleSignOut}>Sign Out</span>
+              <BoxArrowRight className={style.me2} />
+              <span onClick={handleSignOut}>Sign Out</span>
             </Nav.Link>
           </Nav>
         </div>
@@ -124,4 +148,4 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   );
 };
 
-export default WriterSidebar
+export default WriterSidebar;
