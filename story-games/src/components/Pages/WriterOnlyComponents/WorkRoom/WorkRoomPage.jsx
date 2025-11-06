@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
 import styles from "./WorkRoom.module.css";
+import { useNavigate } from "react-router-dom";
 
 const WorkRoomPage = () => {
-
+   const navigate = useNavigate();
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
      
@@ -109,7 +110,7 @@ const WorkRoomPage = () => {
                   <BsCloudUpload className={styles.icon} />
                   Add a New Chapter
                 </button>
-                <button className={`${styles.btn} ${styles.secondary}`}>
+                <button onClick={()=>navigate("/chatApp")} className={`${styles.btn} ${styles.secondary}`}>
                   Group Chat
                 </button>
               </div>
