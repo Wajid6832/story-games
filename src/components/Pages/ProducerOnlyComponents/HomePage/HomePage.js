@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/create-novel");
-  };
+ const handleClick = () => {
+  navigate("/create-novel");
+};
 
   return (
     <div className={styles.container}>
@@ -31,6 +31,7 @@ const HomePage = () => {
             </Button>
           </div>
         </div>
+
         <hr className={styles.lineDivider} />
 
         <div className={styles.content}>

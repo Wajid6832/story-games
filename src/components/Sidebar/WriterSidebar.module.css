@@ -214,3 +214,21 @@
     display: block;
   }
 }
+
+
+.toggleIcon {
+  width: 35px;
+  height: 22px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+
+.on {
+  filter: hue-rotate(120deg);
+  transform: scale(1.05);
+}
+
+.off {
+  opacity: 0.9;
+}
