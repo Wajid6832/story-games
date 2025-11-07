@@ -5,10 +5,15 @@ import { IoReorderThree, IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
-import image from  "../../assets/profile.png";
-import editor from  "../../assets/editor.png";
+import image from "../../assets/profile.png";
+import editor from "../../assets/editor.png";
 import {
-  House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
+  House,
+  Book,
+  Heart,
+  Envelope,
+  QuestionCircle,
+  BoxArrowRight,
 } from "react-bootstrap-icons";
 
 const WriterSidebar = ({ isOpen, toggleSidebar }) => {
@@ -25,37 +30,85 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
   return (
     <>
-      {isOpen && <div className={style.sidebarOverlay} onClick={toggleSidebar} />}
-      <button className={style.mobileToggle} onClick={toggleSidebar}>
+    
+      {isOpen && (
+        <div
+          className={`${style.sidebarOverlay} d-block d-md-none`}
+          onClick={toggleSidebar}
+        />
+      )}
+
+     
+      <button
+        className={`${style.mobileToggle} d-block d-md-none`}
+        onClick={toggleSidebar}
+      >
         {isOpen ? <IoClose /> : <IoReorderThree />}
       </button>
 
-      <div className={`${style.sidebar} ${isOpen ? style.open : style.closed}`}>
+  
+      <div
+        className={`${style.sidebar} ${
+          isOpen ? style.open : style.closed
+        }`}
+      >
         <div className={style.sidebarTop}>
           <div className={style.sidebarBrand}>
             <span className={style.sidebarTitle}>Story Host</span>
-            <div className={style.desktopIcon} onClick={toggleSidebar}><IoReorderThree /></div>
+            <div className={style.desktopIcon} onClick={toggleSidebar}>
+              <IoReorderThree />
+            </div>
           </div>
 
           <Nav className="flex-column mt-1">
             {role === "writer" && (
               <>
-                <Link to="/writerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link
+                  to="/writerHome"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <House className={style.me2} /> <span>Home</span>
                 </Link>
-                <Link to="/ProfilePage" className={style.sidebarLink} onClick={toggleSidebar}>
-                  <img src={image} alt=""/> &nbsp;&nbsp;<span>Profile</span>
+
+                <Link
+                  to="/ProfilePage"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
                 </Link>
-                <Link to="/bookpage" className={style.sidebarLink} onClick={toggleSidebar}>
+
+                <Link
+                  to="/bookpage"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <Book className={style.me2} /> <span>Current Novels</span>
                 </Link>
-                 <Link to="/editorLogin" className={style.sidebarLink} onClick={toggleSidebar}>
-                      <img src={editor} alt=""/>&nbsp;&nbsp; <span>Become an Editor</span>
+
+                <Link
+                  to="/editorLogin"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
+                  <img src={editor} alt="" />
+                  &nbsp;&nbsp;<span>Become an Editor</span>
                 </Link>
-                <Link to="/authorCard" className={style.sidebarLink} onClick={toggleSidebar}>
+
+                <Link
+                  to="/authorCard"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
-                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+
+                <Link
+                  to="/chatApp"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <Envelope className={style.me2} /> <span>Messages</span>
                 </Link>
               </>
@@ -63,10 +116,19 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
             {role === "editor" && (
               <>
-                <Link to="/editorHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link
+                  to="/editorHome"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <House className={style.me2} /> <span>Dashboard</span>
                 </Link>
-                <Link to="/bookpage" className={style.sidebarLink} onClick={toggleSidebar}>
+
+                <Link
+                  to="/bookpage"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <Book className={style.me2} /> <span>Current Novels</span>
                 </Link>
               </>
@@ -74,10 +136,19 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
             {role === "reader" && (
               <>
-                <Link to="/readersLanding" className={style.sidebarLink} onClick={toggleSidebar}>
+                <Link
+                  to="/readersLanding"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <House className={style.me2} /> <span>Reader Home</span>
                 </Link>
-                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+
+                <Link
+                  to="/chatApp"
+                  className={style.sidebarLink}
+                  onClick={toggleSidebar}
+                >
                   <Envelope className={style.me2} /> <span>Messages</span>
                 </Link>
               </>
@@ -87,11 +158,33 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
         <div className={style.sidebarBottom}>
           <Nav className="flex-column">
+            <div
+              className={`${style.sidebarLink} ${style.readerModeSwitch}`}
+            >
+              <div className="form-check form-switch m-0">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckDefault"
+                  defaultChecked
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="switchCheckDefault"
+                >
+                  Read mode off
+                </label>
+              </div>
+            </div>
+
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
+
             <Nav.Link href="#" className={style.sidebarLink}>
-              <BoxArrowRight className={style.me2} /> <span onClick={handleSignOut}>Sign Out</span>
+              <BoxArrowRight className={style.me2} />
+              <span onClick={handleSignOut}>Sign Out</span>
             </Nav.Link>
           </Nav>
         </div>
@@ -100,4 +193,4 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   );
 };
 
-export default WriterSidebar
+export default WriterSidebar;

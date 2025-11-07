@@ -12,9 +12,6 @@
   left: 0;
   z-index: 1000;
   overflow-x: hidden;
-}
-
-.sidebar.open {
   width: 230px;
 }
 
@@ -43,7 +40,6 @@
   color: #333;
   transition: all 0.3s ease;
   white-space: nowrap;
-  opacity: 1;
 }
 
 .sidebar.closed .sidebarTitle {
@@ -52,7 +48,6 @@
   overflow: hidden;
 }
 
-/* Desktop Icon - Only visible on desktop */
 .desktopIcon {
   font-size: 1.4rem;
   color: #333;
@@ -63,7 +58,6 @@
   justify-content: center;
   padding: 5px;
   border-radius: 4px;
-  z-index: 1001;
 }
 
 .desktopIcon:hover {
@@ -113,89 +107,53 @@
   border-top: 1px solid #e0e0e0;
 }
 
-.readerMode {
+.readerModeSwitch {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 15px;
   font-size: 0.9rem;
   color: #444;
+  margin-bottom: 15px;
   white-space: nowrap;
   transition: all 0.3s ease;
 }
 
-.sidebar.closed .readerMode span {
+.sidebar.closed .readerModeSwitch label {
   opacity: 0;
   width: 0;
   overflow: hidden;
 }
 
-.switch {
+.readerModeSwitch .form-check-input {
   width: 36px;
   height: 20px;
   background-color: #888;
   border-radius: 12px;
   position: relative;
-  flex-shrink: 0;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
-.switchCircle {
-  width: 14px;
-  height: 14px;
-  background-color: #fff;
-  border-radius: 50%;
+.readerModeSwitch .form-check-input::before {
+  content: "";
   position: absolute;
   top: 3px;
   left: 3px;
-  transition: transform 0.3s ease;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 230px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-    width: 230px;
-  }
-  
-  .sidebar.closed {
-    transform: translateX(-100%);
-    width: 230px;
-  }
-  
-  .desktopIcon {
-    display: none !important;
-  }
-  
-  .mobileToggle {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1002;
-    background: #3b57f5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: block !important;
-  }
+.readerModeSwitch .form-check-input:checked {
+  background-color: #3b57f5;
 }
 
-@media (min-width: 769px) {
-  .mobileToggle {
-    display: none !important;
-  }
-  
-  .desktopIcon {
-    display: flex !important;
-  }
+.readerModeSwitch .form-check-input:checked::before {
+  transform: translateX(16px);
 }
 
 .sidebarOverlay {
@@ -209,8 +167,17 @@
   z-index: 999;
 }
 
-@media (max-width: 768px) {
-  .sidebarOverlay {
-    display: block;
-  }
+
+.mobileToggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1002;
+  background: #3b57f5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
