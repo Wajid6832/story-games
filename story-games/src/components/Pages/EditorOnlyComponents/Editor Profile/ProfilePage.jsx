@@ -80,7 +80,7 @@ export default function ProfilePage() {
 
         <div className="row g-3 mb-4">
           <div className="col-12 col-md-6 position-relative">
-            <FaPen size={18} className={styles.inputIcon} />
+            <FaPen size={18} className={styles.penicon} />
             <textarea
               name="aboutMe"
               placeholder="About Me"

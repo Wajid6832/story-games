@@ -4,7 +4,6 @@ import axios from "axios";
 
 
 const API_URL = "http://localhost:3000/users";
-
 const savedUser = localStorage.getItem("user");
 
 const initialState = {
