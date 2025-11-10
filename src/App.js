@@ -19,7 +19,6 @@ import EditorLanding from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import ProtectedRoute from "./layout/Protected";
-import WorkRoom from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage"
 import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
 import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
  
@@ -36,6 +35,11 @@ import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/Cre
 import FavoritesPage from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
  
+import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
+import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
+import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
+import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
+import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
 function App() {
   return (
     <BrowserRouter>
@@ -53,8 +57,19 @@ function App() {
             <Route path="/workRoom" element={<WorkRoom/>}/>
             {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
             {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
+            <Route path="/chatApp" element={<ChatApp />} />
+         
+           
+              
+            <Route path="/profilePage" element={<ProfilePage/>}/>
+            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
           </Route>
         </Route>
+      <Route path="/workroompage" element={<WorkRoomPage/>}/>
+      <Route path="/signup" element={<WriterSignUp/>}/>
+      <Route path="/privacypolicypage" element={<PrivacyPolicy/>}/>
+      <Route path="/termsconditionspage" element={<TermsConditions/>}/>
+      <Route path="/landingpage" element={<LandingPage/>}/>
 
         {/* Editor Routes */}
         <Route element={<ProtectedRoute allowedRoles={["editor"]} />}>
