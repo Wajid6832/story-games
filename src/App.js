@@ -34,6 +34,7 @@ import NewChat2 from "./components/Pages/ProducerOnlyComponents/New Chat2/NewCha
 import PageReducer from "./components/Pages/ProducerOnlyComponents/Page Reducer/PageReducer"
 import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
 import FavoritesPage from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
+import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
  
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
             <Route path="/writerHome" element={<WriterHome />} />
             <Route path="/bookpage" element={<Bookpage />} />
             <Route path="/authorCard" element={<AuthorCard />} />
-            <Route path="/chatApp" element={<ChatApp />} />
+            {/* <Route path="/chatApp" element={<ChatApp />} /> */}
             <Route path="/workRoom" element={<WorkRoom/>}/>
             {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
             {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
@@ -87,7 +88,8 @@ function App() {
                <Route path="/profilePage" element={<ProfilePage/>}/>
                 <Route path="/supportFeedback" element={<SupportFeedback/>}/>
                 <Route path="/workRoom" element={<WorkRoom />} />
-
+                <Route path="/chatApp" element={<ChatApp />} />
+                <Route path="/createChapter" element={<CreateChapter />} />
           </Route>
         </Route>
          

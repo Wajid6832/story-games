@@ -6,9 +6,22 @@ import write from '../../../../assets/write.png'
 import document from '../../../../assets/document.png'
 import { RxCrossCircled } from "react-icons/rx";
 const Create = () => {
-   const [data , setData] = useState({
+  //  const [data , setData] = useState({
     
-   });
+  //  });
+
+  const [data, setData] = useState({
+    submissionName: ""
+  });
+
+  
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setData({ submissionName: value });
+    console.log("Submission Name:", value);
+  };
+
+
   return (
     <div className={styles.createContainer}>
       <div >
@@ -23,6 +36,8 @@ const Create = () => {
         <img src={write} alt="icon" className={styles.inputImg} />
         <input
           type="text"
+           onChange={handleChange}
+          value={data.submissionName}
           placeholder="Create Submission Name"
           className={styles.inputField}
         />
