@@ -18,7 +18,7 @@ import EditorLanding from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import ProtectedRoute from "./layout/Protected";
-import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
+import ProfilePage  from "./components/Pages/EditorOnlyComponents/EditorProfile/ProfilePage";
 import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
 import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
@@ -44,7 +44,7 @@ function App() {
          
              <Route path="/workRoom" element={<WorkRoomPage/>}/>
               
-            <Route path="/profilePage" element={<ProfilePage/>}/>
+            <Route path="/ProfilePage" element={<ProfilePage/>}/>
             <Route path="/supportFeedback" element={<SupportFeedback/>}/>
           </Route>
         </Route>

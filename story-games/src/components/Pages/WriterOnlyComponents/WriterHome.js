@@ -55,7 +55,7 @@ const WriterHome = () => {
   if (error) return <div className="alert alert-danger">Error: {error}</div>;
 
   return (
-    <div className="container-fluid">
+    <div className="container">
       <section className="section">
         <h5 className={style.sectionTitle}>Open Adverts</h5>
         <Row className={style.cardsRow}>
