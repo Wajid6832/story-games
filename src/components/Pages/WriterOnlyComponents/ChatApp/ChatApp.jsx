@@ -69,13 +69,6 @@ const ChatApp = () => {
 
   };
 
-
-
-
-
-
-
-
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!message.trim() || !selectedContact) return;

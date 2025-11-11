@@ -47,7 +47,7 @@ const Create = () => {
 
       <h4 className={styles.uploadedTitle}>Uploaded Document</h4>
 
-      <div className={styles.uploadedBox}>
+      <div className={styles.uploadedBox} style={{position: "relative"}}>
         <p>
           <img src={document} alt="" className={styles.documentImg} />
           <div className={styles.text}>

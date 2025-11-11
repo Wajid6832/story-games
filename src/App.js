@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // import "./App.css";
 import ReaderHome from "./Common/Landing/Reader-Home";
 import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
@@ -6,9 +6,9 @@ import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore"
 import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
 import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
+// import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
@@ -34,6 +34,8 @@ import PageReducer from "./components/Pages/ProducerOnlyComponents/Page Reducer/
 import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
 import FavoritesPage from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
 import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
+import Application from "./components/Pages/ProducerOnlyComponents/Application/Application";
+import CharacterPage from "./components/Pages/ProducerOnlyComponents/CharacterPage/CharacterPage";
  
 import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
@@ -54,15 +56,15 @@ function App() {
             <Route path="/bookpage" element={<Bookpage />} />
             <Route path="/authorCard" element={<AuthorCard />} />
             {/* <Route path="/chatApp" element={<ChatApp />} /> */}
-            <Route path="/workRoom" element={<WorkRoom/>}/>
+            {/* <Route path="/workRoom" element={<WorkRoom/>}/> */}
             {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
             {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
-            <Route path="/chatApp" element={<ChatApp />} />
+            {/* <Route path="/chatApp" element={<ChatApp />} /> */}
          
            
               
-            <Route path="/profilePage" element={<ProfilePage/>}/>
-            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
+            {/* <Route path="/profilePage" element={<ProfilePage/>}/> */}
+            {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
           </Route>
         </Route>
       <Route path="/workroompage" element={<WorkRoomPage/>}/>
@@ -102,12 +104,15 @@ function App() {
                <Route path="/favorites" element={<FavoritesPage />} />
                <Route path="/profilePage" element={<ProfilePage/>}/>
                 <Route path="/supportFeedback" element={<SupportFeedback/>}/>
-                <Route path="/workRoom" element={<WorkRoom />} />
-                <Route path="/chatApp" element={<ChatApp />} />
+                {/* <Route path="/workRoom" element={<WorkRoom />} /> */}
+               <Route path="/chatApp" element={<ChatApp />} />
+               <Route path="/application" element={<Application />} />
+               <Route path="/characterpage" element={<CharacterPage/>} />
                 <Route path="/createChapter" element={<CreateChapter />} />
           </Route>
+
         </Route>
-         
+          
 
       </Routes>
     </BrowserRouter>
