@@ -42,6 +42,7 @@ import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsC
 import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
 import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
+import MemberProfile from "./components/Pages/ProducerOnlyComponents/MemberProfile/MemberProfile";
 function App() {
   return (
     <BrowserRouter>
@@ -67,7 +68,7 @@ function App() {
             {/* <Route path="/supportFeedback" element={<SupportFeedback/>}/> */}
           </Route>
         </Route>
-      <Route path="/workroompage" element={<WorkRoomPage/>}/>
+      {/* <Route path="/workroompage" element={<WorkRoomPage/>}/> */}
       <Route path="/signup" element={<WriterSignUp/>}/>
       <Route path="/privacypolicypage" element={<PrivacyPolicy/>}/>
       <Route path="/termsconditionspage" element={<TermsConditions/>}/>
@@ -102,13 +103,16 @@ function App() {
                <Route path="/newChat" element={<NewChat />}/>
                <Route path="newChat2" element={<NewChat2 />}/>
                <Route path="/favorites" element={<FavoritesPage />} />
+               <Route path="/linkbankaccount" element={<LinkBankAccount />} />
                <Route path="/profilePage" element={<ProfilePage/>}/>
                 <Route path="/supportFeedback" element={<SupportFeedback/>}/>
-                {/* <Route path="/workRoom" element={<WorkRoom />} /> */}
+               <Route path="/workroom" element={<WorkRoomPage />}/>
                <Route path="/chatApp" element={<ChatApp />} />
+          
                <Route path="/application" element={<Application />} />
                <Route path="/characterpage" element={<CharacterPage/>} />
                 <Route path="/createChapter" element={<CreateChapter />} />
+                <Route path="/memberProfile" element={<MemberProfile />} />
           </Route>
 
         </Route>
