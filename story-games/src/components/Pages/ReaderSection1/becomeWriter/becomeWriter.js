@@ -1,35 +1,18 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Form, Button, Collapse } from "react-bootstrap";
-
+import React, { useState, useRef } from "react";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import styles from "./BecomeWriter.module.css";
 
 const characterData = [
   "Character 1 Name",
   "Character 2 Name",
   "Character 3 Name",
-  "Character 4 Name"
+  "Character 4 Name",
+  "Character 5 Name"
 ];
 
 const FileUploadBox = ({ onFileChange }) => {
-  const [dragActive, setDragActive] = useState(false);
-  const inputRef = React.useRef(null);
   const [fileName, setFileName] = useState(null);
-
-  const handleDrag = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(e.type === "dragenter" || e.type === "dragover");
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      onFileChange(e.dataTransfer.files);
-      setFileName(e.dataTransfer.files[0].name);
-    }
-  };
+  const inputRef = useRef(null);
 
   const handleChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -39,18 +22,17 @@ const FileUploadBox = ({ onFileChange }) => {
   };
 
   return (
-    <div
-      className={`${styles.fileUploadBox} ${dragActive ? styles.dragActive : ""}`}
-      onDragEnter={handleDrag}
-      onDragLeave={handleDrag}
-      onDragOver={handleDrag}
-      onDrop={handleDrop}
-      onClick={() => inputRef.current.click()}
-    >
-      <input ref={inputRef} type="file" onChange={handleChange} style={{ display: "none" }} />
-      <div className="text-center">
-        <i className="bi bi-cloud-upload fs-3 mb-2"></i>
-        <span>{fileName ? `File Selected: ${fileName}` : "Upload Sample Work"}</span>
+    <div className={styles.fileUploadBox} onClick={() => inputRef.current.click()}>
+      <input
+        ref={inputRef}
+        type="file"
+        onChange={handleChange}
+        className={styles.hiddenInput}
+      />
+      <div className={styles.uploadContent}>
+        <i className="bi bi-cloud-upload mb-1"></i>
+        <div className={styles.uploadText}>Upload Sample Work</div>
+        {fileName && <div className={styles.fileName}>{fileName}</div>}
       </div>
     </div>
   );
@@ -59,22 +41,19 @@ const FileUploadBox = ({ onFileChange }) => {
 const BecomeWriter = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [expandedCharacter, setExpandedCharacter] = useState(null);
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ fullName: "", email: "", sampleFile: null });
-
-  const handleSelect = (name) => {
-    setSelectedCharacter(name);
-  };
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    sampleFile: null
+  });
 
   const handleMoreInfo = (name) => {
-    setShowForm(false);
     setExpandedCharacter(name === expandedCharacter ? null : name);
-    setSelectedCharacter(name);
   };
 
-  const handleApplyClick = () => {
+  const handleApplyClick = (name) => {
+    setSelectedCharacter(name);
     setExpandedCharacter(null);
-    setShowForm(true);
   };
 
   const handleFormChange = (e) => {
@@ -85,88 +64,89 @@ const BecomeWriter = () => {
     setFormData({ ...formData, sampleFile: files[0] });
   };
 
-  const handleCancel = () => {
-    setShowForm(false);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Application submitted for: ${selectedCharacter}`);
-    setShowForm(false);
   };
 
   return (
     <div className={styles.appWrapper}>
       <div className={styles.mainContent}>
         <Container fluid>
-          <h3 className="mb-4 fw-bold">Become a Writer</h3>
-          <h5 className="mb-3">Open Characters</h5>
+          <h3 className={styles.heading}>Become a Writer</h3>
+          <h5 className={styles.subHeading}>Open Characters</h5>
 
           <Row xs={1} md={2} lg={5} className="g-3">
-            {characterData.map((name) => (
-              <Col key={name}>
-                <Card
-                  className={`${styles.characterCard} ${
-                    selectedCharacter === name ? styles.selectedCard : ""
-                  }`}
-                  onClick={() => handleSelect(name)}
-                >
-                  <Card.Body>
-                    <Card.Subtitle className="text-muted small">Book Name</Card.Subtitle>
-                    <Card.Title className="fw-bold mb-2">{name}</Card.Title>
+            {characterData.map((name) => {
+              const isExpanded = expandedCharacter === name;
+              const isSelected = selectedCharacter === name;
 
-                    <p
-                      className={`${styles.infoLink} mb-0`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleMoreInfo(name);
-                      }}
-                    >
-                      More Information
-                      <i
-                        className={`bi bi-chevron-${
-                          expandedCharacter === name ? "up" : "down"
-                        } ms-1`}
-                      />
-                    </p>
-
-                    <Collapse in={expandedCharacter === name}>
+              return (
+                <Col key={name}>
+                  <Card
+                    className={`${styles.characterCard} 
+                      ${isSelected ? styles.selectedCard : ""} 
+                      ${isExpanded ? styles.expandedCard : ""}`}
+                  >
+                    <Card.Body className={styles.cardBody}>
                       <div>
-                        <p className="small mt-3 text-muted">
-                          Author Name · Writer Name
-                          <br />
-                          Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore.
-                        </p>
+                        <Card.Subtitle className={styles.bookName}>
+                          Book Name
+                        </Card.Subtitle>
+                        <Card.Title className={styles.characterName}>
+                          {name}
+                        </Card.Title>
 
-                        <Button
-                          className={`mt-2 ${styles.primaryButton}`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleApplyClick();
-                          }}
+                        <p
+                          className={styles.infoLink}
+                          onClick={() => handleMoreInfo(name)}
                         >
-                          Apply for Position
-                        </Button>
+                          More Information
+                          <i
+                            className={`bi bi-chevron-${isExpanded ? "up" : "down"} ms-1`}
+                          />
+                        </p>
                       </div>
-                    </Collapse>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+
+                      {isExpanded && (
+                        <div className={styles.hiddenInfo}>
+                          <p className={styles.authorText}>Author Name · Writer Name</p>
+                          <p className={styles.infoDescription}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                            quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+                            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                            consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.
+                          </p>
+                          <Button
+                            className={styles.applyButton}
+                            onClick={() => handleApplyClick(name)}
+                          >
+                            Apply for Position
+                          </Button>
+                        </div>
+                      )}
+
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
           </Row>
 
-          {showForm && (
-            <div className="mt-5">
-              <h5 className="mb-3">Input your information:</h5>
+          {selectedCharacter && (
+            <div className={styles.formWrapper}>
+              <h5 className={styles.formHeading}>
+                Input your information for <strong>{selectedCharacter}</strong>:
+              </h5>
 
-              <Form onSubmit={handleSubmit} style={{ maxWidth: "700px" }}>
-                <Row className="mb-3">
+              <Form onSubmit={handleSubmit} className={styles.form}>
+                <Row className={styles.inputRow}>
                   <Col>
                     <Form.Control
                       type="text"
                       placeholder="Enter Full Name"
                       name="fullName"
-                      className={styles.inputField}
                       onChange={handleFormChange}
                       required
                     />
@@ -185,15 +165,11 @@ const BecomeWriter = () => {
 
                 <FileUploadBox onFileChange={handleFileChange} />
 
-                <div className="d-flex mt-4">
-                  <Button type="submit" className={`${styles.primaryButton} me-3`}>
+                <div className={styles.buttonRow}>
+                  <Button type="submit" className={styles.primaryButton}>
                     Upload File
                   </Button>
-                  <Button
-                    variant="outline-secondary"
-                    className={styles.cancelButton}
-                    onClick={handleCancel}
-                  >
+                  <Button type="submit" className={styles.CancelButton}>
                     Cancel
                   </Button>
                 </div>

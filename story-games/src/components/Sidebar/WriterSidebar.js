@@ -88,7 +88,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
 
                 <Link
-                  to="/editorLogin"
+                  to="/becomeWriter"
                   className={style.sidebarLink}
                   onClick={toggleSidebar}
                 >
@@ -167,7 +167,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                   type="checkbox"
                   role="switch"
                   id="switchCheckDefault"
-                  defaultChecked
+                  
                 />
                 <label
                   className="form-check-label"
