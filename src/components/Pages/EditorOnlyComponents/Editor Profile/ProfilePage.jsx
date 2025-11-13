@@ -9,9 +9,11 @@ import {
   FaPen,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./Profile.module.css"; // still used for colors/theme
+import styles from "./Profile.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
+   const navigate = useNavigate();
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -37,7 +39,7 @@ export default function ProfilePage() {
       <div className={`card shadow p-4 border-0 ${styles.card}`}>
         <h1 className={`${styles.header} mb-4`}>My Profile</h1>
 
-        {/* Gifts Section */}
+        
         <div className="row g-3 mb-4">
           <div className="col-12 col-md-6">
             <div className={`${styles.giftCard}`}>
@@ -53,7 +55,7 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Basic Information */}
+        
         <h2 className={`${styles.sectionTitle} mb-3`}>Basic Information</h2>
         <div className="row g-3 mb-3">
           <div className="col-12 col-md-6 position-relative">
@@ -101,11 +103,11 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Password Section */}
+       
         <div className={`${styles.passwordSection} mb-4`}>
           <h2 className={`${styles.sectionTitle} mb-3`}>Password</h2>
 
-          {/* Old Password */}
+         
           <div className="position-relative mb-3">
             <FaLock size={18} className={styles.inputIcon} />
             <input
@@ -124,7 +126,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* New & Confirm Password */}
+          
           <div className="row g-3">
             <div className="col-12 col-md-6 position-relative">
               <FaLock size={18} className={styles.inputIcon} />
@@ -179,18 +181,18 @@ export default function ProfilePage() {
           </button>
         </div>
 
-        {/* Bank Account Section */}
+    
         <div className={`${styles.bankSection} mb-4`}>
           <h2 className={`${styles.sectionTitle} mb-3`}>Bank Account</h2>
           <button
             className={`btn btn-outline-primary ${styles.secondaryButton}`}
-            onClick={() => alert("Link bank account")}
+            // onClick={() => alert("Link bank account")}
+            onClick={() => navigate("/linkbankaccount")}
           >
             Link Bank Account
           </button>
         </div>
-
-        {/* Update Profile Button */}
+        
         <div className="d-grid">
           <button
             className={`btn btn-warning text-white fw-semibold ${styles.updateButton}`}

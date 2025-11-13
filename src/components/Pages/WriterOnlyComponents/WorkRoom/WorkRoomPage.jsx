@@ -3,10 +3,40 @@ import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
 import WriterSidebar from "../../../Sidebar/WriterSidebar";
 import styles from "./WorkRoom.module.css";
-
+import { useEffect } from "react";
 const WorkRoomPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+
+    useEffect(() => {
+    const links = document.querySelectorAll(`.${styles.readLink}`);
+
+    
+    links.forEach((link, index) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault(); 
+
+        
+        if (index === 0) {
+          window.location.href = "/characterpage";
+        }
+      });
+    });
+
+    
+    return () => {
+      links.forEach((link) => {
+        link.replaceWith(link.cloneNode(true));
+      });
+    };
+  }, []);
+
+
+
+ const openGroupChat = () => {
+    window.location.href = "/";
+    }
 
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
@@ -75,6 +105,7 @@ const WorkRoomPage = () => {
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
           <div className={styles.upcomingBox}>
@@ -114,7 +145,9 @@ const WorkRoomPage = () => {
                   <BsCloudUpload className={styles.icon} />
                   Add a New Chapter
                 </button>
-                <button className={`${styles.btn} ${styles.secondary}`}>
+                <button className={`${styles.btn} ${styles.secondary}`}
+                onClick={openGroupChat}
+                >
                   Group Chat
                 </button>
               </div>
