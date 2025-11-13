@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import WriterSidebar from "../components/Sidebar/WriterSidebar";
 import style from "./layout.module.css";
-import Navbar from "../components/Navbar/Navbar";
+// import Navbar from "../components/Navbar/Navbar";
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
@@ -25,7 +25,7 @@ const Layout = ({ role }) => {
         fluid
         className={`${style.mainWrapper} ${sidebarOpen ? style.sidebarOpen : style.sidebarClosed}`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="page-content">
           <Outlet />
         </div>

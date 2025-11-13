@@ -55,7 +55,7 @@ const WriterHome = () => {
   if (error) return <div className="alert alert-danger">Error: {error}</div>;
 
   return (
-    <div className="container-fluid">
+    <div className="container">
       <section className="section">
         <h5 className={style.sectionTitle}>Open Adverts</h5>
         <Row className={style.cardsRow}>
@@ -82,7 +82,7 @@ const WriterHome = () => {
       <section className="section">
         <h5 className={style.sectionTitle}>Current Applications</h5>
         <Row className={style.cardsRow}>
-          {books.slice(11, 20).map((book) => (
+          {books.slice(10, 20).map((book) => (
             <Col key={book.id} xs={4} sm={3} md={2} lg={2} xl={2} className="mb-3">
               <div 
                 className={style.placeholderCard}

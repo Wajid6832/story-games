@@ -1,10 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import ReaderHome from "./Common/Landing/Reader-Home";
-import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels"
-import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore";
 import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
-import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
@@ -18,7 +14,7 @@ import EditorLanding from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import ProtectedRoute from "./layout/Protected";
-import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
+import ProfilePage  from "./components/Pages/EditorOnlyComponents/EditorProfile/ProfilePage";
 import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
 import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
@@ -34,17 +30,19 @@ function App() {
         <Route path="/" element={<EditorLanding />} />
         <Route path="/editorLogin" element={<EditorLogin />} />
         <Route path="/forgot-password" element={<ForgotPass/>} />
+        
 
         <Route element={<ProtectedRoute allowedRoles={["writer"]} />}>
           <Route element={<Layout role="writer" />}>
             <Route path="/writerHome" element={<WriterHome />} />
             <Route path="/bookpage" element={<Bookpage />} />
+            <Route path="/becomeWriter" element={<BecomeWriter />} />
             <Route path="/authorCard" element={<AuthorCard />} />
             <Route path="/chatApp" element={<ChatApp />} />
          
              <Route path="/workRoom" element={<WorkRoomPage/>}/>
               
-            <Route path="/profilePage" element={<ProfilePage/>}/>
+            <Route path="/ProfilePage" element={<ProfilePage/>}/>
             <Route path="/supportFeedback" element={<SupportFeedback/>}/>
           </Route>
         </Route>
@@ -63,6 +61,7 @@ function App() {
         <Route element={<ProtectedRoute allowedRoles={["reader"]} />}>
           <Route element={<Layout role="reader" />}>
             <Route path="/reader" element={<ReadersLanding />} />
+            
           </Route>
         </Route>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaEye,
   FaEyeSlash,
@@ -9,21 +9,37 @@ import {
   FaPen,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./Profile.module.css"; // still used for colors/theme
+import styles from "./Profile.module.css";
 
 export default function ProfilePage() {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loggedUser, setLoggedUser] = useState(null);
 
   const [formData, setFormData] = useState({
-    email: "mail@email.com",
+    email: "",
     username: "user_name01",
     aboutMe: "",
     oldPassword: "",
     newPassword: "",
     confirmPassword: "",
   });
+
+  // Load logged-in user from localStorage
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      const parsed = JSON.parse(userData);
+      setLoggedUser(parsed);
+      setFormData((prev) => ({
+        ...prev,
+        email: parsed.email || prev.email,
+        username: parsed.username || prev.username,
+        aboutMe: parsed.aboutMe || prev.aboutMe,
+      }));
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -32,12 +48,65 @@ export default function ProfilePage() {
     });
   };
 
+  // Handle password update with API
+  const handlePasswordUpdate = async () => {
+    const { oldPassword, newPassword, confirmPassword } = formData;
+
+    if (!oldPassword || !newPassword || !confirmPassword) {
+      alert("Please fill all password fields!");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      alert("New and confirm passwords do not match!");
+      return;
+    }
+    if (!loggedUser) {
+      alert("No user is logged in!");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/users");
+      const users = await res.json();
+
+      const currentUser = users.find(
+        (u) => u.email === loggedUser.email && u.role === loggedUser.role
+      );
+
+      if (!currentUser) return alert("User not found in database!");
+      if (currentUser.password !== oldPassword) return alert("Old password is incorrect!");
+
+      const updateRes = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...currentUser, password: newPassword }),
+      });
+
+      if (updateRes.ok) {
+        alert("Password updated successfully!");
+        setFormData({
+          email: loggedUser.email,
+          username: loggedUser.username,
+          aboutMe: loggedUser.aboutMe,
+          oldPassword: "",
+          newPassword: "",
+          confirmPassword: "",
+        });
+        localStorage.removeItem("user");
+        setLoggedUser(null);
+      } else alert("Failed to update password!");
+    } catch (error) {
+      console.error(error);
+      alert("Error connecting to API!");
+    }
+  };
+
   return (
     <div className={`container-fluid ${styles.pageWrapper}`}>
       <div className={`card shadow p-4 border-0 ${styles.card}`}>
         <h1 className={`${styles.header} mb-4`}>My Profile</h1>
 
-        {/* Gifts Section */}
+      
         <div className="row g-3 mb-4">
           <div className="col-12 col-md-6">
             <div className={`${styles.giftCard}`}>
@@ -53,7 +122,6 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Basic Information */}
         <h2 className={`${styles.sectionTitle} mb-3`}>Basic Information</h2>
         <div className="row g-3 mb-3">
           <div className="col-12 col-md-6 position-relative">
@@ -64,6 +132,7 @@ export default function ProfilePage() {
               value={formData.email}
               onChange={handleInputChange}
               className="form-control ps-5"
+              disabled
             />
           </div>
           <div className="col-12 col-md-6 position-relative">
@@ -77,7 +146,6 @@ export default function ProfilePage() {
             />
           </div>
         </div>
-
         <div className="row g-3 mb-4">
           <div className="col-12 col-md-6 position-relative">
             <FaPen size={18} className={styles.penicon} />
@@ -104,8 +172,6 @@ export default function ProfilePage() {
         {/* Password Section */}
         <div className={`${styles.passwordSection} mb-4`}>
           <h2 className={`${styles.sectionTitle} mb-3`}>Password</h2>
-
-          {/* Old Password */}
           <div className="position-relative mb-3">
             <FaLock size={18} className={styles.inputIcon} />
             <input
@@ -124,7 +190,6 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* New & Confirm Password */}
           <div className="row g-3">
             <div className="col-12 col-md-6 position-relative">
               <FaLock size={18} className={styles.inputIcon} />
@@ -140,14 +205,9 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowNewPassword(!showNewPassword)}
               >
-                {showNewPassword ? (
-                  <FaEyeSlash size={18} />
-                ) : (
-                  <FaEye size={18} />
-                )}
+                {showNewPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
               </div>
             </div>
-
             <div className="col-12 col-md-6 position-relative">
               <FaLock size={18} className={styles.inputIcon} />
               <input
@@ -162,18 +222,13 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? (
-                  <FaEyeSlash size={18} />
-                ) : (
-                  <FaEye size={18} />
-                )}
+                {showConfirmPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
               </div>
             </div>
           </div>
-
           <button
             className={`btn btn-primary mt-3 ${styles.primaryButton}`}
-            onClick={() => alert("Password updated!")}
+            onClick={handlePasswordUpdate}
           >
             Update Password
           </button>
@@ -194,7 +249,7 @@ export default function ProfilePage() {
         <div className="d-grid">
           <button
             className={`btn btn-warning text-white fw-semibold ${styles.updateButton}`}
-            onClick={() => alert("Profile updated!")}
+            onClick={() => alert("Link your bank account")}
           >
             Update Profile
           </button>

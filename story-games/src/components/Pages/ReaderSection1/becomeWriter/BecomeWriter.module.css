@@ -1,46 +1,158 @@
 .appWrapper {
   display: flex;
-  background: #f5f5f7;
+  background-color: #f2f2f2;
   width: 100%;
   min-height: 100vh;
 }
 
 .mainContent {
   padding: 25px;
-  transition: margin-left 0.3s ease;
+}
+
+.heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subHeading {
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .characterCard {
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  background: #f1f2f4;
+  background-color: #e3e3e3;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  min-height: 230px;
+  position: relative;
+  overflow: hidden;
 }
 
-.selectedCard {
-  background-color: #6f8df7 !important;
-  color: #fff !important;
-  border: none !important;
-  transition: all 0.3s ease;
+.cardBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.selectedCard:hover {
-  background-color: #5b7af0 !important;
-  transform: translateY(-2px);
+.bookName {
+  font-size: 0.85rem;
+  color: #6c757d;
 }
 
-.selectedCard .text-muted,
-.selectedCard .infoLink {
-  color: #fff !important;
+.characterName {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .infoLink {
   font-size: 0.85rem;
   color: #5a83f8;
   cursor: pointer;
+  user-select: none;
 }
 
+.expandedCard {
+  background-color: #d6d6d6 !important;
+}
+
+.selectedCard {
+  background-color: #6f8df7 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.selectedCard .bookName,
+.selectedCard .infoLink {
+  color: #fff !important;
+}
+
+.hiddenInfo {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+
+.authorText {
+  color: #2b6ef5;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.infoDescription {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.applyButton {
+  background-color: #6f8df7;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+
+.fileUploadBox {
+  border: 2px dashed #cdd1d9;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 25px;
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uploadText {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.fileName {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #777;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.formWrapper {
+  margin-top: 20px;
+}
+
+.formHeading {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.form {
+  max-width: 700px;
+}
+
+.inputRow {
+  margin-bottom: 10px;
+}
+.buttonRow {
+  display: flex;
+  margin-top: 20px;
+}
 .primaryButton {
   background: #5a83f8;
   border: none;
@@ -48,21 +160,13 @@
   font-size: 0.88rem;
   border-radius: 6px;
   color: #fff;
-}
-
-.cancelButton {
-  border-color: #5a83f8;
-  color: #5a83f8;
-}
-
-.fileUploadBox {
-  border: 2px dashed #cdd1d9;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.inputField {
-  padding: 10px;
+} 
+.CancelButton{
+  background: #fff;
+  margin-left: 20px;
+  border: 1px solid #5a83f8;
+  padding: 6px 30px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  color:#5a83f8 ;
 }

@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../WriterOnlyComponents/Favourite/Autho.module.css";
-import iconImage from "../../../../assets/icon.png";
 import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
 import { CommonModal } from "../../../Modal/Common-Modal/Modal";
 import { fetchFavourite, fetchBooks } from "../../../../features/auth/writerslice";
@@ -80,7 +79,7 @@ const FavoritesPage = () => {
           <div className="position-relative">
             <input
               type="text"
-              className="form-control ps-4 py-2"
+              className="form-control ps-5 py-2"
               placeholder="Search authors..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
