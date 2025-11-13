@@ -23,7 +23,8 @@ import styles from "../ChatApp/ChatApp.module.css";
 
 const ChatApp = () => {
   const [message, setMessage] = useState("");
-  const [selectedContact, setSelectedContact] = useState(null);
+  const[selectedContact, setSelectedContact] = useState(null) 
+  
   const [chats, setChats] = useState({});
 
   const contacts = [
@@ -65,8 +66,8 @@ const ChatApp = () => {
         ],
       }));
     }
-  };
 
+  };
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -166,6 +167,7 @@ const ChatApp = () => {
                 }`}
                 onClick={() => {
                   handleContactClick(c);
+                    //  handleAddMember(c)
                   setShowChat(true); 
                 }}
               >
@@ -218,6 +220,10 @@ const ChatApp = () => {
                     <Dropdown.Item key={i}>{m}</Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
+       
+
+
+
               </Dropdown>
                 <Dropdown align="end">
                   <Dropdown.Toggle
