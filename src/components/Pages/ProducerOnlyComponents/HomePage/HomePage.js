@@ -6,11 +6,19 @@ import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+<<<<<<< HEAD
+ const navigate = useNavigate();
+const handleClick = () => {
+    navigate("/create-novel");
+  };
+  
+=======
   const navigate = useNavigate();
 
  const handleClick = () => {
   navigate("/create-novel");
 };
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 
   return (
     <div className={styles.container}>
@@ -23,6 +31,7 @@ const HomePage = () => {
               <Form.Control
                 type="text"
                 placeholder="Search"
+                onClick={() => navigate("/pagereducer")}
                 className={styles.input}
               />
             </div>
@@ -39,7 +48,9 @@ const HomePage = () => {
           <div className={styles.novelGrid}>
             {[...Array(8)].map((_, i) => (
               <Card key={i} className={styles.novelCard}>
-                <div className={styles.imagePlaceholder}>
+                <div className={styles.imagePlaceholder}
+                   onClick={() => navigate("/pagereducer")}
+                   >
                   <img
                     src={novelImages}
                     alt="Novel Cover"
@@ -56,3 +67,14 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
+

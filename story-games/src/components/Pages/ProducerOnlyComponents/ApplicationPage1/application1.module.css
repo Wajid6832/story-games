@@ -1,0 +1,177 @@
+.pageWrap {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 20px 60px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid #e4e8ff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.pageTitle {
+  font-weight: 700;
+  font-size: 28px;
+  color: #1e1e1e;
+}
+
+/* Search bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 220px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: #6b7280;
+}
+
+.searchInput {
+  padding-left: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Tabs */
+.tabs {
+  border-bottom: 1px solid #d1d5db;
+  margin-bottom: 30px;
+}
+
+.tabs .nav-link {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.tabs .nav-link.active {
+  border-bottom: 2px solid #4f46e5 !important;
+  color: #4f46e5 !important;
+  background-color: transparent !important;
+}
+
+/* Card */
+.card {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #EFEFEF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px 0;
+}
+
+.writerInfo {
+  font-size: 14px;
+  color: #374151;
+}
+
+.demoBtn {
+  color: #4f46e5 !important;
+  font-weight: 500;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  border-color: #4f46e5;
+  gap: 6px;
+}
+
+/* Card Content */
+.novelName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-top: 5px;
+}
+
+.subTitle {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 15px;
+}
+
+/* Buttons */
+.btnRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8.75px;
+  margin-top: 15px;
+}
+
+.saveBtn {
+  background:#6F8BDF ;
+  color: white;
+  border: none;
+  width: 212px;
+  height: 50px;
+}
+
+.saveBtn:hover {
+  background: #6F8BDF;
+}
+
+.acceptBtn {
+  background: #fbbf24;
+  border: none;
+  color: #fff;
+  width: 162px;
+  height: 50px;
+}
+
+.acceptBtn:hover {
+  background: #f59e0b;
+}
+
+.rejectBtn {
+  background: #111827;
+  border: none;
+  color: #fff;
+  width: 162px;
+  height: 50px;
+}
+
+.rejectBtn:hover {
+  background: #1f2937;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pageWrap {
+    padding: 20px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .searchBar {
+    width: 100%;
+  }
+}

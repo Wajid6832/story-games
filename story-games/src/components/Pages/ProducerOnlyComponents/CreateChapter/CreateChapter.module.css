@@ -1,0 +1,125 @@
+.createChapter {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  min-height: 100vh; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #6F8BDF;
+  margin-bottom: 30px;
+  margin-left: -50px;  
+  margin-right: -50px; 
+  width: calc(100% + 100px);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+.iconTop {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+.input,
+.textArea {
+  background: #efefef;
+  border: none;
+  font-size: 15px;
+  color: #333;
+  border-radius: 10px;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.uploadCard {
+  height: 200px !important; 
+  background: #efefef !important;
+  border-radius: 12px !important;
+  border: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  color: #7a7a7a !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+}
+
+.uploadCard:hover {
+  background: #e3e6ff !important;
+  transform: translateY(-3px);
+}
+
+.uploadIcon {
+  font-size: 32px !important;
+  margin-bottom: 8px;
+  color: #6f8bdf;
+}
+
+.characterCard {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  padding: 10px 14px;
+}
+
+.characterCard:hover {
+  background: #eef1ff;
+  transform: scale(1.02);
+}
+
+
+.createBtn {
+  background: #6f8bdf;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.createBtn:hover {
+  background: #4a5ed8;
+}
+
+.saveBtn {
+  background: #6f8bdf;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 10px 24px;
+}
+
+.saveBtn:hover {
+  background: #4a5ed8;
+}
+
+.publishBtn {
+  background-color: transparent !important;
+  color: #6f8bdf !important;
+  border: 1px solid #6f8bdf !important;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 10px 24px;
+}
+
+.publishBtn:hover {
+  background: #dfe5ff !important;
+}

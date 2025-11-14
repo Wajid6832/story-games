@@ -6,11 +6,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
 import image from "../../assets/profile.png";
+<<<<<<< HEAD
+import image2 from "../../../../story-games/src/assets/review.png";
+import image3 from "../../../../story-games/src/assets/applications.png";
+import editor from "../../assets/editor.png";
+import toggleIcon from "../../assets/toogle.png";
+import { useEffect } from "react";
+=======
 import editor from "../../assets/editor.png";
 import image2 from "../../assets/review.png";
 import image3 from "../../assets/applications.png";
 import toggleIcon from "../../assets/toogle.png";
 
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 import {
   House,
   Book,
@@ -21,12 +29,17 @@ import {
 } from "react-bootstrap-icons";
 
 const WriterSidebar = ({ isOpen, toggleSidebar }) => {
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
 
+<<<<<<< HEAD
+=======
   // ✅ Added missing Reader Mode state & toggle
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
   const [isReaderMode, setIsReaderMode] = useState(false);
   const toggleReaderMode = () => setIsReaderMode((prev) => !prev);
 
@@ -87,6 +100,30 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
               </>
             )}
 
+
+            {role === "producer" && (
+              <>
+                <Link to="/producerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <House className={style.me2} /> <span>Home</span>
+                </Link>
+                <Link to="/profilePage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
+                </Link>
+                <Link to="/characterpage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image2} alt="" /> &nbsp;&nbsp;<span>Review Responses</span>
+                </Link>
+                <Link to="/" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image3} alt="" /> &nbsp;&nbsp;<span>Open Application</span>
+                </Link>
+                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Envelope className={style.me2} /> <span>Messages</span>
+                </Link>
+                <Link to="/favorites" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Heart className={style.me2} /> <span>Favorites</span>
+                </Link>
+              </>
+            )}
+
             {role === "reader" && (
               <>
                 <Link to="/readersLanding" className={style.sidebarLink} onClick={toggleSidebar}>
@@ -132,7 +169,10 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
               />
               <span>Reader Mode {isReaderMode ? "ON" : "OFF"}</span>
             </Nav.Link>
+<<<<<<< HEAD
+=======
 
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
