@@ -16,7 +16,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* ✅ Public Routes */}
         <Route path="/editorLogin" element={<EditorLogin />} />
         <Route path="/forgot-password" element={<ForgotPass />} />
         <Route path="/signup" element={<WriterSignUp />} />
@@ -24,7 +23,6 @@ function App() {
         <Route path="/termsconditionspage" element={<TermsConditions />} />
         <Route path="/landingpage" element={<LandingPage />} />
 
-        {/* ✅ Nested Protected Routes (WRAPPED in Fragment) */}
         <>
           {WriterRoutes}
           {EditorRoutes}
@@ -32,7 +30,6 @@ function App() {
           {ProducerRoutes}
         </>
 
-        {/* ✅ Fallback */}
         <Route path="*" element={<EditorLogin />} />
       </Routes>
     </BrowserRouter>
