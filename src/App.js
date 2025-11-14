@@ -9,8 +9,6 @@ import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/L
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap-icons/font/bootstrap-icons.css";
 // import "./App.css";
-import ProfilePage from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
-import Privacy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import Terms from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -26,10 +24,8 @@ import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
 import ProtectedRoute from "./layout/Protected";
 import ProfilePage  from "./components/Pages/EditorOnlyComponents/Editor Profile/ProfilePage";
-import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
  
 // producer component
-import HomePage from "./components/Pages/ProducerOnlyComponents/HomePage/HomePage"
 import Book from "./components/Pages/ProducerOnlyComponents/Book/Book";
 import Book2 from "./components/Pages/ProducerOnlyComponents/Book2/Book2";
 import Book3 from "./components/Pages/ProducerOnlyComponents/Book3/Book3";
@@ -37,11 +33,7 @@ import Create from "./components/Pages/ProducerOnlyComponents/Create/Create";
 import NewChat from "./components/Pages/ProducerOnlyComponents/New Chat/NewChat";
 import NewChat2 from "./components/Pages/ProducerOnlyComponents/New Chat2/NewChat2";
 import PageReducer from "./components/Pages/ProducerOnlyComponents/Page Reducer/PageReducer"
-import CreateNovel from "./components/Pages/ProducerOnlyComponents/NovelForm/CreateNovel";
-import FavoritesPage from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
-import CreateChapter from "./components/Pages/ProducerOnlyComponents/CreateChapter/CreateChapter";
 import Application from "./components/Pages/ProducerOnlyComponents/Application/Application";
-import CharacterPage from "./components/Pages/ProducerOnlyComponents/CharacterPage/CharacterPage";
  
 import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
