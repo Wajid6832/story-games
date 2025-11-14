@@ -1,9 +1,9 @@
-/* body {
+ body {
   width: 1440px;
   height: 1024px;
   border: 16px;
   background-color: #FFFFFF;
-} */
+} 
 .card {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -14,6 +14,7 @@
   justify-content: center;
   border-radius: 16px;
   background-color: white; 
+  /* margin-top: 10px; */
 
 }
 .header {
@@ -30,23 +31,13 @@
   color: #333;
   font-weight: 600;
 }
-
-/* .inputContainer {
-  position: relative;
-  width: 300px;
-} */
-
 .inputImg {
   position: absolute;
   left: 12px;
   width: 20px;
   height: 20px;
-  /* border-radius: 50%; */
-  /* pointer-events: none; */
-  
   margin-bottom: 05px;
-  margin-left: 02px;
-  
+    left: -60px;
 }
 
 .inputField {
@@ -58,14 +49,6 @@
   background-color: lightgrey;
 
 }
-
-/* .inputField:focus {
-  border-color: #6f8bdf;
-} */
-/* .uploadSection {
-  margin: 20px 0;
-} */
-
 .uploadIcon {
   width: 17.14px;
   height: 17.14px;
@@ -99,7 +82,7 @@
   padding-left: 61.28px;
   gap: 8.75px;
   color: #fff;
-  margin-left: 230px;
+  margin-left: 210px;
   margin-top: 50px;
  
 }
@@ -117,8 +100,8 @@
   left: 16px;
   position: absolute;
   display: flex;
-  margin-top: 420px;
-  margin-left: 540px;
+  margin-top: 500px;
+  margin-left: 470px;
 }
 .searchIcon {
   width: 20px;
@@ -196,8 +179,9 @@
   right: 10px;   
   width: 30px;    
   height: auto;
-  margin-right: 300px;
-  /* margin-left: 100px; */
+  margin-right: 720px;
+  
+  margin-top: 30px;
 }
 .textareaContainer {
   width: 560px;

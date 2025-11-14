@@ -10,7 +10,7 @@ import image2 from "../../../../story-games/src/assets/review.png";
 import image3 from "../../../../story-games/src/assets/applications.png";
 import editor from "../../assets/editor.png";
 import toggleIcon from "../../assets/toogle.png";
-
+import { useEffect } from "react";
 import {
   House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
 } from "react-bootstrap-icons";
@@ -25,10 +25,6 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
 
   const [isReaderMode, setIsReaderMode] = useState(false);
   const toggleReaderMode = () => setIsReaderMode((prev) => !prev);
-
-
-
-
 
   const handleSignOut = () => {
     dispatch(clearState());

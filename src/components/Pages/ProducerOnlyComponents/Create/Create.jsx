@@ -60,7 +60,7 @@ const Create = () => {
         </p>
       </div>
 
-      <button className={styles.btn}>Submit Submission</button>
+      <button className={styles.btn} onClick={handleChange}>Submit Submission</button>
     </div>
 
   )

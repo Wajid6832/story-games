@@ -57,7 +57,10 @@ const Book3 = () => {
   />
 </div>
 
-          <button className={styles.createButton}>Create Group</button>
+         
+          <button className={styles.createButton}>
+  <span style={{ marginLeft: "35px" }}>Group Chat</span>
+</button>
         </div>
       </div>
     
