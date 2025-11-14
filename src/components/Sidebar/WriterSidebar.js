@@ -6,19 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
 import image from "../../assets/profile.png";
-<<<<<<< HEAD
 import image2 from "../../../../story-games/src/assets/review.png";
 import image3 from "../../../../story-games/src/assets/applications.png";
 import editor from "../../assets/editor.png";
 import toggleIcon from "../../assets/toogle.png";
 import { useEffect } from "react";
-=======
-import editor from "../../assets/editor.png";
-import image2 from "../../assets/review.png";
-import image3 from "../../assets/applications.png";
-import toggleIcon from "../../assets/toogle.png";
-
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 import {
   House,
   Book,
@@ -36,10 +28,6 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
 
-<<<<<<< HEAD
-=======
-  // ✅ Added missing Reader Mode state & toggle
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
   const [isReaderMode, setIsReaderMode] = useState(false);
   const toggleReaderMode = () => setIsReaderMode((prev) => !prev);
 
@@ -169,10 +157,6 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
               />
               <span>Reader Mode {isReaderMode ? "ON" : "OFF"}</span>
             </Nav.Link>
-<<<<<<< HEAD
-=======
-
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>

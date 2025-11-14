@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 html, body {
   height: 100%;
   overflow: hidden; 
   margin: 0;
   padding: 0;
 }
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 
 .container {
   width: 100%;
@@ -15,13 +12,9 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-<<<<<<< HEAD
-  /* margin-bottom: 120px; */
-=======
   padding: 0;
   margin: 0;
   overflow: hidden; 
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 }
 
 .main {

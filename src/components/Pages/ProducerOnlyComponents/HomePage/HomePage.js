@@ -6,19 +6,11 @@ import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-<<<<<<< HEAD
- const navigate = useNavigate();
-const handleClick = () => {
-    navigate("/create-novel");
-  };
-  
-=======
   const navigate = useNavigate();
 
- const handleClick = () => {
+  const handleClick = () => {
   navigate("/create-novel");
 };
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 
   return (
     <div className={styles.container}>

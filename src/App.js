@@ -135,7 +135,7 @@ function App() {
              <Route path="/supportFeedback" element={<SupportFeedback />} />
              <Route path="/workRoom" element={<WorkRoom />} />
              <Route path="/chatApp" element={<ChatApp />} />
-              <Route path="/privacypolicy" element={< Privacy/>} />
+              <Route path="/privacypolicy" element={< PrivacyPolicy/>} />
               <Route path="/terms&condition" element={< Terms/>} />
 
           </Route>

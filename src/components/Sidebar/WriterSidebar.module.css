@@ -215,32 +215,16 @@
   }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 .toggleIcon {
   width: 35px;
   height: 22px;
   margin-right: 10px;
   transition: all 0.3s ease;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 .on {
   filter: hue-rotate(120deg);
   transform: scale(1.05);
 }
-<<<<<<< HEAD
 .off {
   opacity: 0.9;
 }
-=======
-
-.off {
-  opacity: 0.9;
-}
->>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
