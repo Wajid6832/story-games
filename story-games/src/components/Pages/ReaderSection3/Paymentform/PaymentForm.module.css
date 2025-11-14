@@ -1,0 +1,148 @@
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  background-color: #ffffff;
+
+}
+
+
+.paymentCard {
+  position: relative; 
+  background-color: #fff;
+  border: 1.5px solid #e6e6e6;
+  border-radius: 26px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  padding: 50px 40px 40px;
+  width: 420px;
+   min-height: 600px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+
+.walletImg {
+  width: 95px;
+}
+
+
+.paymentTitle {
+  font-weight: 700;
+  font-size: 22px;
+  color: #1c1c1c;
+  margin-bottom: 28px;
+}
+
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  padding: 10px 14px;
+  flex: 1;
+}
+
+.inputGroup i {
+  font-size: 18px;
+  color: #555;
+  margin-right: 8px;
+}
+
+.inputGroup input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+  min-width: 0;
+}
+
+.inputGroup input::placeholder {
+  color: #999;
+}
+
+.cvvText {
+  font-size: 15px;
+  color: #555;
+  margin-right: 6px;
+}
+
+.cvvInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 15px;
+  color: #333;
+}
+
+
+.rowGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.rowGroup > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  padding: 10px 14px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+input[type="radio"] {
+  accent-color: #5b73f2;
+  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+}
+
+.radioLabel {
+  color: #1e1e1e;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+
+.payBtn {
+  background-color: #5b73f2;
+  color: #fff;
+  border: none;
+  width: 80%;
+  padding: 14px 0;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payBtn:hover {
+  background-color: #4a5cd4;
+  transform: translateY(-2px);
+}

@@ -262,7 +262,7 @@ export default function ProfilePage() {
           <h2 className={`${styles.sectionTitle} mb-3`}>Bank Account</h2>
           <button
             className={`btn btn-outline-primary ${styles.secondaryButton}`}
-            onClick={() => alert("Link bank account")}
+            onClick={() => navigate("/LinkBankAccount")}
           >
             Link Bank Account
           </button>

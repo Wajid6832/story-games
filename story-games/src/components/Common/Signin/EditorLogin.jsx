@@ -41,7 +41,7 @@ const EditorLogin = () => {
             navigate("/editorHome");
             break;
           case "reader":
-            navigate("/readerHome");
+            navigate("/readersLanding");
             break;
           case "producer":
             navigate("/producerHome");
