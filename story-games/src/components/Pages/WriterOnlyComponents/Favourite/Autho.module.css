@@ -1,4 +1,33 @@
-/* Tabs */
+.favoritesHeaderWrapper {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #0066ff;
+  margin-top:10px;
+  box-sizing: border-box;
+}
+
+.homeHeading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.searchIcon {
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+  position: absolute;
+}
+
 .activeTab {
   border-bottom: 2px solid #0066ff !important;
   color: #0066ff !important;
@@ -10,7 +39,6 @@
   border-bottom: 2px solid transparent !important;
 }
 
-/* Author Section */
 .iconCircle {
   width: 72px;
   height: 72px;
@@ -36,8 +64,6 @@
   height: 60px;
   object-fit: cover;
 }
-
-/* Adventure Logs */
 .logCard {
   background: #fafafa;
   border: 1.5px solid #e0e0e0;
@@ -50,7 +76,6 @@
   justify-content: center;
   cursor: pointer;
   height: 160px;
-  position: relative;
 }
 
 .logCard:hover {
@@ -69,14 +94,4 @@
 
 .logCard:hover .logImage {
   transform: scale(1.05);
-}
-
-/* Search Icon */
-.searchIcon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 14px;
 }

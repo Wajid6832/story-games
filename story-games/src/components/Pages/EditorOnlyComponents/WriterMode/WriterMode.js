@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./WriterMode.module.css";
 import writerImage from "../../../../assets/Readers-Assets/images/Frame (2).png";
+import { useNavigate } from "react-router-dom";
 
 function WriterMode({ onClose }) {
+  const navigate = useNavigate();
   return (
     <div className={styles.overlay}>
       <div className={styles.popup}>
@@ -19,7 +21,7 @@ function WriterMode({ onClose }) {
         </div>
 
         <h5>Writer Mode Not Active</h5>
-        <button className={styles.primaryBtn}>Become a Writer</button>
+        <button onClick={() => navigate("/becomeWriter")} className={styles.primaryBtn}>Become a Writer</button>
       </div>
     </div>
   );
