@@ -9,13 +9,17 @@ import {
   FaPen,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Database } from "react-bootstrap-icons";
 import styles from "./Profile.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loggedUser, setLoggedUser] = useState(null);
+  
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -74,16 +78,20 @@ export default function ProfilePage() {
       );
 
       if (!currentUser) return alert("User not found in database!");
-      if (currentUser.password !== oldPassword) return alert("Old password is incorrect!");
+      if (currentUser.password !== oldPassword)
+        return alert("Old password is incorrect!");
 
-      const updateRes = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...currentUser, password: newPassword }),
-      });
+      const updateRes = await fetch(
+        `http://localhost:3000/users/${currentUser.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...currentUser, password: newPassword }),
+        }
+      );
 
       if (updateRes.ok) {
-        alert("Password updated successfully!");
+        alert("Password updated successfully! Redirecting to login...");
         setFormData({
           email: loggedUser.email,
           username: loggedUser.username,
@@ -92,6 +100,9 @@ export default function ProfilePage() {
           newPassword: "",
           confirmPassword: "",
         });
+        setTimeout(() => {
+          navigate("/editorLogin");
+        }, 2000);
         localStorage.removeItem("user");
         setLoggedUser(null);
       } else alert("Failed to update password!");
@@ -104,20 +115,24 @@ export default function ProfilePage() {
   return (
     <div className={`container-fluid ${styles.pageWrapper}`}>
       <div className={`card shadow p-4 border-0 ${styles.card}`}>
-        <h1 className={`${styles.header} mb-4`}>My Profile</h1>
+        <h1 className={`${styles.header} mb-2`}>My Profile</h1>
+        <div className={styles.divider}></div>
 
-      
         <div className="row g-3 mb-4">
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-2">
             <div className={`${styles.giftCard}`}>
               <div className={styles.giftLabel}>Available Gift</div>
-              <div className={styles.giftAmount}>100</div>
+              <div className={styles.giftAmount}>
+                <Database className={styles.coinIcon} /> 100
+              </div>
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-2">
             <div className={`${styles.giftCard}`}>
               <div className={styles.giftLabel}>Given Out Gift</div>
-              <div className={styles.giftAmount}>100</div>
+              <div className={styles.giftAmount}>
+                <Database className={styles.coinIcon} /> 100
+              </div>
             </div>
           </div>
         </div>
@@ -205,7 +220,11 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowNewPassword(!showNewPassword)}
               >
-                {showNewPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                {showNewPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
               </div>
             </div>
             <div className="col-12 col-md-6 position-relative">
@@ -222,7 +241,11 @@ export default function ProfilePage() {
                 className={styles.eyeIcon}
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                {showConfirmPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
               </div>
             </div>
           </div>

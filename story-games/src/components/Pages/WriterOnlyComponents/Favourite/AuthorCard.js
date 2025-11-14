@@ -6,6 +6,7 @@ import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
 import { CommonModal } from "../../../Modal/Common-Modal/Modal";
 import { fetchFavourite, fetchBooks } from "../../../../features/auth/writerslice";
 
+// Author Card Component
 const AuthorCard = ({ name, image }) => (
   <div className="text-center">
     <div className={`mx-auto mb-2 border rounded-circle d-flex align-items-center justify-content-center bg-light ${styles.iconCircle}`}>
@@ -15,6 +16,7 @@ const AuthorCard = ({ name, image }) => (
   </div>
 );
 
+// Adventure Log Card Component
 const LogCard = ({ image }) => (
   <div className={`rounded shadow-sm d-flex align-items-center justify-content-center bg-light ${styles.logCard}`}>
     <img src={image} alt="Adventure Log" className={`${styles.logImage} img-fluid rounded`} />
@@ -55,6 +57,26 @@ const FavoritesPage = () => {
 
   return (
     <div className="container-fluid p-3 p-md-4 p-lg-5">
+      <div className="favoritesHeaderWrapper d-flex flex-column">
+        <div className="d-flex justify-content-between align-items-center mb-2">
+          <h1 className={styles.homeHeading}>Favourites</h1>
+          <div className="position-relative">
+            <input
+              type="text"
+              className="form-control ps-5 py-2"
+              placeholder="Search authors..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{ backgroundColor: "#f0f0f0", border: "1px solid #ced4da" }}
+            />
+            <i className={`bi bi-search position-absolute ${styles.searchIcon}`}></i>
+          </div>
+        </div>
+
+        <div className={styles.divider}></div>
+      </div>
+
+      
       <ul className="nav nav-tabs mb-3 mb-md-4 border-0">
         <li className="nav-item me-3">
           <button
@@ -74,23 +96,10 @@ const FavoritesPage = () => {
         </li>
       </ul>
 
-      {activeTab === "authors" && (
-        <div className="mb-3 mb-md-4">
-          <div className="position-relative">
-            <input
-              type="text"
-              className="form-control ps-5 py-2"
-              placeholder="Search authors..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <i className={`${styles.searchIcon} bi bi-search position-absolute`}></i>
-          </div>
-        </div>
-      )}
-
+      {/* Cards */}
       <div className="container-fluid px-0">
         <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-2 g-md-3">
+          
           {activeTab === "authors" && (
             filteredAuthors.length > 0 ? (
               filteredAuthors.map((item, index) => (
@@ -131,10 +140,11 @@ const FavoritesPage = () => {
               </div>
             )
           )}
+
         </div>
       </div>
 
-      {/* Modal */}
+  
       {openModal && (
         <CommonModal
           show={openModal}
@@ -147,6 +157,7 @@ const FavoritesPage = () => {
           />
         </CommonModal>
       )}
+
     </div>
   );
 };

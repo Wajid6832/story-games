@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "../../components/Sidebar/WriterSidebar.module.css";
 import { Nav } from "react-bootstrap";
 import { IoReorderThree, IoClose } from "react-icons/io5";
+import { SiGnuprivacyguard } from "react-icons/si";
+import { MdLibraryBooks } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
@@ -21,16 +23,20 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
+  const [isWriterModeOn, setIsWriterModeOn] = useState(false);
 
   const handleSignOut = () => {
     dispatch(clearState());
     localStorage.clear();
     navigate("/editorLogin", { replace: true });
   };
+  const handleSwitchChange = (e) => {
+    setIsWriterModeOn(e.target.checked);
+  };
 
   return (
     <>
-    
+
       {isOpen && (
         <div
           className={`${style.sidebarOverlay} d-block d-md-none`}
@@ -88,7 +94,7 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
 
                 <Link
-                  to="/becomeWriter"
+                  to="/"
                   className={style.sidebarLink}
                   onClick={toggleSidebar}
                 >
@@ -157,23 +163,22 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
         </div>
 
         <div className={style.sidebarBottom}>
-          <Nav className="flex-column">
-            <div
-              className={`${style.sidebarLink} ${style.readerModeSwitch}`}
-            >
+           <Nav className="flex-column">
+            <div className={`${style.sidebarLink} ${style.readerModeSwitch}`}>
               <div className="form-check form-switch m-0">
                 <input
                   className="form-check-input"
                   type="checkbox"
                   role="switch"
                   id="switchCheckDefault"
-                  
+                  checked={isWriterModeOn}
+                  onChange={handleSwitchChange}
                 />
                 <label
                   className="form-check-label"
                   htmlFor="switchCheckDefault"
                 >
-                  Read mode off
+                  {isWriterModeOn ? "Reader mode on" : "Reader mode off"}
                 </label>
               </div>
             </div>
@@ -181,10 +186,16 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
+            <Nav.Link href="/privacypolicypage" className={style.sidebarLink}>
+              <SiGnuprivacyguard className={style.me2} /> <span>Privacy Policy</span>
+            </Nav.Link>
+            <Nav.Link href="/termsconditionspage" className={style.sidebarLink}>
+              <MdLibraryBooks className={style.me2} /> <span>Terms & Conditions</span>
+            </Nav.Link>
 
-            <Nav.Link href="#" className={style.sidebarLink}>
+            <Nav.Link onClick={handleSignOut} href="#" className={style.sidebarLink}>
               <BoxArrowRight className={style.me2} />
-              <span onClick={handleSignOut}>Sign Out</span>
+              <span >Sign Out</span>
             </Nav.Link>
           </Nav>
         </div>

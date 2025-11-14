@@ -19,14 +19,33 @@ import {
   BsSend,
   BsChevronLeft,
 } from "react-icons/bs";
+import image from "../../../../assets/ChatImage.png"
 import styles from "../ChatApp/ChatApp.module.css";
 
+
+
+import ChatModal from "../../../Modal/ChatBoxModal/Chat1";
+import NewChatModal from "../../../Modal/ChatBoxModal/Chat2";
+import NewGroupChat from "../../../Modal/ChatBoxModal/Chat3";
+
+
+
+
 const ChatApp = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+
+  const [openChatModal, setOpenChatModal] = useState(false);
+  const [openNewChatModal, setOpenNewChatModal] = useState(false);
+  const [openGroupChatModal, setOpenGroupChatModal] = useState(false);
+
+
+
   const [message, setMessage] = useState("");
   const [selectedContact, setSelectedContact] = useState(null);
   const [chats, setChats] = useState({});
 
-  const contacts = [
+  const [contacts, setContacts] = useState([
     { name: "Wajid Bhai", time: "10 hours", avatar: "WB" },
     { name: "Saqib bhai", time: "9 hours", avatar: "SB" },
     { name: "Hussain Bhai", time: "5 hours", avatar: "HB" },
@@ -38,7 +57,16 @@ const ChatApp = () => {
     { name: "Robert Fox", time: "3 days", avatar: "RF" },
     { name: "Wade Warren", time: "10 hours", avatar: "WW" },
     { name: "Jenny Wilson", time: "10 hours", avatar: "JW" },
-  ];
+  ]);
+  
+const filteredContacts = contacts.filter((contact) =>
+  contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+
+
+
+
   const members = [
     "Jane Cooper",
     "Wade Warren",
@@ -66,6 +94,26 @@ const ChatApp = () => {
       }));
     }
   };
+  
+
+
+const handleClearChat = () => {
+  if (!selectedContact) return;
+
+  const confirmClear = window.confirm(
+    `Are you sure you want to clear the chat with ${selectedContact.name}?`
+  );
+
+  // Only clear if user clicked "OK"
+  if (confirmClear) {
+    setChats((prevChats) => ({
+      ...prevChats,
+      [selectedContact.name]: [],
+    }));
+  }
+};
+
+
 
 
   const sendMessage = async (e) => {
@@ -87,7 +135,9 @@ const ChatApp = () => {
     setMessage("");
 
     setTimeout(async () => {
-      const reply = await getRandomReply();
+      // const reply = await getRandomReply();
+      const reply = await getAIReply(message);
+
       const botMessages = [
         ...updatedMessages,
         {
@@ -103,27 +153,54 @@ const ChatApp = () => {
     }, 500);
   };
 
+const getAIReply = async (userMessage) => {
+  try {
+     if (!selectedContact) return "Select a contact first.";
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer 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", // ⚠️ For testing only
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // "model": "deepseek/deepseek-r1:free",
+        model: "deepseek/deepseek-r1-distill-llama-70b:free",
+        messages: [
+          {
+            role: "system",
+            content: `You are chatting with ${selectedContact.name}.
+      You should reply like ${selectedContact.name} would.
+      Use the same language, tone, and style that ${selectedContact.name} uses.
+      Keep your replies natural, casual, and in the way they would normally talk.`
+          },
+          {
+            role: "user",
+            content: userMessage
+          }
+        ]
+      })
+    });
 
-  const getRandomReply = async () => {
-    try {
-      const res = await fetch("https://api.quotable.io/random");
-      const data = await res.json();
-      return data.content;
-    } catch {
-      const randomReplies = [
-        "Haha, that’s interesting!",
-        "Tell me more!",
-        "Really? I didn’t know that.",
-        "Sounds cool 😎",
-        "Wow, that’s awesome!",
-        "Hmm, good question 🤔",
-      ];
-      return randomReplies[Math.floor(Math.random() * randomReplies.length)];
-    }
-  };
+    const data = await res.json();
+
+    console.log("AI response:", data);
+
+    return data?.choices?.[0]?.message?.content || "Sorry, I didn’t understand that 😅";
+  } catch (error) {
+    console.error("DeepSeek API error:", error);
+    return "Oops! I’m having trouble replying right now 😞";
+  }
+};
+
+
+
+
+
+
+
   const [showChat, setShowChat] = useState(false);
-
   return (
+    <>
     <Container fluid className={styles.chatContainer}>
       <header className={styles.topHeader}>
         <div className={styles.heading}>
@@ -133,11 +210,13 @@ const ChatApp = () => {
           <h5 className={styles.headerTitle}>ChatBox</h5>
         </div>
         <>
-          <Button className={`${styles.newChatBtn} d-none d-md-inline-block btn-lg`}>
+          <Button className={`${styles.newChatBtn} d-none d-md-inline-block btn-lg`} 
+          onClick={() => setOpenChatModal(true)}>
             New Chat
           </Button>
 
-          <Button className={`${styles.newChatBtn} d-inline-block d-md-none btn-sm`}>
+          <Button className={`${styles.newChatBtn} d-inline-block d-md-none btn-sm`}
+          onClick={() => setOpenChatModal(true)}>
             New Chat
           </Button>
         </>
@@ -154,11 +233,17 @@ const ChatApp = () => {
             <InputGroup.Text>
               <BsSearch />
             </InputGroup.Text>
-            <Form.Control placeholder="Enter Name to Search" />
+            <Form.Control
+              type="search"
+              placeholder="Search by name..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </InputGroup>
 
           <ListGroup variant="flush" className={styles.contactList}>
-            {contacts.map((c, i) => (
+            {filteredContacts.map((c, i) => (
+
               <ListGroup.Item
                 key={i}
                 className={`${styles.contactItem} ${
@@ -188,6 +273,7 @@ const ChatApp = () => {
         >
           {!selectedContact ? (
             <div className={styles.noChatSelected}>
+              <img className={styles.chatBg} src={image} alt="" />
               <h4>Select a contact to start chatting</h4>
             </div>
           ) : (
@@ -207,7 +293,8 @@ const ChatApp = () => {
                 </div>
 
 
-                <Dropdown align="center" className={styles.addMemberInput}>
+                <Dropdown align="center" className=
+                  {`${styles.addMemberInput} d-none d-lg-block`}>
                 <Dropdown.Toggle
                   as={Form.Control}
                   placeholder="Add members..."
@@ -219,6 +306,10 @@ const ChatApp = () => {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
+
+
+
+
                 <Dropdown align="end">
                   <Dropdown.Toggle
                     variant="light"
@@ -228,7 +319,7 @@ const ChatApp = () => {
                     <BsThreeDotsVertical />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item className="text-primary">
+                    <Dropdown.Item className="text-primary bg-white" onClick={handleClearChat}>
                       Clear Chat
                     </Dropdown.Item>
                   </Dropdown.Menu>
@@ -266,6 +357,8 @@ const ChatApp = () => {
                       <BsPaperclip />
                     </Button>
                   </div>
+                  
+
 
                   <Form.Control
                     value={message}
@@ -293,7 +386,91 @@ const ChatApp = () => {
         </Col>
       </Row>
     </Container>
+
+
+
+
+
+      
+      {openChatModal && (
+        <ChatModal
+          onHide={() => setOpenChatModal(false)}
+          openNewChat={() => {
+            setOpenChatModal(false);
+            setOpenNewChatModal(true);
+          }}
+          openGroupChat={() => {
+            setOpenChatModal(false);
+            setOpenGroupChatModal(true);
+          }}
+        />
+      )}
+
+      
+{openNewChatModal && (
+  <NewChatModal
+    onHide={() => setOpenNewChatModal(false)}
+    contacts={contacts}
+    setContacts={setContacts}
+    onSelectContact={(contact) => {
+      setSelectedContact(contact);
+      setShowChat(true);
+      setOpenNewChatModal(false);
+    }}
+  />
+)}
+
+
+      {openGroupChatModal && (
+  <NewGroupChat
+    onHide={() => setOpenGroupChatModal(false)}
+    contacts={contacts}
+    setContacts={setContacts}
+  />
+)}
+
+      </>
   );
 };
 
 export default ChatApp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

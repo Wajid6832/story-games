@@ -1,7 +1,6 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import styles from "./StoryPrivacyPolicyPage.module.css";
-
 const PrivacyPolicy = ({
   subtitle = "Privacy Policy",
   content = null

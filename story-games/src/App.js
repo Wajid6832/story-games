@@ -1,85 +1,42 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./layout/Layout";
-import WriterHome from "./components/Pages/WriterOnlyComponents/WriterHome";
-import Bookpage from "./components/Pages/WriterOnlyComponents/Bookpages/Bookpage";
-import AuthorCard from "./components/Pages/WriterOnlyComponents/Favourite/AuthorCard";
-import ChatApp from "./components/Pages/WriterOnlyComponents/ChatApp/ChatApp";
-import EditorLanding from "./Common/Landing/EditorLanding";
 import EditorLogin from "./components/Common/Signin/EditorLogin";
-import ReadersLanding from "./components/Pages/ReaderSection1/LandingReader/ReadersLanding";
-import ProtectedRoute from "./layout/Protected";
-import ProfilePage  from "./components/Pages/EditorOnlyComponents/EditorProfile/ProfilePage";
-import SupportFeedback from "./components/Pages/ReaderSection2/SupportFeedBack/SupportFeedback"
+import ForgotPass from "./components/Common/Signin/ForgotPassword/ForgotPassword";
+import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
 import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyPolicy/StoryPrivacyPolicyPage";
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
-import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
-import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
-import ForgotPass from "./components/Common/Signin/ForgotPassword/ForgotPassword";
-function App() {
 
+import WriterRoutes from "./Routes/WriterRoutes";
+import EditorRoutes from "./Routes/EditorRoutes";
+import ReaderRoutes from "./Routes/ReaderRoutes";
+import ProducerRoutes from "./Routes/ProducerRoutes";
+
+function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<EditorLanding />} />
+        {/* ✅ Public Routes */}
         <Route path="/editorLogin" element={<EditorLogin />} />
-        <Route path="/forgot-password" element={<ForgotPass/>} />
-        
+        <Route path="/forgot-password" element={<ForgotPass />} />
+        <Route path="/signup" element={<WriterSignUp />} />
+        <Route path="/privacypolicypage" element={<PrivacyPolicy />} />
+        <Route path="/termsconditionspage" element={<TermsConditions />} />
+        <Route path="/landingpage" element={<LandingPage />} />
 
-        <Route element={<ProtectedRoute allowedRoles={["writer"]} />}>
-          <Route element={<Layout role="writer" />}>
-            <Route path="/writerHome" element={<WriterHome />} />
-            <Route path="/bookpage" element={<Bookpage />} />
-            <Route path="/becomeWriter" element={<BecomeWriter />} />
-            <Route path="/authorCard" element={<AuthorCard />} />
-            <Route path="/chatApp" element={<ChatApp />} />
-         
-             <Route path="/workRoom" element={<WorkRoomPage/>}/>
-              
-            <Route path="/ProfilePage" element={<ProfilePage/>}/>
-            <Route path="/supportFeedback" element={<SupportFeedback/>}/>
-          </Route>
-        </Route>
-   
-      <Route path="/signup" element={<WriterSignUp/>}/>
-      <Route path="/privacypolicypage" element={<PrivacyPolicy/>}/>
-      <Route path="/termsconditionspage" element={<TermsConditions/>}/>
-      <Route path="/landingpage" element={<LandingPage/>}/>
+        {/* ✅ Nested Protected Routes (WRAPPED in Fragment) */}
+        <>
+          {WriterRoutes}
+          {EditorRoutes}
+          {ReaderRoutes}
+          {ProducerRoutes}
+        </>
 
-        <Route element={<ProtectedRoute allowedRoles={["editor"]} />}>
-          <Route element={<Layout role="editor" />}>
-            <Route path="/editorHome" element={<Bookpage />} />
-          </Route>
-        </Route>
-
-        <Route element={<ProtectedRoute allowedRoles={["reader"]} />}>
-          <Route element={<Layout role="reader" />}>
-            <Route path="/reader" element={<ReadersLanding />} />
-            
-          </Route>
-        </Route>
-
-        <Route element={<ProtectedRoute allowedRoles={["producer"]} />}>
-          <Route element={<Layout role="producer" />}>
-            <Route
-              path="/producerHome"
-              element={<h2>Welcome Producer!</h2>}
-            />
-          </Route>
-        </Route>
-         
-
+        {/* ✅ Fallback */}
+        <Route path="*" element={<EditorLogin />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-
 export default App;
-

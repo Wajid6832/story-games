@@ -9,10 +9,11 @@ import Modal3 from "../../Modal/Common-Modal/Modal3";
 import defaultImage from "../../../assets/icon.png";
 import { Link } from "react-router-dom";
 import { fetchBooks } from "../../../features/auth/writerslice";
+
 const WriterHome = () => {
   const dispatch = useDispatch();
   const { books, loading, error } = useSelector((state) => state.writer);
-  
+
   const [openModal, setOpenModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
   const [componentIndex, setcomponentIndex] = useState(0);
@@ -56,20 +57,33 @@ const WriterHome = () => {
 
   return (
     <div className="container">
+
+       
+      <div className={style.headerContainer}>
+        <h3 className={style.homeHeading}>Home</h3>
+
+        <div className={style.searchBox}>
+          <i className="bi bi-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+       
+      </div>
+      <div className={style.divider}></div>
+    
       <section className="section">
         <h5 className={style.sectionTitle}>Open Adverts</h5>
         <Row className={style.cardsRow}>
           {books.slice(0, 10).map((book) => (
             <Col key={book.id} xs={4} sm={3} md={2} lg={2} xl={2} className="mb-3">
-              <div 
+              <div
                 className={style.placeholderCard}
                 onClick={() => {
                   setSelectedBook(book);
                   setOpenModal(true);
                 }}
               >
-                <img 
-                  src={book.image || defaultImage} 
+                <img
+                  src={book.image || defaultImage}
                   alt={book.title}
                   className={style.cardIcon}
                 />
@@ -79,20 +93,21 @@ const WriterHome = () => {
         </Row>
       </section>
 
+     
       <section className="section">
         <h5 className={style.sectionTitle}>Current Applications</h5>
         <Row className={style.cardsRow}>
           {books.slice(10, 20).map((book) => (
             <Col key={book.id} xs={4} sm={3} md={2} lg={2} xl={2} className="mb-3">
-              <div 
+              <div
                 className={style.placeholderCard}
                 onClick={() => {
                   setSelectedBook(book);
                   setOpenModal(true);
                 }}
               >
-                <img 
-                  src={book.image || defaultImage} 
+                <img
+                  src={book.image || defaultImage}
                   alt={book.title}
                   className={style.cardIcon}
                 />
@@ -101,6 +116,7 @@ const WriterHome = () => {
           ))}
         </Row>
       </section>
+
 
       <section className="section">
         <h5 className={style.sectionTitle}>Available Workrooms</h5>
@@ -109,8 +125,8 @@ const WriterHome = () => {
             <Col key={book.id} xs={12} sm={6} md={4} lg={4} xl={4}>
               <div className={`${style.cardCustom} shadow-sm`}>
                 <div className={style.imagePlaceholder}>
-                  <img 
-                    src={book.image || defaultImage} 
+                  <img
+                    src={book.image || defaultImage}
                     alt={book.title}
                     className={style.workroomImage}
                   />
