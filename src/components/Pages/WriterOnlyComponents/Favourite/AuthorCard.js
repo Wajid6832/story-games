@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../WriterOnlyComponents/Favourite/Autho.module.css";
-import iconImage from "../../../../assets/icon.png";
 import Modalsetup4 from "../../../Modal/Common-Modal/Modalsetup4";
 import { CommonModal } from "../../../Modal/Common-Modal/Modal";
 import { fetchFavourite, fetchBooks } from "../../../../features/auth/writerslice";

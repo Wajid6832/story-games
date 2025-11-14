@@ -1,10 +1,5 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "./App.css";
-import ReaderHome from "./Common/Landing/Reader-Home";
-import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/CurrentNovels";
-import TokenStore from "./components/Pages/ReaderSection1/TokenStore/TokenStore";
-import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
-import ForgotPassword from "./components/Pages/ReaderSection1/ReaderForgotPassword/ForgotPassword";
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap-icons/font/bootstrap-icons.css";

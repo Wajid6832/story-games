@@ -10,7 +10,6 @@ import image2 from "../../assets/review.png";
 import image3 from "../../assets/applications.png";
 import editor from "../../assets/editor.png";
 import toggleIcon from "../../assets/toogle.png";
-import { useEffect } from "react";
 import {
   House,
   Book,

@@ -99,9 +99,13 @@ const WorkRoomPage = () => {
                   <div className={styles.chapterCard}>
                     <p className={styles.date}>1 Oct 22</p>
                     <h4>Chapter {num}</h4>
-                    <a href="#" className={styles.readLink}>
+                    <button
+                      type="button"
+                      className={styles.readLink}
+                      style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textDecoration: 'underline' }}
+                    >
                       Read Chapter →
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}

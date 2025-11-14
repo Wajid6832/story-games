@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, clearState } from "../../../features/auth/auth.slice";
+import { loginUser } from "../../../features/auth/auth.slice";
 import Mail from "../../../assets/icon.png";
 import Password from "../../../assets/password.png";
 import styles from "./EditorLogin.module.css";

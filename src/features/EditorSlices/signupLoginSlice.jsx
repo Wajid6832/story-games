@@ -109,4 +109,4 @@ export const userDetail = createSlice({
 
 });
 export default userDetail.reducer;
-export const {searchUsers}= userDetail .actions;
+export const {searchUsers} = userDetail.actions;

@@ -32,9 +32,9 @@ const LandingPage = () => {
               <button className={styles.signinBtn}>Sign In</button>
             </div>
 
-            <a href="#" className={styles.guestLink}>
+            <button type="button" className={styles.guestLink} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
               Browse as Guest
-            </a>
+            </button>
           </Col>
 
           <Col md={6} className="text-center">
