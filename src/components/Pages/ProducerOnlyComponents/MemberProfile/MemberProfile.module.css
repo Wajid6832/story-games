@@ -1,0 +1,240 @@
+.pageWrap {
+  min-height: 100vh;
+  background: #F9FAFB;
+  padding: 20px 60px;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+/* === Header === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid #E4E8FF;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.backBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #7F95E8;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.backBtn:hover {
+  background: #657BDD;
+}
+.headerTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0;
+}
+.favBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #E5E5E5;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.favBtn:hover {
+  background: #F3F4FF;
+  color: #6C7EDB;
+}
+/* === About Section === */
+.aboutContainer {
+  background: #F3F4F8;
+  border-radius: 16px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.outerCircle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #A3B2FF;
+  background: #F0F0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageIcon {
+  font-size: 55px;
+  color: #A1A1A1;
+}
+.authorName {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #2D2D2D;
+}
+/* === About Text === */
+.aboutText h4 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #1F2937;
+}
+.aboutText p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555770;
+  margin-bottom: 0;
+}
+
+.rightImage {
+  width: 230px;
+  height: auto;
+  object-fit: contain;
+}
+
+.featuredSection {
+  margin-top: 30px;
+}
+.featuredTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 18px;
+}
+/* === Featured Cards === */
+.featureCard {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 240px; /* Increased for better content fit */
+  transition: transform 0.3s ease;
+}
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+.imageBlock {
+  flex: 0.8;
+  background: #C4C4C4;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px; /* Matches the card height */
+}
+.imageBlock svg {
+  font-size: 45px;
+  color: #777;
+}
+.cardBody {
+  flex: 1.2;
+  border: none;
+  border-radius: 14px;
+  background: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  position: relative;
+  left: -20px;
+  z-index: 2;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps button visible */
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.novelTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+.heartIcon {
+  color: #9CA3AF;
+  font-size: 16px;
+  cursor: pointer;
+}
+.novelDesc {
+  font-size: 13.5px;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 10px 0;
+  flex-grow: 1;
+}
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #D99F00;
+  margin-bottom: 6px;
+}
+.readBtn {
+  color: #3D66DD;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0;
+  align-self: flex-start;
+}
+.readBtn:hover {
+  color: #2A4DBD;
+  text-decoration: underline;
+}
+/* === Responsive === */
+@media (max-width: 992px) {
+  .aboutContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+  .rightImage {
+    width: 200px;
+  }
+  .featureCard {
+    flex-direction: column;
+    height: auto;
+  }
+  .cardBody {
+    left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .pageWrap {
+    padding: 15px 20px;
+  }
+  .headerTitle {
+    font-size: 18px;
+  }
+  .outerCircle {
+    width: 120px;
+    height: 120px;
+  }
+  .aboutText p {
+    font-size: 12.5px;
+  }
+  .featuredTitle {
+    font-size: 16px;
+  }
+}
