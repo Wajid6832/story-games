@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import EditorLogin from "./components/Common/Signin/EditorLogin";
 import ForgotPass from "./components/Common/Signin/ForgotPassword/ForgotPassword";
 import WriterSignUp from "./Common/WriterSignUp/WriterSignUp";
@@ -9,7 +8,7 @@ import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyP
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
 
-// Role-Based Route Files
+// Role-Based Routes files
 import WriterRoutes from "./Routes/WriterRoutes";
 import EditorRoutes from "./Routes/EditorRoutes";
 import ReaderRoutes from "./Routes/ReaderRoutes";
@@ -60,8 +59,7 @@ function App() {
             <Route path="/LinkBankAccount" element={<LinkBankAccount />} />
           </Route>
         </Route>
-        
-
+      
         {/* Role-Based */}
         {WriterRoutes}
         {EditorRoutes}

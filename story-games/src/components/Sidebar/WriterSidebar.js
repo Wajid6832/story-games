@@ -226,8 +226,6 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 >
                   <Heart className={style.me2} /> <span>Favorites</span>
                 </Link>
-
-                
               </>
               
             )}
