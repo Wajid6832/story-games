@@ -8,7 +8,7 @@ import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyP
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
 
-// Role-Based Routes files
+// Role-Based Routes
 import WriterRoutes from "./Routes/WriterRoutes";
 import EditorRoutes from "./Routes/EditorRoutes";
 import ReaderRoutes from "./Routes/ReaderRoutes";

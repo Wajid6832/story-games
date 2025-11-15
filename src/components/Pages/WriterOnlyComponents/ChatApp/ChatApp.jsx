@@ -33,8 +33,8 @@ const ChatApp = () => {
     { name: "Hussain Bhai", time: "5 hours", avatar: "HB" },
     { name: "Qammar Bhai", time: "8 hours", avatar: "QB" },
     { name: "Zain", time: "12 hours", avatar: "Z" },
-    { name: "Jerome Bell", time: "3 days", avatar: "JB" },
-    { name: "Brooklyn Simmons", time: "1 hour", avatar: "BS" },
+    { name: "Sajjad Bhai", time: "3 days", avatar: "SB" },
+    { name: "Khalil Bhai", time: "1 hour", avatar: "KB" },
     { name: "Lewis Simmons", time: "10 hours", avatar: "LS" },
     { name: "Robert Fox", time: "3 days", avatar: "RF" },
     { name: "Wade Warren", time: "10 hours", avatar: "WW" },
@@ -57,7 +57,7 @@ const ChatApp = () => {
         [contact.name]: [
           {
             from: "them",
-            text: `Hey! This is ${contact.name}. How are you?`,
+            text: `Assalam-u-alaikum! This is ${contact.name}. How are you?`,
             time: new Date().toLocaleTimeString([], {
               hour: "2-digit",
               minute: "2-digit",

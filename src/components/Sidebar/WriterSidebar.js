@@ -6,13 +6,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
 import image from "../../assets/profile.png";
+<<<<<<< HEAD
 import image2 from "../../../../story-games/src/assets/review.png";
 import image3 from "../../../../story-games/src/assets/applications.png";
 import editor from "../../assets/editor.png";
 import toggleIcon from "../../assets/toogle.png";
 import { useEffect } from "react";
+=======
+import editor from "../../assets/editor.png";
+import image2 from "../../assets/review.png";
+import image3 from "../../assets/applications.png";
+import toggleIcon from "../../assets/toogle.png";
+
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
 import {
-  House, Book, Heart, Envelope, QuestionCircle, BoxArrowRight,
+  House,
+  Book,
+  Heart,
+  Envelope,
+  QuestionCircle,
+  BoxArrowRight,
 } from "react-bootstrap-icons";
 
 const WriterSidebar = ({ isOpen, toggleSidebar }) => {
@@ -23,6 +36,10 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
 
+<<<<<<< HEAD
+=======
+  // ✅ Added missing Reader Mode state & toggle
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
   const [isReaderMode, setIsReaderMode] = useState(false);
   const toggleReaderMode = () => setIsReaderMode((prev) => !prev);
 
@@ -43,7 +60,9 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
         <div className={style.sidebarTop}>
           <div className={style.sidebarBrand}>
             <span className={style.sidebarTitle}>Story Host</span>
-            <div className={style.desktopIcon} onClick={toggleSidebar}><IoReorderThree /></div>
+            <div className={style.desktopIcon} onClick={toggleSidebar}>
+              <IoReorderThree />
+            </div>
           </div>
 
           <Nav className="flex-column mt-1">
@@ -115,6 +134,28 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
                 </Link>
               </>
             )}
+            {role === "producer" && (
+              <>
+                <Link to="/producerHome" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <House className={style.me2} /> <span>Home</span>
+                </Link>
+                <Link to="/profilePage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image} alt="" /> &nbsp;&nbsp;<span>Profile</span>
+                </Link>
+                <Link to="/characterpage" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image2} alt="" /> &nbsp;&nbsp;<span>Review Responses</span>
+                </Link>
+                <Link to="/create-novel" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <img src={image3} alt="" /> &nbsp;&nbsp;<span>Open Application</span>
+                </Link>
+                <Link to="/chatApp" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Envelope className={style.me2} /> <span>Messages</span>
+                </Link>
+                <Link to="/favorites" className={style.sidebarLink} onClick={toggleSidebar}>
+                  <Heart className={style.me2} /> <span>Favorites</span>
+                </Link>
+              </>
+            )}
           </Nav>
         </div>
 
@@ -128,11 +169,17 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
               />
               <span>Reader Mode {isReaderMode ? "ON" : "OFF"}</span>
             </Nav.Link>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
             <Nav.Link href="/supportFeedback" className={style.sidebarLink}>
               <QuestionCircle className={style.me2} /> <span>Support</span>
             </Nav.Link>
+
             <Nav.Link href="#" className={style.sidebarLink}>
-              <BoxArrowRight className={style.me2} /> <span onClick={handleSignOut}>Sign Out</span>
+              <BoxArrowRight className={style.me2} />
+              <span onClick={handleSignOut}>Sign Out</span>
             </Nav.Link>
           </Nav>
         </div>
@@ -141,4 +188,4 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   );
 };
 
-export default WriterSidebar
+export default WriterSidebar;

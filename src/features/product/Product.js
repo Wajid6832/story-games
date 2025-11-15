@@ -193,3 +193,8 @@
 //     </Container>
 //   );
 // }
+<<<<<<< HEAD
+=======
+
+// export default ConfirmationModal;
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7

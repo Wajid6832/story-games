@@ -107,6 +107,7 @@
 
 
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ added for navigation
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
 import { FaPen } from "react-icons/fa";
 import { IoCloudUploadOutline } from "react-icons/io5";
@@ -115,23 +116,32 @@ import { useNavigate } from "react-router-dom";
 
 const CreateChapter = () => {
   const navigate = useNavigate();
+<<<<<<< HEAD
   return (
     <div className={styles.createChapter}>
       {/* Header */}
+=======
+
+  const handleClick = (path) => {
+    navigate(path);
+  };
+
+  return (
+    <div className={`${styles.createChapter} container bg-white p-4 p-md-5 rounded-4 shadow-sm`}>
+
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
       <h3 className="fw-semibold fs-4 mb-2">
         Create New Chapter - Chapter x out of 13
       </h3>
 
       <hr className={styles.divider} />
 
-      {/* Form Section */}
       <div>
         <h5 className="fw-medium mb-4">Fill the boxes below:</h5>
 
         <Row className="align-items-start g-4 mb-4">
-          {/* LEFT SIDE */}
+
           <Col md={6} sm={12}>
-            {/* Chapter Title */}
             <Form.Group className="position-relative mb-4">
               <FaPen className={`${styles.icon} text-muted`} />
               <Form.Control
@@ -141,7 +151,6 @@ const CreateChapter = () => {
               />
             </Form.Group>
 
-            {/* Opening Scene */}
             <Form.Group className="position-relative">
               <FaPen className={`${styles.iconTop} text-muted`} />
               <Form.Control
@@ -153,7 +162,6 @@ const CreateChapter = () => {
             </Form.Group>
           </Col>
 
-          {/* RIGHT SIDE */}
           <Col md={6} sm={12}>
             <Row className="g-3">
               <Col sm={6} xs={12}>
@@ -170,9 +178,12 @@ const CreateChapter = () => {
               </Col>
             </Row>
           </Col>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
         </Row>
 
-        {/* CHARACTERS */}
         <h5 className="fw-medium mb-3">Characters</h5>
 
         <Row className="g-3 mb-5">
@@ -183,8 +194,13 @@ const CreateChapter = () => {
               >
                 <span className="fw-medium">Character {num}</span>
                 <Button
+<<<<<<< HEAD
                   className={styles.createBtn}
                   onClick={() => navigate("/create")}
+=======
+                  className={`${styles.createBtn} px-3 py-1`}
+                  onClick={() => handleClick("/characterpage")}
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
                 >
                   Create Submission
                 </Button>
@@ -193,10 +209,24 @@ const CreateChapter = () => {
           ))}
         </Row>
 
-        {/* BOTTOM BUTTONS */}
         <div className="d-flex flex-wrap gap-3">
+<<<<<<< HEAD
           <Button className={styles.saveBtn}>Save & Review</Button>
           <Button className={styles.publishBtn}>Publish Chapter</Button>
+=======
+          <Button
+            className={`${styles.saveBtn} px-4 py-2`}
+            onClick={() => handleClick("/create-novel")} 
+          >
+            Save & Review
+          </Button>
+          <Button
+            className={`${styles.publishBtn} px-4 py-2`}
+            onClick={() => handleClick("/producerHome")} 
+          >
+            Publish Chapter
+          </Button>
+>>>>>>> b44a25c65f65f91f573eeac6454f9a3fa27e4ed7
         </div>
       </div>
     </div>
