@@ -32,12 +32,13 @@ function App() {
       <Routes>
 
         {/* Unprotected Routes */}
+        <Route path="/" element={<LandingPage />} />
         <Route path="/editorLogin" element={<EditorLogin />} />
         <Route path="/forgot-password" element={<ForgotPass />} />
         <Route path="/signup" element={<WriterSignUp />} />
         <Route path="/privacypolicypage" element={<PrivacyPolicy />} />
         <Route path="/termsconditionspage" element={<TermsConditions />} />
-        <Route path="/landingpage" element={<LandingPage />} />
+        
        
 
         {/* Shared pages (accessible for all roles) */}
@@ -67,7 +68,7 @@ function App() {
         {ProducerRoutes}
 
         {/* Redirect unknown routes */}
-        <Route path="*" element={<EditorLogin />} />
+        <Route path="*" element={<LandingPage />} />
 
       </Routes>
     </BrowserRouter>
