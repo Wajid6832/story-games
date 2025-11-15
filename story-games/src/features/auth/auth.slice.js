@@ -76,13 +76,16 @@ export const loginUser = createAsyncThunk(
 
 export const resetPassword = createAsyncThunk(
   "auth/resetPassword",
-  async ({ email, newPassword }, thunkAPI) => {
+  async ({ email, role, newPassword }, thunkAPI) => {
     try {
       const { data: users } = await axios.get(API_URL, { params: { email } });
-      const user = users.length ? users[0] : null;
+
+      const user = users.find((u) => u.role === role);
 
       if (!user) {
-        return thunkAPI.rejectWithValue({ error: "User not found!" });
+        return thunkAPI.rejectWithValue({
+          error: "User with this email and role not found!",
+        });
       }
 
       const updatedUser = { ...user, password: newPassword };

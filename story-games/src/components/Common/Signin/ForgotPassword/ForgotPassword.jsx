@@ -7,7 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const ForgotPass = () => {
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -19,16 +21,18 @@ const ForgotPass = () => {
     setSuccessMsg("");
     setErrorMsg("");
 
-    if (!email.trim() || !newPassword.trim()) {
+    if (!email.trim() || !role || !newPassword.trim()) {
       setErrorMsg("Please fill all fields");
       return;
     }
 
     try {
-      const result = await dispatch(resetPassword({ email, newPassword })).unwrap();
+      const result = await dispatch(resetPassword({ email, role, newPassword })).unwrap();
       setSuccessMsg(result.message);
       setEmail("");
       setNewPassword("");
+      setRole("");
+      setShowPassword(false);
     } catch (err) {
       setErrorMsg(err?.error || "Reset failed!");
     }
@@ -38,7 +42,7 @@ const ForgotPass = () => {
     if (isSuccess && successMsg) {
       const timer = setTimeout(() => {
         navigate("/editorLogin");
-      }, 2000); 
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [isSuccess, successMsg, navigate]);
@@ -62,13 +66,37 @@ const ForgotPass = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
+          <Form.Label>Role</Form.Label>
+          <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="">Select Role</option>
+            <option value="reader">reader</option>
+            <option value="writer">writer</option>
+            <option value="editor">editor</option>
+            <option value="producer">producer</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group className="mb-3 position-relative">
           <Form.Label>New Password</Form.Label>
           <Form.Control
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter new password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
           />
+          <Button
+            variant="link"
+            style={{
+              position: "absolute",
+              top: "38px",
+              right: "10px",
+              padding: "0",
+              fontSize: "1.2rem",
+            }}
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            <i className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
+          </Button>
         </Form.Group>
 
         <Button
