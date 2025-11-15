@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import illustration from "../../assets/Frame (2).png";
 import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { signupUser } from "../../features/auth/auth.slice";
 import styles from "./WriterSignUp.module.css";
 
 const WriterSignUp = () => {
@@ -16,62 +18,34 @@ const WriterSignUp = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignUp = async () => {
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setErrorMsg("Please enter a valid email");
-      return;
-    }
-    if (password.length < 8) {
-      setErrorMsg("Password must be at least 8 characters");
-      return;
-    }
-    if (password !== confirmPassword) {
-      setErrorMsg("Passwords do not match");
-      return;
-    }
-    if (!role) {
-      setErrorMsg("Please select a role");
-      return;
-    }
+    // frontend validations
+    if (!email || !password || !role) return setErrorMsg("Fill all fields");
 
     setErrorMsg("");
     setSuccessMsg("");
     setLoading(true);
 
     try {
-    
-      const response = await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, role }),
-      });
+      const resultAction = await dispatch(
+        signupUser({ email, password, role })
+      );
 
-      const data = await response.json();
-      console.log(data);
-
-      if (response.ok) {
-        
-        setSuccessMsg("User created successfully! Redirecting to login...");
-        console.log("User Data:", data);
-
-       
+      if (signupUser.fulfilled.match(resultAction)) {
+        setSuccessMsg("User created successfully! Redirecting...");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
         setRole("");
 
-        setTimeout(() => {
-          navigate("/editorLogin");
-        }, 2000);
+        setTimeout(() => navigate("/editorLogin"), 2000);
       } else {
-        setErrorMsg(data.message || "Signup failed. Try again.");
+        setErrorMsg(resultAction.payload?.error || "Signup failed");
       }
-    } catch (error) {
-      console.error("Error:", error);
-      setErrorMsg("Something went wrong. Please try again.");
+    } catch (err) {
+      setErrorMsg("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -80,22 +54,35 @@ const WriterSignUp = () => {
   return (
     <Container fluid className={styles.mainLandingDiv}>
       <Row className={`justify-content-center ${styles.ladingContentDiv}`}>
-        <Col xs={12} md={6} className={`${styles.content} d-flex flex-column gap-4`}>
+        <Col
+          xs={12}
+          md={6}
+          className={`${styles.content} d-flex flex-column gap-2`}
+        >
           <div className={styles.heading}>
             <p>STORY HOST</p>
           </div>
 
-          <div className={`${styles.secondHeading} d-flex align-items-center gap-2`}>
+          <div
+            className={`${styles.secondHeading} d-flex align-items-center gap-2`}
+          >
             <p>Create your account</p>
             <div className={styles.dashtLine}></div>
           </div>
 
-        
-          {successMsg && <Alert variant="success">{successMsg}</Alert>}
-          {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
+          
 
-        
           <Form.Group>
+                {successMsg && (
+            <Alert variant="success" className={styles.alertCustom}>
+              {successMsg}
+            </Alert>
+          )}
+          {errorMsg && (
+            <Alert variant="danger" className={styles.alertCustom}>
+              {errorMsg}
+            </Alert>
+          )}
             <Form.Select
               value={role}
               onChange={(e) => setRole(e.target.value)}
@@ -107,9 +94,9 @@ const WriterSignUp = () => {
               <option value="editor">editor</option>
               <option value="producer">producer</option>
             </Form.Select>
+        
           </Form.Group>
 
-    
           <Form.Group className={styles.inputGroup}>
             <i className="bi bi-envelope"></i>
             <Form.Control
@@ -121,7 +108,6 @@ const WriterSignUp = () => {
             />
           </Form.Group>
 
-          
           <Form.Group className={styles.inputGroup}>
             <i className="bi bi-lock"></i>
             <Form.Control
@@ -140,7 +126,6 @@ const WriterSignUp = () => {
             </Button>
           </Form.Group>
 
-        
           <Form.Group className={styles.inputGroup}>
             <i className="bi bi-lock"></i>
             <Form.Control
@@ -155,11 +140,14 @@ const WriterSignUp = () => {
               className={styles.eyeIcon}
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
             >
-              <i className={showConfirmPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
+              <i
+                className={
+                  showConfirmPassword ? "bi bi-eye" : "bi bi-eye-slash"
+                }
+              ></i>
             </Button>
           </Form.Group>
 
-          
           <div className={`${styles.butons} d-flex flex-wrap gap-3`}>
             <Button
               className={styles.signup}
@@ -177,7 +165,6 @@ const WriterSignUp = () => {
           </div>
         </Col>
 
-       
         <Col
           xs={12}
           md={6}

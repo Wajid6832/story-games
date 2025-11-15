@@ -2,7 +2,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 const API_URL = "http://localhost:3000/users";
 const savedUser = localStorage.getItem("user");
 
@@ -19,12 +18,20 @@ export const signupUser = createAsyncThunk(
   "auth/signupUser",
   async ({ email, password, role }, thunkAPI) => {
     try {
-      const { data: existing } = await axios.get(API_URL, { params: { email } });
+      // existing users filter by email AND role
+      const { data: existing } = await axios.get(API_URL, {
+        params: { email },
+      });
 
-      if (existing.length > 0) {
-        return thunkAPI.rejectWithValue({ error: "User already exists!" });
+      // check if same role already exists
+      const duplicate = existing.find((user) => user.role === role);
+      if (duplicate) {
+        return thunkAPI.rejectWithValue({
+          error: "User with this email and role already exists!",
+        });
       }
 
+      // otherwise, create new user
       const response = await axios.post(API_URL, { email, password, role });
       return response.data;
     } catch (err) {
@@ -82,7 +89,6 @@ export const resetPassword = createAsyncThunk(
       await axios.put(`${API_URL}/${user.id}`, updatedUser);
 
       return { message: "Password reset successfully!" };
-    
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: "Password reset failed!" });
     }
