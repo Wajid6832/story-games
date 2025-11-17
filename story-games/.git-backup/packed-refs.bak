@@ -1,0 +1,23 @@
+# pack-refs with: peeled fully-peeled sorted 
+93f72af07204dc0391aad0f3f16fa56b278ad8d0 refs/remotes/origin/Editing-section
+8dbb72757e171b2047e3759b725017128f96af2f refs/remotes/origin/Sufyan
+60b932376f462d60f076ea4ec3190c019469856e refs/remotes/origin/Team/Writer-Sufyan
+b000a1633ab1d64cc4b9789db3992280a9353336 refs/remotes/origin/editing-screen
+fb9bd4e2c89f6052ef15a88bcea8322087b609d9 refs/remotes/origin/editorTeam-Ehtesham
+4b4c3909406dd6b6da54a21ff04c5ae5aaa10a56 refs/remotes/origin/main
+6d13fbdb850128008b247b685de9f565142bcf09 refs/remotes/origin/reader-home-landing
+207b7be335a1bb130811916f4fb95bfa491e8e40 refs/remotes/origin/staging
+cb74c55ef62b87081bc96ad3f84b51d17e6f5be3 refs/remotes/origin/team/editor-ehtesham
+4f0614d29a53ecca1e3e633c5edf4f412859be4d refs/remotes/origin/team/editor-shahzad
+dc68a9d37d1a7a7759a5278369b5e901f066ba39 refs/remotes/origin/team/producer-khalil
+ac8153d12aec4eac7efc3adee3de19cd4034f8a8 refs/remotes/origin/team/producer-qammer
+06910ef63238a83415a5d0dc6e507db907a926d6 refs/remotes/origin/team/producer-shakeel
+5be7cb5c2248bd5d63b720699910e41b20fb87cc refs/remotes/origin/team/reader-hussain
+108250b1299047693752d048335fa69f97db941f refs/remotes/origin/team/reader-m.saqib
+da1c8d6b33b25ebb1b995bf9f97a222f40cdb0e9 refs/remotes/origin/team/reader-saqib
+7fd17456a4abd64f91f2c1388cfa8474be8e877e refs/remotes/origin/team/writer-hussnain
+52f06b3e1c15f2426daf2fbfa482ea4ce8d60fd9 refs/remotes/origin/teme/reader-sajjad
+7de242db34182c519417b604bcc4a8cdf2f52b9a refs/remotes/origin/writer
+a836c4e2942726adf243b12177d51730b3857a9c refs/remotes/origin/writer-Sufyan
+9d69d325bd88f7b70c439ac7ad1d4a269713c121 refs/remotes/origin/writer-team-Hussnain
+b6edbf41b0c564f1db1993b63ed76f3d41f1053a refs/remotes/origin/writer-team-Wajid
