@@ -2,11 +2,18 @@ import React from "react";
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
 import { FaPen } from "react-icons/fa";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import styles from "./CreateChapter.module.css";
 
 const CreateChapter = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/create");
+  };
   return (
-    <div className={`${styles.createChapter} container bg-white p-4 p-md-5 rounded-4 shadow-sm`}>
+    <div
+      className={`${styles.createChapter} container bg-white p-4 p-md-5 rounded-4 shadow-sm`}
+    >
       {/* Header */}
       <h3 className="fw-semibold fs-4 mb-2">
         Create New Chapter - Chapter x out of 13
@@ -45,22 +52,21 @@ const CreateChapter = () => {
 
           {/* RIGHT SIDE */}
           <Col md={6} sm={12}>
-  <Row className="g-3">
-    <Col sm={6} xs={12}>
-      <Card className={`${styles.uploadCard} text-center border-0`}>
-        <IoCloudUploadOutline className={styles.uploadIcon} />
-        <span>Upload Image</span>
-      </Card>
-    </Col>
-    <Col sm={6} xs={12}>
-      <Card className={`${styles.uploadCard} text-center border-0`}>
-        <IoCloudUploadOutline className={styles.uploadIcon} />
-        <span>Upload MP3 File</span>
-      </Card>
-    </Col>
-  </Row>
-</Col>
-
+            <Row className="g-3">
+              <Col sm={6} xs={12}>
+                <Card className={`${styles.uploadCard} text-center border-0`}>
+                  <IoCloudUploadOutline className={styles.uploadIcon} />
+                  <span>Upload Image</span>
+                </Card>
+              </Col>
+              <Col sm={6} xs={12}>
+                <Card className={`${styles.uploadCard} text-center border-0`}>
+                  <IoCloudUploadOutline className={styles.uploadIcon} />
+                  <span>Upload MP3 File</span>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
         </Row>
 
         {/* CHARACTERS */}
@@ -73,7 +79,10 @@ const CreateChapter = () => {
                 className={`${styles.characterCard} border-0 rounded-3 p-3 d-flex flex-row justify-content-between align-items-center`}
               >
                 <span className="fw-medium">Character {num}</span>
-                <Button className={`${styles.createBtn} px-3 py-1`}>
+                <Button
+                  className={`${styles.createBtn} px-3 py-1`}
+                  onClick={handleClick}
+                >
                   Create Submission
                 </Button>
               </Card>

@@ -14,7 +14,7 @@ const HomePage = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
   const handleClick = () => {
-    navigate("/create-novel");
+    navigate("/createnovel");
   };
   return (
     <div className={styles.container}>

@@ -63,7 +63,7 @@ function PageReducer() {
 
           <div className={style.applyBtn}>
             <button className={style.applyBtnText}>Create New Chapter</button>
-            <button className={style.apply2} onClick={()=>{navigate("/create-novel")}}>
+            <button className={style.apply2} onClick={()=>{navigate("/createnovel")}}>
         
               <img src={align} alt="right" className={style.arrow} />
             </button>

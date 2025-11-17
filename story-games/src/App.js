@@ -8,7 +8,7 @@ import PrivacyPolicy from "./components/Pages/WriterOnlyComponents/StoryPrivacyP
 import TermsConditions from "./components/Pages/WriterOnlyComponents/StoryTermsCondition/StoryTermsConditionPage";
 import LandingPage from "./Common/Landing/WriterLanding/WriterLandingPage";
 
-// Role-Based Routes files
+// Role-Based Routes
 import WriterRoutes from "./Routes/WriterRoutes";
 import EditorRoutes from "./Routes/EditorRoutes";
 import ReaderRoutes from "./Routes/ReaderRoutes";
@@ -32,12 +32,13 @@ function App() {
       <Routes>
 
         {/* Unprotected Routes */}
+        <Route path="/" element={<LandingPage />} />
         <Route path="/editorLogin" element={<EditorLogin />} />
         <Route path="/forgot-password" element={<ForgotPass />} />
         <Route path="/signup" element={<WriterSignUp />} />
         <Route path="/privacypolicypage" element={<PrivacyPolicy />} />
         <Route path="/termsconditionspage" element={<TermsConditions />} />
-        <Route path="/landingpage" element={<LandingPage />} />
+        
        
 
         {/* Shared pages (accessible for all roles) */}
@@ -67,7 +68,7 @@ function App() {
         {ProducerRoutes}
 
         {/* Redirect unknown routes */}
-        <Route path="*" element={<EditorLogin />} />
+        <Route path="*" element={<LandingPage />} />
 
       </Routes>
     </BrowserRouter>

@@ -8,14 +8,13 @@ import styles from "../../../Common/Landing/WriterLanding/Wrtiterlanding.module.
 
 const LandingPage = () => {
   const navigate = useNavigate(); 
-
   const footer = [1, 2, 3, 4, 5, 6];
 
   return (
     <div className={styles.landingWrapper}>
-      <Container fluid className={`${styles.bg} px-4`}>
-        <Row className={`${styles.main} align-items-center`}>
-          <Col md={6} className="d-flex flex-column justify-content-center">
+      <Container fluid className={`${styles.bg} px-3 px-md-4`}>
+        <Row className="align-items-center flex-column flex-md-row">
+          <Col md={6} className="d-flex flex-column justify-content-center order-2 order-md-1">
             <h1 className="fw-bold mb-2 fs-2">Story Host</h1>
             <div className={styles.line}>
               <p className="text-secondary fs-6 mb-0">
@@ -28,8 +27,7 @@ const LandingPage = () => {
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </p>
 
-          
-            <div className="d-flex flex-wrap gap-2 mb-2">
+            <div className="d-flex flex-wrap gap-2 mb-3">
               <Button
                 variant="primary"
                 className={styles.signUpBtn}
@@ -51,7 +49,7 @@ const LandingPage = () => {
             </a>
           </Col>
 
-          <Col md={6} className="text-center">
+          <Col md={6} className="text-center order-1 order-md-2 mb-3 mb-md-0">
             <img
               src={image}
               alt="Books Illustration"
@@ -61,11 +59,11 @@ const LandingPage = () => {
         </Row>
 
         <div className={styles.footer}>
-          <Row className="align-items-center">
-            <Col xs={9}>
-              <Row className="g-2 justify-content-center">
+          <Row className="align-items-center flex-column flex-md-row">
+            <Col xs={12} md={9} className="mb-3 mb-md-0">
+              <Row className="g-2 row-cols-2 row-cols-sm-3 row-cols-md-6">
                 {footer.map((item) => (
-                  <Col key={item} xs={4} sm={3} md={2}>
+                  <Col key={item}>
                     <Card className={styles.placeholderCard}>
                       <i className="bi bi-image"></i>
                     </Card>
@@ -73,8 +71,8 @@ const LandingPage = () => {
                 ))}
               </Row>
             </Col>
-            <Col className="text-start">
-              <h5 className="fw-semibold mt-2">Top lists</h5>
+            <Col xs={12} md={3} className="text-center text-md-start">
+              <h5 className="fw-semibold mt-2 mt-md-0">Top lists</h5>
             </Col>
           </Row>
         </div>

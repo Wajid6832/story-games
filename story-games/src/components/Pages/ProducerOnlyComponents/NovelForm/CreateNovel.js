@@ -1,10 +1,15 @@
 import React from "react";
 import { Form, Row, Col, Card, Button } from "react-bootstrap";
 import { FaPen, FaCalendarAlt, FaUserAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import styles from "./CreateNovel.module.css";
 
 const CreateNovel = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/createChapter");
+  };
   return (
     <div className={`container-fluid bg-white p-5 rounded shadow-sm ${styles.pageWrapper}`}>
      
@@ -130,7 +135,7 @@ const CreateNovel = () => {
               <Form.Control type="text" placeholder="Enter Genre" className={styles.inputField} />
             </div>
             <div className="mt-3">
-              <Button className={styles.submitBtn}>Submit & Create</Button>
+              <Button className={styles.submitBtn} onClick={handleClick}>Submit & Create</Button>
             </div>
           </Col>
         </Row>
