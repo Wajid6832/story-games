@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Container, Card, Modal, Button } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
 // import Sidebar from "../../../Common/Readers-Landing/Sidebar";
-import styles from "../../../Pages/ReaderSection2/ReadersLanding/ReadersLanding.module.css";
+import styles from "../../../Pages/ReaderSection1/LandingReader/ReadersLanding.module.css";
 // import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
 // import styles from "./ReadersLanding.module.css";
 const sections = [
@@ -72,16 +72,9 @@ const CardContent = ({ section, story }) => {
 const ReadersLanding = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
-  const [selectedStory, setSelectedStory] = useState(null);
-  const [modalType, setModalType] = useState(null);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const handleClose = () => setModalType(null);
-  const handleCardClick = (storyData, section) => {
-    setSelectedStory(storyData);
-    if (section === "Uploaded" || section === "My Favorites" || section === "Top 10 Stories")
-      setModalType("story");
-    else if (section.includes("Character")) setModalType("character");
-    else if (section.includes("Chapter")) setModalType("chapter");
+  const handleCardClick = () => {
+    // Handle card click if needed
   };
   useEffect(() => {
     const handleResize = () => {
