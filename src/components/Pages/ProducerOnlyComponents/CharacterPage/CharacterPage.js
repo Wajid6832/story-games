@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Button, Image } from "react-bootstrap";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "./CharacterPage.module.css";
 import squares from "../../../../assets/squares.png";
 import favourite from "../../../../assets/favourite.png";

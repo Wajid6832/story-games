@@ -11,7 +11,6 @@ import image from "../../assets/profile.png";
 import image2 from "../../assets/review.png";
 import image3 from "../../assets/applications.png";
 import editor from "../../assets/editor.png";
-
 import {
   House,
   Book,

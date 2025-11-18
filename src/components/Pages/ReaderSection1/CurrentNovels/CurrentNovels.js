@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Card } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images.png";
 import styles from "./CurrentNovels.module.css";
@@ -11,18 +11,7 @@ const generateNovels = () =>
   }));
 
 const CurrentNovels = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const novels = generateNovels();
-
-  useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < 992;
-      setIsMobile(mobile);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div className="d-flex bg-light vh-100">

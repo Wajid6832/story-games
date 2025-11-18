@@ -20,7 +20,7 @@ const Application = () => {
             
             <div className={styles.imagContainer}>
               <div className={styles.text}>
-            <img src={download}  />
+            <img src={download} alt="Download" />
             <p>Download sample work </p>
             </div>
             </div>

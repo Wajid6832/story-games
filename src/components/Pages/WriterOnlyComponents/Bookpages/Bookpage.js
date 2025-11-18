@@ -68,16 +68,14 @@ const Bookpage = () => {
               <div className={`${styles.chapterCard} p-3`}>
                 <p className={styles.chapterDate}>{ch.date}</p>
                 <h4 className={styles.chapterTitle}>{ch.title}</h4>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenReader(true);
-                  }}
+                <button
+                  type="button"
+                  onClick={() => setOpenReader(true)}
                   className={styles.readLink}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textDecoration: 'underline' }}
                 >
                   Read Chapter
-                </a>
+                </button>
               </div>
             </div>
           ))}
@@ -133,16 +131,14 @@ const Bookpage = () => {
               <div className={`${styles.chapterCard} p-3`}>
                 <p className={styles.chapterDate}>{ch.date}</p>
                 <h4 className={styles.chapterTitle}>{ch.title}</h4>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenReader(true);
-                  }}
+                <button
+                  type="button"
+                  onClick={() => setOpenReader(true)}
                   className={styles.readLink}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textDecoration: 'underline' }}
                 >
                   Read Chapter
-                </a>
+                </button>
               </div>
             </div>
           ))}

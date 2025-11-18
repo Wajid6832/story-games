@@ -182,14 +182,14 @@ export function Products() {
         </form>
       </Modal>
 
-      {/* Delete Confirmation (future use) */}
-      <ConfirmationModal
-        show={showDeleteProductModal}
-        onHide={() => setShowDeleteProductModal(false)}
-        title="Delete Product"
-        message="Are you sure you want to delete this product?"
-        onConfirm={() => console.log("Delete confirmed")}
-      />
-    </Container>
-  );
-}
+//       {/* Delete Confirmation (future use) */}
+//       <ConfirmationModal
+//         show={showDeleteProductModal}
+//         onHide={() => setShowDeleteProductModal(false)}
+//         title="Delete Product"
+//         message="Are you sure you want to delete this product?"
+//         onConfirm={() => console.log("Delete confirmed")}
+//       />
+//     </Container>
+//   );
+// }

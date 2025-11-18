@@ -6,29 +6,23 @@ import { useNavigate } from "react-router-dom";
 import BookReader from "../Characterpage/BookReader";
 
 const WorkRoomPage = () => {
-   const navigate = useNavigate();
-   const [openReader, setOpenReader] = useState(false);
-    if (openReader) {
-       return <BookReader setOpenReader={setOpenReader} />;
-     }
+  const navigate = useNavigate();
+  const [openReader, setOpenReader] = useState(false);
+  if (openReader) {
+    return <BookReader setOpenReader={setOpenReader} />;
+  }
 
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
-     
-      <div
-        className={`${styles.sidebarContainer}`}
-      >
-        
-      </div>
+      <div className={`${styles.sidebarContainer}`}></div>
 
       <div className={`flex-grow-1 ${styles.mainContent}`}>
         <div className={`container ${styles.container}`}>
-        
           <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap">
             <div className="d-flex align-items-center mb-2 mb-sm-0">
               <button
-                onClick={()=>(navigate("/writerHome"))}
-                className={`${styles.backBtn} me-2`} 
+                onClick={() => navigate("/writerHome")}
+                className={`${styles.backBtn} me-2`}
               >
                 <FaAngleLeft />
               </button>
@@ -40,7 +34,6 @@ const WorkRoomPage = () => {
         <div className={styles.divider}></div>
 
         <div className={`container ${styles.container}`}>
-      
           <div className={styles.characterBox}>
             <h3 className={styles.sectionTitle}>Character 1 Name</h3>
             <div className="row g-3">
@@ -71,13 +64,13 @@ const WorkRoomPage = () => {
                   <div className={styles.chapterCard}>
                     <p className={styles.date}>1 Oct 22</p>
                     <h4>Chapter {num}</h4>
-                    <a onClick={(e) => {
-                    e.preventDefault();
-                    setOpenReader(true);
-                  }} 
-                    href="#" className={styles.readLink}>
+                    <button
+                      type="button"
+                      onClick={() => setOpenReader(true)}
+                      className={styles.readLink}
+                    >
                       Read Chapter →
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -120,7 +113,10 @@ const WorkRoomPage = () => {
                   <BsCloudUpload className={styles.icon} />
                   Add a New Chapter
                 </button>
-                <button onClick={()=>navigate("/chatApp")} className={`${styles.btn} ${styles.secondary}`}>
+                <button
+                  onClick={() => navigate("/chatApp")}
+                  className={`${styles.btn} ${styles.secondary}`}
+                >
                   Group Chat
                 </button>
               </div>
