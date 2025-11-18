@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from './Application.module.css';
 import square from '../../../../assets/square.png';
-// import upload from '../../../../assets/upload.png';
 import download from '../../../../assets/download.png'
 import Frame1 from '../../../../assets/Frame.png';
 const Application = () => {

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card, Modal, Button } from "react-bootstrap";
 import placeholder from "../../../../assets/Readers-Assets/images/Frame1.png";
-// import Sidebar from "../../../Common/Readers-Landing/Sidebar";
 import styles from "../../../Pages/ReaderSection2/ReadersLanding/ReadersLanding.module.css";
-// import Sidebar from "../../ReaderSection1/ReaderSidebar/Sidebar";
-// import styles from "./ReadersLanding.module.css";
-
+import { useNavigate } from "react-router-dom";
 const sections = [
   "Uploaded",
   "My Favorites",
@@ -14,6 +11,7 @@ const sections = [
   "Top 10 Characters",
   "Top 10 Intro Chapters",
 ];
+// Dummy data generator
 const generateStories = (sectionName) =>
   Array.from({ length: 10 }, (_, i) => ({
     id: `${sectionName}-${i}`,
@@ -29,6 +27,7 @@ const generateStories = (sectionName) =>
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     chapters: 13,
   }));
+// Card content based on section type
 const CardContent = ({ section, story }) => {
   if (section === "Top 10 Writers") {
     return (
@@ -40,7 +39,7 @@ const CardContent = ({ section, story }) => {
             className={styles.writerPlaceholderIcon}
           />
         </div>
-        <p className="fw-semibold mt-2 mb-0 small text-dark">Author Name</p>
+        <p className="fw-semibold mt-2 mb-0 small text-dark">{story.author}</p>
       </div>
     );
   }
@@ -64,9 +63,11 @@ const CardContent = ({ section, story }) => {
       </div>
     );
   }
+  // Default card for Uploaded / My Favorites / Top 10 Stories
   return (
     <div className={styles.placeholderCard}>
-      <img src={story.image} alt="placeholder" className={styles.placeholderImg} />
+      <img src={story.image} alt={story.title} className={styles.placeholderImg} />
+      <h6 className="fw-bold mt-2">{story.title}</h6>
     </div>
   );
 };
@@ -74,42 +75,35 @@ const ReadersLanding = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
   const [selectedStory, setSelectedStory] = useState(null);
-  const [modalType, setModalType] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const handleClose = () => setModalType(null);
-  const handleCardClick = (storyData, section) => {
-    setSelectedStory(storyData);
-    if (section === "Uploaded" || section === "My Favorites" || section === "Top 10 Stories")
-      setModalType("story");
-    else if (section.includes("Character")) setModalType("character");
-    else if (section.includes("Chapter")) setModalType("chapter");
+  const handleClose = () => setShowModal(false);
+  // Card click only for Uploaded
+  const handleCardClick = (story, section) => {
+    if (section === "Uploaded") {
+     navigate("/ProfilePage");
+    }
   };
+  // Handle responsive layout
   useEffect(() => {
     const handleResize = () => {
       const mobileCheck = window.innerWidth < 992;
       setIsMobile(mobileCheck);
-      if (!mobileCheck) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
+      setSidebarOpen(!mobileCheck);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const contentMargin = isMobile ? "0px" : (sidebarOpen ? "260px" : "80px");
+  const contentMargin = isMobile ? "0px" : sidebarOpen ? "260px" : "80px";
   return (
     <div className="d-flex bg-light vh-100">
-      {/* <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} /> */}
       <Container
         fluid
         className={styles.mainContent + " p-4 overflow-auto readers-main"}
-        style={{
-          marginLeft: contentMargin,
-          width: "100%",
-          transition: "margin-left 0.3s ease",
-        }}
+        style={{ marginLeft: contentMargin, width: "100%", transition: "margin-left 0.3s ease" }}
       >
+        {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
           <button
             className="btn btn-light d-lg-none mb-2"
@@ -124,6 +118,7 @@ const ReadersLanding = () => {
             <input type="text" placeholder="Search" />
           </div>
         </div>
+        {/* Sections */}
         {sections.map((section) => (
           <div key={section} className="mb-5">
             <h5 className="fw-bold mb-3">{section}</h5>
@@ -141,6 +136,7 @@ const ReadersLanding = () => {
                       : ""
                   }`}
                   onClick={() => handleCardClick(story, section)}
+                  style={{ cursor: section === "Uploaded" ? "pointer" : "default" }}
                 >
                   <CardContent section={section} story={story} />
                 </Card>
@@ -148,9 +144,67 @@ const ReadersLanding = () => {
             </div>
           </div>
         ))}
+        {/* Uploaded Modal */}
+        <Modal
+          show={showModal}
+          onHide={handleClose}
+          size="lg"
+          centered
+          backdrop="static"
+          fullscreen="md-down"
+        >
+          {selectedStory && (
+            <div className="d-flex flex-column flex-md-row">
+              <div
+                className="d-flex align-items-center justify-content-center bg-light"
+                style={{ width: "35%", minHeight: "400px" }}
+              >
+                <img
+                  src={selectedStory.image}
+                  alt={selectedStory.title}
+                  className="img-fluid"
+                  style={{ maxHeight: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="p-4" style={{ width: "65%", position: "relative" }}>
+                <button
+                  type="button"
+                  className="btn-close position-absolute"
+                  style={{ top: "15px", right: "15px" }}
+                  onClick={handleClose}
+                ></button>
+                <p className="mb-1 text-muted">{selectedStory.genre}</p>
+                <h5 className="fw-bold mb-2">{selectedStory.book}</h5>
+                <div className="mb-3">
+                  <span className="text-primary me-3" style={{ cursor: "pointer" }}>
+                    {selectedStory.author}
+                  </span>
+                  <span className="text-primary" style={{ cursor: "pointer" }}>
+                    {selectedStory.writer}
+                  </span>
+                </div>
+                <p className="text-muted" style={{ lineHeight: "1.5" }}>
+                  {selectedStory.description}
+                </p>
+                <Button
+                  className="text-white mt-2"
+                  style={{
+                    backgroundColor: "#6F8BDA",
+                    borderRadius: "25px",
+                    fontWeight: "500",
+                    width: "100%",
+                    height: "50px",
+                  }}
+                >
+                  Read Chapter 1 of {selectedStory.chapters} for Free
+                  <i className="bi bi-chevron-right fs-6 ms-2"></i>
+                </Button>
+              </div>
+            </div>
+          )}
+        </Modal>
       </Container>
-       {/* Modal JS goes here, if needed */}
     </div>
   );
 };
-export default ReadersLanding;
+export default ReadersLanding

@@ -32,8 +32,8 @@ const Support = () => {
               </InputGroup.Text>
               <Form.Control
                 as="textarea"
-                rows={4}
                 placeholder="Message"
+                 rows={4}
                 className={styles.textareaControl}
               />
             </InputGroup>

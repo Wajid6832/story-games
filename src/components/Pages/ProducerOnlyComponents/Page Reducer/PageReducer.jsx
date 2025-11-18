@@ -1,7 +1,5 @@
 
-// import React from "react";
-import React, { useState } from "react";
-
+import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import style from "./PageReduced.module.css";
 import image from "../../../../assets/icon.png";
@@ -15,24 +13,17 @@ import align from "../../../../assets/align-justify.png";
 
 function PageReducer() {
   const navigate = useNavigate(); 
-    const [isVisible, setIsVisible] = useState(true);
-
-  const handleClose = () => {
-    setIsVisible(false); 
-  };
 
   const handleEnterWorkroom = () => {
     navigate("/workroom"); 
   };
   return (
-    <>
-     {isVisible && (
     <div className={style.overlay}>
       <img src={square} alt="left" className={style.leftImage} />
 
       <div className={style.wrapper}>
         <div className={style.icon}>
-          <img src={image} alt="icon" onClick={handleClose} />
+          <img src={image} alt="icon" />
         </div>
 
         <div className={style.text}>
@@ -72,7 +63,7 @@ function PageReducer() {
 
           <div className={style.applyBtn}>
             <button className={style.applyBtnText}>Create New Chapter</button>
-            <button className={style.apply2} onClick={()=>{navigate("/create-novel")}}>
+            <button className={style.apply2} onClick={()=>{navigate("/createnovel")}}>
         
               <img src={align} alt="right" className={style.arrow} />
             </button>
@@ -82,8 +73,6 @@ function PageReducer() {
 
       <img src={Rsquare} alt="right" className={style.rightImage} />
     </div>
-     )} :
-     </>
   );
 }
 

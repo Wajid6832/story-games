@@ -12,38 +12,49 @@ const EditorLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading } = useSelector(
-    (state) => state.auth
-  );
+  const { isLoading } = useSelector((state) => state.auth);
+
   const togglePassword = () => setShowPassword(!showPassword);
+
   const handleLoginForm = async () => {
     setErrorMessage("");
+
     if (!email.trim() || !password.trim()) {
       setErrorMessage("Please enter both email and password");
       return;
     }
-    const data = await dispatch(loginUser({ email, password })).unwrap();
-    if (data && data?.role) {
-      if (data.role === "editor") {
-        console.log('111')
-        navigate("/editorHome");
-      } else if (data.role === "writer") {
-        console.log('222')
-        navigate("/writerHome");
-      } else if (data.role === "reader") {
-        console.log('333')
-        navigate("/readerHome")
-      } else if (data.role === "producer") {
-        console.log('444')
-        navigate("/producerHome");
-      } else {
-        console.log('555')
-        navigate("/");
+
+    try {
+      const data = await dispatch(loginUser({ email, password })).unwrap();
+
+      if (data && data.role) {
+        const role = data.role.toLowerCase();
+
+        switch (role) {
+          case "writer":
+            navigate("/writerHome");
+            break;
+          case "editor":
+            navigate("/editorHome");
+            break;
+          case "reader":
+            navigate("/readersLanding");
+            break;
+          case "producer":
+            navigate("/producerHome");
+            break;
+          default:
+            navigate("/");
+        }
       }
+    } catch (err) {
+      setErrorMessage(err?.error || "Invalid credentials!");
     }
   };
+
   return (
     <div className={styles.mainLandingDiv}>
       <div className={styles.landingSecondDiv}>
@@ -55,10 +66,14 @@ const EditorLogin = () => {
                   <p>STORY HOST</p>
                 </div>
                 <div className={styles.secondHeading}>
-                  <p>Lorem ipsum dolor sit amet</p>
+                  <p>Welcome Back</p>
                   <div className={styles.dashtLine}></div>
                 </div>
-                {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+
+                {errorMessage && (
+                  <p style={{ color: "red", fontSize: "0.9rem" }}>{errorMessage}</p>
+                )}
+
                 {/* Email Input */}
                 <div className={styles.inputGroup}>
                   <img src={Mail} alt="" />
@@ -70,6 +85,7 @@ const EditorLogin = () => {
                     className={styles.input}
                   />
                 </div>
+
                 {/* Password Input */}
                 <div className={styles.inputGroup}>
                   <img src={Password} alt="" />
@@ -81,9 +97,20 @@ const EditorLogin = () => {
                     className={styles.input}
                   />
                   <button className={styles.eyeIcon} onClick={togglePassword}>
-                    <i className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}></i>
+                    <i
+                      className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}
+                    ></i>
                   </button>
                 </div>
+                <div className={styles.forgotPasswordDiv}>
+                  <span
+                    className={styles.forgotPassword}
+                    onClick={() => navigate("/forgot-password")}
+                  >
+                    Forgot Password?
+                  </span>
+                </div>
+
                 <div className={styles.butons}>
                   <div className={styles.btn}>
                     <div className={styles.signup}>
@@ -92,11 +119,14 @@ const EditorLogin = () => {
                       </button>
                     </div>
                     <div className={styles.signin}>
-                      <button>Forgot Password?</button>
+                      <button onClick={() => navigate("/signup")}>
+                        Sign Up
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className={styles.image}>
                 <img src={illustration} alt="Illustration" />
               </div>
@@ -107,4 +137,5 @@ const EditorLogin = () => {
     </div>
   );
 };
+
 export default EditorLogin;

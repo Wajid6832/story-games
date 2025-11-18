@@ -1,25 +1,23 @@
 .mainLandingDiv {
   width: 100%;
   min-height: 100vh;
-  background-color: #efefef;
+  background-color: #EFEFEF;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   box-sizing: border-box;
 }
-
 .landingSecondDiv {
   width: 100%;
   max-width: 950px;
   border-radius: 90px;
-  background-color: #ebe8e8;
+  background-color: #EBE8E8;
   transform: rotate(2deg);
   padding-bottom: 20px;
   overflow: hidden;
   margin-top: -100px;
 }
-
 .ladingContentDiv {
   margin-top: -70px;
   width: 100%;
@@ -31,14 +29,12 @@
   align-items: center;
   justify-content: center;
 }
-
 .contentUpper {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
 }
-
 .landignContent {
   margin-top: 30px;
   display: flex;
@@ -49,7 +45,6 @@
   width: 100%;
   gap: 2rem;
 }
-
 /* ---------- Content Section ---------- */
 .content {
   flex: 1 1 400px;
@@ -58,13 +53,11 @@
   gap: 1rem;
   padding-left: 1rem;
 }
-
 .heading p {
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   margin: 0;
 }
-
 .secondHeading {
   display: flex;
   align-items: center;
@@ -72,41 +65,34 @@
   width: 100%;
   max-width: 450px;
 }
-
 .secondHeading p {
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin: 0;
 }
-
 .dashtLine {
   width: 130px;
   height: 4px;
   border-radius: 50px;
-  background-color: #f6b21a;
+  background-color: #F6B21A;
 }
-
 .text {
   max-width: 480px;
 }
-
 .text p {
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
 }
-
 /* ---------- Buttons ---------- */
 .butons {
   width: 100%;
 }
-
 .btn {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 10px;
 }
-
 .signup button,
 .signin button {
   padding: 0.75rem 2rem;

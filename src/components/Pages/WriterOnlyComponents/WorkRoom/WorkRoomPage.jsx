@@ -1,62 +1,28 @@
 import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { BsCloudUpload } from "react-icons/bs";
-import WriterSidebar from "../../../Sidebar/WriterSidebar";
 import styles from "./WorkRoom.module.css";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import BookReader from "../Characterpage/BookReader";
+
 const WorkRoomPage = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-
-
-    useEffect(() => {
-    const links = document.querySelectorAll(`.${styles.readLink}`);
-
-    
-    links.forEach((link, index) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault(); 
-
-        
-        if (index === 0) {
-          window.location.href = "/characterpage";
-        }
-      });
-    });
-
-    
-    return () => {
-      links.forEach((link) => {
-        link.replaceWith(link.cloneNode(true));
-      });
-    };
-  }, []);
-
-
-
- const openGroupChat = () => {
-    window.location.href = "/";
-    }
+  const navigate = useNavigate();
+  const [openReader, setOpenReader] = useState(false);
+  if (openReader) {
+    return <BookReader setOpenReader={setOpenReader} />;
+  }
 
   return (
     <div className={`d-flex ${styles.pageWrapper}`}>
-     
-      <div
-        className={`${styles.sidebarContainer} ${
-          isSidebarOpen ? styles.sidebarOpen : styles.sidebarClosed
-        }`}
-      >
-        <WriterSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      </div>
+      <div className={`${styles.sidebarContainer}`}></div>
 
       <div className={`flex-grow-1 ${styles.mainContent}`}>
         <div className={`container ${styles.container}`}>
-        
           <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap">
             <div className="d-flex align-items-center mb-2 mb-sm-0">
               <button
+                onClick={() => navigate("/writerHome")}
                 className={`${styles.backBtn} me-2`}
-                onClick={toggleSidebar}
               >
                 <FaAngleLeft />
               </button>
@@ -68,7 +34,6 @@ const WorkRoomPage = () => {
         <div className={styles.divider}></div>
 
         <div className={`container ${styles.container}`}>
-      
           <div className={styles.characterBox}>
             <h3 className={styles.sectionTitle}>Character 1 Name</h3>
             <div className="row g-3">
@@ -101,15 +66,14 @@ const WorkRoomPage = () => {
                     <h4>Chapter {num}</h4>
                     <button
                       type="button"
+                      onClick={() => setOpenReader(true)}
                       className={styles.readLink}
-                      style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textDecoration: 'underline' }}
                     >
                       Read Chapter →
                     </button>
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
           <div className={styles.upcomingBox}>
@@ -149,8 +113,9 @@ const WorkRoomPage = () => {
                   <BsCloudUpload className={styles.icon} />
                   Add a New Chapter
                 </button>
-                <button className={`${styles.btn} ${styles.secondary}`}
-                onClick={openGroupChat}
+                <button
+                  onClick={() => navigate("/chatApp")}
+                  className={`${styles.btn} ${styles.secondary}`}
                 >
                   Group Chat
                 </button>

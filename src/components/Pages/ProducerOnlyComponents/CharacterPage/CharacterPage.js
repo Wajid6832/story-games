@@ -8,33 +8,18 @@ import stopIcon from "../../../../assets/stop.png";
 import { CiImageOn } from "react-icons/ci";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { useNavigate } from "react-router-dom"; 
+
+
+
 
 const CharacterPage = () => {
-  const navigate = useNavigate();
-
- 
-  const handleBackClick = () => {
-    navigate("/producerHome"); 
-  };
-
-  const handlePrevClick = () => {
-    navigate("/previousChapter"); 
-  };
-
-  const handleNextClick = () => {
-    navigate("/nextChapter"); 
-  };
-
   return (
+
+
     <div className={styles.characterPage}>
       <div className={styles.header}>
         <div className={styles.leftSection}>
-          <Button
-            variant="light"
-            className={styles.backButton}
-            onClick={handleBackClick} 
-          >
+          <Button variant="light" className={styles.backButton}>
             <img src={squares} alt="Back" className={styles.backIcon} />
           </Button>
           <h2 className={styles.bookTitle}>Book Name • 1.1 Character One</h2>
@@ -48,8 +33,10 @@ const CharacterPage = () => {
         </div>
       </div>
 
+
       <Container fluid className={styles.pageContainer}>
         <Row>
+
           <Col md={6} className={styles.page}>
             <h5 className={styles.chapterTitle}>1.1.1. Chapter 1</h5>
             <p className={styles.text}>
@@ -57,19 +44,20 @@ const CharacterPage = () => {
               Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.
-            </p>
 
+            </p>
             <p className={styles.text}>
-              Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
               Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+            </p>
+            <p className={styles.text}>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
               aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
             </p>
             <p className={styles.pageNumber}>Page 1 of 20</p>
           </Col>
+
 
           <Col md={6} className={styles.page}>
             <p className={styles.text}>
@@ -81,14 +69,14 @@ const CharacterPage = () => {
             <div className={styles.imageBox}>
               <div className={styles.iconBox}>
                 <CiImageOn className={styles.imageIcon} />
-              </div>
+               </div>
               <p className={styles.caption}>
                 <em>Lorem Ipsum, dor sit amet</em>
               </p>
             </div>
 
             <div className={styles.soundButtons}>
-              <Button variant="primary">
+              <Button variant="primary"  >
                 <img src={playIcon} alt="Play" className={styles.soundIcon} />
                 Play sound effects
               </Button>
@@ -100,15 +88,16 @@ const CharacterPage = () => {
 
             <p className={styles.text}>
               Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
               Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </p>
             <p className={styles.pageNumber}>Page 2 of 20</p>
 
             <div className={styles.pageNav}>
-              <Button variant="light" onClick={handlePrevClick}>
+              <Button variant="light">
                 <IoIosArrowDropleft />
               </Button>
-              <Button variant="primary" onClick={handleNextClick}>
+              <Button variant="primary">
                 <IoIosArrowDroprightCircle />
               </Button>
             </div>
@@ -116,6 +105,7 @@ const CharacterPage = () => {
         </Row>
       </Container>
     </div>
+
   );
 };
 

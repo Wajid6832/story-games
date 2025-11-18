@@ -24,7 +24,10 @@ const Bookpage = () => {
           className={`${styles.characterHeader} d-flex align-items-center justify-content-between flex-wrap`}
         >
           <h2 className={styles.characterName}>1.1. Character One</h2>
-          <button className={styles.perspectiveBtn}>
+          <button onClick={(e) => {
+                    e.preventDefault();
+                    setOpenReader(true);
+                  }} className={styles.perspectiveBtn}>
             Read from Character Perspective
           </button>
         </div>
@@ -84,7 +87,10 @@ const Bookpage = () => {
           className={`${styles.characterHeader} d-flex align-items-center justify-content-between flex-wrap`}
         >
           <h2 className={styles.characterName}>1.2. Character Two</h2>
-          <button className={styles.perspectiveBtn}>
+          <button onClick={(e) => {
+                    e.preventDefault();
+                    setOpenReader(true);
+                  }} className={styles.perspectiveBtn}>
             Read from Character Perspective
           </button>
         </div>
