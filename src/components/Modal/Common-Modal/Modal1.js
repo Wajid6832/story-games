@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Modal from "react-bootstrap/Modal";
+import BootstrapModal from "react-bootstrap/Modal";
 
 export const CommonModal = (props) => {
   useEffect(() => {
@@ -23,18 +23,18 @@ export const CommonModal = (props) => {
   }, []);
 
   return (
-    <Modal {...props} centered size="lg">
-      <Modal.Body
-        className={props.bodyClasses}
-        style={{
-          border: "none",
-          boxShadow: "none",
-          background: "transparent",
-          padding: "0"
-        }}
-      >
-        {props.children}
-      </Modal.Body>
-    </Modal>
+    <BootstrapModal {...props} centered size="lg">
+  <BootstrapModal.Body
+    className={props.bodyClasses}
+    style={{
+      border: "none",
+      boxShadow: "none",
+      background: "transparent",
+      padding: "0"
+    }}
+  >
+    {props.children}
+  </BootstrapModal.Body>
+</BootstrapModal>
   );
 };
