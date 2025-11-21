@@ -2,22 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// React Icons
-import { FaThumbsUp, FaCoins } from "react-icons/fa";
-
-// Mock data for likes and tokens
-const n = {
-  likes: 5,
-  tokens: 5,
-};
-
-// Styles for Likes & Tokens row
-const statsRowStyle = {
-  display: "flex",
-  gap: "20px",
-  fontSize: "0.9rem",
-  marginBottom: "1.5rem",
-};
 
 const Character = () => {
   return (
