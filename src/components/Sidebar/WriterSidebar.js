@@ -7,6 +7,7 @@ import { MdLibraryBooks } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearState } from "../../features/auth/auth.slice";
+import WriterMode from "../Pages/ReaderSection3/WriterModal/WriterMode";
 import image from "../../assets/profile.png";
 import image2 from "../../assets/review.png";
 import image3 from "../../assets/applications.png";
@@ -27,17 +28,30 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.auth);
   const role = data?.role || "writer";
-  const [isWriterModeOn, setIsWriterModeOn] = useState(false);
-
+  const [isWriterModeOn, setIsWriterModeOn] = useState(true);
+  const [showWriterModal, setShowWriterModal] = useState(false);
   const handleSignOut = () => {
     dispatch(clearState());
     localStorage.clear();
     navigate("/editorLogin", { replace: true });
   };
   const handleSwitchChange = (e) => {
+    const checked = e.target.checked;
     setIsWriterModeOn(e.target.checked);
+    if (checked && role === "reader") {
+      setShowWriterModal(true);
+    } else {
+      setShowWriterModal(false);
+    }
   };
-
+  const handleCloseWriterMode = () => {
+    setShowWriterModal(false);
+    setIsWriterModeOn(false);
+    if(role === "reader"){
+      navigate("/readersLanding");
+    }
+    toggleSidebar();
+  };
   return (
     <>
 
@@ -323,6 +337,13 @@ const WriterSidebar = ({ isOpen, toggleSidebar }) => {
           </Nav>
         </div>
       </div>
+      {
+        showWriterModal && role === "reader" && (
+          <WriterMode
+          onClose={handleCloseWriterMode}
+          />
+        )
+      }
     </>
   );
 };

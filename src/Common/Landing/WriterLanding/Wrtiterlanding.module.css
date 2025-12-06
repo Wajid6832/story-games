@@ -1,10 +1,23 @@
 .landingWrapper {
-  background: #f4f5ff;
-  min-height: 100vh;
+  position: relative;
+  max-width: 1440px;
+  /* Change 1: height: auto aur min-height use karein */
+  width: 100%;
+  min-height: 600px; /* Large screen par 600px height maintain rahegi */
+  height: auto;      /* Mobile par content ke hisaab se height badh jayegi */
+  
+  /* Change 2: Padding thodi kam ki taake desktop par scroll na aaye */
+  padding: 40px 70px; 
+  
+  background: #ffffff;
+  clip-path: polygon(5% 0, 100% 0, 96% 100%, 0 98%);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  overflow-x: hidden; 
+  
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 20px 0;
 }
 
 .bg {
@@ -19,10 +32,7 @@
   padding: 30px 20px;
 }
 
-.main {
-  flex: 1;
-  align-items: center;
-}
+/* Baki buttons aur text classes same rahengi... */
 
 .signUpBtn {
   background-color: #4b7bff;
@@ -74,7 +84,8 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-  margin-right: 80%;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .guestLink:hover {
@@ -82,14 +93,15 @@
 }
 
 .heroImage {
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 300px; 
   height: auto;
+  object-fit: contain;
 }
 
 .placeholderCard {
   width: 100%;
-  aspect-ratio: 0.9; 
+  aspect-ratio: 1 / 1; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,13 +117,12 @@
 }
 
 .footer {
-  width: 95%; 
-  max-width: 100%;            
+  width: 88%;
   background: linear-gradient(135deg, #f9f9f9 0%, #e3e6f8 100%);
   border-radius: 20px;
-  padding: 10px 15px; 
-  margin-top: 30px; 
+  padding: 15px 20px; 
+  margin-top: 20px; 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
 }

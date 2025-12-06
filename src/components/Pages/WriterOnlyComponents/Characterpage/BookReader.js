@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiHeart, FiAward, FiPlay, FiSquare } from 'react-icons/fi';
 import styles from "../../WriterOnlyComponents/Characterpage/BookReader.module.css"
+import ReaderModalFlow from"../../ReaderSection3/ReaderModal/ReaderModalFlow";  
 
 export default function BookReader() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const [showAwardModal, setShowAwardModal] = useState(false);
 
   const bookData = {
     title: "Book Name",
@@ -35,7 +37,11 @@ export default function BookReader() {
   return (
     <div className={`${styles.wrapper} d-flex justify-content-center align-items-center`}>
       <div className={`${styles.bookContainer} bg-white rounded shadow-lg overflow-hidden`}>
-        
+        {
+          showAwardModal && (
+            <ReaderModalFlow 
+              onClose={()=> setShowAwardModal(false)} />  
+        )}
         <div className={`${styles.header} bg-white border-bottom d-flex justify-content-between align-items-center px-4 py-3`}>
           <div className="d-flex align-items-center gap-3">
 
@@ -50,7 +56,7 @@ export default function BookReader() {
             </h1>
           </div>
           <div className="d-flex align-items-center gap-2">
-            <button className={`btn btn-primary d-flex align-items-center gap-2 ${styles.awardBtn}`}>
+            <button onClick={()=> setShowAwardModal(true)} className={`btn btn-primary d-flex align-items-center gap-2 ${styles.awardBtn}`}>
               <FiAward size={16} />
               Award Good Read Token
             </button>
