@@ -25,6 +25,7 @@ import CurrentNovels from "./components/Pages/ReaderSection1/CurrentNovels/Curre
 import BecomeWriter from "./components/Pages/ReaderSection1/becomeWriter/becomeWriter";
 import BookReader from "./components/Pages/WriterOnlyComponents/Characterpage/BookReader";
 import LinkBankAccount from "./components/Pages/ReaderSection1/LinkBankAccount/LinkBankAccount";
+import WorkRoomPage from "./components/Pages/WriterOnlyComponents/WorkRoom/WorkRoomPage";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
             <Route path="/becomeWriter" element={<BecomeWriter />} />
             <Route path="/bookreader" element={<BookReader />} />
             <Route path="/LinkBankAccount" element={<LinkBankAccount />} />
+             <Route path="/workRoom" element={<WorkRoomPage />} />
           </Route>
         </Route>
       
