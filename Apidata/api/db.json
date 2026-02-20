@@ -1,0 +1,382 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "reader user",
+      "email": "readeruser129@gmail.com",
+      "password": "readeruser129@",
+      "role": "reader"
+    },
+    {
+      "id": "2",
+      "name": "writer user",
+      "email": "writeruser129@gmail.com",
+      "password": "writeruser129@",
+      "role": "writer"
+    },
+    {
+      "id": "3",
+      "name": "editor user",
+      "email": "editor129@gmail.com",
+      "password": "editoruser@129",
+      "role": "editor"
+    },
+    {
+      "id": "4",
+      "name": "producer user",
+      "email": "produceruser129@gmail.com",
+      "password": "produceruser129@",
+      "role": "producer"
+    },
+    {
+      "id": "bea4",
+      "email": "chwajid6832@gmail.com",
+      "password": "123456ch",
+      "role": "writer"
+    },
+    {
+      "id": "85a2",
+      "email": "qamerhussain203@gmail.com",
+      "password": "1122115@",
+      "role": "producer"
+    },
+    {
+      "id": "bbcb",
+      "email": "wajidch7860@gmail.com",
+      "password": "12345678",
+      "role": "writer"
+    },
+    {
+      "id": "b504",
+      "email": "wajidch7860@gmail.com",
+      "password": "12345678",
+      "role": "reader"
+    },
+    {
+      "id": "6f26",
+      "email": "readeruser12@gmail.com",
+      "password": "123456ch",
+      "role": "reader"
+    },
+    {
+      "id": "0f4f",
+      "email": "chwajid68@gmail.com",
+      "password": "123456ch",
+      "role": "writer"
+    }
+  ],
+  "favourite": [
+    {
+      "id": "1",
+      "images": "https://em-content.zobj.net/source/facebook/200/man_emoji-modifier-fitzpatrick-type-4_1f468-1f3fd_1f3fd.png",
+      "Authorname": "Jerome Bell"
+    },
+    {
+      "id": "2",
+      "images": "https://i.pinimg.com/236x/1a/03/cd/1a03cdd188662382fa9d5e0ea195654a.jpg",
+      "Authorname": "Brooklyn Simmons"
+    },
+    {
+      "id": "3",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN2kflFGeTt1r4clqoZwGg5oNdw1jpiBT3pL1S-O89uq0PugzdUdcY1L9nM2oay_aoCI0&usqp=CAU",
+      "Authorname": "Lewis Simmons"
+    },
+    {
+      "id": "4",
+      "images": "https://emojitool.com/img/apple/ios-13.3/man-type-4-1168.png",
+      "Authorname": "Robert Fox"
+    },
+    {
+      "id": "5",
+      "images": "https://images.emojiterra.com/google/android-11/512px/1f935-1f3fb-2642.png",
+      "Authorname": "Ralph Edwards"
+    },
+    {
+      "id": "6",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUuztEnOo6wuWQRph2Lk1hjcWAg8B4TQDcI9_bWlU8OLZEzvXSZHkkQZq47CsIIOnd4o&usqp=CAU",
+      "Authorname": "Wade Warner"
+    },
+    {
+      "id": "7",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzbhNl87fwcgnc5rzD9B61riUtJzhOp1fCLfPP4Ux2tJ76TjEyh84gUTtYZqXJsVwuHjk&usqp=CAU",
+      "Authorname": "Jenny Wilson"
+    },
+    {
+      "id": "8",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgB8V5Q7CST7njZJyu4NGkFZ3EXjIG9wb9duEhe3f9WIkEvWL_h05vfzst4tQ_DsqZtW8&usqp=CAU",
+      "Authorname": "Amelia Edwards"
+    },
+    {
+      "id": "9",
+      "images": "https://em-content.zobj.net/source/facebook/200/man_emoji-modifier-fitzpatrick-type-4_1f468-1f3fd_1f3fd.png",
+      "Authorname": "Jerome Bell"
+    },
+    {
+      "id": "10",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUuztEnOo6wuWQRph2Lk1hjcWAg8B4TQDcI9_bWlU8OLZEzvXSZHkkQZq47CsIIOnd4o&usqp=CAU",
+      "Authorname": "Jerome Bell"
+    },
+    {
+      "id": "11",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN2kflFGeTt1r4clqoZwGg5oNdw1jpiBT3pL1S-O89uq0PugzdUdcY1L9nM2oay_aoCI0&usqp=CAU",
+      "Authorname": "Brooklyn Simmons"
+    },
+    {
+      "id": "12",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUuztEnOo6wuWQRph2Lk1hjcWAg8B4TQDcI9_bWlU8OLZEzvXSZHkkQZq47CsIIOnd4o&usqp=CAU",
+      "Authorname": "Lewis Simmons"
+    },
+    {
+      "id": "13",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE6TeRUIXchu8uYuiaJRdPkAa-Ij0d_smTSUP0hOIfZ1dkrqGRNDTvSOlOBTnh40ruu_8&usqp=CAU",
+      "Authorname": "Robert Fox"
+    },
+    {
+      "id": "14",
+      "images": "https://i.pinimg.com/236x/1a/03/cd/1a03cdd188662382fa9d5e0ea195654a.jpg",
+      "Authorname": "Ralph Edwards"
+    },
+    {
+      "id": "15",
+      "images": "https://i.pinimg.com/236x/1a/03/cd/1a03cdd188662382fa9d5e0ea195654a.jpg",
+      "Authorname": "Wade Warner"
+    },
+    {
+      "id": "16",
+      "images": "https://i.pinimg.com/236x/1a/03/cd/1a03cdd188662382fa9d5e0ea195654a.jpg",
+      "Authorname": "Jenny Wilson"
+    },
+    {
+      "id": "17",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUuztEnOo6wuWQRph2Lk1hjcWAg8B4TQDcI9_bWlU8OLZEzvXSZHkkQZq47CsIIOnd4o&usqp=CAU",
+      "Authorname": "Amelia Edwards"
+    },
+    {
+      "id": "18",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUuztEnOo6wuWQRph2Lk1hjcWAg8B4TQDcI9_bWlU8OLZEzvXSZHkkQZq47CsIIOnd4o&usqp=CAU",
+      "Authorname": "Jerome Bell"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Shadows of Eternity",
+      "genre": "Fantasy",
+      "author": "Aiko Tanaka",
+      "description": "In feudal Japan, disgraced samurai Takeshi wanders as a ronin after being framed for his master's murder. When his former clan is threatened by a corrupt warlord seeking to overthrow the shogunate, Takeshi must choose between maintaining his exile or reclaiming his honor. Along his journey, he mentors a young orphan with hidden talents and reconnects with a mysterious woman who holds the key to clearing his name. As political intrigue unfolds and battles rage across the countryside, Takeshi discovers that true strength comes not from the sword, but from the code one lives by. His path to redemption will test every principle of bushido he once held sacred",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrYFE2Y1G5idMckZ6OT1sOPhKuek_EX7DxOg&s"
+    },
+    {
+      "id": "2",
+      "title": "Circuit Hearts",
+      "genre": "Sci-Fi Romance",
+      "author": "Riku Hayashi",
+      "description": "In feudal Japan, disgraced samurai Takeshi wanders as a ronin after being framed for his master's murder. When his former clan is threatened by a corrupt warlord seeking to overthrow the shogunate, Takeshi must choose between maintaining his exile or reclaiming his honor. Along his journey, he mentors a young orphan with hidden talents and reconnects with a mysterious woman who holds the key to clearing his name. As political intrigue unfolds and battles rage across the countryside, Takeshi discovers that true strength comes not from the sword, but from the code one lives by. His path to redemption will test every principle of bushido he once held sacred",
+      "image": "https://npr.brightspotcdn.com/dims4/default/5fc1da4/2147483647/strip/true/crop/1439x1079+0+0/resize/880x660!/quality/90/?url=https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F1439x1079%2099%200%2Fresize%2F1439x1079%21%2F%3Furl%3Dhttp%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F24%2F13%2F0dca1b9143a6969c8791b745eb41%2Fsleeper3.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Haunted Dormitory",
+      "genre": "Horror",
+      "author": "Mei Nakamura",
+      "description": "In feudal Japan, disgraced samurai Takeshi wanders as a ronin after being framed for his master's murder. When his former clan is threatened by a corrupt warlord seeking to overthrow the shogunate, Takeshi must choose between maintaining his exile or reclaiming his honor. Along his journey, he mentors a young orphan with hidden talents and reconnects with a mysterious woman who holds the key to clearing his name. As political intrigue unfolds and battles rage across the countryside, Takeshi discovers that true strength comes not from the sword, but from the code one lives by. His path to redemption will test every principle of bushido he once held sacred",
+      "image": "https://static.vecteezy.com/system/resources/thumbnails/046/370/594/small/portrait-of-man-in-hood-with-glowing-yellow-eyes-making-threatening-gesture-photo.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Samurai Reborn",
+      "genre": "Historical",
+      "author": "Kenji Ito",
+      "description": "In feudal Japan, disgraced samurai Takeshi wanders as a ronin after being framed for his master's murder. When his former clan is threatened by a corrupt warlord seeking to overthrow the shogunate, Takeshi must choose between maintaining his exile or reclaiming his honor. Along his journey, he mentors a young orphan with hidden talents and reconnects with a mysterious woman who holds the key to clearing his name. As political intrigue unfolds and battles rage across the countryside, Takeshi discovers that true strength comes not from the sword, but from the code one lives by. His path to redemption will test every principle of bushido he once held sacred",
+      "image": "https://media.istockphoto.com/id/1598719537/vector/teenage-samurai-girl-anime.jpg?s=612x612&w=0&k=20&c=yK7lT21o3E9ZayNdHaAPzjEsSWqcq4hIZklsGDMStuQ="
+    },
+    {
+      "id": "5",
+      "title": "Love in Pixels",
+      "genre": "Rom-Com",
+      "author": "Haruna Sato",
+      "description": "Two gamers discover love through a competitive e-sport.",
+      "image": "https://thumbs.dreamstime.com/b/vector-pixel-art-love-bird-vector-pixel-art-love-bird-isolated-cartoon-110723012.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Cosmic Voyage",
+      "genre": "Space Adventure",
+      "author": "Naoki Fujimoto",
+      "description": "Explorers journey into an uncharted galaxy filled with danger.",
+      "image": "https://static.scientificamerican.com/sciam/cache/file/BC745FE0-3A58-4F9E-8ABF901AFC1FF0E1_source.jpg?w=1200"
+    },
+    {
+      "id": "7",
+      "title": "Dead Pool",
+      "genre": "Action",
+      "author": "Eren Nishimura",
+      "description": "A rogue swordsman battles against a corrupt empire.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZ_PJ0IQQTyusf63zph-FCjooXUb6c88ag&s"
+    },
+    {
+      "id": "8",
+      "title": "Digital Dreams",
+      "genre": "Cyberpunk",
+      "author": "Akira Suzuki",
+      "description": "A detective uncovers a conspiracy in a virtual metropolis.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg"
+    },
+    {
+      "id": "9",
+      "title": "The Last Cherry Blossom",
+      "genre": "Drama",
+      "author": "Yuki Mori",
+      "description": "A girl battles illness while finding meaning in everyday beauty.",
+      "image": "https://biculturalmama.com/wp-content/uploads/2017/02/Last-Cherry-Blossom-cover-1-e1486347565557.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Mecha Legends",
+      "genre": "Mecha Sci-Fi",
+      "author": "Hayato Kirishima",
+      "description": "Pilots unite to defend Earth from alien forces.",
+      "image": "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.RightSoftLabs.MvAB.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Midnight Idols",
+      "genre": "Music / Slice of Life",
+      "author": "Sakura Inoue",
+      "description": "An idol group navigates fame, rivalry, and friendship.",
+      "image": "https://thumbs.dreamstime.com/b/neon-musical-note-glowing-wet-city-street-night-vaporwave-aesthetic-urban-music-concept-neon-musical-note-glowing-wet-321327101.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Mystic Bakery",
+      "genre": "Fantasy Comedy",
+      "author": "Noriko Watanabe",
+      "description": "Magical pastries grant wild and unexpected powers.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT99lxwlCpuxBHIcVP79njBr47X6lk1nW2Vng&s"
+    },
+    {
+      "id": "13",
+      "title": "Ghost Signal",
+      "genre": "Tech Horror",
+      "author": "Ren Kobayashi",
+      "description": "A mysterious broadcast drives listeners insane.",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/terrifier-2-everett-66eb11ed9cb62.jpg"
+    },
+    {
+      "id": "14",
+      "title": "Royal Groom",
+      "genre": "Romance",
+      "author": "Mina Takahashi",
+      "description": "A commoner is selected to marry the crown princess.",
+      "image": "https://i.pinimg.com/736x/f3/37/50/f33750a6199d54b613960d253c27be3d.jpg"
+    },
+    {
+      "id": "15",
+      "title": "Neon Samurai",
+      "genre": "Sci-Fi Action",
+      "author": "Koji Yamamoto",
+      "description": "A cyber-enhanced warrior fights for justice in a neon Tokyo.",
+      "image": "https://mir-s3-cdn-cf.behance.net/project_modules/hd/af316090819485.5e21052ac6d96.jpg"
+    },
+    {
+      "id": "16",
+      "title": "Paper Wings",
+      "genre": "Drama / Coming-of-Age",
+      "author": "Hana Mori",
+      "description": "A shy student discovers her voice through literature.",
+      "image": "https://thumbs.dreamstime.com/b/creative-paper-wings-against-colorful-wall-background-design-striking-image-features-attached-to-vibrant-red-symbolizing-394865756.jpg"
+    },
+    {
+      "id": "17",
+      "title": "The Scarlet Veil",
+      "genre": "Dark Fantasy",
+      "author": "Sora Aizawa",
+      "description": "An alchemist pursues immortality at dire costs.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1o7AiEo4-vsDuB_VPrI1b-xE_alv63tX74A&s"
+    },
+    {
+      "id": "18",
+      "title": "Zero Break",
+      "genre": "Sports",
+      "author": "Tatsuya Kuroda",
+      "description": "A badminton prodigy rises after a career-ending injury.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWGBWY3ZX0KrdEMozW36khWYh3ejz7Jovdw&s"
+    },
+    {
+      "id": "19",
+      "title": "Dorm of Gamers",
+      "genre": "Slice of Life",
+      "author": "Rina Okabe",
+      "description": "Gamers living together face friendship and rivalry.",
+      "image": "https://i.pinimg.com/736x/6f/87/4d/6f874d4f5199df6f2c69c822fcd72fab.jpg"
+    },
+    {
+      "id": "20",
+      "title": "Timebound",
+      "genre": "Time Travel",
+      "author": "Keita Yamazaki",
+      "description": "A teen learns every choice shifts his timeline.",
+      "image": "https://img2.wallspic.com/previews/4/8/3/5/3/135384/135384-green-watch-fractal_art-steampunk-future-500x.jpg"
+    }
+  ],
+  "characters": [
+    {
+      "id": "1",
+      "name": "1.1. Character One",
+      "author": "Jon Doe",
+      "traits": "Lorem ipsum dolor sit amet...",
+      "about": "Lorem ipsum dolor sit amet...",
+      "chapters": [
+        {
+          "id": 1,
+          "date": "1 Oct 24",
+          "title": "1.1.1. Chapter 1"
+        },
+        {
+          "id": 2,
+          "date": "3 Oct 24",
+          "title": "1.1.2. Chapter 2"
+        },
+        {
+          "id": 3,
+          "date": "5 Oct 24",
+          "title": "1.1.3. Chapter 3"
+        },
+        {
+          "id": 4,
+          "date": "7 Oct 24",
+          "title": "1.1.4. Chapter 4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "1.2. Character Two",
+      "author": "Jane Smith",
+      "traits": "Lorem ipsum dolor sit amet...",
+      "about": "Lorem ipsum dolor sit amet...",
+      "chapters": [
+        {
+          "id": 1,
+          "date": "1 Oct 24",
+          "title": "1.2.1. Chapter 1"
+        },
+        {
+          "id": 2,
+          "date": "3 Oct 24",
+          "title": "1.2.2. Chapter 2"
+        },
+        {
+          "id": 3,
+          "date": "5 Oct 24",
+          "title": "1.2.3. Chapter 3"
+        },
+        {
+          "id": 4,
+          "date": "7 Oct 24",
+          "title": "1.2.4. Chapter 4"
+        }
+      ]
+    }
+  ]
+}
